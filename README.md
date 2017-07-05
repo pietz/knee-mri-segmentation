@@ -1,2 +1,2 @@
-# mri-segmentation
-Segmentation of 3D MRI data
+# Age Prediction
+This repository contains the code of my bachelor thesis project to predict the age of a person based on MRI images of their knees. To achieve this task I'm using convolutional neural networks to first segment those parts of the image that are relevant to the problem. Next, I use another CNN to classify the age of the contestens based on the segmented images. These two steps were needed to make the network learn, because of the low number of samples that were available.

@@ -1,0 +1,129 @@
+%Packages
+\documentclass[11pt, a4paper]{article}
+
+% Papierformat und Seitenränder
+\usepackage[verbose,a4paper,top=25mm,bottom=25mm,left=30mm,right=30mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+%Legt die Schriftart auf ``Latin Modern'' fest
+\usepackage{lmodern}
+
+%1,5 facher Zeilenabstand
+%\usepackage[onehalfspacing]{setspace}
+% Einfacher Zeilenabstand
+\usepackage[singlespacing]{setspace}
+
+%Für neue Rechtschreibung und deutsche Silbentrennung
+\usepackage[ngerman]{babel}
+
+%Ermöglicht das Einbinden von Grafiken
+\usepackage{graphicx}
+% Um Grafiken fließender Text
+%\usepackage{wrapfig}
+
+% Erhöht maximale Lückengröße zwischen Wörtern
+%\setlength\emergencystretch{1em} 
+
+% Für Zitate
+\usepackage[round]{natbib}
+\bibliographystyle{Bibliographystyle}
+%\setlength{\bibinitsep}{\baselineskip}
+
+% %Für Anhänge
+% %\usepackage[titletoc,title]{appendix}
+
+% %Nummeriert alle Ebenen von Part (-1) bis Subparagraph (5)
+% \setcounter{secnumdepth}{3}
+% %Nimmt alle Ebenen von Part (-1) bis Subparagraph (5) ins Inhaltsverzeichnis auf
+% \setcounter{tocdepth}{3}
+
+% %Inkludiert das Literaturverzeichnis ins Inhaltsverzeichnis
+% %\usepackage[nottoc]{tocbibind}
+% %Referenz: ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/tocbibind/tocbibind.pdf
+
+% % Für sehr, sehr viel besseren Blocksatz
+% \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% % activate={true,nocompatibility} - activate protrusion and expansion
+% % final - enable microtype; use "draft" to disable
+% % tracking=true, kerning=true, spacing=true - activate these techniques
+% % factor=1100 - add 10% to the protrusion amount (default is 1000)
+% % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+
+% % Macht Leerzeilen zu 'richtigen' Absätzen
+% \usepackage{parskip}
+
+% %Einzug der Fußnoten
+% %\usepackage[hang, bottom]{footmisc}
+% %\setlength{\footnotemargin}{15pt}
+
+% %Fußnoten von Grafiken auf derselben Seite
+% \usepackage{afterpage}
+
+% % URL-Paket
+% \usepackage[colorlinks,        % Links ohne Umrandungen in zu wählender Farbe
+% 	linkcolor=black,   % Farbe interner Verweise
+% 	filecolor=black,   % Farbe externer Verweise
+% 	citecolor=black,
+% 	urlcolor=black]{hyperref} 
+	
+% %Erstellung eines Glossars
+% %\usepackage[nomain, acronym, nonumberlist, toc, section=section, nopostdot]{glossaries}
+% %\renewcommand*{\glsgroupskip}{}% no extra line skip between clusters
+% %\makeglossaries
+
+
+% %\input{Glossar.tex}
+% %\input{Abkürzungen.tex}
+
+% %Bessere Beschreibungslisten
+% %\usepackage{enumitem}
+
+% %Erstellung von Tabellen
+% \usepackage[margin=00pt,font=small,labelfont=bf, position=below, skip=3pt, justification=justified]{caption}
+% \usepackage{booktabs} % Schickere Linien in Tabellen
+% \usepackage{colortbl} % Farben in Tabellen
+% \usepackage{tabularx}
+% %\usepackage{multirow}
+
+% % Kapitelweise Nummerierung von Abbildungen
+% %\usepackage{chngcntr}
+% %\counterwithin{figure}{section}
+
+% %Einbinden von externen PDF-Dateien
+% \usepackage{pdfpages}
+
+% % Überschriftenformatierung ermöglichen
+% %\usepackage{titlesec}
+
+% %Subparagraphen kursiv
+% \titleformat*{\subparagraph}{\itshape}
+
+% %Blindtext
+% \usepackage{blindtext}
+
+% %Mathematische Symbole
+% \usepackage[geometry]{ifsym}
+
+% %Farbiger Text
+% \usepackage{color}
+% \definecolor{grau}{gray}{.6}
+
+% %Fußnoten ohne Ziffer
+% \makeatletter
+% \def\blfootnote{\gdef\@thefnmark{}\@footnotetext}
+% \makeatother
+
+% % EINSTELLUNGEN
+% % -------------------------------------------
+
+% % Verhindert Hurenkinder und Schusterjungen recht zuverlässig
+% \widowpenalty = 10000
+% \clubpenalty = 10000
+% \interfootnotelinepenalty = 10000
+
+% %Einzug in Beschreibungslisten global festlegen
+% \setlist[description]{leftmargin=\einzug}
+
+% %Abstand zwischen Gleitobjekten und Text
+% \setlength{\intextsep}{20pt}

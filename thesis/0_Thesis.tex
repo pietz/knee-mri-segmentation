@@ -1,0 +1,59 @@
+%\input{config.tex}
+
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[singlespacing]{setspace}
+\usepackage{parskip}
+\usepackage{graphicx}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+
+\widowpenalty = 10000
+\clubpenalty = 10000
+\interfootnotelinepenalty = 10000
+
+\pagenumbering{Roman}
+
+\title{Segmentation of three dimensional MRI data}
+\author{Paul-Louis Pröve}
+
+\begin{document}
+
+    \begin{titlepage}
+    \centering
+    \includegraphics[width=0.4\textwidth]{fhw.png}\par
+    \vspace{1cm}
+    {\scshape\Large Bachelor Thesis\par}
+    \vspace{2cm}
+    {\bfseries\Huge Segmentation of three dimensional MRI data\par}
+    \vspace{2cm}
+    {\itshape\Large Paul-Louis Pröve\par}
+    mail@plpp.de\par
+    \vfill
+    supervised by\par
+    Prof. Dr. Dennis Säring\par
+    dsg@fh-wedel.de\par
+    \vspace{1cm}
+    Hamburg,\par \today\par
+    \end{titlepage}
+
+\tableofcontents
+\newpage
+
+%\listoffigures
+%\newpage
+
+\pagenumbering{arabic}
+
+\input{1_abstract.tex}
+\input{2_introduction.tex}
+\input{3_review.tex}
+\input{4_methods.tex}
+\input{5_results.tex}
+\input{6_discussion.tex}
+
+
+
+\end{document}
