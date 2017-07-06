@@ -4,6 +4,7 @@
 \contentsline {subsection}{\numberline {3.1}Magnetic Resonance Imaging}{3}
 \contentsline {subsection}{\numberline {3.2}Epiphyseal Plates}{3}
 \contentsline {subsection}{\numberline {3.3}Neural Networks}{3}
+\contentsline {subsection}{\numberline {3.4}Segmentation}{3}
 \contentsline {section}{\numberline {4}Methods}{4}
 \contentsline {subsection}{\numberline {4.1}Dataset}{4}
 \contentsline {subsection}{\numberline {4.2}Preprocessing}{4}
@@ -11,7 +12,7 @@
 \contentsline {subsubsection}{\numberline {4.2.2}Resizing}{4}
 \contentsline {subsubsection}{\numberline {4.2.3}Normalization}{5}
 \contentsline {subsubsection}{\numberline {4.2.4}2D and 3D data}{5}
-\contentsline {subsubsection}{\numberline {4.2.5}Seperate Bone Maps}{5}
+\contentsline {subsubsection}{\numberline {4.2.5}Separate Bone Maps}{5}
 \contentsline {subsection}{\numberline {4.3}Architectures}{5}
 \contentsline {subsubsection}{\numberline {4.3.1}Channels}{5}
 \contentsline {subsubsection}{\numberline {4.3.2}Dropout}{6}
