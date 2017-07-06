@@ -10,18 +10,34 @@
 
 The number of parameters in a Neural Network usually range from hundreds of thousands to hundreds of millions values which will be adjusted during training. The complexity allows the model to learn on its own which features of an image are important for any given task. This works in conjunction with the fact that high volumes of data are available for the training.
 
-Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample and the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence for seperate segmentation channels on the output.
+Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample and the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of seperate segmentation channels on the output.
 
 \subsubsection{Cropping}
 
-The framing of the raw images included large parts of the thigh and shin to be visible in the picture. Since these weren't relevant for the purpose of the study, they were cropped out. An algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point in 3D space.
+The framing of the raw images included large parts of the thigh and shin to be visible in the picture. Since these weren't relevant for the purpose of the study, they were cropped out. An algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point. There was no cropping applied on the z-axis.
 
 \subsubsection{Resizing}
 
-The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the application of Transfer Learning using pretrained models. This resolution also delivered enough detail for the segmentation maps.
+The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the use of Transfer Learning based on pretrained models. Also, this resolution still delivered enough detail for the segmentation maps.
+
+On the z-axis everything was scaled to 36 slices, which meant a 1.5 upscale for the images provided by Jopp et al. and a minor downscale from the 41 slices that were taken specifically for this study.
+
+Every image had now unified dimensions of 36x224x224 voxels.
 
 \subsubsection{Normalization}
-\subsubsection{2D and 3D}
+
+The normalization procedure of this dataset was executed in two steps. First the N4 Bias Correction was applied to the images, which tries to balance irregularities than happen when the MRIs were recorded. In the second step all intensity values were normalized to range from 0 to 1 so that every input is on the same scale.
+
+\subsubsection{2D and 3D data}
+
+Every three dimensional image was also converted to 36 slices of 224x224 pixels allowing the use of more common two dimensional CNN architectures. This reshaping multiplied the number of available samples by 36, but also reduced the data per image by the same factor. Although the total amount of information stayed the same the comparison between 2D and 3D data showed two major differences.
+
+By using three dimensional convolutions the network can draw conclusions from the order of the slices within one image. This turned out to be helpful for the segmentation process and reduced the number of falsely detected bones. Using 3D data for regression and classification hurt the performance by such a magnitude that training became impossible. 
+
+Converting the data from 3D to 2D has no impact on the input information. It does however have a large impact on the output information when working with regression and classification. By using slices instead of volumes we gain 36 times more data points for the backpropagation process.
+
+
+
 \subsubsection{Seperate Bone Maps}
 
 \subsection{Architectures}
