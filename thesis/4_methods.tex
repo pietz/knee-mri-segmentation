@@ -4,13 +4,19 @@
 
 3d, mri, german males, 14-21, different resolutions, different perspectives, segmentation maps for 76, mhd files
 
+
+
 \subsection{Preprocessing}
+
+The number of parameters in a Neural Network usually ranges from hundreds of thousands to hundreds of millions values which will be adjusted during training. The complexity allows the model to learn on its own which features of an image are important for any given task. This works in conjunction with the fact that high volumes of data are available for the training.
+
+Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample and the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence for seperate segmentation channels on the output.
 
 \subsubsection{Cropping}
 \subsubsection{Rescaling}
+\subsubsection{Normalization}
 \subsubsection{2D and 3D}
 \subsubsection{Seperate Bone Maps}
-\subsubsection{N4 Bias Correction}
 
 \subsection{Architectures}
 
