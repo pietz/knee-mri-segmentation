@@ -8,12 +8,18 @@
 
 \subsection{Preprocessing}
 
-The number of parameters in a Neural Network usually ranges from hundreds of thousands to hundreds of millions values which will be adjusted during training. The complexity allows the model to learn on its own which features of an image are important for any given task. This works in conjunction with the fact that high volumes of data are available for the training.
+The number of parameters in a Neural Network usually range from hundreds of thousands to hundreds of millions values which will be adjusted during training. The complexity allows the model to learn on its own which features of an image are important for any given task. This works in conjunction with the fact that high volumes of data are available for the training.
 
 Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample and the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence for seperate segmentation channels on the output.
 
 \subsubsection{Cropping}
-\subsubsection{Rescaling}
+
+The framing of the raw images included large parts of the thigh and shin to be visible in the picture. Since these weren't relevant for the purpose of the study, they were cropped out. An algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point in 3D space.
+
+\subsubsection{Resizing}
+
+The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the application of Transfer Learning using pretrained models. This resolution also delivered enough detail for the segmentation maps.
+
 \subsubsection{Normalization}
 \subsubsection{2D and 3D}
 \subsubsection{Seperate Bone Maps}
