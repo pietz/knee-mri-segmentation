@@ -2,13 +2,13 @@
 
 \subsection{Dataset}
 
-3d, mri, german males, 14-21, different resolutions, different perspectives, segmentation maps for 76, mhd files
+3d, mri, german males, 14-21, different resolutions, coronal/sagittal, segmentation maps for 76, mhd files, distribution of age.
 
 
 
 \subsection{Preprocessing}
 
-The number of parameters in a Neural Network usually range from hundreds of thousands to hundreds of millions values which will be adjusted during training. The complexity allows the model to learn on its own which features of an image are important for any given task. This works in conjunction with the fact that high volumes of data are available for the training.
+The amount of parameters in a Neural Network usually ranges from hundreds of thousands to hundreds of millions values which will be adjusted during training. The complexity allows the model to learn on its own what features of an image are important for any given task. This works in conjunction with the fact that high volumes of data are available for the training.
 
 Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample and the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of seperate segmentation channels on the output.
 
@@ -18,11 +18,11 @@ The framing of the raw images included large parts of the thigh and shin to be v
 
 \subsubsection{Resizing}
 
-The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the use of Transfer Learning based on pretrained models. Also, this resolution still delivered enough detail for the segmentation maps.
+The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the use of Transfer Learning based on pre-trained models. This resolution still delivered enough detail for the segmentation maps.
 
 On the z-axis everything was scaled to 36 slices, which meant a 1.5 upscale for the images provided by Jopp et al. and a minor downscale from the 41 slices that were taken specifically for this study.
 
-Every image had now unified dimensions of 36x224x224 voxels.
+Every image now had unified dimensions of 36x224x224 voxels.
 
 \subsubsection{Normalization}
 
@@ -30,15 +30,17 @@ The normalization procedure of this dataset was executed in two steps. First the
 
 \subsubsection{2D and 3D data}
 
-Every three dimensional image was also converted to 36 slices of 224x224 pixels allowing the use of more common two dimensional CNN architectures. This reshaping multiplied the number of available samples by 36, but also reduced the data per image by the same factor. Although the total amount of information stayed the same the comparison between 2D and 3D data showed two major differences.
+Every three dimensional image can be converted to n two dimensional slices, where n is the resolution of the sliced axis. Since the z-axis shows a much lower resolution than x and y, each image was sliced in 36 224x224 2D images. This resulted in 36 times more samples, but reduced the information per image by the same factor. 
 
-By using three dimensional convolutions the network can draw conclusions from the order of the slices within one image. This turned out to be helpful for the segmentation process and reduced the number of falsely detected bones. Using 3D data for regression and classification hurt the performance by such a magnitude that training became impossible. 
+Using three dimensional convolutions turned out to be helpful for the segmentation, because the network was able to draw conclusions from the order of the slices within one image. 
 
-Converting the data from 3D to 2D has no impact on the input information. It does however have a large impact on the output information when working with regression and classification. By using slices instead of volumes we gain 36 times more data points for the backpropagation process.
+\subsubsection{Separate Bone Maps}
+
+The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a model that would segment the three bones while still differentiating between them. This helped the accuracy of the prediction opposed to using just a single channel for all of the bones. In places where the Femur and Tibia were very close to one another, the separate channels prevented the closing of this region by the network.
+
+For another experiment the three channels were treated as one to create a network that would segment any type of bone in the image. This resulted in better performance when applied to sagittal images of the knee provided by Maas et al.
 
 
-
-\subsubsection{Seperate Bone Maps}
 
 \subsection{Architectures}
 

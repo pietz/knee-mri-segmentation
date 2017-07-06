@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.12)  5 JUL 2017 21:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.10.12)  6 JUL 2017 15:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -580,26 +580,26 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
  [1]
 (./1_abstract.tex [1]) (./2_introduction.tex [2]) (./3_review.tex [3])
-(./4_methods.tex [4]) (./5_results.tex [5]) (./6_discussion.tex [6])
-(./0_Thesis.aux) ) 
+(./4_methods.tex [4] [5] [6]) (./5_results.tex [7]) (./6_discussion.tex
+[8]) (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 3800 strings out of 494447
- 61576 string characters out of 6166765
- 146090 words of memory out of 5000000
+ 3816 strings out of 494447
+ 61736 string characters out of 6166765
+ 147090 words of memory out of 5000000
  7024 multiletter control sequences out of 15000+600000
- 57673 words of font info for 52 fonts, out of 8000000 for 9000
+ 58337 words of font info for 60 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 38i,4n,38p,418b,154s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016basic/texmf-dist/fonts/enc/dvips/lm/l
-m-ec.enc}</usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmbx10.
-pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><
-/usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr
-/local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local
-/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
-Output written on 0_Thesis.pdf (8 pages, 141681 bytes).
+ 38i,4n,38p,550b,154s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016basic/texmf-dist/fonts/enc/dvips
+/lm/lm-ec.enc}</usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lm
+bx10.pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmbx12.
+pfb></usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb>
+</usr/local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/
+local/texlive/2016basic/texmf-dist/fonts/type1/public/lm/lmri12.pfb>
+Output written on 0_Thesis.pdf (10 pages, 147634 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
+ 60 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16902 words of extra memory for PDF output out of 17280 (max. 10000000)
 
