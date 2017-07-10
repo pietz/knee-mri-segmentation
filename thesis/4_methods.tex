@@ -1,6 +1,6 @@
 \section{Methods}
 
-\subsection{Dataset}
+\subsection{Data Analysis}
 
 3d, mri, german males, 14-21, different resolutions, coronal/sagittal, segmentation maps for 76, mhd files, distribution of age.
 
@@ -8,9 +8,9 @@
 
 \subsection{Preprocessing}
 
-The amount of parameters in a Neural Network usually ranges from hundreds of thousands to hundreds of millions values which will be adjusted during training. The complexity allows the model to learn on its own what features of an image are important for any given task. This works in conjunction with the fact that high volumes of data are available for the training.
+The number of parameters in a Neural Network usually range from hundreds of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
 
-Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample and the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of seperate segmentation channels on the output.
+Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample or the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of seperate segmentation channels on the output.
 
 \subsubsection{Cropping}
 
