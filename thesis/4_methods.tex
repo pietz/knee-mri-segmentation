@@ -8,9 +8,9 @@
 
 \subsection{Preprocessing}
 
-The number of parameters in a Neural Network usually range from hundreds of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
+The number of parameters in a Neural Network commonly range from hundreds of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
 
-Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample or the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of seperate segmentation channels on the output.
+Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample or the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
 
 \subsubsection{Cropping}
 
@@ -18,7 +18,7 @@ The framing of the raw images included large parts of the thigh and shin to be v
 
 \subsubsection{Resizing}
 
-The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the use of Transfer Learning based on pre-trained models. This resolution still delivered enough detail for the segmentation maps.
+The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the use of Transfer Learning based on popular pre-trained models. This resolution still delivered enough detail for the segmentation maps.
 
 On the z-axis everything was scaled to 36 slices, which meant a 1.5 upscale for the images provided by Jopp et al. and a minor downscale from the 41 slices that were taken specifically for this study.
 
@@ -42,6 +42,8 @@ For another experiment the three channels were treated as one to create a networ
 
 \subsection{Architectures}
 
+
+
 In search for a network that would perform well on the segmentation, different architectures were looked at and multiple settings were tried.
 
 \subsubsection{Patch and Image based}
@@ -55,7 +57,14 @@ growth and initial size
 
 \subsubsection{Dropout}
 
+Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path of the architecture to implicitly add image augmentation to the data.
+
+Since overfitting was a big problem of this study, several other uses of Dropout were investigated. These experiments included increasing the dropout rate, as well as applying it in multiple places of the network. Adding a Dropout of 0.2 between the convolutional layers on the contracting side yielded the best results. While it didn't hurt the performance when low amounts of dropout were also added to the expanding side, it had a negative effect on the training speed.
+
+
 \subsubsection{Batch Size}
+
+The batch size describes the number of samples that will be used for one forward- and back-propagation step.
 
 \subsection{Training}
 
