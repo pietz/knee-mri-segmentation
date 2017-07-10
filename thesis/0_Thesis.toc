@@ -6,7 +6,7 @@
 \contentsline {subsection}{\numberline {3.3}Neural Networks}{3}
 \contentsline {subsection}{\numberline {3.4}Segmentation}{3}
 \contentsline {section}{\numberline {4}Methods}{4}
-\contentsline {subsection}{\numberline {4.1}Dataset}{4}
+\contentsline {subsection}{\numberline {4.1}Data Analysis}{4}
 \contentsline {subsection}{\numberline {4.2}Preprocessing}{4}
 \contentsline {subsubsection}{\numberline {4.2.1}Cropping}{4}
 \contentsline {subsubsection}{\numberline {4.2.2}Resizing}{4}

@@ -57,7 +57,7 @@ growth and initial size
 
 \subsubsection{Dropout}
 
-Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path of the architecture to implicitly add image augmentation to the data.
+Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path of the architecture to implicitly add image augmentation to the data. The original paper does not give 
 
 Since overfitting was a big problem of this study, several other uses of Dropout were investigated. These experiments included increasing the dropout rate, as well as applying it in multiple places of the network. Adding a Dropout of 0.2 between the convolutional layers on the contracting side yielded the best results. While it didn't hurt the performance when low amounts of dropout were also added to the expanding side, it had a negative effect on the training speed.
 
