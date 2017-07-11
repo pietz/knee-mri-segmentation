@@ -74,14 +74,38 @@ Depending on the size of the input one may be restricted to smaller batches. In 
 
 \subsection{Training}
 
+The training phase describes the actual learning process of the architecture. After initializing the neural network with random values, several parameters have an influence on the accuracy of the model and how quickly a possible optimum is reached.
+
+\subsubsection{Training and Validation Split}
+
+In order to measure how well a network generalizes on samples it hasn't seen before, the dataset was split up in a training and validation portion. While 80 percent of the data was reserved to make the model learn, the remaining 20 percent were used to measure the results.
+
+In larger datasets it is common to use another fraction of the data as the Test Set, which is used as a second level validation method. By using the validation data multiple times throughout the training, the network may get an implicit view of its content. The test set can then be applied at the very end to measure the final accuracy of the model.
+
 \subsubsection{Loss Function}
+
+The loss function measures the performance on a single batch and its result is what the network will minimize during the backpropagation. Common choices include the mean squared error (MSE) for regression problems or the categorical cross entropy (CCE) for classification problems. 
+
+For segmentation purposes there are other units of measure that give more intuition about the performance of the model. These include the Intersection-over-Union (IoU) or the DICE coefficient. 
+
+--insert formulas--
+
+Both describe the overlap of ground truth and prediction in relation to falsely identified segments. Higher scores of these measurements indicate a better segmentation. Since the backpropagation will minimize the result of the loss function, the negative DICE coefficient was used for this study.
 
 \subsubsection{Optimizer}
 
+The optimizer 
+
 \subsubsection{Learning Rate Policy}
 
-\subsubsection{Early Stopping}
+The learning rate policy describes how the learning rate is changed throughout the training. With the introduction of adaptive optimizers like Adam or RMSProp there has been a lower emphasize on this topic. Learning rates that were set too high or too low, will be adjusted by the optimizer after a few iterations. Even though this reduces the number of possible defects, a lot of training time can be saved with the right policy.
 
-IoU, Adam, early stopping, LR policy
+10 epochs were run at different learning rates to compare initial results and to examine the point at which the model wouldn't converge at all. 0.002 was the highest rate at which the model started training, but 0.001 resulted in the best score.
+
+After the model stopped to improve at epoch 65 the learning rate was changed to 0.0001. This gave a small boost of accuracy. In order to have a smooth transition between learning rates, the decay was set to 0.001. This meant that the initial learning rate of 0.001 would reach 0.0001 after 68 epochs.
+
+-- insert training time graph --
+
+\subsubsection{Early Stopping}
 
 \newpage
