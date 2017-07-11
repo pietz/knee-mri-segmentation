@@ -57,14 +57,22 @@ growth and initial size
 
 \subsubsection{Dropout}
 
-Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path of the architecture to implicitly add image augmentation to the data. The original paper does not give 
+Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path of the architecture to implicitly add image augmentation to the data. The original paper does not give any information how much Dropout was used.
 
-Since overfitting was a big problem of this study, several other uses of Dropout were investigated. These experiments included increasing the dropout rate, as well as applying it in multiple places of the network. Adding a Dropout of 0.2 between the convolutional layers on the contracting side yielded the best results. While it didn't hurt the performance when low amounts of dropout were also added to the expanding side, it had a negative effect on the training speed.
+Since overfitting was a big problem of this study, several other Dropout strategies were investigated. Increasing the rate above 0.5 did reduce the overfitting, but also hurt the performance of the model. Placing a Dropout unit between each convolution pair on the contracting side turned out to be an effective method for this dataset. Multiple amounts of Dropout were tested of which 0.2 achieved the best results. While it didn't hurt the performance when low amounts of Dropout were also added to the expanding side, it had a negative effect on the training speed.
+
+We believe this is due to the nature of an encoding/decoding architecture. On the contracting side of the network the amount of information is compressed by decreasing the spatial resolution of the images. This dense representation can lead to overfitting because the number of features is heavily reduced from the input. The upscaling side of the model expands the available information, which helps to fight overfitting on its own.
 
 
 \subsubsection{Batch Size}
 
-The batch size describes the number of samples that will be used for one forward- and back-propagation step.
+Neural Networks use a process called stochastic gradient descent (SGD) or one of its variants to approximate the gradient on a small fraction of the data. The size of this fraction is called the batch size and describes how many samples are used for a single forward- and back-propagation step.
+
+Common batch sizes range from 32 to 256, but depend on the size of the input and the available RAM of the workstation. In the field of 3D convolutions In the past it was believed that larger batches led to something called the generalization gap (1609.04836), where the accuracy of a model would drop if it was trained particularly large batches. Recent work by Hoffer at al. (1705.08741) suggest other reasons for this drop in accuracy.
+
+For 2D CNNs batch sizes between 32 and 256 are common, but recent experiments by Goyal et al. show
+
+The batch size describes the number of samples that will be used for one forward- and back-propagation step. In the past it was believed that larger batches led to a phenomenon called the generalization gap.
 
 \subsection{Training}
 
