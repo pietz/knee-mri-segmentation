@@ -108,4 +108,12 @@ After the model stopped to improve at epoch 65 the learning rate was changed to 
 
 \subsubsection{Early Stopping}
 
+Neural networks will continuously minimise the loss on the training set. This result needs to be validated on data the network hasn't seen before. At a certain point during training the performance on the validation set will start to decrease, because the model is over fitting on the training data. The number of iterations to reach this point is dependent on many hyperparameters, as well as the random values the network as been initialised with. As such it's difficult to calculate how many epochs the training will need to reach its peak.
+
+Early stopping is a simple technique that will end the training process as soon as the model stops improving on the validation data. In order to do this, a patience is defined how long the network should continue training after the score has gone down. This is important because not every epoch will lead to a new best score on the validation data.
+
+For test runs in this study a patience of 9 was selected, which meant the training would stop after 10 epochs without improvement. Depending on the architecture and other hyperparameters this point was reached after 30 to 60 epochs. For the last training with the final set of hyperparameters the patience was increased to 19, which didn't improve the accuracy.  This was also a verification that the initial value of 9 was a good fit for this problem.
+
+
+
 \newpage
