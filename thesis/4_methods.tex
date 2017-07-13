@@ -26,11 +26,9 @@ The number of parameters in a Neural Network commonly range from hundreds of tho
 
 Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample or the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
 
-\subsubsection{Cropping}
+\subsubsection{Cropping and Resizing}
 
 The framing of the raw images included large parts of the thigh and shin to be visible in the picture. Since these weren't relevant for the purpose of the study, they were cropped out. An algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point. There was no cropping applied on the z-axis.
-
-\subsubsection{Resizing}
 
 The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the use of Transfer Learning based on popular pre-trained models. This resolution still delivered enough detail for the segmentation maps.
 
@@ -96,13 +94,13 @@ Depending on the size of the input one may be restricted to smaller batches. In 
 
 The training phase describes the actual learning process of the architecture. After initializing the neural network with random values, several parameters have an influence on the accuracy of the model and how quickly a possible optimum is reached.
 
-\subsubsection{Training and Validation Split}
+\subsubsection{Training, Validation and Testing}
 
 In order to measure how well a network generalizes on samples it hasn't seen before, the dataset was split up in a training and validation portion. While 80 percent of the data was reserved to make the model learn, the remaining 20 percent were used to measure the results.
 
 In larger datasets it is common to use another fraction of the data as the Test Set, which is used as a second level validation method. By using the validation data multiple times throughout the training, the network may get an implicit view of its content. The test set can then be applied at the very end to measure the final accuracy of the model.
 
-\subsubsection{Loss Function}
+\subsubsection{Loss Function and Metrics}
 
 The loss function measures the performance on a single batch and its result is what the network will minimise during the back-propagation. Common choices include the mean squared error (MSE) for regression problems or the categorical cross entropy (CCE) for classification problems. 
 
