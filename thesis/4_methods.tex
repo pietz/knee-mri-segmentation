@@ -1,6 +1,20 @@
 \section{Methods}
 
+\subsection{Setup}
+
+text
+
+\subsubsection{Hardware}
+
+text
+
+\subsubsection{Software}
+
+text
+
 \subsection{Data Analysis}
+
+The dataset of this study contained a total of 154 images from three different sources
 
 3d, mri, german males, 14-21, different resolutions, coronal/sagittal, segmentation maps for 76, mhd files, distribution of age.
 
@@ -28,6 +42,10 @@ Every image now had unified dimensions of 36x224x224 voxels.
 
 The normalization procedure of this dataset was executed in two steps. First the N4 Bias Correction was applied to the images, which tries to balance irregularities than happen when the MRIs were recorded. In the second step all intensity values were normalized to range from 0 to 1 so that every input is on the same scale.
 
+\subsubsection{Bias Field Correction}
+
+text
+
 \subsubsection{2D and 3D data}
 
 Every three dimensional image can be converted to n two dimensional slices, where n is the resolution of the sliced axis. Since the z-axis shows a much lower resolution than x and y, each image was sliced in 36 224x224 2D images. This resulted in 36 times more samples, but reduced the information per image by the same factor. 
@@ -35,6 +53,8 @@ Every three dimensional image can be converted to n two dimensional slices, wher
 Using three dimensional convolutions turned out to be helpful for the segmentation, because the network was able to draw conclusions from the order of the slices within one image. 
 
 \subsubsection{Separate Bone Maps}
+
+The initial segmentation maps included three separate channels for the differentiation between the Tibia, Femur and Fibula. 
 
 The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a model that would segment the three bones while still differentiating between them. This helped the accuracy of the prediction opposed to using just a single channel for all of the bones. In places where the Femur and Tibia were very close to one another, the separate channels prevented the closing of this region by the network.
 
@@ -48,7 +68,7 @@ In search for a network that would perform well on the segmentation, different a
 
 \subsubsection{Patch and Image based}
 
-
+As described in 3.2.2 the segmentation of an image can be seen as the classification of every pixel or voxel
 
 
 \subsubsection{Channels}
@@ -84,13 +104,13 @@ In larger datasets it is common to use another fraction of the data as the Test 
 
 \subsubsection{Loss Function}
 
-The loss function measures the performance on a single batch and its result is what the network will minimize during the backpropagation. Common choices include the mean squared error (MSE) for regression problems or the categorical cross entropy (CCE) for classification problems. 
+The loss function measures the performance on a single batch and its result is what the network will minimise during the back-propagation. Common choices include the mean squared error (MSE) for regression problems or the categorical cross entropy (CCE) for classification problems. 
 
 For segmentation purposes there are other units of measure that give more intuition about the performance of the model. These include the Intersection-over-Union (IoU) or the DICE coefficient. 
 
 --insert formulas--
 
-Both describe the overlap of ground truth and prediction in relation to falsely identified segments. Higher scores of these measurements indicate a better segmentation. Since the backpropagation will minimize the result of the loss function, the negative DICE coefficient was used for this study.
+Both describe the overlap of ground truth and prediction in relation to falsely identified segments. Higher scores of these measurements indicate a better segmentation. Since the back-propagation will minimise the result of the loss function, the negative DICE coefficient was used for this study.
 
 \subsubsection{Optimizer}
 
