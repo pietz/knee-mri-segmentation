@@ -4,12 +4,6 @@
 
 text
 
-\subsubsection{Hardware}
-
-text
-
-\subsubsection{Software}
-
 text
 
 \subsection{Data Analysis}
@@ -44,6 +38,10 @@ The normalization procedure of this dataset was executed in two steps. First the
 
 text
 
+\subsubsection{Augmentation}
+
+text
+
 \subsubsection{2D and 3D data}
 
 Every three dimensional image can be converted to n two dimensional slices, where n is the resolution of the sliced axis. Since the z-axis shows a much lower resolution than x and y, each image was sliced in 36 224x224 2D images. This resulted in 36 times more samples, but reduced the information per image by the same factor. 
@@ -58,7 +56,7 @@ The initial segmentation maps came with three separate channels for the Femur, T
 
 For another experiment the three channels were treated as one to create a network that would segment any type of bone in the image. This resulted in better performance when applied to sagittal images of the knee provided by Maas et al. The network was able to generalize on a situation it wasn't trained on.
 
-\subsection{Architectures}
+\subsection{Architecture}
 
 
 
