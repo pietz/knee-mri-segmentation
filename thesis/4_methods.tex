@@ -2,13 +2,27 @@
 
 \subsection{Setup}
 
-The workstation for this study included an Intel i5 processor, 16GB of RAM and most importantly a NVidia Geforce GTX1060 with 6GB of GPU RAM. Neural Networks can be trained more effienctly on GPUs than CPUs. This is because the simpler but highly parallized architecture of graphics chips plays in favor for the needed calculations in deep learning.
+The workstation for this study included an Intel i5 processor, 16GB of RAM and most importantly a NVidia Geforce GTX1060/6GB. Neural Networks can be trained more effienctly on GPUs than CPUs. This is because the simpler but highly parallized architecture of graphics chips plays in favor for the needed calculations in deep learning.
 
-The workstation ran Ubuntu 16.04 with the CUDA and cuDNN libraries installed in order to take advantage of the GPU. As the main programming language Python was chosen due to its simple syntax and popularity in the deep learning field. Keras was chosen as the framework for training models, because its top level syntax allows fast prototyping and testing. SimpleITK is a Python binding of ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field where it also originated.
+The workstation ran Ubuntu 16.04 with the CUDA and cuDNN libraries installed in order to take advantage of the GPU. As the main programming language Python was chosen due to its simple syntax and popularity in the deep learning field. Keras was chosen as the framework for training models, because its top level syntax allows fast prototyping and testing. SimpleITK is a Python binding of ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field, where it originated.
 
 \subsection{Data Analysis}
 
-The dataset of this study contained a total of 154 images from three different sources
+The dataset was a collection of three dimensional MR images showing human knees. The number of available samples grew during the project. For most of the development time it included 150 images that came from 3 different sources.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{l l l r r l}
+    Source & Prospective & Perspective & Samples & Maps & Resolution \\
+    \hline
+    Epi    & Yes         & Coronal     & 80      & 40   & 800x800x41 \\
+    Jopp   & No          & Coronal     & 65      & 36   & 512x512x24 \\
+    Maas   & No          & Sagittal    & 5       & 0    & multiple \\
+\end{tabular}
+\caption{Details of available images sorted by their source}
+\end{table}
+
+
 
 3d, mri, german males, 14-21, different resolutions, coronal/sagittal, segmentation maps for 76, mhd files, distribution of age.
 
@@ -18,7 +32,15 @@ The dataset of this study contained a total of 154 images from three different s
 
 The number of parameters in a Neural Network commonly range from hundreds of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
 
-Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques reduce the amount of information per sample or the amount of variance between multiple samples. This results in a complexity reduction of the problem the network is supposed to solve. Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
+Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques do one of three things:
+
+\begin{itemize}
+\item Decrease the amount of information per sample
+\item Decrease the variance between multiple samples
+\item Increase the total number of samples
+\end{itemize}
+
+Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
 
 \subsubsection{Cropping and Resizing}
 
