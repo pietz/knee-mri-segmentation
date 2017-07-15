@@ -124,9 +124,23 @@ In larger datasets it is common to use another fraction of the data as the Test 
 
 \subsubsection{Loss Function and Metrics}
 
-The loss function measures the performance on a single batch and its result is what the network will minimise during the back-propagation. Common choices include the mean squared error (MSE) for regression problems or the categorical cross entropy (CCE) for classification problems. 
+Metrics are used in deep learning to measure the performance of a model. For example the accuracy is often chosen to describe how well a neural network is doing on a classification task. An accuracy of 0.9 indicates that 9 out of 10 samples are classified correctly.
 
-For segmentation purposes there are other units of measure that give more intuition about the performance of the model. These include the Intersection-over-Union (IoU) or the DICE coefficient. 
+\begin{equation}
+Accuracy = \frac{TP+TN}{TP+TN+FP+FN}
+\end{equation}
+
+In the formula above T and F indicate whether a prediction was true or false. P and N stand for a positive or negative outcome.
+
+The result of a loss function is a metric that will be minimized during the backpropagation process. In order to be used with gradient descent it needs to be differentiable. That is why the accuracy cannot be used as a loss function. It is neither differentiable nor does 0 indicate the best possible performance.
+
+In situations like these a surrogate function is chosen that has a high correlation with the target metric. For classification problems this is usually the cross entropy. Because a segmentation can be seen as a classification for every output pixel, the cross entropy was chosen at first as a loss function.
+
+\begin{equation}
+Cross Entropy = \frac{TP+TN}{TP+TN+FP+FN}
+\end{equation}
+
+
 
 --insert formulas--
 

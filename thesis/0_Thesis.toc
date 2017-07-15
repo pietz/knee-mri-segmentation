@@ -27,6 +27,6 @@
 \contentsline {subsubsection}{\numberline {4.5.2}Loss Function and Metrics}{8}
 \contentsline {subsubsection}{\numberline {4.5.3}Optimizer}{9}
 \contentsline {subsubsection}{\numberline {4.5.4}Learning Rate Policy}{9}
-\contentsline {subsubsection}{\numberline {4.5.5}Early Stopping}{9}
+\contentsline {subsubsection}{\numberline {4.5.5}Early Stopping}{10}
 \contentsline {section}{\numberline {5}Results}{11}
 \contentsline {section}{\numberline {6}Discussion}{12}
