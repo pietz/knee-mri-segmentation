@@ -4,7 +4,7 @@
 
 The workstation for this study included an Intel i5 processor, 16GB of RAM and most importantly a NVidia Geforce GTX1060/6GB. Neural Networks can be trained more effienctly on GPUs than CPUs. This is because the simpler but highly parallized architecture of graphics chips plays in favor for the needed calculations in deep learning.
 
-The workstation ran Ubuntu 16.04 with the CUDA and cuDNN libraries installed in order to take advantage of the GPU. As the main programming language Python was chosen due to its simple syntax and popularity in the deep learning field. Keras was chosen as the framework for training models, because its top level syntax allows fast prototyping and testing. SimpleITK is a Python binding of ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field, where it originated.
+The workstation ran Ubuntu 16.04 with the CUDA and cuDNN libraries installed in order to take advantage of the GPU. As the main programming language Python 2 was chosen due to its simple syntax and popularity in the deep learning field. The code of this project is compatible with Python 3 as well. Keras was used as the framework for training models, because its top level syntax allows fast prototyping and testing. SimpleITK is a Python binding of ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field. The development environment was a Jupyter Notebook, which allowed a flexible execution of code snippets instead of running the entire program for every single change.
 
 \subsection{Data Analysis}
 
@@ -54,9 +54,23 @@ Every image now had unified dimensions of 36x224x224 voxels.
 
 \subsubsection{Normalization}
 
-The normalization procedure of this dataset was executed in two steps. First the N4 Bias Correction was applied to the images, which tries to balance irregularities than happen when the MRIs were recorded. In the second step all intensity values were normalized to range from 0 to 1 so that every input is on the same scale.
+The normalization of images refers to the process of transforming all samples on the same scale of values. Two techniques have been popular in the field of deep learning. The first one is called feature scaling, where every sample is normalized between 0 and 1.
 
-\subsubsection{Bias Field Correction}
+\begin{equation}
+x' = \frac {x - min(x)}{max(x) - min(x)}
+\end{equation}
+
+The second technique calculates the standard score, where the mean is subtracted from the intensities and then divided by the standard deviation. 
+
+\begin{equation}
+x' = \frac {x - \mu}{\sigma}
+\end{equation}
+
+In this case the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and testing data, it is important to use the mean and standard deviation of the training data, instead of calculating them on their own values.
+
+In theory the standard score is a more desirable approach, because it can help to fight exploding and disappearing gradients in a more effective way. In practice it led to the same results as using feature scaling, which was then chosen due to its easier normalization handling.
+
+\subsubsection{N4 Bias Field Correction}
 
 text
 
@@ -82,11 +96,13 @@ For another experiment the three channels were treated as one to create a networ
 
 \subsection{Architecture}
 
-
-
 In search for a network that would perform well on the segmentation, different architectures were looked at and multiple settings were tried.
 
-\subsubsection{Patch and Image based}
+\subsubsection{Pixel and Image Outputs}
+
+Early CNN architectures for segmentation would take small patches of images as an input to predict a single pixel through a classification pipeline. Afterwards a segmentation map was assembled using each of these predicted pixels. This process was very slow and it also prevented the network to have a field of view larger than the inserted patch.
+
+
 
 As described in 3.2.2 the segmentation of an image can be seen as the classification of every pixel or voxel
 
@@ -97,12 +113,9 @@ growth and initial size
 
 \subsubsection{Dropout}
 
-Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path of the architecture to implicitly add image augmentation to the data. The original paper does not give any information how much Dropout was used.
+Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to implicitly add image augmentation to the data.
 
-Since overfitting was a big problem of this study, several other Dropout strategies were investigated. Increasing the rate above 0.5 did reduce the overfitting, but also hurt the performance of the model. Placing a Dropout unit between each convolution pair on the contracting side turned out to be an effective method for this dataset. Multiple amounts of Dropout were tested of which 0.2 achieved the best results. 0.1 resulted is more overfitting and 0.3 led to instabilities during training.
-
-While it didn't hurt the performance when low amounts of Dropout were also added to the expanding side, it had a negative effect on the training speed. We believe this is due to the nature of an encoding/decoding architecture. On the contracting side of the network the amount of information is compressed by decreasing the spatial resolution of the images. This dense representation can lead to overfitting because the number of features is heavily reduced from the input. The upscaling side of the model expands the available information, which helps to fight overfitting on its own.
-
+Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first candidate. Other tests included adding dropout between the convolutions on the contracting side,which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end the initial candidate was chosen for future trainings.
 
 \subsubsection{Batch Size}
 
