@@ -132,19 +132,50 @@ Accuracy = \frac{TP+TN}{TP+TN+FP+FN}
 
 In the formula above T and F indicate whether a prediction was true or false. P and N stand for a positive or negative outcome.
 
-The result of a loss function is a metric that will be minimized during the backpropagation process. In order to be used with gradient descent it needs to be differentiable. That is why the accuracy cannot be used as a loss function. It is neither differentiable nor does 0 indicate the best possible performance.
+The result of a loss function is a metric that will be minimized during the backpropagation process. In order to be used with gradient descent it needs to be differentiable. That is why the accuracy cannot be used as a loss function. It is a binary metric that works with true or false values and not with probabilities.
 
-In situations like these a surrogate function is chosen that has a high correlation with the target metric. For classification problems this is usually the cross entropy. Because a segmentation can be seen as a classification for every output pixel, the cross entropy was chosen at first as a loss function.
+In situations like these a surrogate function is used that has a high correlation with the target metric. For classification problems this is often the cross entropy. Because a segmentation can be seen as a classification for every output pixel, it was also chosen as a candidate for this study.
 
 \begin{equation}
-Cross Entropy = \frac{TP+TN}{TP+TN+FP+FN}
+Cross Entropy = Insert here
 \end{equation}
 
+Another option was the F1 score, which is a specific implementation of the F-Measure when beta is 1. 
 
+\begin{equation}
+F_\beta score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
+\end{equation}
 
---insert formulas--
+Although the F1 score is mostly understood as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the F1 loss was defined as 1 - F1 score.
 
-Both describe the overlap of ground truth and prediction in relation to falsely identified segments. Higher scores of these measurements indicate a better segmentation. Since the back-propagation will minimise the result of the loss function, the negative DICE coefficient was used for this study.
+\begin{equation}
+F_\beta loss = 1 - F_\beta score
+\end{equation}
+
+The value of beta can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was actually true, whereas recall describes how much of the ground truth segments were recognized by the model. This can be useful for datasets with high imbalances between classes, like this study showed between Fibula, Femur and Tibia. However, as it turned out the predictions were very well balanced with the F1 score alone.
+
+\begin{equation}
+Precision = \frac{TP}{TP+FP}
+\end{equation}
+
+\begin{equation}
+Recall = \frac{TP}{TP+FN}
+\end{equation}
+
+To test whether the F1 score or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. To no surprise the F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In a subjective visual test the results of F1 trained model showed favorable segmentations, but it took more than twice as many epochs to train.
+
+In another test both loss functions were combined in a single metric by taking the sum of the cross entropy and the F1 loss.
+
+\iffalse
+
+The cross entropy has a few desirable properties as a loss function, but it does not give an intuitive insight to the performance on image based results. The accuracy can also lead to misinterpretable results when there's a high imbalance between classes --- like there was in this study with different types of bones. The Fibula was visible in far fewer samples than the Femur and Tibia, while also being smaller than the other two in those images where it could be seen.
+
+\begin{equation}
+IoU = \frac{TP}{TN+TP+FP}
+\end{equation}
+
+Metrics like the DICE coefficient give a very intuitive understanding to the performance of a segmentation result. It describes the relationship between the correctly segmented area and those parts that were falsely predicted or ignored.
+\fi
 
 \subsubsection{Optimizer}
 
