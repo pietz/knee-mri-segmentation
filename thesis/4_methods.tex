@@ -1,12 +1,12 @@
 \section{Methods}
 
-\subsection{Setup}
+\subsection{Setup*}
 
 The workstation for this study included an Intel i5 processor, 16GB of RAM and most importantly a NVidia Geforce GTX1060/6GB. Neural Networks can be trained more effienctly on GPUs than CPUs. This is because the simpler but highly parallized architecture of graphics chips plays in favor for the needed calculations in deep learning.
 
 The workstation ran Ubuntu 16.04 with the CUDA and cuDNN libraries installed in order to take advantage of the GPU. As the main programming language Python 2 was chosen due to its simple syntax and popularity in the deep learning field. The code of this project is compatible with Python 3 as well. Keras was used as the framework for training models, because its top level syntax allows fast prototyping and testing. The development environment was a Jupyter Notebook, which allowed a flexible execution of code snippets instead of running the entire program for every single change.
 
-The processing of medical image data needed a library that could handle these formats. SimpleITK is a Python binding of the ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field. Other libraries were also used for smaller task. A complete listing can be found on the respective GitHub page, where the entire code is available.
+The processing of medical image data needed a library that could handle these formats. SimpleITK is a Python binding of the ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field. Other libraries were also used for smaller task. A complete listing can be found on the project's GitHub page, where the entire code is available.
 
 \subsection{Data Analysis}
 
@@ -30,7 +30,7 @@ german males, 14-21, different resolutions, coronal/sagittal, segmentation maps 
 
 
 
-\subsection{Preprocessing}
+\subsection{Preprocessing*}
 
 The number of parameters in a Neural Network commonly range from hundreds of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
 
@@ -44,19 +44,21 @@ Because of the small dataset that was available for this study, several types of
 
 Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
 
-\subsubsection{Cropping and Resizing}
+\subsubsection{Cropping, Resizing and Resampling*}
 
-The framing of the raw images included large parts of the thigh and shin to be visible in the picture. Since these weren't relevant for the purpose of the study, they were cropped out. An algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point. There was no cropping applied on the z-axis.
+The framing of the raw images included large parts of the thigh and shin to be visible in the picture. Since these weren't relevant for the purpose of the study, they were cropped out. An algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point.
 
-The images were also resized to a resolution that is common for Convolutional Neural Networks. 224x224 Pixels for width and height also allowed the use of Transfer Learning based on popular pre-trained models. This resolution still delivered enough detail for the segmentation maps.
+Although there is no theoretical size limitation to using convolutional neural networks, it is desirable to reduce the spatial resolution to decrease the amount of calculations. 224x224 pixels for width and height still gave enough detail to identify the shape of Femur, Tibia and Fibula.
 
-On the z-axis everything was scaled to 36 slices, which meant a 1.5 upscale for the images provided by Jopp et al. and a minor downscale from the 41 slices that were taken specifically for this study.
+Resizing the z-axis was problematic, because the resolution was roughly 20 times lower. When scaling along this dimension the segmentation maps of different slices started to blend together and create merged maps of multiple layers. In order to get the images from two different main sources on the same scale, the 41 slices per image of the Epi data were padded with empty pixels to 48 slices. Afterwards every second 2D image was taken to resample to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps would have been misleading and false.
 
-Every image now had unified dimensions of 36x224x224 voxels.
+Throwing away perfectly good data is very uncommon in the machine learning field, especially if datasets are rather small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources the balance between the amount of Epi and Jopp data was kept.
 
-\subsubsection{Normalization}
+A total of 76 24x224x224 images were now available for training.
 
-The normalization of images refers to the process of transforming all samples on the same scale of values. Two techniques have been popular in the field of deep learning. The first one is called feature scaling, where every sample is normalized between 0 and 1.
+\subsubsection{Normalization*}
+
+The normalization of images refers to the process of transforming all samples on the same scale of values. Two techniques for this are popular in the field of deep learning. The first one is called feature scaling, where every sample is normalized between 0 and 1.
 
 \begin{equation}
 x' = \frac {x - min(x)}{max(x) - min(x)}
@@ -68,7 +70,7 @@ The second technique calculates the standard score, where the mean is subtracted
 x' = \frac {x - \mu}{\sigma}
 \end{equation}
 
-In this case the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and testing data, it is important to use the mean and standard deviation of the training data, instead of calculating them on their own values.
+In this case the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and test sets, it is important to use the mean and standard deviation of the training data, instead of calculating them on their own values.
 
 In theory the standard score is a more desirable approach, because it can help to fight exploding and disappearing gradients in a more effective way. In practice it led to the same results as using feature scaling, which was then chosen due to its easier normalization handling.
 
@@ -83,6 +85,8 @@ Image augmentation is a popular approach to virtually increase the size of the d
 
 
 \subsubsection{2D and 3D data}
+
+The raw MRI images allowed
 
 Every three dimensional image can be converted to n two dimensional slices, where n is the resolution of the sliced axis. Since the z-axis shows a much lower resolution than x and y, each image was sliced in 36 224x224 2D images. This resulted in 36 times more samples, but reduced the information per image by the same factor. 
 
@@ -113,9 +117,9 @@ As described in 3.2.2 the segmentation of an image can be seen as the classifica
 
 growth and initial size
 
-\subsubsection{Dropout}
+\subsubsection{Dropout*}
 
-Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to implicitly add image augmentation to the data.
+Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to prevent overfitting.
 
 Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first candidate. Other tests included adding dropout between the convolutions on the contracting side,which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end the initial candidate was chosen for future trainings.
 
@@ -137,7 +141,7 @@ In order to measure how well a network generalizes on samples it hasn't seen bef
 
 In larger datasets it is common to use another fraction of the data as the Test Set, which is used as a second level validation method. By using the validation data multiple times throughout the training, the network may get an implicit view of its content. The test set can then be applied at the very end to measure the final accuracy of the model.
 
-\subsubsection{Metrics and Loss Functions}
+\subsubsection{Metrics and Loss Functions*}
 
 Metrics are used in deep learning to measure the performance of a model. For example the accuracy is often chosen to describe how well a neural network is doing on a classification task. An accuracy of 0.9 indicates that 9 out of 10 samples are classified correctly.
 
@@ -177,11 +181,11 @@ Precision = \frac{TP}{TP+FP}
 Recall = \frac{TP}{TP+FN}
 \end{equation}
 
-To test whether the F1 score or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. The F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy and Intersection-over-Union (IoU) the performance of F1 trained network showed higher scores. The model that used the cross entropy as a loss function showed a much faster convergence speed and needed less than half the epochs. 
+To test whether the F1 loss or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. The F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy and Intersection-over-Union (IoU) the performance of F1 trained network showed higher scores. The model that used the cross entropy as a loss function showed a much faster convergence speed and needed less than half the epochs. 
 
 Another test run combined ths sum of both metrics to a single loss, which showed even better scores on the cross entropy than the model that was trained on this metric alone. The F1 score and the other metrics mentioned above were in between the previous runs.
 
-Based on these three tests the F1 loss performed best on all of the metrics except for the cross entropy. Since this was chosen as a surrogate function and not as a performance metric the F1 loss was kept as a loss function for all future tests.
+Based on these three tests the F1 loss performed best on all of the metrics except for the cross entropy. Since this was chosen as a surrogate function and not as a performance metric, the F1 loss was kept as a loss function for all future tests.
 
 \iffalse
 
@@ -198,21 +202,19 @@ Metrics like the DICE coefficient give a very intuitive understanding to the per
 
 The optimizer 
 
-\subsubsection{Learning Rate Policy}
+\subsubsection{Learning Rate Policy*}
 
 The learning rate policy describes how the learning rate is changed throughout the training. With the introduction of adaptive optimizers like Adam or RMSProp there has been a lower emphasize on this topic. Learning rates that were set too high or too low, will be adjusted by the optimizer after a few iterations. Even though this reduces the number of possible defects, a lot of training time can be saved with the right policy.
 
 10 epochs were run at different learning rates to compare initial results and to examine the point at which the model wouldn't converge at all. 0.002 was the highest rate at which the model started training, but 0.001 resulted in the best score.
 
-After the model stopped to improve at epoch 65 the learning rate was changed to 0.0001. This gave a small boost of accuracy. In order to have a smooth transition between learning rates, the decay was set to 0.001. This meant that the initial learning rate of 0.001 would reach 0.0001 after 68 epochs.
+After the model stopped to improve at epoch 65 the learning rate was changed to 0.0001. This gave a small boost of accuracy. In order to have a smooth transition between learning rates, the decay was set to 0.001. This meant that the initial learning rate of 0.001 would reach 0.0001 after 68 epochs and then continue to decrease even further.
 
--- insert training time graph --
+\subsubsection{Early Stopping*}
 
-\subsubsection{Early Stopping}
+Neural networks will continuously minimise the loss on the training set. This result needs to be validated on data the network hasn't seen before. At a certain point during training the performance on the validation set will start to decrease, because the model is overfitting on the training data. The number of iterations to reach this point is dependent on many hyperparameters, as well as the random values the network has been initialized with. As such it's difficult to calculate how many epochs the training will need to reach its peak.
 
-Neural networks will continuously minimise the loss on the training set. This result needs to be validated on data the network hasn't seen before. At a certain point during training the performance on the validation set will start to decrease, because the model is over fitting on the training data. The number of iterations to reach this point is dependent on many hyperparameters, as well as the random values the network as been initialised with. As such it's difficult to calculate how many epochs the training will need to reach its peak.
-
-Early stopping is a simple technique that will end the training process as soon as the model stops improving on the validation data. In order to do this, a patience is defined how long the network should continue training after the score has gone down. This is important because not every epoch will lead to a new best score on the validation data.
+Early stopping is a simple technique that will end the training process as soon as the model stops improving on the validation data. In order to do this, a patience is defined how long the network should continue training after the score has stopped increasing. This is important because not every epoch will lead to a new best score on the validation data.
 
 For test runs in this study a patience of 9 was selected, which meant the training would stop after 10 epochs without improvement. Depending on the architecture and other hyperparameters this point was reached after 30 to 60 epochs. For the last training with the final set of hyperparameters the patience was increased to 19, which didn't improve the accuracy.  This was also a verification that the initial value of 9 was a good fit for this problem.
 

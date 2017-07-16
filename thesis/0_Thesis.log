@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  16 JUL 2017 17:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  16 JUL 2017 23:41
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -597,12 +597,12 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 40.
- [5] [6] [7] [8] [9] [10] [11]) (./5_results.tex [12]) (./6_discussion.tex
-[13]) (./0_Thesis.bbl
+ [5] [6] [7] [8] [9] [10] [11] [12]) (./5_results.tex [13])
+(./6_discussion.tex [14]) (./0_Thesis.bbl
 
 LaTeX Warning: Empty `thebibliography' environment on input line 3.
 
-) [14] (./0_Thesis.aux) ) 
+) [15] (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
  3864 strings out of 492995
  62091 string characters out of 6132704
@@ -610,7 +610,7 @@ Here is how much of TeX's memory you used:
  7266 multiletter control sequences out of 15000+600000
  59001 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,7n,38p,674b,190s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,7n,38p,755b,190s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm
 /lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
 }{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/loc
@@ -624,10 +624,10 @@ ic/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi
 ve/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/f
 onts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (16 pages, 204768 bytes).
+Output written on 0_Thesis.pdf (17 pages, 206414 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16902 words of extra memory for PDF output out of 17280 (max. 10000000)
 

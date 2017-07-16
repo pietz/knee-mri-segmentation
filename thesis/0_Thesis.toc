@@ -8,25 +8,25 @@
 \contentsline {subsubsection}{\numberline {3.2.1}Convolutions}{3}
 \contentsline {subsubsection}{\numberline {3.2.2}Segmentation}{3}
 \contentsline {section}{\numberline {4}Methods}{4}
-\contentsline {subsection}{\numberline {4.1}Setup}{4}
+\contentsline {subsection}{\numberline {4.1}Setup*}{4}
 \contentsline {subsection}{\numberline {4.2}Data Analysis}{4}
-\contentsline {subsection}{\numberline {4.3}Preprocessing}{5}
-\contentsline {subsubsection}{\numberline {4.3.1}Cropping and Resizing}{5}
-\contentsline {subsubsection}{\numberline {4.3.2}Normalization}{5}
+\contentsline {subsection}{\numberline {4.3}Preprocessing*}{5}
+\contentsline {subsubsection}{\numberline {4.3.1}Cropping, Resizing and Resampling*}{5}
+\contentsline {subsubsection}{\numberline {4.3.2}Normalization*}{6}
 \contentsline {subsubsection}{\numberline {4.3.3}N4 Bias Field Correction}{6}
 \contentsline {subsubsection}{\numberline {4.3.4}Augmentation}{6}
-\contentsline {subsubsection}{\numberline {4.3.5}2D and 3D data}{6}
+\contentsline {subsubsection}{\numberline {4.3.5}2D and 3D data}{7}
 \contentsline {subsubsection}{\numberline {4.3.6}Separate Bone Maps}{7}
 \contentsline {subsection}{\numberline {4.4}Architecture}{7}
 \contentsline {subsubsection}{\numberline {4.4.1}Pixel and Image Outputs}{7}
-\contentsline {subsubsection}{\numberline {4.4.2}Channels}{7}
-\contentsline {subsubsection}{\numberline {4.4.3}Dropout}{8}
+\contentsline {subsubsection}{\numberline {4.4.2}Channels}{8}
+\contentsline {subsubsection}{\numberline {4.4.3}Dropout*}{8}
 \contentsline {subsubsection}{\numberline {4.4.4}Batch Size}{8}
-\contentsline {subsection}{\numberline {4.5}Training}{8}
+\contentsline {subsection}{\numberline {4.5}Training}{9}
 \contentsline {subsubsection}{\numberline {4.5.1}Training, Validation and Testing}{9}
-\contentsline {subsubsection}{\numberline {4.5.2}Metrics and Loss Functions}{9}
-\contentsline {subsubsection}{\numberline {4.5.3}Optimizer}{10}
-\contentsline {subsubsection}{\numberline {4.5.4}Learning Rate Policy}{11}
-\contentsline {subsubsection}{\numberline {4.5.5}Early Stopping}{11}
-\contentsline {section}{\numberline {5}Results}{12}
-\contentsline {section}{\numberline {6}Discussion}{13}
+\contentsline {subsubsection}{\numberline {4.5.2}Metrics and Loss Functions*}{9}
+\contentsline {subsubsection}{\numberline {4.5.3}Optimizer}{11}
+\contentsline {subsubsection}{\numberline {4.5.4}Learning Rate Policy*}{11}
+\contentsline {subsubsection}{\numberline {4.5.5}Early Stopping*}{11}
+\contentsline {section}{\numberline {5}Results}{13}
+\contentsline {section}{\numberline {6}Discussion}{14}
