@@ -122,7 +122,7 @@ In order to measure how well a network generalizes on samples it hasn't seen bef
 
 In larger datasets it is common to use another fraction of the data as the Test Set, which is used as a second level validation method. By using the validation data multiple times throughout the training, the network may get an implicit view of its content. The test set can then be applied at the very end to measure the final accuracy of the model.
 
-\subsubsection{Loss Function and Metrics}
+\subsubsection{Metrics and Loss Functions}
 
 Metrics are used in deep learning to measure the performance of a model. For example the accuracy is often chosen to describe how well a neural network is doing on a classification task. An accuracy of 0.9 indicates that 9 out of 10 samples are classified correctly.
 
@@ -146,13 +146,13 @@ Another option was the F1 score, which is a specific implementation of the F-Mea
 F_\beta score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
 \end{equation}
 
-Although the F1 score is mostly understood as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the F1 loss was defined as 1 - F1 score.
+Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the F1 loss was defined as 1 - F1 score.
 
 \begin{equation}
 F_\beta loss = 1 - F_\beta score
 \end{equation}
 
-The value of beta can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was actually true, whereas recall describes how much of the ground truth segments were recognized by the model. This can be useful for datasets with high imbalances between classes, like this study showed between Fibula, Femur and Tibia. However, as it turned out the predictions were very well balanced with the F1 score alone.
+The value of beta can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was actually true, whereas recall describes how much of the ground truth was recognized by the model. This can be useful for datasets with high imbalances between classes, like this study showed between Fibula, Femur and Tibia. However, as it turned out the predictions were very well balanced with the F1 score alone.
 
 \begin{equation}
 Precision = \frac{TP}{TP+FP}
@@ -162,9 +162,11 @@ Precision = \frac{TP}{TP+FP}
 Recall = \frac{TP}{TP+FN}
 \end{equation}
 
-To test whether the F1 score or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. To no surprise the F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In a subjective visual test the results of F1 trained model showed favorable segmentations, but it took more than twice as many epochs to train.
+To test whether the F1 score or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. The F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy and Intersection-over-Union (IoU) the performance of F1 trained network showed higher scores. The model that used the cross entropy as a loss function showed a much faster convergence speed and needed less than half the epochs. 
 
-In another test both loss functions were combined in a single metric by taking the sum of the cross entropy and the F1 loss.
+Another test run combined ths sum of both metrics to a single loss, which showed even better scores on the cross entropy than the model that was trained on this metric alone. The F1 score and the other metrics mentioned above were in between the previous runs.
+
+Based on these three tests the F1 loss performed best on all of the metrics except for the cross entropy. Since this was chosen as a surrogate function and not as a performance metric the F1 loss was kept as a loss function for all future tests.
 
 \iffalse
 
