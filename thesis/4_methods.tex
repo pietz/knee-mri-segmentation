@@ -72,11 +72,11 @@ x' = \frac {x - \mu}{\sigma}
 
 In this case the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and test sets, it is important to use the mean and standard deviation of the training data, instead of calculating them on their own values.
 
-In theory the standard score is a more desirable approach, because it can help to fight exploding and disappearing gradients in a more effective way. In practice it led to the same results as using feature scaling, which was then chosen due to its easier normalization handling. text
+In theory the standard score is a more desirable approach, because it can help to fight exploding and disappearing gradients in a more effective way. In practice it led to the same results as using feature scaling,which was then chosen due to its easier normalization handling.
 
-\subsubsection{N4 Bias Field Correction}
+\subsubsection{N4 Bias Field Correction*}
 
-text
+A bias field is a low frequency nonuniform intensity that is an unwanted byproduct Magnetic Resonance imaging. Several methods have been developed in the past of which N4ITK \cite{Tustison2010} is the de facto standard in the field. This algorithm approximates the nonuniform field and balances intensities using B-Splines. As the name suggests it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24x224x224 image took between 60 and 120 seconds.
 
 \subsubsection{Augmentation*}
 
@@ -98,15 +98,15 @@ Lossy augmentation methods include a variety of image transformations. Common ch
 
 For the purpose of this study only horizontal flips were realized to give the impression that images from both knees were available. Other forms of image augmentation were not necessary because the use of Dropout was an extremely effective measure to prevent overfitting.
 
+\subsubsection{2D and 3D data*}
 
+Although convolutional neural networks are most commonly connected with 2D data such as photos or drawings, they can be applied in any dimensional space. In Natural Language Processing (NLP) 1D convolutions are often used on sentences and in finance they can be applied to time series forecasting. In the medical field where a variety of volumetric data exists, 3D convolutions have become a popular choice for building deep learning solutions.
 
-\subsubsection{2D and 3D data}
+In the context of neural networks one has to differentiate between volumetric data with one channel and 2D data that consists of multiple color channels. Both are example of 3D data, but the volumetric images features three spatial dimensions, whereas photos feature only two. Convolutions commonly traverse the spatial dimensions, which means photos with multiple channels are usually not subject to 3D convolutions. Instead multiple input channels are fed into a 2D CNN.
 
-The raw MRI images allowed
+Although the dataset onsisted of volumetric MRI data, the z-axis showed a 20 times lower resolution than the other two. Not knowing the influence of this situation both 3D and 2D architectures were investigated for this project. The 3D model didn't use any MaxPooling on the already small z-axis. A kernel size of 3x3x3 was used similar to the 3D version of U-Net. The 2D data was created by using each of the 24 slices as a single input image. 
 
-Every three dimensional image can be converted to n two dimensional slices, where n is the resolution of the sliced axis. Since the z-axis shows a much lower resolution than x and y, each image was sliced in 36 224x224 2D images. This resulted in 36 times more samples, but reduced the information per image by the same factor. 
-
-Using three dimensional convolutions turned out to be helpful for the segmentation, because the network was able to draw conclusions from the order of the slices within one image. 
+While in theory the spatial information of the z-axis gave the 3D network more contextual information of every slice, the 2D model performed better at the end. The latter was also less computationally expensive and allowed working with data where only single slices where available per sample.
 
 \subsubsection{Separate Bone Maps}
 
@@ -197,22 +197,11 @@ Precision = \frac{TP}{TP+FP}
 Recall = \frac{TP}{TP+FN}
 \end{equation}
 
-To test whether the F1 loss or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. The F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy and Intersection-over-Union (IoU) the performance of F1 trained network showed higher scores. The model that used the cross entropy as a loss function showed a much faster convergence speed and needed less than half the epochs. 
+To test whether the F1 loss or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. The F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy and Intersection-over-Union (IoU) the performance of F1 trained network showed higher scores.
 
-Another test run combined ths sum of both metrics to a single loss, which showed even better scores on the cross entropy than the model that was trained on this metric alone. The F1 score and the other metrics mentioned above were in between the previous runs.
+Another test run used both loss function at the same time. This was done by feeding the output of the second to last layer into two separate segmentation outputs. Each of these last layers were trained with the F1 loss and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture combined the best results of the previous runs in a single model, but also increased the training time per epoch by 30\%.
 
-Based on these three tests the F1 loss performed best on all of the metrics except for the cross entropy. Since this was chosen as a surrogate function and not as a performance metric, the F1 loss was kept as a loss function for all future tests.
-
-\iffalse
-
-The cross entropy has a few desirable properties as a loss function, but it does not give an intuitive insight to the performance on image based results. The accuracy can also lead to misinterpretable results when there's a high imbalance between classes --- like there was in this study with different types of bones. The Fibula was visible in far fewer samples than the Femur and Tibia, while also being smaller than the other two in those images where it could be seen.
-
-\begin{equation}
-IoU = \frac{TP}{TN+TP+FP}
-\end{equation}
-
-Metrics like the DICE coefficient give a very intuitive understanding to the performance of a segmentation result. It describes the relationship between the correctly segmented area and those parts that were falsely predicted or ignored.
-\fi
+Evaluating these two outputs on the other metrics played in favor for the F1 loss output. Combining both maps didn't improve the scores any further. Since the cross entropy was chosen as a surrogate function and not as a performance metric, only the F1 loss was kept as a loss function for all future tests.
 
 \subsubsection{Optimizer}
 
