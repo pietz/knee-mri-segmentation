@@ -72,15 +72,31 @@ x' = \frac {x - \mu}{\sigma}
 
 In this case the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and test sets, it is important to use the mean and standard deviation of the training data, instead of calculating them on their own values.
 
-In theory the standard score is a more desirable approach, because it can help to fight exploding and disappearing gradients in a more effective way. In practice it led to the same results as using feature scaling, which was then chosen due to its easier normalization handling.
+In theory the standard score is a more desirable approach, because it can help to fight exploding and disappearing gradients in a more effective way. In practice it led to the same results as using feature scaling, which was then chosen due to its easier normalization handling. text
 
 \subsubsection{N4 Bias Field Correction}
 
 text
 
-\subsubsection{Augmentation}
+\subsubsection{Augmentation*}
 
-Image augmentation is a popular approach to virtually increase the size of the dataset. A neural network overfits more when learning the same image n times, than it would learning n alternations of this image just once.
+Image augmentation is a popular approach to virtually increase the size of the dataset. The general idea is that a neural network will overfit more when learning one sample n times, than learning n alternations of this sample just once. It helps to generalize on new images instead of memorizing patterns in the training data.
+
+Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90° rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term \"lossless\" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
+
+Lossy augmentation methods include a variety of image transformations. Common choices include:
+
+\begin{itemize}
+\item Horizontal shifts
+\item Vertical shifts
+\item Rotations
+\item Shear mapping
+\item Brightness adjustments
+\item Contrast adjustments
+\item Gamma adjustments
+\end{itemize}
+
+For the purpose of this study only horizontal flips were realized to give the impression that images from both knees were available. Other forms of image augmentation were not necessary because the use of Dropout was an extremely effective measure to prevent overfitting.
 
 
 
@@ -119,7 +135,7 @@ growth and initial size
 
 \subsubsection{Dropout*}
 
-Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to prevent overfitting.
+Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training \cite{Srivastava2014}. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to prevent overfitting.
 
 Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first candidate. Other tests included adding dropout between the convolutions on the contracting side,which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end the initial candidate was chosen for future trainings.
 
@@ -165,7 +181,7 @@ Another option was the F1 score, which is a specific implementation of the F-Mea
 F_\beta score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
 \end{equation}
 
-Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the F1 loss was defined as 1 - F1 score.
+Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a \"soft\" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the F1 loss was defined as 1 - F1 score.
 
 \begin{equation}
 F_\beta loss = 1 - F_\beta score
