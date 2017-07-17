@@ -2,7 +2,7 @@
 
 \subsection{Setup*}
 
-The workstation for this study included an Intel i5 processor, 16GB of RAM and most importantly a NVidia Geforce GTX1060/6GB. Neural Networks can be trained more effienctly on GPUs than CPUs. This is because the simpler but highly parallized architecture of graphics chips plays in favor for the needed calculations in deep learning.
+The workstation for this study included an Intel i5 processor, 16GB of RAM and most importantly a NVidia Geforce GTX1060/6GB. Neural Networks can be trained more effienctly on GPUs than CPUs. This is because the simpler but highly parallized architecture of graphics chips plays in favour for the needed calculations in deep learning.
 
 The workstation ran Ubuntu 16.04 with the CUDA and cuDNN libraries installed in order to take advantage of the GPU. As the main programming language Python 2 was chosen due to its simple syntax and popularity in the deep learning field. The code of this project is compatible with Python 3 as well. Keras was used as the framework for training models, because its top level syntax allows fast prototyping and testing. The development environment was a Jupyter Notebook, which allowed a flexible execution of code snippets instead of running the entire program for every single change.
 
@@ -26,7 +26,7 @@ The dataset was a collection of three dimensional MR images showing human knees.
 
 
 
-german males, 14-21, different resolutions, coronal/sagittal, segmentation maps for 76, mhd files, distribution of age.
+german males, 14-21, different resolutions, coronal/sagittal, segmentation maps for 76, mhd files, distribution of age
 
 
 
@@ -82,7 +82,7 @@ A bias field is a low frequency nonuniform intensity that is an unwanted byprodu
 
 Image augmentation is a popular approach to virtually increase the size of the dataset. The general idea is that a neural network will overfit more when learning one sample n times, than learning n alternations of this sample just once. It helps to generalize on new images instead of memorizing patterns in the training data.
 
-Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90° rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term \"lossless\" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
+Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90 degrees rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term \"lossless\" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
 
 Lossy augmentation methods include a variety of image transformations. Common choices include:
 
