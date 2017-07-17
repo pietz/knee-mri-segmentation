@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{\numberline {4.3.5}2D and 3D data*}{7}
 \contentsline {subsubsection}{\numberline {4.3.6}Separate Bone Maps}{8}
 \contentsline {subsection}{\numberline {4.4}Architecture}{8}
-\contentsline {subsubsection}{\numberline {4.4.1}Pixel and Image Outputs}{9}
+\contentsline {subsubsection}{\numberline {4.4.1}Pixel and Image Outputs}{8}
 \contentsline {subsubsection}{\numberline {4.4.2}Channels}{9}
 \contentsline {subsubsection}{\numberline {4.4.3}Dropout*}{9}
 \contentsline {subsubsection}{\numberline {4.4.4}Batch Size}{9}

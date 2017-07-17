@@ -110,9 +110,7 @@ While in theory the spatial information of the z-axis gave the 3D network more c
 
 \subsubsection{Separate Bone Maps}
 
-The initial segmentation maps included three separate channels for the differentiation between the Tibia, Femur and Fibula. 
-
-The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a model that would segment the three bones while still differentiating between them. This helped the accuracy of the prediction opposed to using just a single channel for all of the bones. In places where the Femur and Tibia were very close to one another, the separate channels prevented the closing of this region by the network.
+The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a model that would segment the three bones while still differentiating between them.
 
 For another experiment the three channels were treated as one to create a network that would segment any type of bone in the image. This resulted in better performance when applied to sagittal images of the knee provided by Maas et al. The network was able to generalize on a situation it wasn't trained on.
 
