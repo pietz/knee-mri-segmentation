@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{Srivastava2014}
+Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
+  Salakhutdinov.
+\newblock {Dropout: A Simple Way to Prevent Neural Networks from Overfitting}.
+\newblock {\em Journal of Machine Learning Research}, 15:1929--1958, 2014.
+
+\bibitem{Tustison2010}
+Nicholas~J. Tustison, Brian~B. Avants, Philip~A. Cook, Yuanjie Zheng, Alexander
+  Egan, Paul~A. Yushkevich, and James~C. Gee.
+\newblock {N4ITK: Improved N3 bias correction}.
+\newblock {\em IEEE Transactions on Medical Imaging}, 29(6):1310--1320, 2010.
+
+\end{thebibliography}
