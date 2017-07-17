@@ -64,7 +64,7 @@ The normalization of images refers to the process of transforming all samples on
 x' = \frac {x - min(x)}{max(x) - min(x)}
 \end{equation}
 
-The second technique calculates the standard score, where the mean is subtracted from the intensities and then divided by the standard deviation. 
+The second technique calculates the standard score, where the mean is subtracted from the intensities and then divided by the standard deviation.
 
 \begin{equation}
 x' = \frac {x - \mu}{\sigma}
@@ -82,7 +82,11 @@ A bias field is a low frequency nonuniform intensity that is an unwanted byprodu
 
 Image augmentation is a popular approach to virtually increase the size of the dataset. The general idea is that a neural network will overfit more when learning one sample n times, than learning n alternations of this sample just once. It helps to generalize on new images instead of memorizing patterns in the training data.
 
+<<<<<<< HEAD
 Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90 degrees rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term \"lossless\" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
+=======
+Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90 degree rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term \"lossless\" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
+>>>>>>> 97d4dc8c5e3ffcd27f0440e7d5fed2c8fa790a13
 
 Lossy augmentation methods include a variety of image transformations. Common choices include:
 
@@ -110,9 +114,7 @@ While in theory the spatial information of the z-axis gave the 3D network more c
 
 \subsubsection{Separate Bone Maps}
 
-The initial segmentation maps included three separate channels for the differentiation between the Tibia, Femur and Fibula. 
-
-The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a model that would segment the three bones while still differentiating between them. This helped the accuracy of the prediction opposed to using just a single channel for all of the bones. In places where the Femur and Tibia were very close to one another, the separate channels prevented the closing of this region by the network.
+The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a model that would segment the three bones while still differentiating between them.
 
 For another experiment the three channels were treated as one to create a network that would segment any type of bone in the image. This resulted in better performance when applied to sagittal images of the knee provided by Maas et al. The network was able to generalize on a situation it wasn't trained on.
 
