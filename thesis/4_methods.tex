@@ -82,11 +82,7 @@ A bias field is a low frequency nonuniform intensity that is an unwanted byprodu
 
 Image augmentation is a popular approach to virtually increase the size of the dataset. The general idea is that a neural network will overfit more when learning one sample n times, than learning n alternations of this sample just once. It helps to generalize on new images instead of memorizing patterns in the training data.
 
-<<<<<<< HEAD
-Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90 degrees rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term \"lossless\" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
-=======
-Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90 degree rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term \"lossless\" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
->>>>>>> 97d4dc8c5e3ffcd27f0440e7d5fed2c8fa790a13
+Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips, if width and height are equal. Note that any multiples of 90 degree rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term "lossless" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
 
 Lossy augmentation methods include a variety of image transformations. Common choices include:
 
@@ -100,7 +96,7 @@ Lossy augmentation methods include a variety of image transformations. Common ch
 \item Gamma adjustments
 \end{itemize}
 
-For the purpose of this study only horizontal flips were realized to give the impression that images from both knees were available. Other forms of image augmentation were not necessary because the use of Dropout was an extremely effective measure to prevent overfitting.
+For the purpose of this study horizontal flips were implemented to give the impression that images from both knees were available. In addition to this these images were shifted slightly on the horizontal axis to add another type of augmentation. Interestingly these methods did not improve the accuracy of the model, which aligned with the fact that overfitting was not an issue during training. The augmented images were therefore removed.
 
 \subsubsection{2D and 3D data*}
 
@@ -108,15 +104,17 @@ Although convolutional neural networks are most commonly connected with 2D data 
 
 In the context of neural networks one has to differentiate between volumetric data with one channel and 2D data that consists of multiple color channels. Both are example of 3D data, but the volumetric images features three spatial dimensions, whereas photos feature only two. Convolutions commonly traverse the spatial dimensions, which means photos with multiple channels are usually not subject to 3D convolutions. Instead multiple input channels are fed into a 2D CNN.
 
-Although the dataset onsisted of volumetric MRI data, the z-axis showed a 20 times lower resolution than the other two. Not knowing the influence of this situation both 3D and 2D architectures were investigated for this project. The 3D model didn't use any MaxPooling on the already small z-axis. A kernel size of 3x3x3 was used similar to the 3D version of U-Net. The 2D data was created by using each of the 24 slices as a single input image. 
+Although the dataset consisted of volumetric MRI data, the z-axis showed a 20 times lower resolution than the other two. Not knowing the influence of this situation both 3D and 2D architectures were investigated for this project. The 3D model didn't use any MaxPooling on the already small z-axis. A kernel size of 3x3x3 was used similar to the 3D version of U-Net. The 2D data was created by using each of the 24 slices as a single input image. 
 
 While in theory the spatial information of the z-axis gave the 3D network more contextual information of every slice, the 2D model performed better at the end. The latter was also less computationally expensive and allowed working with data where only single slices where available per sample.
 
-\subsubsection{Separate Bone Maps}
+\subsubsection{Separate Bone Maps*}
 
-The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a model that would segment the three bones while still differentiating between them.
+The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a network that would segment the three bones while still differentiating between them. In theory, this gave the network more context concerning the placement of each bone, but it also was a more complex task to solve. 
 
-For another experiment the three channels were treated as one to create a network that would segment any type of bone in the image. This resulted in better performance when applied to sagittal images of the knee provided by Maas et al. The network was able to generalize on a situation it wasn't trained on.
+In practice, this led to problems with the Fibula, which was not recognized by any of the applied architectures. The channel was always predicted empty. It's appearance in the images accounted for 3.4\% of the segmented area, whereas the Tibia made up 41\% and the Femur accounted for 55.6\%. This led the network to learn that an empty prediction of this channel is effective in 96.6\% of the cases, which is very accurate on its own. Several techniques were tried, but the problem couldn't be resolved within the time frame of this study.
+
+For another experiment the three channels were treated as one to create a network that would segment any type of bone in the image. This solved the problem of the Fibula, while also delivering more accurate maps for the the Femur and Tibia.
 
 \subsection{Architecture}
 
