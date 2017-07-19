@@ -14,31 +14,35 @@ text
 
 \subsection{Computer Science}
 
-\subsubsection{Artificial Intelligence}
+\subsubsection{Artificial Intelligence*}
 
-Artificial Intelligence is understood as the effort of automating a given task that normally needs human intelligence to be done. The history of AI goes back to the 1950s, where a certain type called \"symbolic AI\" started to evolve. It was believed that human level intelligence could be achieved through hard-coded rules that programmers specified. Taking a complex problem like playing chess and continuing to break it into smaller problems until they can be solved with known logic. While it was effective for certain tasks,  fuzzy problems image classification, speech recognition or language translation were difficult to solve. Over the years a new approach was found, which today is called machine learning.
+Artificial Intelligence (AI) is understood as the effort of automating a given task that normally needs human intelligence to solve\cite{Chollet2017}. The history of AI goes back to the 1950s, where a certain type called "symbolic AI" started to gain popularity. It was believed that human level intelligence could be achieved through hard-coded rules that programmers specified. 
+
+Taking a complex problem like playing chess and continuing to break it into smaller problems, until they can be solved with known logic. While it was effective for certain tasks, fuzzy problems like image classification, speech recognition or language translation were difficult to tackle. Over the years a new approach was found, which today is referred to as machine learning.
 
 \subsubsection{Machine Learning}
 
-The concept of classical programming is that the engineer has to define a set of rules called an algorithm which takes in data and calculates an answer based on it.
+The concept of classical programming is that an engineer defines a set of rules, called an algorithm, which uses input data to calculate some form of output data\cite{Chollet2017}.
 
 --insert picture--
 
-The goal of machine learning is to not the define these rules by hand. Instead data and answers are fed into a machine learning algorithm, which will optimize its own set of rules.
+A machine learning algorithm is an algorithm that is able to learn from data\cite{Goodfellow2016}. It can be used to automatically calculate these rules, so they don't have to be specified by hand. Three components are needed for such an approach.
+
+\begin{itemize}
+\item Input data the algorithm is supposed to transform
+\item Output data the algorithm is supposed to predict
+\item A measurement to validate the performance of a prediction
+\end{itemize}
+
+It works by feeding input and output data into a pipeline, which will learn to transform one into the other. With the advantage that no explicit programming is needed to generate the rules, comes the disadvantage that prior input and output data is needed for the initial learning process.
 
 --insert picture--
 
-This output replaces the rules which otherwise needed manual work.
+ML is an effective method if it's not feasible or possible to define an algorithm by hand and sufficient data is available for training. How much “sufficient” is depends on factors like type of task, complexity of the data, uniformity of the data, type of ML algorithm and others.
 
-The process of generating rules is called training. The ML algorithm is trained using data-answers tuples to calculate these rules. Afterwards these rules can be used to make a prediction based on what it learned. With the advantage that no explicit programming is needed for the prediction pipeline comes the disadvantage that prior data and answers are needed for the training.
+There are different subparts to machine learning like supervised and unsupervised learning. Supervised learning is used when it's clear what the output data looks like, whereas unsupervised learning can help to find unknown patterns in the data.
 
-A ML algorithm is a mathematical function that transforms the input of a specific shape to an output of another shape while minimizing the error of the output values based on the right answers.
-
-ML is an effective method if a set of rules is not feasible to define by hand and enough samples of data are available. How much “enough” is depends on elements like type of task, complexity of the data, uniformity of the data, the type of ML algorithm and others.
-
-There are different subparts to machine learning like supervised and unsupervised learning. Supervised learning is based on labeled data, whereas unsupervised learning works with unlabeled data. The difference is whether or not the algorithm is told what each data sample is classified as. Supervised learning is often used when we know what we’re looking for and want to predict this event for new data. Unsupervised learning can help to find patterns in datasets that we didn’t even know existed.
-
-Examples of supervised learning techniques include linear regression, naive bayes, support vector machines, decision trees, random forests, gradient boosting and neural networks. Since the main interest of this thesis revolves around neural networks, we will only include linear regression because it can be seen as a simplified neural network.
+Examples of supervised learning techniques include linear regression, naive bayes, support vector machines, decision trees, random forests, gradient boosting and neural networks. Since the main interest of this study revolves around a specific type of neural networks, 
 
 
 
@@ -46,11 +50,9 @@ Examples of supervised learning techniques include linear regression, naive baye
 \subsubsection{Artificial Neural Networks}
 
 
-Artificial Neural Networks (ANN) are loosely inspired by neurobiological concept of the human brain. However, in contrast to many introductions 
+Artificial Neural Networks (ANN) are loosely inspired by neurobiological concept of the human brain. However, in contrast to many introductions
 
-\subsubsection{Convolutions}
-
-The introduction of convolutional layers in deep learning 
+\subsubsection{Gradient Descent} 
 
 \subsubsection{Regression, Classification and Segmentation*}
 
