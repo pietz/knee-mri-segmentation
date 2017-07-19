@@ -28,9 +28,9 @@ The introduction of convolutional layers in deep learning
 
 Neural networks can help to solve different types of supervised machine learning problems of which regression, classification and segmentation are the most common.
 
-A regression describes the prediction of one or multiple continuous outputs. An example for this would be the age prediction of a person based on their knee MRI. Regression is also a big part of object detections where its applied to determine positions in an image.
+A regression describes the prediction of one or multiple continuous outputs. An example for this would be the age prediction of a person based on their knee MRI. Regression is also a big part of object detections where its applied to determine coordinates in an image.
 
-A classification sorts the input into one or multiple categories like predicting if a knee MRI is open, partially closed or closed. It can be seen as n parallel regressions where n equals the total number of classes. The continuous output for each class is the probability of the input belonging into this class. For 1 out of n classifications, the most probable category is predicted. For m out of n classifications, a threshold defines at which point a class is predicted.
+A classification sorts the input into one or multiple categories, like predicting if a knee MRI is open, partially closed or closed. It can be seen as n parallel regressions where n equals the total number of classes. The continuous output for each class is the probability of the input belonging into this class. For 1 out of n classifications, the most probable category is predicted. For m out of n classifications, a threshold defines at which point a class is predicted.
 
 A segmentation creates an image of identical dimensions as the input. Every channel of the output mask belongs to a specific category that needs to be segmented. In this study the Femur, Tibia and Fibula needed to be masked from the rest of the MRI content. Segmenting these three on a single channel solves a different problem. Instead of distinguishing between separate classes, any type of bone will by masked as a result.
 
