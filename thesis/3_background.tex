@@ -12,13 +12,41 @@ text
 
 text
 
-\subsection{Computer Vision}
+\subsection{Computer Science}
 
-\subsubsection{Convolutions}
+\subsubsection{Artificial Intelligence}
 
-\subsection{Artificial Neural Networks}
+Artificial Intelligence is understood as the effort of automating a given task that normally needs human intelligence to be done. The history of AI goes back to the 1950s, where a certain type called \"symbolic AI\" started to evolve. It was believed that human level intelligence could be achieved through hard-coded rules that programmers specified. Taking a complex problem like playing chess and continuing to break it into smaller problems until they can be solved with known logic. While it was effective for certain tasks,  fuzzy problems image classification, speech recognition or language translation were difficult to solve. Over the years a new approach was found, which today is called machine learning.
 
-Artificial Neural Network are based on 
+\subsubsection{Machine Learning}
+
+The concept of classical programming is that the engineer has to define a set of rules called an algorithm which takes in data and calculates an answer based on it.
+
+--insert picture--
+
+The goal of machine learning is to not the define these rules by hand. Instead data and answers are fed into a machine learning algorithm, which will optimize its own set of rules.
+
+--insert picture--
+
+This output replaces the rules which otherwise needed manual work.
+
+The process of generating rules is called training. The ML algorithm is trained using data-answers tuples to calculate these rules. Afterwards these rules can be used to make a prediction based on what it learned. With the advantage that no explicit programming is needed for the prediction pipeline comes the disadvantage that prior data and answers are needed for the training.
+
+A ML algorithm is a mathematical function that transforms the input of a specific shape to an output of another shape while minimizing the error of the output values based on the right answers.
+
+ML is an effective method if a set of rules is not feasible to define by hand and enough samples of data are available. How much “enough” is depends on elements like type of task, complexity of the data, uniformity of the data, the type of ML algorithm and others.
+
+There are different subparts to machine learning like supervised and unsupervised learning. Supervised learning is based on labeled data, whereas unsupervised learning works with unlabeled data. The difference is whether or not the algorithm is told what each data sample is classified as. Supervised learning is often used when we know what we’re looking for and want to predict this event for new data. Unsupervised learning can help to find patterns in datasets that we didn’t even know existed.
+
+Examples of supervised learning techniques include linear regression, naive bayes, support vector machines, decision trees, random forests, gradient boosting and neural networks. Since the main interest of this thesis revolves around neural networks, we will only include linear regression because it can be seen as a simplified neural network.
+
+
+
+
+\subsubsection{Artificial Neural Networks}
+
+
+Artificial Neural Networks (ANN) are loosely inspired by neurobiological concept of the human brain. However, in contrast to many introductions 
 
 \subsubsection{Convolutions}
 
@@ -28,10 +56,10 @@ The introduction of convolutional layers in deep learning
 
 Neural networks can help to solve different types of supervised machine learning problems of which regression, classification and segmentation are the most common.
 
-A regression describes the prediction of one or multiple continuous outputs. An example for this would be the age prediction of a person based on their knee MRI. Regression is also a big part of object detections where its applied to determine coordinates in an image.
+A regression describes the prediction of one or multiple continuous outputs. An example for this would be the age prediction of a person based on their knee MRI. Regression is also a big part of object detections where it's applied to determine coordinates in an image.
 
 A classification sorts the input into one or multiple categories, like predicting if a knee MRI is open, partially closed or closed. It can be seen as n parallel regressions where n equals the total number of classes. The continuous output for each class is the probability of the input belonging into this class. For 1 out of n classifications, the most probable category is predicted. For m out of n classifications, a threshold defines at which point a class is predicted.
 
-A segmentation creates an image of identical dimensions as the input. Every channel of the output mask belongs to a specific category that needs to be segmented. In this study the Femur, Tibia and Fibula needed to be masked from the rest of the MRI content. Segmenting these three on a single channel solves a different problem. Instead of distinguishing between separate classes, any type of bone will by masked as a result.
+A segmentation creates an image of identical dimensions as the input. Every channel of the output mask belongs to a specific category that is segmented. In this study the Femur, Tibia and Fibula needed to be masked from the rest of the MRI content. Segmenting these three on a single channel solves a different problem. Instead of distinguishing between separate classes, any type of bone will by masked as a result.
 
 \newpage
