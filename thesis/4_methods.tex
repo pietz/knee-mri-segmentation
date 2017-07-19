@@ -8,7 +8,7 @@ The workstation ran Ubuntu 16.04 with the CUDA and cuDNN libraries installed in 
 
 The processing of medical image data needed a library that could handle these formats. SimpleITK is a Python binding of the ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field. Other libraries were also used for smaller task. A complete listing can be found on the project's GitHub page, where the entire code is available.
 
-\subsection{Data Analysis}
+\subsection{Data Analysis*}
 
 The dataset was a collection of three dimensional MR images showing the right human knee. The number of available samples grew during the project. For most of the development time it included 150 images that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as certain meta information about each image. The resolution of these samples differed from one source to the other.
 
@@ -31,12 +31,6 @@ Data provided from Maas et al. featured a sagittal perspective, while all other 
 The total of 76 maps were all manually created by two different people. Each mask featured 3 channels that showed Femur, Tibia and Fibula separately. They did not segment the entirety of each 3D image, but masked a window around the knee cap where the three bones meet.
 
 The candidates chosen for the MRI recording were all german males between the age of 14 and 21. This age was specifically chosen, because it marks the range in which the epiphyseal plates in the knee grow together. Their age appearance was normally distributed with a mean of 17.5 years.
-
-
-
-distribution of age
-
-
 
 \subsection{Preprocessing*}
 
