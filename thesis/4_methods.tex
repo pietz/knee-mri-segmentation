@@ -66,7 +66,7 @@ The normalization of images refers to the process of transforming all samples on
 x' = \frac {x - min(x)}{max(x) - min(x)}
 \end{equation}
 
-The second technique calculates the standard score, where the mean is subtracted from the intensities and then divided by the standard deviation.
+The second technique calculates the standard score, where the mean is subtracted from the samples and then divided by the standard deviation.
 
 \begin{equation}
 x' = \frac {x - \mu}{\sigma}
@@ -74,7 +74,7 @@ x' = \frac {x - \mu}{\sigma}
 
 In this case the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and test sets, it is important to use the mean and standard deviation of the training data, instead of calculating them on their own values.
 
-In theory the standard score is a more desirable approach, because it can help to fight exploding and disappearing gradients in a more effective way. In practice it led to the same results as using feature scaling,which was then chosen due to its easier normalization handling.
+The standard score presents a more desirable approach, because its mean centering helps to prevent exploding and disappearing gradients in a more effective way. It is also less sensitive to outliers, which frequently appeared in the form of extremely high intensities. 
 
 \subsubsection{N4 Bias Field Correction*}
 
@@ -118,19 +118,13 @@ In practice, this led to problems with the Fibula, which was not recognized by a
 
 For another experiment the three channels were treated as one to create a network that would segment any type of bone in the image. This solved the problem of the Fibula, while also delivering more accurate maps for the the Femur and Tibia.
 
-\subsubsection{Training, Validation and Testing Sets}
+\subsubsection{Training, Validation and Testing Sets*}
 
-
-
-Training a neural network requires large amounts of data to make 
-
-The data was split into three different subsets of which each was used for a different purpose. The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It is the only portion of the data 
-
-In order to measure how well a network generalizes on samples it hasn't seen before, the dataset was split up in a training and validation portion. While 80 percent of the data was reserved to make the model learn, the remaining 20 percent were used to measure the results.
-
-
+The data was split into three subsets of which each was used for a different purpose. The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It's the only portion of the data the network will draw conclusions from. The validation data is used to regularly measure the performance of the model and check whether over-fitting occurs or not. If the accuracy of the validation set drops below the results on the training data, the network is starting to memorize the data it knows rather than generalizing on the concept. The third subset is referred to as the testing data. In contrast to the validation set it's only used once in the very end, to give a final score. The idea is that by building a model based on the validation results a certain information bleed occurs, where the network will implicitly learn from the validation data.
 
 \subsection{Architecture}
+
+Artificial Neural Networks are made up of 
 
 In search for a network that would perform well on the segmentation, different architectures were looked at and multiple settings were tried.
 
@@ -160,11 +154,9 @@ Since a single unit of dropout with a rate of 0.5 is common in other architectur
 
 \subsection{Training*}
 
-The training is where the actual learning takes place and its name is inspired by how humans improve their performance on tasks. When opposed with a difficult question the first step would be a simple guess of what the answer might be. In a second step this information is compared to the right answer and processed by the brain accordingly.
+The training is where the actual learning takes place and its process is inspired by how humans improve their performance on tasks. When opposed with a difficult question the first step would be a simple guess of what the answer might be. In a second step this information is compared to the right answer and processed by the brain accordingly.
 
 Similarly, training of a neural network consists of two parts. In the first step the input is fed forward through the network and an answer prediction is made. In the very beginning this is just a random guess, because ANNs are initialized with random values. The prediction is then compared to the ground truth and a performance measure is calculated. This metric can be fed backwards through the network in order to optimize the parameters in the model. These two steps are called forward and backward propagation.
-
-The training phase describes the actual learning process of the architecture. After initializing the neural network with random values, several parameters have an influence on the accuracy of the model and how quickly a possible optimum is reached.
 
 \subsubsection{Metrics and Loss Functions*}
 
