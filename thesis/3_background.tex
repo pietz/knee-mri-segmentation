@@ -44,13 +44,20 @@ ML is an effective method if it's not feasible or possible to define an algorith
 
 There are different subparts to machine learning like supervised and unsupervised learning. Supervised learning is used when it's clear what the output data looks like, whereas unsupervised learning can help to find unknown patterns in the data. Examples of supervised learning techniques include linear regression, naive bayes, support vector machines, decision trees, random forests, gradient boosting and artificial artificial neural networks (ANNs). Since the main interest of this study revolves around ANNs, this will be the focus of following chapters.
 
-\subsubsection{Artificial Neural Networks*}
+\subsubsection{Artificial Neural Networks}
 
 Artificial neural networks are inspired by neurobiological concepts of the human brain. However, they are not models of the human brain. There is no evidence to support that the brain implements anything like the learning mechanisms used in ANNs \cite{Chollet2017}. They are mathematical frameworks for learning representations from data and one of, if not the only tool in deep learning --- a subset of machine learning.
 
-The origin of the term deep learning is twofold. On one hand it refers to ANNs that show multiple layers of depth within their architecture. On the other it describes that they are able to learn "deep" hierarchical information from data.
+The origin of the term deep learning is twofold. On one hand it refers to ANNs that show multiple layers of depth within their architecture. On the other it describes that they are able to learn "deep" hierarchical information from data. ANNs are as old as machine learning itself, but only gained a lot of their popularity in recent years.
 
-ANNs are as old as machine learning itself, but only gained a lot of their popularity in the early 2010s \cite{Chollet2017}. An important breakthrough happened in 2012 when AlexNet \cite{Krizhevsky} was the first artificial neural network to win the famous ImageNet competition. Their recent success is due to the availability of faster computer hardware, large amounts of data and algorithmic improvements \cite{Chollet2017}.
+\subsubsection{Convolutional Neural Network}
+
+Convolutional neural networks (CNNs) are a specific type of ANN that use an operation called convolution in at least one of their layers. The first CNN was introduced by Yann LeCunn \cite{LeCun1998} in 1998 at which time it's popularity was limited. In 2012 a CNN called AlexNet \cite{Krizhevsky} won the prestigious ImagetNet competition and these types of networks have been winning ever since.
+
+A convolution is a mathematical operation on two functions of real-valued argument. In deep learning terminology the first function refers to the input and the second function describes the kernel. The output of this operation is called a feature map \cite{Goodfellow2016}.
+
+Convolutions are frequently used in image processing, which is also why they were introduced to visual tasks in the field of deep learning. In contrast to dense layers, which form the foundation of regular ANNs
+
 
 \subsubsection{Regression, Classification and Segmentation*}
 

@@ -120,11 +120,15 @@ For another experiment the three channels were treated as one to create a networ
 
 \subsubsection{Training, Validation and Testing Sets*}
 
-The data was split into three subsets of which each was used for a different purpose. The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It's the only portion of the data the network will draw conclusions from. The validation data is used to regularly measure the performance of the model and check whether over-fitting occurs or not. If the accuracy of the validation set drops below the results on the training data, the network is starting to memorize the data it knows rather than generalizing on the concept. The third subset is referred to as the testing data. In contrast to the validation set it's only used once in the very end, to give a final score. The idea is that by building a model based on the validation results a certain information bleed occurs, where the network will implicitly learn from the validation data.
+The data was split into three subsets of which each was used for a different purpose. The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It's the only portion of the data the network will draw direct conclusions from. 
+
+The validation data is used to regularly measure the performance of the model and check whether over-fitting occurs or not. If the accuracy of the validation set drops below the results of the training data, the network is starting to memorize the data it knows rather than generalizing on the concept. 
+
+The third subset is referred to as the testing data. In contrast to the validation set it's only used once in the very end, to give a final score. The idea is that by building a model based on the validation results a certain information bleed occurs, where the network will implicitly learn from the validation data. To prevent biased end results the testing data is used as a last performance reference.
 
 \subsection{Architecture}
 
-Artificial Neural Networks are made up of 
+Since convolutional neural networks were introduced in 
 
 In search for a network that would perform well on the segmentation, different architectures were looked at and multiple settings were tried.
 
