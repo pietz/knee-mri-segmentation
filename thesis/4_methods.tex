@@ -118,6 +118,18 @@ In practice, this led to problems with the Fibula, which was not recognized by a
 
 For another experiment the three channels were treated as one to create a network that would segment any type of bone in the image. This solved the problem of the Fibula, while also delivering more accurate maps for the the Femur and Tibia.
 
+\subsubsection{Training, Validation and Testing Sets}
+
+
+
+Training a neural network requires large amounts of data to make 
+
+The data was split into three different subsets of which each was used for a different purpose. The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It is the only portion of the data 
+
+In order to measure how well a network generalizes on samples it hasn't seen before, the dataset was split up in a training and validation portion. While 80 percent of the data was reserved to make the model learn, the remaining 20 percent were used to measure the results.
+
+
+
 \subsection{Architecture}
 
 In search for a network that would perform well on the segmentation, different architectures were looked at and multiple settings were tried.
@@ -143,23 +155,16 @@ Dropout is a popular regularization technique that randomly zeros out a fraction
 
 Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first candidate. Other tests included adding dropout between the convolutions on the contracting side,which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end the initial candidate was chosen for future trainings.
 
-\subsubsection{Batch Size}
 
-Neural Networks use a process called stochastic gradient descent (SGD) or one of its variants to approximate the gradient on a small fraction of the data. The size of this fraction is called the batch size and describes how many samples are used for a single forward- and back-propagation step.
 
-In the past it was believed that larger batches led to something called the generalization gap (1609.04836), where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. (1705.08741) suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on imagenet (1706.02677).
 
-Depending on the size of the input one may be restricted to smaller batches. In the field of 3D convolutions even one image can take up a majority of the RAM on a workstation.
+\subsection{Training*}
 
-\subsection{Training}
+The training is where the actual learning takes place and its name is inspired by how humans improve their performance on tasks. When opposed with a difficult question the first step would be a simple guess of what the answer might be. In a second step this information is compared to the right answer and processed by the brain accordingly.
+
+Similarly, training of a neural network consists of two parts. In the first step the input is fed forward through the network and an answer prediction is made. In the very beginning this is just a random guess, because ANNs are initialized with random values. The prediction is then compared to the ground truth and a performance measure is calculated. This metric can be fed backwards through the network in order to optimize the parameters in the model. These two steps are called forward and backward propagation.
 
 The training phase describes the actual learning process of the architecture. After initializing the neural network with random values, several parameters have an influence on the accuracy of the model and how quickly a possible optimum is reached.
-
-\subsubsection{Training, Validation and Testing}
-
-In order to measure how well a network generalizes on samples it hasn't seen before, the dataset was split up in a training and validation portion. While 80 percent of the data was reserved to make the model learn, the remaining 20 percent were used to measure the results.
-
-In larger datasets it is common to use another fraction of the data as the Test Set, which is used as a second level validation method. By using the validation data multiple times throughout the training, the network may get an implicit view of its content. The test set can then be applied at the very end to measure the final accuracy of the model.
 
 \subsubsection{Metrics and Loss Functions*}
 
@@ -210,6 +215,14 @@ Evaluating these two outputs on the other metrics played in favor for the F1 los
 \subsubsection{Optimizer}
 
 The optimizer 
+
+\subsubsection{Batch Size}
+
+Neural Networks use a process called stochastic gradient descent (SGD) or one of its variants to approximate the gradient on a small fraction of the data. The size of this fraction is called the batch size and describes how many samples are used for a single forward- and back-propagation step.
+
+In the past it was believed that larger batches led to something called the generalization gap (1609.04836), where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. (1705.08741) suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on imagenet (1706.02677).
+
+Depending on the size of the input one may be restricted to smaller batches. In the field of 3D convolutions even one image can take up a majority of the RAM on a workstation.
 
 \subsubsection{Learning Rate Policy*}
 
