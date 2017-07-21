@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex 0_Thesis"] 1500642845 "0_Thesis.aux" "0_Thesis.bbl" "0_Thesis" 1500642880
+["bibtex 0_Thesis"] 1500643543 "0_Thesis.aux" "0_Thesis.bbl" "0_Thesis" 1500643788
   "/usr/local/texlive/2017/texmf-dist/bibtex/bst/base/plain.bst" 1480098433 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "0_Thesis.aux" 1500642879 3846 deafa90c0cf94ce52ff0221650e217a5 ""
+  "0_Thesis.aux" 1500643788 3846 d689efb61898b773f66b906857a4e342 ""
   "references.bib" 1500640204 111422 82721e500b80038c9b55b946b2a48d2b ""
   (generated)
-  "0_Thesis.blg"
   "0_Thesis.bbl"
-["pdflatex"] 1500642879 "/Users/pietz/Dev/Python/knee-mri-segmentation/thesis/0_Thesis.tex" "0_Thesis.pdf" "0_Thesis" 1500642880
-  "/Users/pietz/Dev/Python/knee-mri-segmentation/thesis/0_Thesis.tex" 1500620365 1380 d725fc0d8a14bbca86ec0d375329c038 ""
+  "0_Thesis.blg"
+["pdflatex"] 1500643787 "/Users/pietz/Dev/Python/knee-mri-segmentation/thesis/0_Thesis.tex" "0_Thesis.pdf" "0_Thesis" 1500643788
+  "/Users/pietz/Dev/Python/knee-mri-segmentation/thesis/0_Thesis.tex" 1500643787 1408 0c1849a3e83015fdef9e643df95f9e8d ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1480098668 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1480098668 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc" 1480098668 2840 216e6e45ad352e2456e1149f28885bee ""
@@ -88,19 +88,19 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1500037180 4129592 4cc4111466f111b5eb573287debfeff6 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "0_Thesis.aux" 1500642879 3846 deafa90c0cf94ce52ff0221650e217a5 ""
-  "0_Thesis.bbl" 1500642845 1701 8b681c22baf30cd6467d08e33514e3e2 "bibtex 0_Thesis"
-  "0_Thesis.tex" 1500620365 1380 d725fc0d8a14bbca86ec0d375329c038 ""
-  "0_Thesis.toc" 1500642879 2485 dd6ae1b527fb81235f49927df266fc35 ""
+  "0_Thesis.aux" 1500643788 3846 d689efb61898b773f66b906857a4e342 ""
+  "0_Thesis.bbl" 1500643543 1701 8b681c22baf30cd6467d08e33514e3e2 "bibtex 0_Thesis"
+  "0_Thesis.tex" 1500643787 1408 0c1849a3e83015fdef9e643df95f9e8d ""
+  "0_Thesis.toc" 1500643788 2485 2dbb40121b5b5a281cd3fda1b6c25c2e ""
   "1_abstract.tex" 1500033531 1192 cad346d117d30676055efce46ac38e8a ""
   "2_introduction.tex" 1500620365 847 d7541413fa7c641fbd63c7925f9bf800 ""
   "3_background.tex" 1500630519 6818 c81412c42b15ce765bf938e95c51e98b ""
-  "4_methods.tex" 1500642879 27888 0985eb9a76053b7be6cd00756347f7ac ""
+  "4_methods.tex" 1500643678 27930 760bb07845c468221b0b991ab017e411 ""
   "5_results.tex" 1500033531 74 f6aef2a2003dd5f9c69af1a1e1754f04 ""
   "6_discussion.tex" 1500033531 74 05e8250151fc8ec0647ac41f428d0715 ""
   "imgs/fhw.png" 1500620365 12294 4d581edd22116545fb118bb8fac88154 ""
   (generated)
-  "0_Thesis.log"
-  "0_Thesis.pdf"
   "0_Thesis.toc"
+  "0_Thesis.log"
   "0_Thesis.aux"
+  "0_Thesis.pdf"

@@ -142,7 +142,21 @@ Encoder-decoder networks are the de facto standard in the current field of image
 
 The number of parameters in a neural network has a strong correlation with its learning capacity. By adding more weights that can be adjusted during training, the model can approximate a more complex function that transforms the input into the output. The downside is that a larger parameter count will also increase the possibility of overfitting the data. Instead of learning the desirable concept, the neural network will memorize the training data and perform less accurate on new data.
 
-To find the right balance between a model that is complex enough to solve the problem and still generalizes well, one has to try different sizes and see what works best. It was noted that models with more than 500,000 parameters tended overfit and train less stable. Different types of regularization technqiues did not solve this. Networks with 200,000 parameters were the ones that delivered
+To find the right balance between a model that is complex enough to solve the problem and still generalizes well, one has to try different sizes and see what works best. It was noted that models with more than 500,000 parameters tended overfit and train less stable. Different types of regularization technqiues did not solve this. Further architecture tests were made below this parameter count.
+
+\subsubsection{Channels*}
+
+Every convolutional layer has a specific number of input and output channels. The number of input channels of a layer has to be identical to the number of output channels in the previous one. A convention in the field of CNNs is to gradually increase the number of channels, while the spatial resolution is reduced due to the use of MaxPooling.
+
+When comparing the effects of different channel strategies, it was noted that a higher growth rate of channels did not improve the performance of the model. Keeping the number consistent for the entire architecture led to similar results as increasing them by 2 for every convolutional block. As a matter of fact the training was more stable because of it.
+
+An initial number of 32 channels was used for most of the tests, but was later increased to 48 due to slightly higher scores.
+
+\subsubsection{Dropout*}
+
+Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training \cite{Srivastava2014}. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to prevent overfitting.
+
+Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first candidate. Other tests included adding multiple dropout units between the convolutions on the contracting side, which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end the initial candidate was chosen for future trainings.
 
 \subsubsection{Activation Functions*}
 
@@ -159,20 +173,6 @@ Since the introduction of ReLU other variants have built on its success like PRe
 --insert equation--
 
 ELU showed superior results in comparison to ReLU and was chosen for all future tests.
-
-\subsubsection{Channels*}
-
-Every convolutional layer has a specific number of input and output channels. The number of input channels of a layer has to be identical to the number of output channels in the previous one. A convention in the field of CNNs is to gradually increase the number of channels, while the spatial resolution is reduced due to the use of MaxPooling.
-
-When comparing the effects of different channel strategies, it was noted that a higher growth rate of channels did not improve the performance of the model. Keeping the number consistent for the entire architecture led to similar results as increasing them by 2 for every convolutional block. As a matter of fact the training was more stable because of it.
-
-An initial number of 32 channels was used for most of the tests, but was later increased to 48 due to slightly higher scores.
-
-\subsubsection{Dropout*}
-
-Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training \cite{Srivastava2014}. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to prevent overfitting.
-
-Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first candidate. Other tests included adding multiple dropout units between the convolutions on the contracting side, which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end the initial candidate was chosen for future trainings.
 
 \subsection{Training*}
 
@@ -234,7 +234,9 @@ The optimizer
 
 Neural Networks use a process called stochastic gradient descent (SGD) or one of its variants to approximate the gradient on a small fraction of the data. The size of this fraction is called the batch size and describes how many samples are used for a single forward- and back-propagation step.
 
-In the past it was believed that larger batches led to something called the generalization gap (1609.04836), where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. (1705.08741) suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on imagenet (1706.02677).
+In the past it was believed that larger batches led to something called the generalization gap (1609.04836), where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. (1705.08741) suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet (1706.02677).
+
+Using batches smaller than 32 samples
 
 Depending on the size of the input one may be restricted to smaller batches. In the field of 3D convolutions even one image can take up a majority of the RAM on a workstation.
 
