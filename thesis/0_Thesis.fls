@@ -84,10 +84,10 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/microtype/mt-cmr.cfg
-INPUT fhw.png
-INPUT ./fhw.png
+INPUT imgs/fhw.png
+INPUT ./imgs/fhw.png
 OUTPUT 0_Thesis.pdf
-INPUT ./fhw.png
+INPUT ./imgs/fhw.png
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmcsc10.tfm
@@ -128,10 +128,10 @@ INPUT 3_background.tex
 INPUT 3_background.tex
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
-INPUT 4_methods.tex
-INPUT 4_methods.tex
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
+INPUT 4_methods.tex
+INPUT 4_methods.tex
 INPUT 5_results.tex
 INPUT 5_results.tex
 INPUT 6_discussion.tex

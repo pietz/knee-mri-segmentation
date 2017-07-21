@@ -42,31 +42,34 @@ It works by feeding input and output data into a pipeline, which will learn to t
 
 ML is an effective method if it's not feasible or possible to define an algorithm by hand and sufficient data is available for training. How much “sufficient” is depends on factors like type of task, complexity of the data, uniformity of the data, type of ML algorithm and others.
 
-There are different subparts to machine learning like supervised and unsupervised learning. Supervised learning is used when it's clear what the output data looks like, whereas unsupervised learning can help to find unknown patterns in the data. Examples of supervised learning techniques include linear regression, naive bayes, support vector machines, decision trees, random forests, gradient boosting and artificial artificial neural networks (ANNs). Since the main interest of this study revolves around ANNs, this will be the focus of following chapters.
+There are different subparts to machine learning like supervised and unsupervised learning. Supervised learning is used when it's clear what the output data looks like, whereas unsupervised learning can help to find unknown patterns in the data. Examples of supervised learning techniques include linear regression, naive bayes, support vector machines, decision trees, random forests, gradient boosting and artificial neural networks (ANNs). Since the main interest of this study revolves around ANNs, this will be the focus of following chapters.
 
-\subsubsection{Artificial Neural Networks}
+\subsubsection{Artificial Neural Networks*}
 
-Artificial neural networks are inspired by neurobiological concepts of the human brain. However, they are not models of the human brain. There is no evidence to support that the brain implements anything like the learning mechanisms used in ANNs \cite{Chollet2017}. They are mathematical frameworks for learning representations from data and one of, if not the only tool in deep learning --- a subset of machine learning.
+Artificial neural networks are inspired by neurobiological concepts of the human brain. However, they are not models of the human brain. There is no evidence to support that the brain implements anything like the learning mechanisms used in ANNs \cite{Chollet2017}. Artificial neural networks are mathematical frameworks for learning representations from data and one of, if not the only tool in deep learning --- a subset of machine learning.
 
-The origin of the term deep learning is twofold. On one hand it refers to ANNs that show multiple layers of depth within their architecture. On the other it describes that they are able to learn "deep" hierarchical information from data. ANNs are as old as machine learning itself, but only gained a lot of their popularity in recent years.
+The origin of the term deep learning is twofold. On one hand it refers to ANNs that show multiple layers of depth within their architecture. On the other it describes that they are able to learn "deep" hierarchical information from data. ANNs are as old as machine learning itself, but only gained a lot of their popularity in recent years \cite{Chollet2017}.
 
-\subsubsection{Convolutional Neural Networks}
+Classic ANNs use multiple so called "dense layers", where every value in the input is connected to every value in the output. This gives the network the ability to learn global correlations in the data.
+
+\subsubsection{Convolutional Neural Networks*}
 
 Convolutional neural networks (CNNs) are a specific type of ANN that use an operation called convolution in at least one of their layers. The first CNN was introduced by Yann LeCunn \cite{LeCun1998} in 1989 at which time it's popularity was limited. In 2012 a CNN called AlexNet \cite{Krizhevsky} won the prestigious ImagetNet competition and these types of networks have been winning ever since.
 
 A convolution is a mathematical operation on two functions of real-valued argument. In deep learning terminology the first function refers to the input and the second function describes the kernel. The output of this operation is called a feature map \cite{Goodfellow2016}.
 
-Convolutions are frequently used in image processing, which is also why they were introduced to visual tasks in the field of deep learning. They allow to learn local patterns in the data instead of treating the features in the input globally.
+Convolutions are frequently used in image processing, which is also why they were introduced to visual tasks in the field of deep learning. They allow to learn local patterns in the data instead of treating the input features in a global manner, like dense layers do.
 
+Another type of layer that is frequently used in CNN architectures perform a pooling operation. By doing so the spatial resolution is reduced and only the most relevant features are kept. This is important to keep the size of a neural network manageable and prevent overfitting.
 
 \subsubsection{Regression, Classification and Segmentation*}
 
-Neural networks can help to solve different types of supervised machine learning problems of which regression, classification and segmentation are the most common.
+CNNs can help to solve different types of supervised machine learning problems of which regression, classification and segmentation are the most common.
 
 A regression describes the prediction of one or multiple continuous outputs. An example for this would be the age prediction of a person based on their knee MRI. Regression is also an important part of object detections, where it's applied to determine coordinates in an image.
 
-A classification sorts the input into one or multiple categories, like predicting if a knee MRI is open, partially closed or closed. It can be seen as n parallel regressions where n equals the total number of classes. The continuous output for each class is the probability of the input belonging into this class. For 1 out of n classifications, the most probable category is predicted. For m out of n classifications, a threshold defines at which point a class is predicted.
+A classification sorts the input into one or multiple categories, like predicting if the growth plate is open, partially closed or closed. It can be seen as n parallel regressions where n equals the total number of classes. The continuous output for each class is the probability of the input belonging into this category. For 1 out of n classifications, the most probable category is predicted. For m out of n classifications, a threshold defines at which point a category is predicted.
 
-A segmentation creates an image of identical dimensions as the input and masks task specific regions. Every channel of the output mask belongs to a certain category that is segmented. A segmentation can be seen as a classification for every pixel or voxel. For this study the Femur, Tibia and Fibula needed to be masked from the rest of the MRI content. It was investigated to treat them as three separate channels, as well as merging them into one "bone" category.
+A segmentation creates an image of identical dimensions as the input and masks specific regions. Every channel of the output mask belongs to a certain category that is segmented. A segmentation can be seen as a classification of every pixel (or voxel). For this study the Femur, Tibia and Fibula needed to be masked from the rest of the MRI content. It was investigated to treat them as three separate channels, as well as merging them into one "bone" category.
 
 \newpage

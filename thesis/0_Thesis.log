@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  17 JUL 2017 19:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  21 JUL 2017 15:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -549,18 +549,18 @@ Package microtype Warning: \nonfrenchspacing is active. Adjustment of
 (microtype)                to add `\microtypecontext{spacing=nonfrench}'
 (microtype)                to your preamble.
 
-<fhw.png, id=1, 179.9523pt x 96.36pt>
-File: fhw.png Graphic file (type png)
- <use fhw.png>
-Package pdftex.def Info: fhw.png used on input line 26.
+<imgs/fhw.png, id=1, 179.9523pt x 96.36pt>
+File: imgs/fhw.png Graphic file (type png)
+ <use imgs/fhw.png>
+Package pdftex.def Info: imgs/fhw.png used on input line 26.
 (pdftex.def)             Requested size: 143.9978pt x 77.11307pt.
  [1
 
-{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./fhw.p
-ng>] (./0_Thesis.toc
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./imgs/
+fhw.png>]
+(./0_Thesis.toc
 LaTeX Font Info:    Try loading font information for OT1+lmr on input line 4.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Try loading font information for OML+lmm on input line 4.
@@ -589,42 +589,44 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \openout3 = `0_Thesis.toc'.
 
  [1]
-(./1_abstract.tex [1]) (./2_introduction.tex [2]) (./3_background.tex [3])
-(./4_methods.tex [4]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 40.
- (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
+(./1_abstract.tex [1]) (./2_introduction.tex [2]) (./3_background.tex [3]
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 34.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 40.
- [5] [6] [7] [8] [9] [10] [11] [12] [13]) (./5_results.tex [14])
-(./6_discussion.tex [15]) (./0_Thesis.bbl) [16] (./0_Thesis.aux) ) 
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 34.
+ [4] [5] [6])
+(./4_methods.tex [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
+[19]) (./5_results.tex [20]) (./6_discussion.tex [21]) (./0_Thesis.bbl)
+[22] (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 3869 strings out of 492995
- 62142 string characters out of 6132704
- 153446 words of memory out of 5000000
- 7271 multiletter control sequences out of 15000+600000
- 59001 words of font info for 68 fonts, out of 8000000 for 9000
+ 3878 strings out of 492995
+ 62259 string characters out of 6132704
+ 154467 words of memory out of 5000000
+ 7277 multiletter control sequences out of 15000+600000
+ 59084 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,7n,38p,786b,190s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/t
-exlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/te
-xmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts
-/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips
-/lm/lm-mathsy.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmb
-x10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/t
-ype1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
-lm/lmri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.
-pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (18 pages, 227447 bytes).
+ 39i,7n,38p,777b,190s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/l
+m-ec.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr
+/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/tex
+live/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2017/
+texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2017/texmf-dist
+/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/typ
+e1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi8.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/l
+ocal/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive
+/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2017/texm
+f-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fon
+ts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
+ublic/lm/lmsy8.pfb>
+Output written on 0_Thesis.pdf (24 pages, 246464 bytes).
 PDF statistics:
- 114 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 133 PDF objects out of 1000 (max. 8388607)
+ 93 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16902 words of extra memory for PDF output out of 17280 (max. 10000000)
 

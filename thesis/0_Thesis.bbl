@@ -1,5 +1,40 @@
 \begin{thebibliography}{1}
 
+\bibitem{Chollet2017}
+Francois Chollet.
+\newblock {\em {Deep Learning With Python}}, volume~1.
+\newblock 2017.
+
+\bibitem{Clevert2015}
+Djork-Arn{\'{e}} Clevert, Thomas Unterthiner, and Sepp Hochreiter.
+\newblock {Fast and Accurate Deep Network Learning by Exponential Linear Units
+  (ELUs)}.
+\newblock nov 2015.
+
+\bibitem{Goodfellow2016}
+Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
+\newblock {\em {Deep Learning}}.
+\newblock The MIT Press, 2016.
+
+\bibitem{He2015}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock {Delving Deep into Rectifiers: Surpassing Human-Level Performance on
+  ImageNet Classification}.
+\newblock feb 2015.
+
+\bibitem{Krizhevsky}
+Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
+\newblock {ImageNet Classification with Deep Convolutional Neural Networks}.
+
+\bibitem{LeCun1998}
+Yann LeCun, Patrick Haffner, L{\'{e}}on Bottou, and Yoshua Bengio.
+\newblock {Object Recognition with Gradient-Based Learning}.
+\newblock 1998.
+
+\bibitem{Nair}
+Vinod Nair and Geoffrey~E Hinton.
+\newblock {Rectified Linear Units Improve Restricted Boltzmann Machines}.
+
 \bibitem{Srivastava2014}
 Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
   Salakhutdinov.
