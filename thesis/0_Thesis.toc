@@ -23,9 +23,9 @@
 \contentsline {subsubsection}{\numberline {4.3.7}Training, Validation and Testing Sets*}{12}
 \contentsline {subsection}{\numberline {4.4}Architecture*}{13}
 \contentsline {subsubsection}{\numberline {4.4.1}Number of Parameters*}{13}
-\contentsline {subsubsection}{\numberline {4.4.2}Activation Functions*}{14}
-\contentsline {subsubsection}{\numberline {4.4.3}Channels*}{14}
-\contentsline {subsubsection}{\numberline {4.4.4}Dropout*}{15}
+\contentsline {subsubsection}{\numberline {4.4.2}Channels*}{14}
+\contentsline {subsubsection}{\numberline {4.4.3}Dropout*}{14}
+\contentsline {subsubsection}{\numberline {4.4.4}Activation Functions*}{14}
 \contentsline {subsection}{\numberline {4.5}Training*}{15}
 \contentsline {subsubsection}{\numberline {4.5.1}Metrics and Loss Functions*}{15}
 \contentsline {subsubsection}{\numberline {4.5.2}Optimizer}{17}

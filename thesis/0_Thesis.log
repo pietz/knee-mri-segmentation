@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  21 JUL 2017 15:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  21 JUL 2017 15:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -623,7 +623,7 @@ ocal/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive
 f-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fon
 ts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/p
 ublic/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (24 pages, 246464 bytes).
+Output written on 0_Thesis.pdf (24 pages, 246272 bytes).
 PDF statistics:
  133 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream
