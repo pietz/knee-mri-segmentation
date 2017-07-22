@@ -8,6 +8,8 @@
 \usepackage[singlespacing]{setspace}
 \usepackage{parskip}
 \usepackage{graphicx}
+\usepackage{svg}
+\usepackage{amsmath}
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 
 \widowpenalty = 10000
@@ -27,7 +29,7 @@
     \vspace{1cm}
     {\scshape\Large Bachelor Thesis\par}
     \vspace{2cm}
-    {\bfseries\Huge Investigating the use of convolutional neural networks for the semantic segmentation of 3D MR images\par}
+    {\bfseries\Huge Automated Segmentation of Bone Matter in 3D MR Images using Convolutional Neural Networks\par}
     \vspace{2cm}
     {\itshape\Large Paul-Louis Pröve\par}
     mail@plpp.de\par
@@ -39,6 +41,8 @@
     Hamburg,\par \today\par
     \end{titlepage}
 
+\input{1_abstract.tex}
+
 \tableofcontents
 \newpage
 
@@ -47,7 +51,6 @@
 
 \pagenumbering{arabic}
 
-\input{1_abstract.tex}
 \input{2_introduction.tex}
 \input{3_background.tex}
 \input{4_methods.tex}
