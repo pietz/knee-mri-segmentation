@@ -52,13 +52,11 @@ There are different subparts to machine learning like supervised and unsupervise
 
 \subsubsection{Artificial Neural Networks*}
 
-Artificial neural networks are inspired by neurobiological concepts of the human brain. However, they are not models of the human brain. There is no evidence to support that the brain implements anything like the learning mechanisms used in ANNs \cite{Chollet2017}. Artificial neural networks are mathematical frameworks for learning representations from data and one of, if not the only tool in deep learning --- a subset of machine learning.
+Artificial neural networks are inspired by neurobiological concepts of the human brain. However, they are not models of the human brain. There is no evidence to support that the brain implements anything like the learning mechanisms used in ANNs \cite{Chollet2017}. Artificial neural networks are mathematical frameworks for learning representations from data and one of, if not the only tool in deep learning (DL) --- a subset of machine learning.
 
-The origin of the term deep learning is twofold. On one hand it refers to ANNs that show multiple layers of depth within their architecture. On the other it describes that they are able to learn "deep" hierarchical information from data. ANNs are as old as machine learning itself, but only gained a lot of their popularity in recent years \cite{Chollet2017}.
+The origin of the term deep learning is twofold. On one hand it refers to the fact that ANNs are able to learn "deep" hierarchical information from data. On the other it describes that they show multiple layers of depth within their architecture. ANNs are as old as machine learning itself, but only gained a lot of their popularity in recent years \cite{Chollet2017}.
 
-ANNs consist of multiple layers that perform mathematical operations.
-
-ANNs use multiple so called "dense layers", where every value in the input is connected to every value in the output. This gives the network the ability to learn global correlations in the data.
+These dense layers inside artificial neural networks contain entities called nodes that are jointly linked with one another. Every node in a dense layer is connected to each node in the previous and following layer. This structure gives ANNs the capacity to approximate complex mathematical functions and learn global representations in the data. These nodes, also called parameters, can range to hundreds of millions depending on the task.
 
 \subsubsection{Convolutional Neural Networks*}
 
@@ -68,7 +66,7 @@ A convolution is a mathematical operation on two functions of real-valued argume
 
 Convolutions are frequently used in image processing, which is also why they were introduced to visual tasks in the field of deep learning. They allow to learn local patterns in the data instead of treating the input features in a global manner, like dense layers do.
 
-Another type of layer that is frequently used in CNN architectures perform a pooling operation. By doing so the spatial resolution is reduced and only the most relevant features are kept. This is important to keep the size of a neural network manageable and prevent overfitting.
+Another type of layer that is frequently used in CNN architectures perform a pooling operation. By doing so the spatial resolution is reduced and only the most relevant features are kept. This is important to keep the size of a CNN manageable.
 
 \subsubsection{Semantic Segmentation*}
 
@@ -78,6 +76,6 @@ A regression describes the prediction of one or multiple continuous outputs. An 
 
 A classification sorts the input into one or multiple categories, like predicting if the growth plate is open, partially closed or closed. It can be seen as n parallel regressions where n equals the total number of classes. The continuous output for each class is the probability of the input belonging into this category. For 1 out of n classifications, the most probable category is predicted. For m out of n classifications, a threshold defines at which point a category is predicted.
 
-A segmentation creates an image of identical dimensions as the input and masks specific regions. Every channel of the output mask belongs to a certain category that is segmented. A segmentation can be seen as a classification of every pixel or voxel. For this study the Femur, Tibia and Fibula needed to be masked from the rest of the MRI content. This is called a semantic segmentation because the process is based on a semantic meaning of objects in the image.
+A segmentation creates an image of identical dimensions as the input and masks specific regions within. Every channel of the output mask belongs to a certain category that is segmented. A segmentation can be seen as a classification of each pixel/voxel. For this study the Femur, Tibia and Fibula needed to be masked from the rest of the MRI content. This is called a semantic segmentation because the process is based on a semantic meaning of objects in the image.
 
 \newpage
