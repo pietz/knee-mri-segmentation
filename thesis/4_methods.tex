@@ -136,21 +136,34 @@ As mentioned in 3.2.5 a segmentation can be seen as a classification for every p
 
 An improvement for segmentations came through architectures referred to as encoder-decoder models. The encoding process describes the same spatial compression used in classification networks. Afterwards in the decoding step the spatial resolution is brought back to its original shape and further processed by additional convolutions. This yields huge speed improvements, while also increasing the accuracy of the prediction. 
 
-Encoder-decoder networks are the de facto standard in the current field of image segmentation and were the initial starting point for building an architecture for this study. In the following subchapters several elements of such a model will be discussed.
+Encoder-decoder networks are the de facto standard in the current field of image segmentation and were the initial starting point for building an architecture. In the following subchapters several elements of such a model will be discussed.
 
 \subsubsection{Number of Parameters*}
 
 The number of parameters in a neural network has a strong correlation with its learning capacity. By adding more weights that can be adjusted during training, the model can approximate a more complex function that transforms the input into the output. The downside is that a larger parameter count will also increase the possibility of overfitting the data. Instead of learning the desirable concept, the neural network will memorize the training data and perform less accurate on new data.
 
-To find the right balance between a model that is complex enough to solve the problem and still generalizes well, one has to try different sizes and see what works best. It was noted that models with more than 500,000 parameters tended overfit and train less stable. Different types of regularization technqiues did not solve this. Further architecture tests were made below this parameter count.
+To find the right balance between a model that is complex enough to solve the problem and still generalizes well, one has to try different sizes and see what works best. It was noted that models with more than 500,000 parameters tended overfit and train less stable. Different types of regularization techniques did not solve this. Further architecture tests were constructed below this parameter count.
 
 \subsubsection{Channels*}
 
 Every convolutional layer has a specific number of input and output channels. The number of input channels of a layer has to be identical to the number of output channels in the previous one. A convention in the field of CNNs is to gradually increase the number of channels, while the spatial resolution is reduced due to the use of MaxPooling.
 
-When comparing the effects of different channel strategies, it was noted that a higher growth rate of channels did not improve the performance of the model. Keeping the number consistent for the entire architecture led to similar results as increasing them by 2 for every convolutional block. As a matter of fact the training was more stable because of it.
+When comparing the effects of different channel strategies, it was noted that a higher growth rate of channels did not improve the performance of the model. Keeping the number consistent for the entire architecture led to similar results as increasing them by rates larger than 1 for every convolutional block. This could be explained by the fact that MRI slices don't have the same hierarchical depth as photographs do.
 
-An initial number of 32 channels was used for most of the tests, but was later increased to 48 due to slightly higher scores.
+\begin{table}[h!]
+\centering
+\begin{tabular}{l l l r r l}
+    Model & Conv 1 Out Ch. & Perspective & Samples & Maps & Resolution \\
+    \hline
+    A     & Yes         & Coronal     & 80      & 40   & 800x800x41 \\
+    B     & No          & Coronal     & 65      & 36   & 512x512x24 \\
+    C     & No          & Sagittal    & 5       & 0    & multiple \\
+    D     & No          & Sagittal    & 5       & 0    & multiple \\
+\end{tabular}
+\caption{Details of available images sorted by their source}
+\end{table}
+
+A more important impact was noted by the initial number of convolutional outputs. A network with a consistent number of 32 convolutional channels achieved better performance than an architecture with 16 channels initially that would increase by a rate of 1.5. 8 initial channels and a rate of 2 showed even worse results. Increasing the number of channels in the consistent model beyond 32 did not improve performance any further.
 
 \subsubsection{Dropout*}
 
@@ -236,7 +249,7 @@ Neural Networks use a process called stochastic gradient descent (SGD) or one of
 
 In the past it was believed that larger batches led to something called the generalization gap (1609.04836), where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. (1705.08741) suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet (1706.02677).
 
-Using batches smaller than 32 samples
+Using batches smaller than 32 samples can introduce a different kind of problem. Having too few data points that don't represent the mean of the data well, may lead to slow and unstable training. I took the maximum batch size that would fit into VRAM which led to sizes between 32 and 64. When using 3D convolutions I was restricted to sizes between 2 and 4 due to their high dimensionalies
 
 Depending on the size of the input one may be restricted to smaller batches. In the field of 3D convolutions even one image can take up a majority of the RAM on a workstation.
 
