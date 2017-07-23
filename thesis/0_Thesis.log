@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  23 JUL 2017 14:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  23 JUL 2017 14:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -718,35 +718,39 @@ File: imgs/ann.png Graphic file (type png)
 Package pdftex.def Info: imgs/ann.png used on input line 66.
 (pdftex.def)             Requested size: 288.0011pt x 149.21445pt.
 
-[4 <./imgs/ann.png>] [5] [6]) (./4_methods.tex [7] [8] [9] [10] [11] [12]
-[13] [14] [15] [16] [17] [18] [19]) (./5_results.tex [20]) (./6_discussion.tex
-[21]) (./0_Thesis.bbl) [22] (./0_Thesis.aux) ) 
+[4 <./imgs/ann.png>] [5] [6]) (./4_methods.tex
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20])
+(./5_results.tex [21]) (./6_discussion.tex [22]) (./0_Thesis.bbl) [23]
+(./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 5760 strings out of 492995
- 90798 string characters out of 6132704
- 209794 words of memory out of 5000000
- 9098 multiletter control sequences out of 15000+600000
+ 5763 strings out of 492995
+ 90833 string characters out of 6132704
+ 209806 words of memory out of 5000000
+ 9101 multiletter control sequences out of 15000+600000
  65484 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,8n,42p,777b,237s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-di
-st/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/d
-vips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mat
-hit.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</
-usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts
-/type1/public/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
-ic/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.
-pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (25 pages, 424692 bytes).
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.
+enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
+l/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
+2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2017/texmf
+-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2017/texmf-dist/font
+s/type1/public/lm/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
+blic/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/l
+mmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017
+/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2017/texmf-dis
+t/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
+pe1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/lm/lmsy8.pfb>
+Output written on 0_Thesis.pdf (26 pages, 426102 bytes).
 PDF statistics:
- 142 PDF objects out of 1000 (max. 8388607)
- 97 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 99 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  19472 words of extra memory for PDF output out of 20736 (max. 10000000)
 

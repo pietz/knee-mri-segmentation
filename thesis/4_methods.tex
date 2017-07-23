@@ -1,4 +1,6 @@
-\section{Methods}
+\section{Methods*}
+
+The purpose of this chapter is twofold. It will discuss the design and processing decisions that were made for the development of this project, while also giving explanatory insight into how these applied technologies work. I decided that the latter will do more good in this chapter than in the previous one because the theoretical background is directly connected to the choices methods that were applied.
 
 \subsection{Setup*}
 
@@ -241,7 +243,7 @@ Another test run used both loss function at the same time. This was done by feed
 
 Evaluating these two outputs on the other metrics played in favor for the F1 loss output. Combining both maps didn't improve the scores any further. Since the cross entropy was chosen as a surrogate function and not as a performance metric, all future tests used only the F1 loss. This delivered faster training than the dual output method.
 
-\subsubsection{Optimizer}
+\subsubsection{Optimizer*}
 
 The previous chapter provided an overview of the loss function, which measures the performance of a prediction during the training process. This chapter discusses how the result can be used to execute the actual optimization step.
 
@@ -251,14 +253,15 @@ The gradient is the derivative for functions of multi-dimensional inputs, such a
 
 Instead the stochastic gradient descent (SGD) is used which will use a random batch of the training data and iteratively adjust the parameters in small steps. SGD is the basis for all common ANNs, but over the years different variants were introduced to the field.
 
-The Adam optimizer is such a variant, which enhances SGD amongst other things by using what's called "adaptive momentum estimation". This is also where the name derives from.
+The Adam optimizer is such a variant, which enhances SGD amongst other things by using what's called "adaptive momentum estimation". This is also where its name derives from. It adaptively adjusts the rate at which parameters are changed depending on previous and current shapes of the slope. This behavior can tremendously speed up training.
 
+Due to the popularity of Adam in most branches of deep learning it was also applied to this project.
 
 \subsubsection{Batch Size*}
 
-Neural Networks use a process called stochastic gradient descent (SGD) or one of its variants to iteratively the gradient on a small fraction of the data. The size of this fraction is called the batch size and describes how many samples are used for a single forward- and back-propagation step.
+The previous chapter mentioned a random batch of data the ANN will iteratively learn from and its size is commonly referred to as the batch size.
 
-In the past it was believed that larger batches led to something called the generalization gap (1609.04836), where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. (1705.08741) suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet (1706.02677).
+In the past it was believed that larger batches led to something called the generalization gap \cite{Keskar2016}, where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. \cite{Hoffer2017} suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet \cite{Goyal2017}.
 
 Using batches smaller than 32 samples can introduce a different kind of problem. Having too few data points that don't represent the mean of the data well, may lead to slow and unstable training.
 
@@ -279,7 +282,5 @@ Neural networks will continuously minimise the loss on the training set. This re
 Early stopping is a simple technique that will end the training process as soon as the model stops improving on the validation data. In order to do this, a patience is defined how long the network should continue training after the score has stopped increasing. This is important because not every epoch will lead to a new best score on the validation data.
 
 For test runs in this study a patience of 9 was selected, which meant the training would stop after 10 epochs without improvement. Depending on the architecture and other hyperparameters this point was reached after 30 to 60 epochs. For the last training with the final set of hyperparameters the patience was increased to 19, which didn't improve the accuracy.  This was also a verification that the initial value of 9 was a good fit for this problem.
-
-
 
 \newpage

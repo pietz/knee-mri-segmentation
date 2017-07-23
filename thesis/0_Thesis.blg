@@ -5,51 +5,54 @@ The style file: plain.bst
 Database file #1: references.bib.bib
 Warning--empty publisher in Chollet2017
 Warning--empty journal in Clevert2015
+Warning--empty journal in Goyal2017
 Warning--empty journal in He2015
+Warning--empty journal in Hoffer2017
+Warning--empty journal in Keskar2016
 Warning--empty journal in Krizhevsky
 Warning--empty year in Krizhevsky
 Warning--empty journal in LeCun1998
 Warning--empty journal in Nair
 Warning--empty year in Nair
-You've used 9 entries,
+You've used 12 entries,
             2118 wiz_defined-function locations,
-            548 strings with 5436 characters,
-and the built_in function-call counts, 2851 in all, are:
-= -- 251
-> -- 186
+            560 strings with 6076 characters,
+and the built_in function-call counts, 3917 in all, are:
+= -- 339
+> -- 280
 < -- 1
-+ -- 73
-- -- 64
-* -- 217
-:= -- 511
-add.period$ -- 25
-call.type$ -- 9
-change.case$ -- 57
++ -- 110
+- -- 98
+* -- 306
+:= -- 711
+add.period$ -- 34
+call.type$ -- 12
+change.case$ -- 83
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 96
-empty$ -- 187
-format.name$ -- 64
-if$ -- 550
+cite$ -- 23
+duplicate$ -- 126
+empty$ -- 238
+format.name$ -- 98
+if$ -- 746
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 11
-newline$ -- 46
-num.names$ -- 18
-pop$ -- 77
+int.to.str$ -- 12
+missing$ -- 14
+newline$ -- 61
+num.names$ -- 24
+pop$ -- 109
 preamble$ -- 1
-purify$ -- 50
+purify$ -- 73
 quote$ -- 0
-skip$ -- 61
+skip$ -- 81
 stack$ -- 0
-substring$ -- 107
+substring$ -- 122
 swap$ -- 5
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 32
-warning$ -- 8
-while$ -- 22
-width$ -- 10
-write$ -- 85
-(There were 8 warnings)
+type$ -- 44
+warning$ -- 11
+while$ -- 28
+width$ -- 14
+write$ -- 112
+(There were 11 warnings)

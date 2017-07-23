@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Chollet2017}
 Francois Chollet.
@@ -16,11 +16,30 @@ Ian Goodfellow, Yoshua Bengio, and Aaron Courville.
 \newblock {\em {Deep Learning}}.
 \newblock The MIT Press, 2016.
 
+\bibitem{Goyal2017}
+Priya Goyal, Piotr Doll{\'{a}}r, Ross Girshick, Pieter Noordhuis, Lukasz
+  Wesolowski, Aapo Kyrola, Andrew Tulloch, Yangqing Jia, and Kaiming He.
+\newblock {Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour}.
+\newblock jun 2017.
+
 \bibitem{He2015}
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock {Delving Deep into Rectifiers: Surpassing Human-Level Performance on
   ImageNet Classification}.
 \newblock feb 2015.
+
+\bibitem{Hoffer2017}
+Elad Hoffer, Itay Hubara, and Daniel Soudry.
+\newblock {Train longer, generalize better: closing the generalization gap in
+  large batch training of neural networks}.
+\newblock may 2017.
+
+\bibitem{Keskar2016}
+Nitish~Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy,
+  and Ping Tak~Peter Tang.
+\newblock {On Large-Batch Training for Deep Learning: Generalization Gap and
+  Sharp Minima}.
+\newblock sep 2016.
 
 \bibitem{Krizhevsky}
 Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.

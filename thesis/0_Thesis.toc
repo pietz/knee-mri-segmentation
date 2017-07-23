@@ -1,5 +1,5 @@
 \contentsline {section}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {2}Background}{2}
+\contentsline {section}{\numberline {2}Background*}{2}
 \contentsline {subsection}{\numberline {2.1}Medical Knowledge}{2}
 \contentsline {subsubsection}{\numberline {2.1.1}Magnetic Resonance Imaging}{2}
 \contentsline {subsubsection}{\numberline {2.1.2}Growth Plates}{2}
@@ -9,27 +9,27 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Artificial Neural Networks*}{4}
 \contentsline {subsubsection}{\numberline {2.2.4}Convolutional Neural Networks*}{5}
 \contentsline {subsubsection}{\numberline {2.2.5}Semantic Segmentation*}{5}
-\contentsline {section}{\numberline {3}Methods}{7}
+\contentsline {section}{\numberline {3}Methods*}{7}
 \contentsline {subsection}{\numberline {3.1}Setup*}{7}
 \contentsline {subsection}{\numberline {3.2}Data Analysis*}{7}
 \contentsline {subsection}{\numberline {3.3}Preprocessing*}{8}
-\contentsline {subsubsection}{\numberline {3.3.1}Cropping, Resizing and Resampling*}{8}
+\contentsline {subsubsection}{\numberline {3.3.1}Cropping, Resizing and Resampling*}{9}
 \contentsline {subsubsection}{\numberline {3.3.2}Normalization*}{9}
 \contentsline {subsubsection}{\numberline {3.3.3}N4 Bias Field Correction*}{10}
 \contentsline {subsubsection}{\numberline {3.3.4}Augmentation*}{10}
 \contentsline {subsubsection}{\numberline {3.3.5}2D and 3D data*}{11}
-\contentsline {subsubsection}{\numberline {3.3.6}Separate Bone Maps*}{11}
-\contentsline {subsubsection}{\numberline {3.3.7}Training, Validation and Testing Sets*}{12}
+\contentsline {subsubsection}{\numberline {3.3.6}Separate Bone Maps*}{12}
+\contentsline {subsubsection}{\numberline {3.3.7}Training, Validation and Testing Sets*}{13}
 \contentsline {subsection}{\numberline {3.4}Architecture*}{13}
-\contentsline {subsubsection}{\numberline {3.4.1}Number of Parameters*}{13}
+\contentsline {subsubsection}{\numberline {3.4.1}Number of Parameters*}{14}
 \contentsline {subsubsection}{\numberline {3.4.2}Channels*}{14}
-\contentsline {subsubsection}{\numberline {3.4.3}Dropout*}{14}
+\contentsline {subsubsection}{\numberline {3.4.3}Dropout*}{15}
 \contentsline {subsubsection}{\numberline {3.4.4}Activation Functions*}{15}
-\contentsline {subsection}{\numberline {3.5}Training*}{15}
+\contentsline {subsection}{\numberline {3.5}Training*}{16}
 \contentsline {subsubsection}{\numberline {3.5.1}Metrics and Loss Functions*}{16}
-\contentsline {subsubsection}{\numberline {3.5.2}Optimizer}{17}
+\contentsline {subsubsection}{\numberline {3.5.2}Optimizer*}{18}
 \contentsline {subsubsection}{\numberline {3.5.3}Batch Size*}{18}
 \contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy*}{19}
 \contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{19}
-\contentsline {section}{\numberline {4}Results}{20}
-\contentsline {section}{\numberline {5}Discussion}{21}
+\contentsline {section}{\numberline {4}Results}{21}
+\contentsline {section}{\numberline {5}Discussion}{22}
