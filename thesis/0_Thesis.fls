@@ -163,6 +163,9 @@ INPUT ./imgs/cs_hier.png
 INPUT ./imgs/cs_hier.png
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
+INPUT imgs/ann.png
+INPUT ./imgs/ann.png
+INPUT ./imgs/ann.png
 INPUT 4_methods.tex
 INPUT 4_methods.tex
 INPUT 5_results.tex

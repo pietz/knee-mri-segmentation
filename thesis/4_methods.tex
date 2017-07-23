@@ -217,13 +217,15 @@ Another option was the F1 score, which is a specific implementation of the F-Mea
 F_\beta score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
 \end{equation}
 
-Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a \"soft\" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the F1 loss was defined as 1 - F1 score.
+Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the F1 loss was defined as 1 - F1 score.
 
 \begin{equation}
 F_\beta loss = 1 - F_\beta score
 \end{equation}
 
-The value of beta can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was actually true, whereas recall describes how much of the ground truth was recognized by the model. This can be useful for datasets with high imbalances between classes, like this study showed between Fibula, Femur and Tibia. However, as it turned out the predictions were very well balanced with the F1 score alone.
+The value of beta can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was true, whereas recall describes how much of the ground truth was recognized by the model. This can be useful for datasets with high imbalances between classes, like this study showed between Fibula, Femur and Tibia. 
+
+Therefor the F2 score was tried for the three channel segmentation, where the Fibula could not be recognized. Although this model showed better scores regarding recall the Fibula was still not segmented.
 
 \begin{equation}
 Precision = \frac{TP}{TP+FP}
@@ -235,23 +237,32 @@ Recall = \frac{TP}{TP+FN}
 
 To test whether the F1 loss or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. The F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy and Intersection-over-Union (IoU) the performance of F1 trained network showed higher scores.
 
-Another test run used both loss function at the same time. This was done by feeding the output of the second to last layer into two separate segmentation outputs. Each of these last layers were trained with the F1 loss and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture combined the best results of the previous runs in a single model, but also increased the training time per epoch by 30\%.
+Another test run used both loss function at the same time. This was done by feeding the output of the second to last layer into two separate segmentation outputs. Each of these last layers were trained with the F1 loss and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture matched the best results of the previous runs in a single model, but also increased the training time per epoch by 30\%.
 
-Evaluating these two outputs on the other metrics played in favor for the F1 loss output. Combining both maps didn't improve the scores any further. Since the cross entropy was chosen as a surrogate function and not as a performance metric, only the F1 loss was kept as a loss function for all future tests.
+Evaluating these two outputs on the other metrics played in favor for the F1 loss output. Combining both maps didn't improve the scores any further. Since the cross entropy was chosen as a surrogate function and not as a performance metric, all future tests used only the F1 loss. This delivered faster training than the dual output method.
+
+\subsubsection{Optimizer}
+
+The previous chapter provided an overview of the loss function, which measures the performance of a prediction during the training process. This chapter discusses how the result can be used to execute the actual optimization step.
+
+The derivative of a single variable function defines the slope of this function at any given point. Knowing this, one can tell in which direction the original function declines. Adjusting the independent variable along the descent of a loss function will minimize the error in respect to its dependent variable.
+
+The gradient is the derivative for functions of multi-dimensional inputs, such as the loss functions used in deep learning \cite{Chollet2017}. A process that minimizes its result is called gradient descent. While it is possible to determine its minimum analytically, it is intractable for artificial neural networks due to the high number of parameters.
+
+Instead the stochastic gradient descent (SGD) is used which will use a random batch of the training data and iteratively adjust the parameters in small steps. SGD is the basis for all common ANNs, but over the years different variants were introduced to the field.
+
+The Adam optimizer is such a variant, which enhances SGD amongst other things by using what's called "adaptive momentum estimation". This is also where the name derives from.
+
 
 \subsubsection{Batch Size*}
 
-Neural Networks use a process called stochastic gradient descent (SGD) or one of its variants to approximate the gradient on a small fraction of the data. The size of this fraction is called the batch size and describes how many samples are used for a single forward- and back-propagation step.
+Neural Networks use a process called stochastic gradient descent (SGD) or one of its variants to iteratively the gradient on a small fraction of the data. The size of this fraction is called the batch size and describes how many samples are used for a single forward- and back-propagation step.
 
 In the past it was believed that larger batches led to something called the generalization gap (1609.04836), where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. (1705.08741) suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet (1706.02677).
 
 Using batches smaller than 32 samples can introduce a different kind of problem. Having too few data points that don't represent the mean of the data well, may lead to slow and unstable training.
 
 Based on hardware limitations the largest possible batch sizes ranged from 24 to 48 samples depending on the current architecture. Whatever could be fit into memory was used for these experiments. Exceptions occurred when working with 3D convolutions in which case the batch size was limited to 4 samples.
-
-\subsubsection{Optimizer}
-
-The optimizer 
 
 \subsubsection{Learning Rate Policy*}
 

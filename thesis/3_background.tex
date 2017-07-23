@@ -18,9 +18,13 @@ text
 
 The main task of this thesis revolves around a very specific branch of computer science problems. In this section I want to provide a path to where most of the work will take place. Figure 1 visualizes the hierarchical relationship of the following subsections.
 
-\begin{center}
-\includegraphics[width=1.0\textwidth]{imgs/cs_hier.png}\par
-\end{center}
+\begin{figure}
+\centering
+\par
+\includegraphics[width=0.8\textwidth]{imgs/cs_hier.png}
+\caption{Hierarchical overview where convolutional neural networks and semantic segmentation are placed in the field of computer science}
+\par
+\end{figure}
 
 \subsubsection{Artificial Intelligence*}
 
@@ -55,6 +59,14 @@ There are different subparts to machine learning like supervised and unsupervise
 Artificial neural networks are inspired by neurobiological concepts of the human brain. However, they are not models of the human brain. There is no evidence to support that the brain implements anything like the learning mechanisms used in ANNs \cite{Chollet2017}. Artificial neural networks are mathematical frameworks for learning representations from data and one of, if not the only tool in deep learning (DL) --- a subset of machine learning.
 
 The origin of the term deep learning is twofold. On one hand it refers to the fact that ANNs are able to learn "deep" hierarchical information from data. On the other it describes that they show multiple layers of depth within their architecture. ANNs are as old as machine learning itself, but only gained a lot of their popularity in recent years \cite{Chollet2017}.
+
+\begin{figure}
+\centering
+\par
+\includegraphics[width=0.8\textwidth]{imgs/ann.png}
+\caption{An ANN with 3 input nodes, 2 hidden layers with 4 nodes each and 2 output nodes}
+\par
+\end{figure}
 
 These dense layers inside artificial neural networks contain entities called nodes that are jointly linked with one another. Every node in a dense layer is connected to each node in the previous and following layer. This structure gives ANNs the capacity to approximate complex mathematical functions and learn global representations in the data. These nodes, also called parameters, can range to hundreds of millions depending on the task.
 

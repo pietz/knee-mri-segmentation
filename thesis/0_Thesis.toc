@@ -4,7 +4,7 @@
 \contentsline {subsubsection}{\numberline {2.1.1}Magnetic Resonance Imaging}{2}
 \contentsline {subsubsection}{\numberline {2.1.2}Growth Plates}{2}
 \contentsline {subsection}{\numberline {2.2}Computer Science}{2}
-\contentsline {subsubsection}{\numberline {2.2.1}Artificial Intelligence*}{3}
+\contentsline {subsubsection}{\numberline {2.2.1}Artificial Intelligence*}{2}
 \contentsline {subsubsection}{\numberline {2.2.2}Machine Learning*}{3}
 \contentsline {subsubsection}{\numberline {2.2.3}Artificial Neural Networks*}{4}
 \contentsline {subsubsection}{\numberline {2.2.4}Convolutional Neural Networks*}{5}
@@ -27,9 +27,9 @@
 \contentsline {subsubsection}{\numberline {3.4.4}Activation Functions*}{15}
 \contentsline {subsection}{\numberline {3.5}Training*}{15}
 \contentsline {subsubsection}{\numberline {3.5.1}Metrics and Loss Functions*}{16}
-\contentsline {subsubsection}{\numberline {3.5.2}Batch Size*}{17}
-\contentsline {subsubsection}{\numberline {3.5.3}Optimizer}{18}
-\contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy*}{18}
-\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{18}
+\contentsline {subsubsection}{\numberline {3.5.2}Optimizer}{17}
+\contentsline {subsubsection}{\numberline {3.5.3}Batch Size*}{18}
+\contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy*}{19}
+\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{19}
 \contentsline {section}{\numberline {4}Results}{20}
 \contentsline {section}{\numberline {5}Discussion}{21}
