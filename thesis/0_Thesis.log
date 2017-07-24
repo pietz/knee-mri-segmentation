@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  24 JUL 2017 17:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  24 JUL 2017 18:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -748,10 +748,10 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [14 <./imgs/unet.png>] [15] [16] [17] [18] [19] [20] [21]) (./5_results.tex
 [22]) (./6_discussion.tex [23]) (./0_Thesis.bbl [24]) [25] (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 5843 strings out of 492995
- 91933 string characters out of 6132704
- 214185 words of memory out of 5000000
- 9174 multiletter control sequences out of 15000+600000
+ 5844 strings out of 492995
+ 91942 string characters out of 6132704
+ 214189 words of memory out of 5000000
+ 9175 multiletter control sequences out of 15000+600000
  71464 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  48i,11n,42p,755b,304s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -771,7 +771,7 @@ ic/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr
 /local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (28 pages, 506419 bytes).
+Output written on 0_Thesis.pdf (28 pages, 507747 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  107 compressed objects within 2 object streams

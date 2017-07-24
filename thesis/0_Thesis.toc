@@ -22,14 +22,15 @@
 \contentsline {subsubsection}{\numberline {3.3.7}Training, Validation and Testing Sets*}{13}
 \contentsline {subsection}{\numberline {3.4}Architecture*}{13}
 \contentsline {subsubsection}{\numberline {3.4.1}Channels, Growth Rate and Depth*}{14}
-\contentsline {subsubsection}{\numberline {3.4.2}Dropout*}{15}
-\contentsline {subsubsection}{\numberline {3.4.3}Activation Functions*}{16}
-\contentsline {subsection}{\numberline {3.5}Training*}{16}
+\contentsline {subsubsection}{\numberline {3.4.2}Skip Connections*}{15}
+\contentsline {subsubsection}{\numberline {3.4.3}Dropout*}{16}
+\contentsline {subsubsection}{\numberline {3.4.4}Activation Functions*}{16}
+\contentsline {subsection}{\numberline {3.5}Training*}{17}
 \contentsline {subsubsection}{\numberline {3.5.1}Metrics and Loss Functions*}{17}
 \contentsline {subsubsection}{\numberline {3.5.2}Optimizer*}{19}
-\contentsline {subsubsection}{\numberline {3.5.3}Batch Size*}{19}
+\contentsline {subsubsection}{\numberline {3.5.3}Batch Size*}{20}
 \contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy*}{20}
-\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{20}
+\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{21}
 \contentsline {section}{\numberline {4}Results}{22}
 \contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{22}
 \contentsline {subsection}{\numberline {4.2}Visual Evaluation}{22}

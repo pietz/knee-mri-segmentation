@@ -22,6 +22,11 @@ Priya Goyal, Piotr Doll{\'{a}}r, Ross Girshick, Pieter Noordhuis, Lukasz
 \newblock {Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour}.
 \newblock jun 2017.
 
+\bibitem{He2015a}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock {Deep Residual Learning for Image Recognition}.
+\newblock dec 2015.
+
 \bibitem{He2015}
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock {Delving Deep into Rectifiers: Surpassing Human-Level Performance on

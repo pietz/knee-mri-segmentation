@@ -186,6 +186,14 @@ D started with 8 channels which were than increased by a factor of 2, whereas B 
 
 This theory was supported by the results from A and C, both of which kept their initial number of channels throughout the network. These two showed the highest scores in comparison to the other models, while keeping their size relatively small. Since their results were identical model A was kept because of its faster training speed. It was interesting to see that the smallest model performed best across the candidates.
 
+The original U-Net featured a depth of 5 convolutional blocks until reaching the bottom of the "U"-shape. It was also investigated that a depth of 6 would not improve performance, while a depth of 4 decreased the accuracy. Model A was therefor left unchanged.
+
+\subsubsection{Skip Connections*}
+
+U-Net uses skip connections to copy values from the left side to the corresponding layer on the right side. This improves performance because otherwise spatial information would get lost while contracting the input. An experiment showed that removing these paths indeed hurt the performance badly.
+
+ResNet \cite{He2015a} is another popular classification architecture that was the first to use residual connections. These are another type of skip connection that bridge the beginning and end of a convolutional block. They are also one of the main reasons CNNs can be expanded to depths of thousands of layers. Since their use in the industry has found great success in many models, they were also applied in this network. However they did not have an impact on the performance or the training speed, which is why they were removed.
+
 \subsubsection{Dropout*}
 
 Dropout is a popular regularization technique that randomly zeros out a fraction of the nodes during training \cite{Srivastava2014}. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16 \cite{Simonyan2014a}, SqueezeNet \cite{Iandola2016a} or AlexNet \cite{Krizhevsky} use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to prevent overfitting.
