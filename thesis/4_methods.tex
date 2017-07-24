@@ -62,15 +62,15 @@ A total of 76 24x224x224 images were now available for training.
 
 The normalization of images refers to the process of transforming all samples on the same scale of values. Two techniques for this are popular in the field of deep learning. The first one is called feature scaling, where every sample is normalized between 0 and 1.
 
-\begin{equation}
-x' = \frac {x - min(x)}{max(x) - min(x)}
-\end{equation}
+\begin{figure}
+\[x' = \frac {x - min(x)}{max(x) - min(x)}\]
+\end{figure}
 
 The second technique calculates the standard score, where the mean is subtracted from the samples and then divided by the standard deviation.
 
-\begin{equation}
-x' = \frac {x - \mu}{\sigma}
-\end{equation}
+\begin{figure}
+\[x' = \frac {x - \mu}{\sigma}\]
+\end{figure}
 
 In this case the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and test sets, it is important to use the mean and standard deviation of the training data, instead of calculating them on their own values.
 
@@ -84,7 +84,9 @@ A bias field is a low frequency nonuniform intensity that is an unwanted byprodu
 
 Image augmentation is a popular approach to virtually increase the size of the dataset. The general idea is that a neural network will overfit more when learning one sample n times, than learning n alternations of this sample just once. It helps to generalize on new images instead of memorizing patterns in the training data.
 
-Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips, if width and height are equal. Note that any multiples of 90 degree rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. The term "lossless" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
+Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips, if width and height are equal. Note that any multiples of 90 degree rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary in respect to their contained values. 
+
+The term "lossless" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
 
 Lossy augmentation methods include a variety of image transformations. Common choices include:
 
@@ -98,7 +100,9 @@ Lossy augmentation methods include a variety of image transformations. Common ch
 \item Gamma adjustments
 \end{itemize}
 
-For the purpose of this study horizontal flips were implemented to give the impression that images from both knees were available. In addition to this these images were shifted slightly on the horizontal axis to add another type of augmentation. Interestingly these methods did not improve the accuracy of the model, which aligned with the fact that overfitting was not an issue during training. The augmented images were therefore removed.
+For the purpose of this study horizontal flips were implemented to give the impression that images from both knees were available. In addition to this these images were shifted 24 pixels on the horizontal axis to add another type of augmentation. 
+
+Interestingly, these methods did not improve the accuracy of the model. The horizontal flips even hurt the performance and were therefor removed. The horizontal shifts were kept in the training set, so the network would perform better on data that was not perfectly aligned.
 
 \subsubsection{2D and 3D data*}
 
@@ -124,66 +128,99 @@ For another experiment the three channels were merged to create a network that w
 
 The data was split into three subsets of which each was used for a different purpose. The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It's the only portion of the data the network will draw direct conclusions from. 
 
-The validation data is used to regularly measure the performance of the model and check whether over-fitting occurs or not. If the accuracy of the validation set drops below the results of the training data, the network is starting to memorize the data it knows rather than generalizing on the concept. 
+The validation data is used to regularly measure the performance of the model and check whether overfitting occurs or not. If the accuracy of the validation set drops below the results of the training data, the network is starting to memorize the data it knows rather than generalizing on the concept. 
 
-The third subset is referred to as the testing data. In contrast to the validation set it's only used once in the very end, to give a final score. The idea is that by building a model based on the validation results a certain information bleed occurs, where the network will implicitly learn from the validation data. To prevent biased end results the testing data is used as a last performance reference.
+The third subset is referred to as the testing data. In contrast to the validation set it's only used once in the very end, to give a final score. The idea is that by building a model based on the validation results a certain amount of information bleed occurs, where the network will implicitly learn from the validation data. To prevent biased end results the testing data is used as a last performance reference.
 
 \subsection{Architecture*}
 
 The architecture of most classification CNNs use a recurrent combination of convolutional and pooling layers. By combining the local learning patterns of convolutions with the spatial reductions of pooling, the input is compressed to a dense representation of its most important features.
 
-As mentioned in 3.2.5 a segmentation can be seen as a classification for every pixel. As such early CNN segmentation models used small patches of the input image to only predict a single pixel output through a classification pipeline. Afterwards a full segmentation map was assembled using each of these pixels. This process was very slow and it also prevented the network to have a field of view larger than the inserted patch.
+As mentioned in 3.2.5 a segmentation can be seen as a classification for every pixel. As such early CNN segmentation models used small patches of the input image to only predict a single pixel through a classification pipeline. Afterwards a full segmentation map was assembled using each of these pixels. This process was very slow and it also prevented the network to have a field of view larger than the inserted patch.
 
-An improvement for segmentations came through architectures referred to as encoder-decoder models. The encoding process describes the same spatial compression used in classification networks. Afterwards in the decoding step the spatial resolution is brought back to its original shape and further processed by additional convolutions. This yields huge speed improvements, while also increasing the accuracy of the prediction. 
+An improvement for segmentations came through architectures referred to as encoder-decoder models. The encoding process describes the same spatial compression used in classification networks. Afterwards in the decoding step the spatial resolution is brought back to its original shape and further processed by additional convolutions. This yields huge speed improvements, while also increasing the accuracy of the prediction. Encoder-decoder networks are the de facto standard in the current field of image segmentation and were the initial starting point for building an architecture.
 
-Encoder-decoder networks are the de facto standard in the current field of image segmentation and were the initial starting point for building an architecture. In the following subchapters several elements of such a model will be discussed.
+\begin{figure}
+\centering
+\par
+\includegraphics[width=1.0\textwidth]{imgs/unet.png}
+\caption{Visualization of the U-Net architecture}
+\par
+\end{figure}
 
-\subsubsection{Number of Parameters*}
+Figure 3 shows a specific implementation of an encoder-decoder model known as U-Net \cite{Ronneberger2015a}. It has been successfully used on a variety of projects in and outside the medical field. The contracting side on the left shows a similar architecture to classification CNNs, after which the process is mirrored on the expanding side.
 
-The number of parameters in a neural network has a strong correlation with its learning capacity. By adding more weights that can be adjusted during training, the model can approximate a more complex function that transforms the input into the output. The downside is that a larger parameter count will also increase the possibility of overfitting the data. Instead of learning the desirable concept, the neural network will memorize the training data and perform less accurate on new data.
+The following subchapters will discuss key elements that go into the design process of such an architecture. It was also analyzed how technologies that were introduced after the U-Net paper could possibly improve the performance on this dataset.
 
-To find the right balance between a model that is complex enough to solve the problem and still generalizes well, one has to try different sizes and see what works best. It was noted that models with more than 500,000 parameters tended overfit and train less stable. Different types of regularization techniques did not solve this. Further architecture tests were constructed below this parameter count.
+\subsubsection{Channels, Growth Rate and Depth*}
 
-\subsubsection{Channels*}
+The number of parameters in a neural network has a strong correlation with its learning capacity. By adding more nodes that can be adjusted during training, the model can approximate a more complex function that transforms the input into the output. The downside is that a larger parameter count will also increase the possibility of overfitting the data. A convention in the field of CNNs is to gradually increase the number of channels, while the spatial resolution is reduced due to the use of MaxPooling. U-Net also shows this behavior on the left side of its architecture.
 
-Every convolutional layer has a specific number of input and output channels. The number of input channels of a layer has to be identical to the number of output channels in the previous one. A convention in the field of CNNs is to gradually increase the number of channels, while the spatial resolution is reduced due to the use of MaxPooling.
-
-When comparing the effects of different channel strategies, it was noted that a higher growth rate of channels did not improve the performance of the model. Keeping the number consistent for the entire architecture led to similar results as increasing them by rates larger than 1 for every convolutional block. This could be explained by the fact that MRI slices don't have the same hierarchical depth as photographs do.
+A test was set up that compared the original U-Net against 5 smaller variants. They varied in the total number of paramaters and how the number of channels changed from one layer to the next.
 
 \begin{table}[h!]
-\centering
-\begin{tabular}{l l l r r l}
-    Model & Conv 1 Out Ch. & Perspective & Samples & Maps & Resolution \\
+    \centering
+    \begin{tabular}{| l || r | r | r | r | r | r | r | r | r || r |}
     \hline
-    A     & Yes         & Coronal     & 80      & 40   & 800x800x41 \\
-    B     & No          & Coronal     & 65      & 36   & 512x512x24 \\
-    C     & No          & Sagittal    & 5       & 0    & multiple \\
-    D     & No          & Sagittal    & 5       & 0    & multiple \\
-\end{tabular}
-\caption{Details of available images sorted by their source}
+            & C1   & C2   & C3   & C4   & C5   & C6   & C7   & C8   & C9  & Param. \\ 
+    \hline
+    Model A &   32 &   32 &   32 &   32 &   32 &   32 &   32 &   32 &  32 & 211k      \\
+    \hline
+    Model B &   16 &   24 &   36 &   54 &   81 &   54 &   36 &   24 &  16 & 340k      \\
+    \hline
+    Model C &   48 &   48 &   48 &   48 &   48 &   48 &   48 &   48 &  48 & 474k      \\
+    \hline
+    Model D &    8 &   16 &   32 &   64 &  128 &   64 &   32 &   16 &   8 & 485k      \\
+    \hline
+    Model E &   32 &   48 &   72 &  108 &  159 &  108 &   72 &   48 &  32 & 1,358k      \\
+    \hline
+    U-Net   &   64 &  128 &  256 &  512 & 1024 &  512 &  256 &  128 &  64 & 31,000k      \\
+    \hline
+    \end{tabular}
+    \caption{Convolution blocks 1 to 9 of the candidates with their respective output channels and total number of parameters}
 \end{table}
 
-A more important impact was noted by the initial number of convolutional outputs. A network with a consistent number of 32 convolutional channels achieved better performance than an architecture with 16 channels initially that would increase by a rate of 1.5. 8 initial channels and a rate of 2 showed even worse results. Increasing the number of channels in the consistent model beyond 32 did not improve performance any further.
+Training U-Net was very slow in two regards. Each training step lasted 6 times longer compared to the smallest model, while it also took 25 times more training steps to reach the same results. Since it was also overfitting to a large amount, it was not trained until the end. The second largest model E also overfitted on the training data and never achieved comparable results to the other 4 models.
+
+D started with 8 channels which were than increased by a factor of 2, whereas B started out larger but only increased the channels by a rate of 1.5. Although it being the smaller model B showed a higher accuracy in the end. It was concluded that the initial number of output channels has a larger effect on the result than the growth rate.
+
+This theory was supported by the results from A and C, both of which kept their initial number of channels throughout the network. These two showed the highest scores in comparison to the other models, while keeping their size relatively small. Since their results were identical model A was kept because of its faster training speed. It was interesting to see that the smallest model performed best across the candidates.
 
 \subsubsection{Dropout*}
 
-Dropout is a popular regularization technique that randomly zeros out a fraction of the weights during training \cite{Srivastava2014}. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16, SqueezeNet or AlexNet use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to prevent overfitting.
+Dropout is a popular regularization technique that randomly zeros out a fraction of the nodes during training \cite{Srivastava2014}. It is understood that this helps the model to generalize better and reduce overfitting on a given dataset. Well known image classification architectures like VGG16 \cite{Simonyan2014a}, SqueezeNet \cite{Iandola2016a} or AlexNet \cite{Krizhevsky} use Dropout near the end of the network. Similarly U-Net uses Dropout at the end of the contracting path to prevent overfitting.
 
-Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first candidate. Other tests included adding multiple dropout units between the convolutions on the contracting side, which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end the initial candidate was chosen for future trainings.
+Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first option. Other tests included adding multiple dropout units between the convolutions on the contracting side, which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end the initial candidate was chosen for future trainings.
 
 \subsubsection{Activation Functions*}
 
 Activation functions sit between layers in a network to introduce a non-linearity. Otherwise the dense and convolutional operations could be regenerated to a simple linear transformation and remove the benefits of building a deep model.
 
-\begin{equation}
-g(z) = max(0,z)
-\end{equation}
+\begin{figure}[H]
+\[
+f(x) =
+\begin{cases} 
+0 & \text{if } x < 0  \\
+x & \text{if } x \geq 0
+\end{cases}
+\]
+\caption{Rectified Linear Unit (ReLU)}
+\end{figure}
 
 The rectified linear unit or ReLU \cite{Nair} is the default recommendation for an activation function in modern neural networks. It's defined as the maximum of 0 and the input value, and can be described as a non-linear function made up of two linear pieces. Because of this it preserves many of the properties that make models easy to optimize and generalize well on new data \cite{Goodfellow2016}.
 
-Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive inputs, but adds an exponential function to negative values instead of setting them to 0. This has showed further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive.
+Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive inputs, but adds an exponential function to negative values instead of erasing its value.  This has showed further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive.
 
---insert equation--
+\begin{figure}[H]
+\[
+f(x) =
+\begin{cases} 
+e^x - 1 & \text{if } x < 0  \\
+x & \text{if } x \geq 0
+\end{cases}
+\]
+\caption{Exponential Linear Unit (ELU)}
+\end{figure}
 
 ELU showed superior results in comparison to ReLU and was chosen for all future tests.
 
@@ -237,7 +274,7 @@ Recall = \frac{TP}{TP+FN}
 
 To test whether the F1 loss or the cross entropy showed better results, both loss functions were used in separate runs to compare their segmentations. The F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy and Intersection-over-Union (IoU) the performance of F1 trained network showed higher scores.
 
-Another test run used both loss function at the same time. This was done by feeding the output of the second to last layer into two separate segmentation outputs. Each of these last layers were trained with the F1 loss and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture matched the best results of the previous runs in a single model, but also increased the training time per epoch by 30\%.
+Another test run used both loss function at the same time. This was done by feeding the output of the second to last layer into two separate segmentation outputs. Each of these last layers were trained with the F1 loss and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture matched the best results of the previous runs in a single model, but also increased the training time by 30\%.
 
 Evaluating these two outputs on the other metrics played in favor for the F1 loss output. Combining both maps didn't improve the scores any further. Since the cross entropy was chosen as a surrogate function and not as a performance metric, all future tests used only the F1 loss. This delivered faster training than the dual output method.
 
@@ -251,15 +288,11 @@ The gradient is the derivative for functions of multi-dimensional inputs, such a
 
 Instead the stochastic gradient descent (SGD) is used which will use a random batch of the training data and iteratively adjust the parameters in small steps. SGD is the basis for all common ANNs, but over the years different variants were introduced to the field.
 
-The Adam optimizer is such a variant, which enhances SGD amongst other things by using what's called "adaptive momentum estimation". This is also where its name derives from. It adaptively adjusts the rate at which parameters are changed depending on previous and current shapes of the slope. This behavior can tremendously speed up training.
-
-Due to the popularity of Adam in most branches of deep learning it was also applied to this project.
+The Adam optimizer is such a variant, which enhances SGD amongst other things by using what's called an "adaptive momentum estimation". This is also where its name derives from. It adaptively adjusts the learning rate which defines how much the parameters will be changed in one training step. By incorporating the previous and current shape of the slope Adam can tremendously speed up the training.
 
 \subsubsection{Batch Size*}
 
-The previous chapter mentioned a random batch of data the ANN will iteratively learn from and its size is commonly referred to as the batch size.
-
-In the past it was believed that larger batches led to something called the generalization gap \cite{Keskar2016}, where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. \cite{Hoffer2017} suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet \cite{Goyal2017}.
+The number of random samples per training step is referred to as the batch size. In the past it was believed that larger batches led to something called the generalization gap \cite{Keskar2016}, where the accuracy of a model would drop if it was trained on particularly large batches. Recent work by Hoffer at al. \cite{Hoffer2017} suggests other reasons for this drop in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet \cite{Goyal2017}.
 
 Using batches smaller than 32 samples can introduce a different kind of problem. Having too few data points that don't represent the mean of the data well, may lead to slow and unstable training.
 
@@ -267,9 +300,16 @@ Based on hardware limitations the largest possible batch sizes ranged from 24 to
 
 \subsubsection{Learning Rate Policy*}
 
-The learning rate policy describes how the learning rate is changed throughout the training. With the introduction of adaptive optimizers like Adam or RMSProp there has been a lower emphasize on this topic. Learning rates that were set too high or too low, will be adjusted by the optimizer after a few iterations. Even though this reduces the number of possible defects, a lot of training time can be saved with the right policy.
+One full iteration over the training samples is referred to as an epoch and the learning rate policy describes how the learning rate is changed from one epoch to another. With the introduction of adaptive optimizers like Adam or RMSProp there has been a lower emphasize on this topic. Learning rates that were set too high or too low, will be adjusted by the optimizer after a few iterations. Even though this reduces the number of possible defects, a lot of training time can be saved with the right policy.
 
 10 epochs were run at different learning rates to compare initial results and to examine the point at which the model wouldn't converge at all. 0.002 was the highest rate at which the model started training, but 0.001 resulted in the best score.
+
+\begin{figure}[H]
+\[
+lr(x) = \frac{1}{1 + decay * x}
+\]
+\caption{Learning rate at epoch x based on the decay value}
+\end{figure}
 
 After the model stopped to improve at epoch 65 the learning rate was changed to 0.0001. This gave a small boost of accuracy. In order to have a smooth transition between learning rates, the decay was set to 0.001. This meant that the initial learning rate of 0.001 would reach 0.0001 after 68 epochs and then continue to decrease even further.
 

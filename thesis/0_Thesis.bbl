@@ -34,6 +34,12 @@ Elad Hoffer, Itay Hubara, and Daniel Soudry.
   large batch training of neural networks}.
 \newblock may 2017.
 
+\bibitem{Iandola2016a}
+Forrest~N. Iandola, Song Han, Matthew~W. Moskewicz, Khalid Ashraf, William~J.
+  Dally, and Kurt Keutzer.
+\newblock {SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and}.
+\newblock feb 2016.
+
 \bibitem{Keskar2016}
 Nitish~Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy,
   and Ping Tak~Peter Tang.
@@ -53,6 +59,16 @@ Yann LeCun, Patrick Haffner, L{\'{e}}on Bottou, and Yoshua Bengio.
 \bibitem{Nair}
 Vinod Nair and Geoffrey~E Hinton.
 \newblock {Rectified Linear Units Improve Restricted Boltzmann Machines}.
+
+\bibitem{Ronneberger2015a}
+Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
+\newblock {U-Net: Convolutional Networks for Biomedical Image Segmentation}.
+\newblock {\em Miccai}, pages 234--241, may 2015.
+
+\bibitem{Simonyan2014a}
+Karen Simonyan and Andrew Zisserman.
+\newblock {Very Deep Convolutional Networks for Large-Scale Image Recognition}.
+\newblock sep 2014.
 
 \bibitem{Srivastava2014}
 Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
