@@ -204,31 +204,25 @@ Since a single unit of dropout with a rate of 0.5 is common in other architectur
 
 Activation functions sit between layers in a network to introduce a non-linearity. Otherwise the dense and convolutional operations could be regenerated to a simple linear transformation and remove the benefits of building a deep model.
 
-\begin{figure}[H]
 \[
-f(x) =
+relu(x) =
 \begin{cases} 
 0 & \text{if } x < 0  \\
 x & \text{if } x \geq 0
 \end{cases}
 \]
-\caption{Rectified Linear Unit (ReLU)}
-\end{figure}
 
 The rectified linear unit or ReLU \cite{Nair} is the default recommendation for an activation function in modern neural networks. It's defined as the maximum of 0 and the input value, and can be described as a non-linear function made up of two linear pieces. Because of this it preserves many of the properties that make models easy to optimize and generalize well on new data \cite{Goodfellow2016}.
 
 Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive inputs, but adds an exponential function to negative values instead of erasing its value.  This has showed further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive.
 
-\begin{figure}[H]
 \[
-f(x) =
+elu(x) =
 \begin{cases} 
 e^x - 1 & \text{if } x < 0  \\
 x & \text{if } x \geq 0
 \end{cases}
 \]
-\caption{Exponential Linear Unit (ELU)}
-\end{figure}
 
 ELU showed superior results in comparison to ReLU and was chosen for all future tests.
 
