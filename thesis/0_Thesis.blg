@@ -3,58 +3,66 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: 0_Thesis.aux
 The style file: plain.bst
 Database file #1: references.bib.bib
+Repeated entry---line 180 of file references.bib.bib
+ : @article{He2015
+ :                ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "He2015a"
-Warning--I didn't find a database entry for "Nair"
-Warning--I didn't find a database entry for "Clevert2015"
-Warning--I didn't find a database entry for "Hoffer2017"
-Warning--I didn't find a database entry for "Goyal2017"
+Warning--empty school in Alexander2015
+Warning--there's a number but no series in Aumuller2010
+Warning--empty publisher in Aumuller2010
 Warning--empty publisher in Chollet2017
+Warning--empty journal in Clevert2015
+Warning--empty journal in Goyal2017
 Warning--empty journal in He2015
+Warning--empty journal in Hoffer2017
 Warning--empty journal in Iandola2016a
 Warning--empty journal in Keskar2016
 Warning--empty journal in Krizhevsky
 Warning--empty year in Krizhevsky
 Warning--empty journal in LeCun1998
+Warning--empty journal in Nair
+Warning--empty year in Nair
 Warning--empty journal in Simonyan2014a
-You've used 12 entries,
+You've used 19 entries,
             2118 wiz_defined-function locations,
-            574 strings with 6000 characters,
-and the built_in function-call counts, 3966 in all, are:
-= -- 357
-> -- 254
-< -- 2
-+ -- 100
-- -- 88
-* -- 295
-:= -- 701
-add.period$ -- 35
-call.type$ -- 12
-change.case$ -- 78
+            596 strings with 7099 characters,
+and the built_in function-call counts, 6027 in all, are:
+= -- 534
+> -- 403
+< -- 3
++ -- 159
+- -- 140
+* -- 447
+:= -- 1076
+add.period$ -- 55
+call.type$ -- 19
+change.case$ -- 123
 chr.to.int$ -- 0
-cite$ -- 20
-duplicate$ -- 138
-empty$ -- 258
-format.name$ -- 88
-if$ -- 779
+cite$ -- 35
+duplicate$ -- 206
+empty$ -- 384
+format.name$ -- 140
+if$ -- 1173
 int.to.chr$ -- 0
-int.to.str$ -- 12
-missing$ -- 15
-newline$ -- 62
-num.names$ -- 24
-pop$ -- 101
+int.to.str$ -- 19
+missing$ -- 21
+newline$ -- 95
+num.names$ -- 38
+pop$ -- 166
 preamble$ -- 1
-purify$ -- 68
+purify$ -- 108
 quote$ -- 0
-skip$ -- 93
+skip$ -- 140
 stack$ -- 0
-substring$ -- 154
-swap$ -- 16
-text.length$ -- 2
+substring$ -- 189
+swap$ -- 20
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 42
-warning$ -- 8
-while$ -- 31
-width$ -- 14
-write$ -- 118
-(There were 13 warnings)
+type$ -- 68
+warning$ -- 16
+while$ -- 45
+width$ -- 21
+write$ -- 180
+(There was 1 error message)

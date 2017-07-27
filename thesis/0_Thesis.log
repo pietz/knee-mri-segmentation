@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  26 JUL 2017 18:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  27 JUL 2017 10:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -664,22 +664,22 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 <imgs/cs_hier.png, id=25, 1419.3025pt x 916.42375pt>
 File: imgs/cs_hier.png Graphic file (type png)
  <use imgs/cs_hier.png>
-Package pdftex.def Info: imgs/cs_hier.png used on input line 28.
+Package pdftex.def Info: imgs/cs_hier.png used on input line 32.
 (pdftex.def)             Requested size: 288.0011pt x 185.95235pt.
 
 [3 <./imgs/cs_hier.png>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 48.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 52.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 48.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 52.
  [4]
 <imgs/ann.png, id=36, 1606.0pt x 832.10875pt>
 File: imgs/ann.png Graphic file (type png)
  <use imgs/ann.png>
-Package pdftex.def Info: imgs/ann.png used on input line 70.
+Package pdftex.def Info: imgs/ann.png used on input line 74.
 (pdftex.def)             Requested size: 288.0011pt x 149.21445pt.
  [5 <./imgs/ann.png>] [6]) (./4_methods.tex
 
@@ -703,32 +703,18 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: Citation `He2015a' on page 15 undefined on input line 195.
 
-[15]
-
-LaTeX Warning: Citation `Nair' on page 16 undefined on input line 215.
-
-
-LaTeX Warning: Citation `Clevert2015' on page 16 undefined on input line 217.
-
-[16] [17] [18]
-
-LaTeX Warning: Citation `Hoffer2017' on page 19 undefined on input line 297.
-
-
-LaTeX Warning: Citation `Goyal2017' on page 19 undefined on input line 297.
-
-[19] [20] [21]) (./5_results.tex [22]) (./6_discussion.tex [23])
-(./0_Thesis.bbl) [24] (./0_Thesis.aux)
+[15] [16] [17] [18] [19] [20] [21]) (./5_results.tex [22]) (./6_discussion.tex
+[23]) (./0_Thesis.bbl [24]) [25] (./0_Thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4589 strings out of 492995
- 70637 string characters out of 6132704
- 169309 words of memory out of 5000000
- 7953 multiletter control sequences out of 15000+600000
- 71464 words of font info for 78 fonts, out of 8000000 for 9000
+ 4596 strings out of 492995
+ 70724 string characters out of 6132704
+ 169337 words of memory out of 5000000
+ 7956 multiletter control sequences out of 15000+600000
+ 71724 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,9n,38p,755b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
@@ -746,10 +732,10 @@ public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lm
 ri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (27 pages, 508177 bytes).
+Output written on 0_Thesis.pdf (28 pages, 513510 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 105 compressed objects within 2 object streams
+ 158 PDF objects out of 1000 (max. 8388607)
+ 107 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  20501 words of extra memory for PDF output out of 20736 (max. 10000000)
 
