@@ -18,7 +18,18 @@ The positively charged hydrogen particles in water produce a signal when exposed
 
 Most bones in the human body grow through a chondral process, where cartilages near the end of a long bone are ossified over time. These continuously renewing cartilages are referred to as growth plates, and they are responsible for extending the longitudinal length of the shaft. The growth of a bone comes to an end when cells in the cartilages stop their proliferation, and the growth plate starts to close. This is correlated with increasing amounts of sex hormones during puberty \cite{Aumuller2010}. On average women will stop growing between age 14 to 17, while for men this happens between age 18 to 22 \cite{Attarian2013}.
 
--- insert open, centrally-closed and closed image samples --
+\begin{figure}[!htb]
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/open-14y.jpg}
+\endminipage\hfill
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/centrally-closed-16y.jpg}
+\endminipage\hfill
+\minipage{0.32\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/closed-18y.jpg}
+\endminipage
+\caption{The Tibia (lower bone) in 3 different states: open at age 14 (left), centrally-closed at age 16 (middle) and closed at age 18 (right). These examples show 3 different candidates.}
+\end{figure}
 
 The closing process initializes at the center of the growth plate and extends to the edges.  Literature often classifies the current state of the growth plate in open, centrally-closed and closed \cite{Mauer2015}.
 
@@ -36,7 +47,7 @@ The primary task of this thesis revolves around a particular branch of computer 
 
 \subsubsection{Artificial Intelligence}
 
-Artificial Intelligence (AI) is understood as the effort of automating a given task that typically needs human intelligence to solve. The history of AI goes back to the 1950s, where a particular type called "symbolic AI" started to gain popularity. It was believed that human level intelligence could be achieved through hard-coded rules that programmers specified \cite{Chollet2017}. 
+Artificial Intelligence (AI) is understood as the effort of automating a given task that typically needs human intelligence to solve. The history of AI started in the 1950s, where a particular type called "symbolic AI" gained popularity. It was believed that human level intelligence could be achieved through hard-coded rules that programmers specified \cite{Chollet2017}. 
 
 Taking a complex problem like playing chess and continuing to break it into smaller problems, until they can be solved with known logic. While it was effective for certain tasks, fuzzy problems like image classification, speech recognition or language translation were difficult to tackle. Over the years a new approach was found, which today is referred to as machine learning (ML).
 
@@ -44,7 +55,13 @@ Taking a complex problem like playing chess and continuing to break it into smal
 
 The concept of classical programming is that an engineer defines a set of rules, called an algorithm, which uses input data to calculate some form of output data \cite{Chollet2017}.
 
---insert picture--
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=0.8\textwidth]{imgs/classic_prog.png}
+\caption{Classical programming pipeline}
+\par
+\end{figure}
 
 A machine learning algorithm is an algorithm that can learn from data \cite{Goodfellow2016}. It can be used to calculate these rules automatically, so they don't have to be specified by hand. Three components are needed for such an approach.
 
@@ -56,7 +73,13 @@ A machine learning algorithm is an algorithm that can learn from data \cite{Good
 
 It works by feeding input and output data into a pipeline, which will learn to transform one into the other. With the advantage that no explicit programming is needed to generate the rules, comes the disadvantage that prior input and output data is required for the initial learning process.
 
---insert picture--
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=0.8\textwidth]{imgs/ml_pipeline.png}
+\caption{Machine learning pipeline that calculates a set of rules}
+\par
+\end{figure}
 
 Machine learning may be applied as an effective method if it's not feasible or possible to define an algorithm by hand and sufficient data is available for training. How much “sufficient” is depends on factors like the type of task, the complexity of the data, the uniformity of the data, the type of machine learning algorithm and others.
 
@@ -80,7 +103,7 @@ These dense layers inside artificial neural networks contain entities called nod
 
 \subsubsection{Convolutional Neural Networks}
 
-Convolutional neural networks (CNNs) are a particular type of ANN that uses an operation called convolution in at least one of their layers. The first CNN was introduced by Yann LeCunn \cite{LeCun1990} in 1990 at which time its popularity was limited. In 2012 a CNN called AlexNet \cite{Krizhevsky} won the prestigious ImagetNet competition, and these types of networks have been winning ever since.
+Convolutional neural networks (CNNs) are a specific type of ANN that uses an operation called convolution in at least one of their layers. The first CNN was introduced by Yann LeCunn \cite{LeCun1990} in 1990 at which time its popularity was limited. In 2012 a CNN called AlexNet \cite{Krizhevsky} won the prestigious ImagetNet competition, and these types of networks have been winning ever since.
 
 A convolution is a mathematical operation on two functions of real-valued argument. In imaging terminology, the first function refers to the input and the second function describes the kernel. The output of this operation is called a feature map \cite{Goodfellow2016}.
 
