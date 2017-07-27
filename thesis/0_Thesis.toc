@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {2}Background*}{2}
 \contentsline {subsection}{\numberline {2.1}Medical Knowledge*}{2}
 \contentsline {subsubsection}{\numberline {2.1.1}Magnetic Resonance Imaging*}{2}
-\contentsline {subsubsection}{\numberline {2.1.2}Growth Plates}{2}
+\contentsline {subsubsection}{\numberline {2.1.2}Growth Plates*}{2}
 \contentsline {subsection}{\numberline {2.2}Computer Science*}{3}
 \contentsline {subsubsection}{\numberline {2.2.1}Artificial Intelligence*}{3}
 \contentsline {subsubsection}{\numberline {2.2.2}Machine Learning*}{4}

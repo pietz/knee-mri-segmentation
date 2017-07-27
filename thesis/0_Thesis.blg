@@ -3,7 +3,7 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: 0_Thesis.aux
 The style file: plain.bst
 Database file #1: references.bib.bib
-Repeated entry---line 180 of file references.bib.bib
+Repeated entry---line 238 of file references.bib.bib
  : @article{He2015
  :                ,
 I'm skipping whatever remains of this entry
@@ -20,30 +20,29 @@ Warning--empty journal in Iandola2016a
 Warning--empty journal in Keskar2016
 Warning--empty journal in Krizhevsky
 Warning--empty year in Krizhevsky
-Warning--empty journal in LeCun1998
 Warning--empty journal in Nair
 Warning--empty year in Nair
 Warning--empty journal in Simonyan2014a
 You've used 19 entries,
             2118 wiz_defined-function locations,
-            596 strings with 7099 characters,
-and the built_in function-call counts, 6027 in all, are:
-= -- 534
-> -- 403
-< -- 3
-+ -- 159
-- -- 140
-* -- 447
-:= -- 1076
+            599 strings with 7205 characters,
+and the built_in function-call counts, 6274 in all, are:
+= -- 563
+> -- 413
+< -- 4
++ -- 163
+- -- 144
+* -- 466
+:= -- 1105
 add.period$ -- 55
 call.type$ -- 19
-change.case$ -- 123
+change.case$ -- 125
 chr.to.int$ -- 0
-cite$ -- 35
-duplicate$ -- 206
-empty$ -- 384
-format.name$ -- 140
-if$ -- 1173
+cite$ -- 34
+duplicate$ -- 216
+empty$ -- 399
+format.name$ -- 144
+if$ -- 1233
 int.to.chr$ -- 0
 int.to.str$ -- 19
 missing$ -- 21
@@ -51,18 +50,18 @@ newline$ -- 95
 num.names$ -- 38
 pop$ -- 166
 preamble$ -- 1
-purify$ -- 108
+purify$ -- 110
 quote$ -- 0
-skip$ -- 140
+skip$ -- 152
 stack$ -- 0
-substring$ -- 189
-swap$ -- 20
-text.length$ -- 3
+substring$ -- 221
+swap$ -- 30
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 68
-warning$ -- 16
-while$ -- 45
+warning$ -- 15
+while$ -- 48
 width$ -- 21
-write$ -- 180
+write$ -- 182
 (There was 1 error message)

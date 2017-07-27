@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  27 JUL 2017 10:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  27 JUL 2017 11:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -681,7 +681,11 @@ File: imgs/ann.png Graphic file (type png)
  <use imgs/ann.png>
 Package pdftex.def Info: imgs/ann.png used on input line 74.
 (pdftex.def)             Requested size: 288.0011pt x 149.21445pt.
- [5 <./imgs/ann.png>] [6]) (./4_methods.tex
+
+
+LaTeX Warning: Citation `LeCun1990' on page 5 undefined on input line 83.
+
+[5 <./imgs/ann.png>] [6]) (./4_methods.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -708,12 +712,15 @@ LaTeX Warning: Citation `He2015a' on page 15 undefined on input line 195.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 4596 strings out of 492995
- 70724 string characters out of 6132704
+ 4597 strings out of 492995
+ 70735 string characters out of 6132704
  169337 words of memory out of 5000000
- 7956 multiletter control sequences out of 15000+600000
+ 7957 multiletter control sequences out of 15000+600000
  71724 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,9n,38p,755b,229s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -732,7 +739,7 @@ public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lm
 ri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (28 pages, 513510 bytes).
+Output written on 0_Thesis.pdf (28 pages, 514203 bytes).
 PDF statistics:
  158 PDF objects out of 1000 (max. 8388607)
  107 compressed objects within 2 object streams

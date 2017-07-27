@@ -67,10 +67,12 @@ Nitish~Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy,
 Alex Krizhevsky, Ilya Sutskever, and Geoffrey~E Hinton.
 \newblock {ImageNet Classification with Deep Convolutional Neural Networks}.
 
-\bibitem{LeCun1998}
-Yann LeCun, Patrick Haffner, L{\'{e}}on Bottou, and Yoshua Bengio.
-\newblock {Object Recognition with Gradient-Based Learning}.
-\newblock 1998.
+\bibitem{LeCun1990}
+Y.~{Le Cun}, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, and
+  W.~Hubbard.
+\newblock {Handwritten Digit Recognition with a Back-Propagation Network}.
+\newblock {\em Advances in Neural Information Processing Systems}, pages
+  396--404, 1990.
 
 \bibitem{Nair}
 Vinod Nair and Geoffrey~E Hinton.
