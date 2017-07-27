@@ -28,7 +28,7 @@ The dataset was a collection of three dimensional MR images showing the right hu
 
 Data provided from Maas et al. featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 65 images from Jopp et al. were another source of retrospective data, of which 36 had segmentation maps. The origin of this data was a previous study that investigated the condition of the epiphyseal plates of Tibia and Femur. A total of 80 MR images were specifically taken for this project. They showed the highest resolution in all dimensions and half of them had segmentation maps.
 
-\begin{figure}[!htb]
+\begin{figure}[H]
 \minipage{0.32\textwidth}
   \includegraphics[width=\linewidth]{imgs/3.jpg}
 \endminipage\hfill
@@ -48,12 +48,20 @@ Data provided from Maas et al. featured a sagittal perspective, while all other 
 \minipage{0.32\textwidth}%
   \includegraphics[width=\linewidth]{imgs/38.jpg}
 \endminipage
-\caption{6 different slices of a single 3D MRI sample}
+\caption{Six equally distributed slices of a single 3D MRI sample. Femur and Tibia are visible starting at the second image, whereas the Fibula becomes visible in the lower left corner of the 4th image.}
 \end{figure}
 
 The total of 76 maps were all manually created by two different people. Each mask featured 3 channels that showed Femur, Tibia and Fibula separately. They did not segment the entirety of each 3D image, but masked a window around the knee cap where the three bones meet.
 
-The candidates chosen for the MRI recording were all german males between the age of 14 and 21. This age was specifically chosen, because it marks the range in which the epiphyseal plates in the knee grow together. Their age appearance was normally distributed with a mean of 17.5 years.
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=1.0\textwidth]{imgs/age_distr.png}
+\caption{Age distribution in the data set. Purple shows the samples for which segmentation maps were available. Blue includes the rest.}
+\par
+\end{figure}
+
+The candidates chosen for the MRI recordings were all german males between the age of 14 and 20. Their age was normal distributed and a majority of the candidates were recorded twice roughly a year apart.
 
 \subsection{Preprocessing*}
 

@@ -185,6 +185,9 @@ INPUT ./imgs/31.jpg
 INPUT imgs/38.jpg
 INPUT ./imgs/38.jpg
 INPUT ./imgs/38.jpg
+INPUT imgs/age_distr.png
+INPUT ./imgs/age_distr.png
+INPUT ./imgs/age_distr.png
 INPUT imgs/unet.png
 INPUT ./imgs/unet.png
 INPUT ./imgs/unet.png
