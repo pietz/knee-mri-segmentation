@@ -4,7 +4,7 @@
 David~E. Attarian.
 \newblock {Your Bones: What are growth plates?}, 2013.
 
-\bibitem{Alexander2015}
+\bibitem{Mauer2015}
 Markus {Auf der Mauer}.
 \newblock {\em {Automated Quantification of the Growth Plate of the Proximal
   Tibia for the Age Assessment in 3D MR Images Using a Fuzzy-Logic
@@ -39,10 +39,16 @@ Priya Goyal, Piotr Doll{\'{a}}r, Ross Girshick, Pieter Noordhuis, Lukasz
 \newblock {Accurate, Large Minibatch SGD: Training ImageNet in 1 Hour}.
 \newblock jun 2017.
 
-\bibitem{He2015}
+\bibitem{He2015b}
 Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
 \newblock {Deep Residual Learning for Image Recognition}.
 \newblock dec 2015.
+
+\bibitem{He2015a}
+Kaiming He, Xiangyu Zhang, Shaoqing Ren, and Jian Sun.
+\newblock {Delving Deep into Rectifiers: Surpassing Human-Level Performance on
+  ImageNet Classification}.
+\newblock feb 2015.
 
 \bibitem{Hoffer2017}
 Elad Hoffer, Itay Hubara, and Daniel Soudry.

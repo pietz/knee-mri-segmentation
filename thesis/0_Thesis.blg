@@ -3,18 +3,14 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: 0_Thesis.aux
 The style file: plain.bst
 Database file #1: references.bib.bib
-Repeated entry---line 238 of file references.bib.bib
- : @article{He2015
- :                ,
-I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "He2015a"
-Warning--empty school in Alexander2015
+Warning--empty school in Mauer2015
 Warning--there's a number but no series in Aumuller2010
 Warning--empty publisher in Aumuller2010
 Warning--empty publisher in Chollet2017
 Warning--empty journal in Clevert2015
 Warning--empty journal in Goyal2017
-Warning--empty journal in He2015
+Warning--empty journal in He2015b
+Warning--empty journal in He2015a
 Warning--empty journal in Hoffer2017
 Warning--empty journal in Iandola2016a
 Warning--empty journal in Keskar2016
@@ -23,45 +19,45 @@ Warning--empty year in Krizhevsky
 Warning--empty journal in Nair
 Warning--empty year in Nair
 Warning--empty journal in Simonyan2014a
-You've used 19 entries,
+You've used 20 entries,
             2118 wiz_defined-function locations,
-            599 strings with 7205 characters,
-and the built_in function-call counts, 6274 in all, are:
-= -- 563
-> -- 413
+            600 strings with 7292 characters,
+and the built_in function-call counts, 6577 in all, are:
+= -- 589
+> -- 436
 < -- 4
-+ -- 163
-- -- 144
-* -- 466
-:= -- 1105
-add.period$ -- 55
-call.type$ -- 19
-change.case$ -- 125
++ -- 172
+- -- 152
+* -- 489
+:= -- 1161
+add.period$ -- 58
+call.type$ -- 20
+change.case$ -- 132
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 216
-empty$ -- 399
-format.name$ -- 144
-if$ -- 1233
+cite$ -- 36
+duplicate$ -- 226
+empty$ -- 416
+format.name$ -- 152
+if$ -- 1290
 int.to.chr$ -- 0
-int.to.str$ -- 19
-missing$ -- 21
-newline$ -- 95
-num.names$ -- 38
-pop$ -- 166
+int.to.str$ -- 20
+missing$ -- 22
+newline$ -- 100
+num.names$ -- 40
+pop$ -- 175
 preamble$ -- 1
-purify$ -- 110
+purify$ -- 116
 quote$ -- 0
-skip$ -- 152
+skip$ -- 159
 stack$ -- 0
-substring$ -- 221
+substring$ -- 226
 swap$ -- 30
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
-warning$ -- 15
-while$ -- 48
-width$ -- 21
-write$ -- 182
-(There was 1 error message)
+type$ -- 72
+warning$ -- 16
+while$ -- 50
+width$ -- 22
+write$ -- 191
+(There were 16 warnings)

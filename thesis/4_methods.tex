@@ -192,7 +192,7 @@ The original U-Net featured a depth of 5 convolutional blocks until reaching the
 
 U-Net uses skip connections to copy values from the left side to the corresponding layer on the right side. This improves performance because otherwise spatial information would get lost while contracting the input. An experiment showed that removing these paths indeed hurt the performance badly.
 
-ResNet \cite{He2015a} is another popular classification architecture that was the first to use residual connections. These are another type of skip connection that bridge the beginning and end of a convolutional block. They are also one of the main reasons CNNs can be expanded to depths of thousands of layers. Since their use in the industry has found great success in many models, they were also applied in this network. However they did not have an impact on the performance or the training speed, which is why they were removed.
+ResNet \cite{He2015b} is another popular classification architecture that was the first to use residual connections. These are another type of skip connection that bridge the beginning and end of a convolutional block. They are also one of the main reasons CNNs can be expanded to depths of thousands of layers. Since their use in the industry has found great success in many models, they were also applied in this network. However they did not have an impact on the performance or the training speed, which is why they were removed.
 
 \subsubsection{Dropout*}
 
@@ -214,7 +214,7 @@ x & \text{if } x \geq 0
 
 The rectified linear unit or ReLU \cite{Nair} is the default recommendation for an activation function in modern neural networks. It's defined as the maximum of 0 and the input value, and can be described as a non-linear function made up of two linear pieces. Because of this it preserves many of the properties that make models easy to optimize and generalize well on new data \cite{Goodfellow2016}.
 
-Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive inputs, but adds an exponential function to negative values instead of erasing its value.  This has showed further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive.
+Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015a}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive inputs, but adds an exponential function to negative values instead of erasing its value.  This has showed further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive.
 
 \[
 elu(x) =
