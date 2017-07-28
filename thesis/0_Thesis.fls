@@ -202,6 +202,12 @@ INPUT ./imgs/unet.png
 INPUT ./imgs/unet.png
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
+INPUT imgs/elu_relu1.png
+INPUT ./imgs/elu_relu1.png
+INPUT ./imgs/elu_relu1.png
+INPUT imgs/model.png
+INPUT ./imgs/model.png
+INPUT ./imgs/model.png
 INPUT 5_results.tex
 INPUT 5_results.tex
 INPUT 6_discussion.tex

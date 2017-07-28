@@ -25,14 +25,14 @@
 \contentsline {subsubsection}{\numberline {3.4.2}Skip Connections*}{18}
 \contentsline {subsubsection}{\numberline {3.4.3}Dropout*}{18}
 \contentsline {subsubsection}{\numberline {3.4.4}Activation Functions*}{19}
-\contentsline {subsection}{\numberline {3.5}Training*}{19}
+\contentsline {subsection}{\numberline {3.5}Training*}{20}
 \contentsline {subsubsection}{\numberline {3.5.1}Metrics and Loss Functions*}{20}
 \contentsline {subsubsection}{\numberline {3.5.2}Optimizer*}{22}
-\contentsline {subsubsection}{\numberline {3.5.3}Batch Size*}{22}
+\contentsline {subsubsection}{\numberline {3.5.3}Batch Size*}{23}
 \contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy*}{23}
-\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{23}
+\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{24}
 \contentsline {subsection}{\numberline {3.6}Summary}{24}
-\contentsline {section}{\numberline {4}Results}{25}
-\contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{25}
-\contentsline {subsection}{\numberline {4.2}Visual Evaluation}{25}
-\contentsline {section}{\numberline {5}Discussion}{26}
+\contentsline {section}{\numberline {4}Results}{27}
+\contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{27}
+\contentsline {subsection}{\numberline {4.2}Visual Evaluation}{27}
+\contentsline {section}{\numberline {5}Discussion}{28}

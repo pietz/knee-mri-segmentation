@@ -216,7 +216,8 @@ A test was set up that compared the original U-Net against 5 smaller variants. T
     \centering
     \begin{tabular}{| l || r | r | r | r | r | r | r | r | r || r |}
     \hline
-            & C1   & C2   & C3   & C4   & C5   & C6   & C7   & C8   & C9  & Param. \\ 
+    Name    & C1   & C2   & C3   & C4   & C5   & C6   & C7   & C8   & C9  & Param. \\ 
+    \hline
     \hline
     Model A &   32 &   32 &   32 &   32 &   32 &   32 &   32 &   32 &  32 & 211k      \\
     \hline
@@ -268,8 +269,6 @@ x & \text{if } x \geq 0
 
 The rectified linear unit or ReLU \cite{Nair} is the default recommendation for an activation function in modern neural networks. It's defined as the maximum of 0 and the input value, and can be described as a non-linear function made up of two linear pieces. Because of this it preserves many of the properties that make models easy to optimize and generalize well on new data \cite{Goodfellow2016}.
 
-Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015a}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive inputs, but adds an exponential function to negative values instead of erasing its value.  This has showed further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive.
-
 \[
 elu(x) =
 \begin{cases} 
@@ -277,6 +276,16 @@ e^x - 1 & \text{if } x < 0  \\
 x & \text{if } x \geq 0
 \end{cases}
 \]
+
+Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015a}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive inputs, but adds an exponential function to negative values instead of erasing its value.  This has showed further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive.
+
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=0.5\textwidth]{imgs/elu_relu1.png}
+\caption{Visualization of ReLU in orange and ELU in blue}
+\par
+\end{figure}
 
 ELU showed superior results in comparison to ReLU and was chosen for all future tests.
 
@@ -383,6 +392,20 @@ For test runs in this study a patience of 9 was selected, which meant the traini
 
 \subsection{Summary}
 
+In summary, the architecture features 4 "Down Blocks" on the contracting side that are mirrored through 4 "Up Blocks" on the expanding side. Each level is connected to the other side to share information at the current spatial resolution.
 
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=0.8\textwidth]{imgs/model.png}
+\caption{The proposed architecture for the segmentation}
+\par
+\end{figure}
+
+A Down Block consists of 2 convolutional layers each followed by an ELU activation function, after which A MaxPooling layer halves the width and height of the image. The Up Block looks similar, but features a transposed convolutional layer in the beginning to upsample the resolution and no MaxPooling in the end. The Middle Block features a Dropout layer with a discussed value of 0.5, which is surrounded by convolutional layers as well. All convolutional layers had 32 channels. The output layer also featured a convolution that reduced the channels to 1, which represents the segmentation map.
+
+Other options that were tried but didn't improve performance included using convolutional blocks with a stride of 2 instead of MaxPooling to downsample the images. 
+
+Batch normalization was also applied, but resulted in a great amount of overfitting the network never recovered from. The fact that it did not improve the performance came as a surprise because it usually improves any model. A possible reason for this could be the small batch size in combination with a high variance of intensities in the data. If the mean of each batch varies significantly from mean of the entire training data, it may hurt the performance of batch normalization.
 
 \newpage
