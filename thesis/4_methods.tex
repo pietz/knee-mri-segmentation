@@ -166,6 +166,35 @@ While in theory the spatial information of the z-axis gave the 3D network more c
 
 The initial segmentation maps came with three separate channels for the Femur, Tibia and Fibula. With this information it was possible to train a network that would segment the three bones while still differentiating between them.
 
+\begin{figure}[H]
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/x1.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/x2.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/x3.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/x4.png}
+\endminipage
+\vspace{0.15cm}
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/y1.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/y2.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/y3.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/y4.png}
+\endminipage
+\caption{Four sample slices with their ground truth segmentations showing the three separate bones}
+\end{figure}
+
 However, this led to problems with the Fibula, which was not recognized by any of the applied architectures. The channel was always predicted empty. It's appearance in the images accounted for 3.4\% of the segmented area, whereas the Tibia made up 41\% and the Femur accounted for the remaining 55.6\%. This led the network to learn that an empty prediction of this channel is effective in 96.6\% of the cases, which is very accurate on its own. Instead of spending capacity on improving a channel that only makes up a tiny fraction of the end result, the network improved the performance of Femur and Tibia.
 
 The only successful method was training a separate model for each of the three bones. The network started to predict empty segmentation maps in the beginning because the actual masks only made up a fraction of the frame. The only way to improve from here was to find the Fibula in the non-empty slices and segment its region. This was different from the tests before, where the unsatisfactory performance of the Fibula was balanced by making more accurate segmentations from the other two bones.
@@ -397,7 +426,7 @@ In summary, the architecture features 4 "Down Blocks" on the contracting side th
 \begin{figure}[H]
 \centering
 \par
-\includegraphics[width=0.8\textwidth]{imgs/model.png}
+\includegraphics[width=0.7\textwidth]{imgs/model.png}
 \caption{The proposed architecture for the segmentation}
 \par
 \end{figure}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 JUL 2017 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 JUL 2017 15:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -659,28 +659,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `0_Thesis.toc'.
 
- [2]
+ [2] [3]
 (./2_introduction.tex [1]) (./3_background.tex
-<imgs/open-14y.jpg, id=22, 562.1pt x 562.1pt>
+<imgs/open-14y.jpg, id=25, 562.1pt x 562.1pt>
 File: imgs/open-14y.jpg Graphic file (type jpg)
  <use imgs/open-14y.jpg>
 Package pdftex.def Info: imgs/open-14y.jpg used on input line 23.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/centrally-closed-16y.jpg, id=23, 562.1pt x 562.1pt>
+<imgs/centrally-closed-16y.jpg, id=26, 562.1pt x 562.1pt>
 File: imgs/centrally-closed-16y.jpg Graphic file (type jpg)
 
 <use imgs/centrally-closed-16y.jpg>
 Package pdftex.def Info: imgs/centrally-closed-16y.jpg used on input line 26.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/closed-18y.jpg, id=24, 562.1pt x 562.1pt>
+<imgs/closed-18y.jpg, id=27, 562.1pt x 562.1pt>
 File: imgs/closed-18y.jpg Graphic file (type jpg)
  <use imgs/closed-18y.jpg>
 Package pdftex.def Info: imgs/closed-18y.jpg used on input line 29.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-[2] <imgs/cs_hier.png, id=28, 1419.3025pt x 916.42375pt>
+[2] <imgs/cs_hier.png, id=31, 1419.3025pt x 916.42375pt>
 File: imgs/cs_hier.png Graphic file (type png)
 
 <use imgs/cs_hier.png>
@@ -688,7 +688,7 @@ Package pdftex.def Info: imgs/cs_hier.png used on input line 43.
 (pdftex.def)             Requested size: 288.0011pt x 185.95235pt.
  [3 <./imgs/open-14y.jpg> <./imgs/centrally-closed-16y.jpg> <./imgs/closed-18y.
 jpg> <./imgs/cs_hier.png>]
-<imgs/classic_prog.png, id=34, 2257.43375pt x 284.06125pt>
+<imgs/classic_prog.png, id=38, 2257.43375pt x 284.06125pt>
 File: imgs/classic_prog.png Graphic file (type png)
 
 <use imgs/classic_prog.png>
@@ -702,59 +702,72 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 69.
 
-<imgs/ml_pipeline.png, id=35, 2263.45625pt x 795.97375pt>
+<imgs/ml_pipeline.png, id=39, 2263.45625pt x 795.97375pt>
 File: imgs/ml_pipeline.png Graphic file (type png)
 
 <use imgs/ml_pipeline.png>
 Package pdftex.def Info: imgs/ml_pipeline.png used on input line 79.
 (pdftex.def)             Requested size: 288.0011pt x 101.26973pt.
  [4 <./imgs/classic_prog.png>]
-<imgs/ann.png, id=42, 1606.0pt x 832.10875pt>
+<imgs/ann.png, id=45, 1606.0pt x 832.10875pt>
 File: imgs/ann.png Graphic file (type png)
  <use imgs/ann.png>
 Package pdftex.def Info: imgs/ann.png used on input line 97.
 (pdftex.def)             Requested size: 288.0011pt x 149.21445pt.
- [5 <./imgs/ml_pipeline.png>] [6 <./imgs/ann.png>] [7]) (./4_methods.tex
+ [5 <./imgs/ml_pipeline.png>] [6 <./imgs/ann.png>]
+<imgs/landscape.jpg, id=54, 1003.75pt x 1003.75pt>
+File: imgs/landscape.jpg Graphic file (type jpg)
+ <use imgs/landscape.jpg>
+Package pdftex.def Info: imgs/landscape.jpg used on input line 127.
+(pdftex.def)             Requested size: 115.20264pt x 115.19142pt.
+
+<imgs/landscape_mask.jpg, id=55, 1003.75pt x 1003.75pt>
+File: imgs/landscape_mask.jpg Graphic file (type jpg)
+
+<use imgs/landscape_mask.jpg>
+Package pdftex.def Info: imgs/landscape_mask.jpg used on input line 130.
+(pdftex.def)             Requested size: 115.20264pt x 115.19142pt.
+ [7 <./imgs/landscape.jpg> <./imgs/landscape_mask.jpg>]) (./4_methods.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8] <imgs/3.jpg, id=57, 562.1pt x 562.1pt>
+[8] <imgs/3.jpg, id=62, 562.1pt x 562.1pt>
 File: imgs/3.jpg Graphic file (type jpg)
  <use imgs/3.jpg>
 Package pdftex.def Info: imgs/3.jpg used on input line 33.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/10.jpg, id=58, 562.1pt x 562.1pt>
+<imgs/10.jpg, id=63, 562.1pt x 562.1pt>
 File: imgs/10.jpg Graphic file (type jpg)
  <use imgs/10.jpg>
 Package pdftex.def Info: imgs/10.jpg used on input line 36.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/17.jpg, id=59, 562.1pt x 562.1pt>
+<imgs/17.jpg, id=64, 562.1pt x 562.1pt>
 File: imgs/17.jpg Graphic file (type jpg)
  <use imgs/17.jpg>
 Package pdftex.def Info: imgs/17.jpg used on input line 39.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/24.jpg, id=60, 562.1pt x 562.1pt>
+<imgs/24.jpg, id=65, 562.1pt x 562.1pt>
 File: imgs/24.jpg Graphic file (type jpg)
  <use imgs/24.jpg>
 Package pdftex.def Info: imgs/24.jpg used on input line 43.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/31.jpg, id=61, 562.1pt x 562.1pt>
+<imgs/31.jpg, id=66, 562.1pt x 562.1pt>
 File: imgs/31.jpg Graphic file (type jpg)
  <use imgs/31.jpg>
 Package pdftex.def Info: imgs/31.jpg used on input line 46.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/38.jpg, id=62, 562.1pt x 562.1pt>
+<imgs/38.jpg, id=67, 562.1pt x 562.1pt>
 File: imgs/38.jpg Graphic file (type jpg)
  <use imgs/38.jpg>
 Package pdftex.def Info: imgs/38.jpg used on input line 49.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/age_distr.png, id=63, 709.65125pt x 362.35374pt>
+<imgs/age_distr.png, id=68, 709.65125pt x 362.35374pt>
 File: imgs/age_distr.png Graphic file (type png)
 
 <use imgs/age_distr.png>
@@ -762,77 +775,128 @@ Package pdftex.def Info: imgs/age_distr.png used on input line 59.
 (pdftex.def)             Requested size: 360.0pt x 183.82484pt.
  [9 <./imgs/3.jpg> <./imgs/10.jpg> <./imgs/17.jpg> <./imgs/24.jpg> <./imgs/31.j
 pg> <./imgs/38.jpg>] [10 <./imgs/age_distr.png>]
-[11] <imgs/orig.jpg, id=75, 321.2pt x 321.2pt>
+[11] <imgs/orig.jpg, id=80, 321.2pt x 321.2pt>
 File: imgs/orig.jpg Graphic file (type jpg)
  <use imgs/orig.jpg>
 Package pdftex.def Info: imgs/orig.jpg used on input line 118.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
 
-<imgs/corr.jpg, id=76, 321.2pt x 321.2pt>
+<imgs/corr.jpg, id=81, 321.2pt x 321.2pt>
 File: imgs/corr.jpg Graphic file (type jpg)
  <use imgs/corr.jpg>
 Package pdftex.def Info: imgs/corr.jpg used on input line 121.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
 
-<imgs/diff2.jpg, id=77, 321.2pt x 321.2pt>
+<imgs/diff2.jpg, id=82, 321.2pt x 321.2pt>
 File: imgs/diff2.jpg Graphic file (type jpg)
  <use imgs/diff2.jpg>
 Package pdftex.def Info: imgs/diff2.jpg used on input line 124.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
- [12 <./imgs/orig.jpg> <./imgs/corr.jpg> <./imgs/diff2.jpg>] [13] [14] [15]
-<imgs/unet.png, id=93, 1560.83125pt x 1039.885pt>
+ [12 <./imgs/orig.jpg> <./imgs/corr.jpg> <./imgs/diff2.jpg>] [13]
+<imgs/x1.png, id=92, 224.84pt x 224.84pt>
+File: imgs/x1.png Graphic file (type png)
+ <use imgs/x1.png>
+Package pdftex.def Info: imgs/x1.png used on input line 171.
+(pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
+
+<imgs/x2.png, id=93, 224.84pt x 224.84pt>
+File: imgs/x2.png Graphic file (type png)
+ <use imgs/x2.png>
+Package pdftex.def Info: imgs/x2.png used on input line 174.
+(pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
+
+<imgs/x3.png, id=94, 224.84pt x 224.84pt>
+File: imgs/x3.png Graphic file (type png)
+ <use imgs/x3.png>
+Package pdftex.def Info: imgs/x3.png used on input line 177.
+(pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
+
+<imgs/x4.png, id=95, 224.84pt x 224.84pt>
+File: imgs/x4.png Graphic file (type png)
+ <use imgs/x4.png>
+Package pdftex.def Info: imgs/x4.png used on input line 180.
+(pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
+
+<imgs/y1.png, id=96, 224.84pt x 224.84pt>
+File: imgs/y1.png Graphic file (type png)
+ <use imgs/y1.png>
+Package pdftex.def Info: imgs/y1.png used on input line 184.
+(pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
+
+<imgs/y2.png, id=97, 224.84pt x 224.84pt>
+File: imgs/y2.png Graphic file (type png)
+ <use imgs/y2.png>
+Package pdftex.def Info: imgs/y2.png used on input line 187.
+(pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
+
+<imgs/y3.png, id=98, 224.84pt x 224.84pt>
+File: imgs/y3.png Graphic file (type png)
+ <use imgs/y3.png>
+Package pdftex.def Info: imgs/y3.png used on input line 190.
+(pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
+
+<imgs/y4.png, id=99, 224.84pt x 224.84pt>
+File: imgs/y4.png Graphic file (type png)
+ <use imgs/y4.png>
+Package pdftex.def Info: imgs/y4.png used on input line 193.
+(pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
+ [14] [15 <./imgs/x1.png (PNG copy)> <./imgs/x2.png (PNG copy)> <./imgs/x3.png 
+(PNG copy)> <./imgs/x4.png (PNG copy)> <./imgs/y1.png (PNG copy)> <./imgs/y2.pn
+g (PNG copy)> <./imgs/y3.png (PNG copy)> <./imgs/y4.png (PNG copy)>]
+<imgs/unet.png, id=107, 1560.83125pt x 1039.885pt>
 File: imgs/unet.png Graphic file (type png)
  <use imgs/unet.png>
-Package pdftex.def Info: imgs/unet.png used on input line 200.
+Package pdftex.def Info: imgs/unet.png used on input line 229.
 (pdftex.def)             Requested size: 360.0pt x 239.83495pt.
- [16 <./imgs/unet.png>]
-Overfull \hbox (1.23544pt too wide) in paragraph at lines 217--235
+ [16]
+[17 <./imgs/unet.png>]
+Overfull \hbox (1.23544pt too wide) in paragraph at lines 246--264
  [][] 
  []
 
-[17] [18] <imgs/elu_relu1.png, id=104, 496.85625pt x 362.35374pt>
+[18] [19] <imgs/elu_relu1.png, id=121, 496.85625pt x 362.35374pt>
 File: imgs/elu_relu1.png Graphic file (type png)
 
 <use imgs/elu_relu1.png>
-Package pdftex.def Info: imgs/elu_relu1.png used on input line 285.
+Package pdftex.def Info: imgs/elu_relu1.png used on input line 314.
 (pdftex.def)             Requested size: 180.0pt x 131.27107pt.
- [19] [20 <./imgs/elu_relu1.png>] [21] [22] [23]
-<imgs/model.png, id=125, 1606.0pt x 1686.3pt>
+ [20 <./imgs/elu_relu1.png>] [21] [22] [23] [24]
+<imgs/model.png, id=141, 1606.0pt x 1686.3pt>
 File: imgs/model.png Graphic file (type png)
  <use imgs/model.png>
-Package pdftex.def Info: imgs/model.png used on input line 400.
-(pdftex.def)             Requested size: 288.0011pt x 302.38875pt.
- [24]
-[25 <./imgs/model.png>] [26]) (./5_results.tex [27]) (./6_discussion.tex
-[28]) (./0_Thesis.bbl [29]) [30] (./0_Thesis.aux) ) 
+Package pdftex.def Info: imgs/model.png used on input line 429.
+(pdftex.def)             Requested size: 251.9989pt x 264.59015pt.
+ [25 <./imgs/model.png>] [26]) (./5_results.tex [27]) (./6_discussion.tex [28])
+
+(./0_Thesis.bbl [29]) [30] (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4682 strings out of 492995
- 72268 string characters out of 6132704
+ 4732 strings out of 492995
+ 73053 string characters out of 6132704
  169341 words of memory out of 5000000
- 8024 multiletter control sequences out of 15000+600000
+ 8064 multiletter control sequences out of 15000+600000
  71724 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,38p,739b,267s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/tex
-mf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/texmf-dist/fonts/
-enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/l
-m-mathit.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathex.e
-nc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texli
-ve/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2017/te
-xmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-dist/
-fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type
-1/public/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/l
-m/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb
-></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2
-017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-
-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts
-/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (33 pages, 1378334 bytes).
+ 39i,9n,38p,739b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dis
+t/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dv
+ips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-math
+it.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/u
+sr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/t
+exlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/
+type1/public/lm/lmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/publ
+ic/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi
+8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr
+/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texli
+ve/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2017/te
+xmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/f
+onts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
+/public/lm/lmsy8.pfb>
+Output written on 0_Thesis.pdf (34 pages, 1991849 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 118 compressed objects within 2 object streams
+ 209 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 20586 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 20636 words of extra memory for PDF output out of 20736 (max. 10000000)
 

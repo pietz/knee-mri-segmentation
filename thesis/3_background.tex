@@ -121,4 +121,15 @@ A classification sorts the input into one or multiple categories, like predictin
 
 A segmentation creates an image of identical dimensions as the input and masks specific regions within. Every channel of the output mask belongs to a particular category that is segmented. A segmentation can be seen as a classification of each pixel/voxel. For this study, the Femur, Tibia, and Fibula needed to be masked from the rest of the MRI content. This is called a semantic segmentation because the process is based on a semantic meaning of objects in the image.
 
+\begin{figure}[H]
+  \centering
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/landscape.jpg}
+\endminipage \hspace{0.2cm}
+\minipage{0.32\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/landscape_mask.jpg}
+\endminipage
+\caption{A landscape photograph with a possible semantic segmentation map for sky, stone and sea}
+\end{figure}
+
 \newpage
