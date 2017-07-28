@@ -12,7 +12,7 @@ The processing of medical image data needed a library that could handle these fo
 
 \subsection{Data Analysis*}
 
-The dataset was a collection of three dimensional MR images showing the right human knee. The number of available samples grew during the project. For most of the development time it included 150 images that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as certain meta information about each image. The resolution of these samples differed from one source to the other.
+The data set was a collection of three dimensional MR images showing the right human knee. The number of available samples grew during the project. For most of the development time it included 150 images that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as certain meta information about each image. The resolution of these samples differed from one source to the other.
 
 \begin{table}[h!]
 \centering
@@ -65,51 +65,68 @@ The candidates chosen for the MRI recordings were all german males between the a
 
 \subsection{Preprocessing*}
 
-The number of parameters in a Neural Network commonly range from hundreds of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
+The number of parameters in a Neural Network commonly range from tens of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
 
-Because of the small dataset that was available for this study, several types of data preprocessing were applied to the images. These techniques do one of three things:
+Because of the small data set that was available for this study, several types of data preprocessing were applied to the images. These techniques do one of three things:
 
 \begin{itemize}
 \item Decrease the amount of information per sample
 \item Decrease the variance between multiple samples
-\item Increase the total number of samples
+\item Increase the total number of samples virtually
 \end{itemize}
 
-Other preprocessing methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
+Other preparation methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
 
 \subsubsection{Cropping, Resizing and Resampling*}
 
-The framing of the raw images included large parts of the thigh and shin to be visible in the picture. Since these weren't relevant for the purpose of the study, they were cropped out. An algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point.
+The framing of the raw images included large parts of the thigh and shin to be visible in the picture. Since these weren't relevant for the purpose of the study, they were cropped out. An existing algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point.
 
-Although there is no theoretical size limitation to using convolutional neural networks, it is desirable to reduce the spatial resolution to decrease the amount of calculations. 224x224 pixels for width and height still gave enough detail to identify the shape of Femur, Tibia and Fibula.
+Although there is no theoretical size limitation to using convolutional neural networks, it is desirable to reduce the spatial resolution to decrease the amount of calculations. 224x224 pixels for width and height still gave enough detail to identify the shape of Femur, Tibia and Fibula, while being a common resolution for CNNs.
 
-Resizing the z-axis was problematic, because the resolution was roughly 20 times lower. When scaling along this dimension the segmentation maps of different slices started to blend together and create merged maps of multiple layers. In order to get the images from two different main sources on the same scale, the 41 slices per image of the Epi data were padded with empty pixels to 48 slices. Afterwards every second 2D image was taken to resample to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps would have been misleading and false.
+Resizing the z-axis was problematic, because the resolution was roughly 20 times lower. When scaling along this dimension the segmentation maps of different slices started to blend together and create merged maps of multiple layers. In order to get the images from two different main sources on the same scale, two different approaches were tried.
 
-Throwing away perfectly good data is very uncommon in the machine learning field, especially if datasets are rather small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources the balance between the amount of Epi and Jopp data was kept.
+The 41 slices per image of the Epi data were padded with empty pixels to 48 slices. Afterwards every second 2D image was resampled to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps would have been misleading and false.
 
-A total of 76 24x224x224 images were now available for training.
+Throwing away perfectly good data is very uncommon in the machine learning field, especially if datasets are rather small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources the balance between the amount of Epi and Jopp data was kept. A total of 76 24x224x224 images were now available for training.
+
+The second approach converted the volumetric data to 2D, while using all 41 slices from the Epi data and all 24 slices from Jopp et al.. No data was thown away, but the data was no longer volumetric.
 
 \subsubsection{Normalization*}
 
 The normalization of images refers to the process of transforming all samples on the same scale of values. Two techniques for this are popular in the field of deep learning. The first one is called feature scaling, where every sample is normalized between 0 and 1.
 
-\begin{figure}
+\begin{figure}[H]
 \[x' = \frac {x - min(x)}{max(x) - min(x)}\]
 \end{figure}
 
 The second technique calculates the standard score, where the mean is subtracted from the samples and then divided by the standard deviation.
 
-\begin{figure}
+\begin{figure}[H]
 \[x' = \frac {x - \mu}{\sigma}\]
 \end{figure}
 
 In this case the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and test sets, it is important to use the mean and standard deviation of the training data, instead of calculating them on their own values.
 
-The standard score presents a more desirable approach, because its mean centering helps to prevent exploding and disappearing gradients in a more effective way. It is also less sensitive to outliers, which frequently appeared in the form of extremely high intensities. 
+The standard score presents a more desirable approach, because its mean centering helps to prevent exploding and disappearing gradients in a more effective way. It is also less sensitive to outliers e.g. extremely bright spots in the image, which frequently appeared in the form of extremely high intensities. 
 
 \subsubsection{N4 Bias Field Correction*}
 
-A bias field is a low frequency nonuniform intensity that is an unwanted byproduct Magnetic Resonance imaging. Several methods have been developed in the past of which N4ITK \cite{Tustison2010} is the de facto standard in the field. This algorithm approximates the nonuniform field and balances intensities using B-Splines. As the name suggests it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24x224x224 image took between 60 and 120 seconds.
+A bias field is a low frequency nonuniform intensity that is an unwanted byproduct Magnetic Resonance imaging. Several methods have been developed in the past of which N4ITK \cite{Tustison2010} is the de facto standard in the field. This algorithm approximates the nonuniform field and balances intensities using B-Splines. 
+
+\begin{figure}[H]
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/orig.jpg}
+\endminipage\hfill
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/corr.jpg}
+\endminipage\hfill
+\minipage{0.32\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/diff2.jpg}
+\endminipage
+\caption{Raw image (left), corrected image (middle) and visualization of intensity differences between the two (right)}
+\end{figure}
+
+As the name suggests it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24x224x224 image took between 60 and 120 seconds.
 
 \subsubsection{Augmentation*}
 

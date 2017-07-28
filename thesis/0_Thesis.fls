@@ -188,6 +188,15 @@ INPUT ./imgs/38.jpg
 INPUT imgs/age_distr.png
 INPUT ./imgs/age_distr.png
 INPUT ./imgs/age_distr.png
+INPUT imgs/orig.jpg
+INPUT ./imgs/orig.jpg
+INPUT ./imgs/orig.jpg
+INPUT imgs/corr.jpg
+INPUT ./imgs/corr.jpg
+INPUT ./imgs/corr.jpg
+INPUT imgs/diff2.jpg
+INPUT ./imgs/diff2.jpg
+INPUT ./imgs/diff2.jpg
 INPUT imgs/unet.png
 INPUT ./imgs/unet.png
 INPUT ./imgs/unet.png
