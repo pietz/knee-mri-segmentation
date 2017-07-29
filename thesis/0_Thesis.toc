@@ -13,13 +13,13 @@
 \contentsline {subsection}{\numberline {3.1}Setup*}{8}
 \contentsline {subsection}{\numberline {3.2}Data Analysis*}{8}
 \contentsline {subsection}{\numberline {3.3}Preprocessing*}{10}
-\contentsline {subsubsection}{\numberline {3.3.1}Cropping, Resizing and Resampling*}{11}
+\contentsline {subsubsection}{\numberline {3.3.1}Cropping, Resizing, and Resampling*}{11}
 \contentsline {subsubsection}{\numberline {3.3.2}Normalization*}{11}
 \contentsline {subsubsection}{\numberline {3.3.3}N4 Bias Field Correction*}{12}
 \contentsline {subsubsection}{\numberline {3.3.4}Augmentation*}{13}
 \contentsline {subsubsection}{\numberline {3.3.5}2D and 3D data*}{14}
 \contentsline {subsubsection}{\numberline {3.3.6}Separate Bone Maps*}{14}
-\contentsline {subsubsection}{\numberline {3.3.7}Training, Validation and Testing Sets*}{16}
+\contentsline {subsubsection}{\numberline {3.3.7}Training, Validation, and Testing Sets*}{16}
 \contentsline {subsection}{\numberline {3.4}Architecture*}{16}
 \contentsline {subsubsection}{\numberline {3.4.1}Channels, Growth Rate and Depth*}{17}
 \contentsline {subsubsection}{\numberline {3.4.2}Skip Connections*}{19}

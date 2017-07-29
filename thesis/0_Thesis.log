@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  28 JUL 2017 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  29 JUL 2017 12:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -775,19 +775,19 @@ Package pdftex.def Info: imgs/age_distr.png used on input line 59.
 (pdftex.def)             Requested size: 360.0pt x 183.82484pt.
  [9 <./imgs/3.jpg> <./imgs/10.jpg> <./imgs/17.jpg> <./imgs/24.jpg> <./imgs/31.j
 pg> <./imgs/38.jpg>] [10 <./imgs/age_distr.png>]
-[11] <imgs/orig.jpg, id=80, 321.2pt x 321.2pt>
+[11] <imgs/orig.jpg, id=83, 321.2pt x 321.2pt>
 File: imgs/orig.jpg Graphic file (type jpg)
  <use imgs/orig.jpg>
 Package pdftex.def Info: imgs/orig.jpg used on input line 118.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
 
-<imgs/corr.jpg, id=81, 321.2pt x 321.2pt>
+<imgs/corr.jpg, id=84, 321.2pt x 321.2pt>
 File: imgs/corr.jpg Graphic file (type jpg)
  <use imgs/corr.jpg>
 Package pdftex.def Info: imgs/corr.jpg used on input line 121.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
 
-<imgs/diff2.jpg, id=82, 321.2pt x 321.2pt>
+<imgs/diff2.jpg, id=85, 321.2pt x 321.2pt>
 File: imgs/diff2.jpg Graphic file (type jpg)
  <use imgs/diff2.jpg>
 Package pdftex.def Info: imgs/diff2.jpg used on input line 124.
@@ -893,7 +893,7 @@ ve/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/f
 onts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
 /public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (34 pages, 1991849 bytes).
+Output written on 0_Thesis.pdf (34 pages, 1991866 bytes).
 PDF statistics:
  209 PDF objects out of 1000 (max. 8388607)
  120 compressed objects within 2 object streams
