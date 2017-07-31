@@ -19,45 +19,45 @@ Warning--empty year in Krizhevsky
 Warning--empty journal in Nair
 Warning--empty year in Nair
 Warning--empty journal in Simonyan2014a
-You've used 20 entries,
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            600 strings with 7292 characters,
-and the built_in function-call counts, 6577 in all, are:
-= -- 589
-> -- 436
+            603 strings with 7340 characters,
+and the built_in function-call counts, 6770 in all, are:
+= -- 605
+> -- 443
 < -- 4
-+ -- 172
-- -- 152
-* -- 489
-:= -- 1161
-add.period$ -- 58
-call.type$ -- 20
-change.case$ -- 132
++ -- 175
+- -- 154
+* -- 494
+:= -- 1192
+add.period$ -- 60
+call.type$ -- 21
+change.case$ -- 136
 chr.to.int$ -- 0
-cite$ -- 36
-duplicate$ -- 226
-empty$ -- 416
-format.name$ -- 152
-if$ -- 1290
+cite$ -- 37
+duplicate$ -- 233
+empty$ -- 438
+format.name$ -- 154
+if$ -- 1332
 int.to.chr$ -- 0
-int.to.str$ -- 20
+int.to.str$ -- 21
 missing$ -- 22
-newline$ -- 100
-num.names$ -- 40
-pop$ -- 175
+newline$ -- 104
+num.names$ -- 42
+pop$ -- 183
 preamble$ -- 1
-purify$ -- 116
+purify$ -- 119
 quote$ -- 0
-skip$ -- 159
+skip$ -- 169
 stack$ -- 0
-substring$ -- 226
-swap$ -- 30
+substring$ -- 231
+swap$ -- 31
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 76
 warning$ -- 16
-while$ -- 50
-width$ -- 22
-write$ -- 191
+while$ -- 52
+width$ -- 23
+write$ -- 198
 (There were 16 warnings)

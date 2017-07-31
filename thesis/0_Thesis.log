@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  29 JUL 2017 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  31 JUL 2017 17:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -767,113 +767,119 @@ File: imgs/38.jpg Graphic file (type jpg)
 Package pdftex.def Info: imgs/38.jpg used on input line 49.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/age_distr.png, id=68, 709.65125pt x 362.35374pt>
+<imgs/age_distr.png, id=68, 1188.44pt x 608.2725pt>
 File: imgs/age_distr.png Graphic file (type png)
-
-<use imgs/age_distr.png>
+ <use imgs/age_distr.png>
 Package pdftex.def Info: imgs/age_distr.png used on input line 59.
-(pdftex.def)             Requested size: 360.0pt x 183.82484pt.
- [9 <./imgs/3.jpg> <./imgs/10.jpg> <./imgs/17.jpg> <./imgs/24.jpg> <./imgs/31.j
-pg> <./imgs/38.jpg>] [10 <./imgs/age_distr.png>]
-[11] <imgs/orig.jpg, id=83, 321.2pt x 321.2pt>
+(pdftex.def)             Requested size: 360.0pt x 184.25592pt.
+
+[9 <./imgs/3.jpg> <./imgs/10.jpg> <./imgs/17.jpg> <./imgs/24.jpg> <./imgs/31.jp
+g> <./imgs/38.jpg>] [10 <./imgs/age_distr.png>] [11]
+<imgs/intensity_distr.png, id=83, 1188.44pt x 608.2725pt>
+File: imgs/intensity_distr.png Graphic file (type png)
+
+<use imgs/intensity_distr.png>
+Package pdftex.def Info: imgs/intensity_distr.png used on input line 109.
+(pdftex.def)             Requested size: 360.0pt x 184.25592pt.
+ [12 <./imgs/intensity_distr.png>]
+<imgs/orig.jpg, id=88, 321.2pt x 321.2pt>
 File: imgs/orig.jpg Graphic file (type jpg)
  <use imgs/orig.jpg>
-Package pdftex.def Info: imgs/orig.jpg used on input line 118.
+Package pdftex.def Info: imgs/orig.jpg used on input line 124.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
 
-<imgs/corr.jpg, id=84, 321.2pt x 321.2pt>
+<imgs/corr.jpg, id=89, 321.2pt x 321.2pt>
 File: imgs/corr.jpg Graphic file (type jpg)
  <use imgs/corr.jpg>
-Package pdftex.def Info: imgs/corr.jpg used on input line 121.
+Package pdftex.def Info: imgs/corr.jpg used on input line 127.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
 
-<imgs/diff2.jpg, id=85, 321.2pt x 321.2pt>
+<imgs/diff2.jpg, id=90, 321.2pt x 321.2pt>
 File: imgs/diff2.jpg Graphic file (type jpg)
  <use imgs/diff2.jpg>
-Package pdftex.def Info: imgs/diff2.jpg used on input line 124.
+Package pdftex.def Info: imgs/diff2.jpg used on input line 130.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
- [12 <./imgs/orig.jpg> <./imgs/corr.jpg> <./imgs/diff2.jpg>] [13]
-<imgs/x1.png, id=92, 224.84pt x 224.84pt>
+ [13 <./imgs/orig.jpg> <./imgs/corr.jpg> <./imgs/diff2.jpg>] [14]
+<imgs/x1.png, id=97, 224.84pt x 224.84pt>
 File: imgs/x1.png Graphic file (type png)
  <use imgs/x1.png>
-Package pdftex.def Info: imgs/x1.png used on input line 171.
+Package pdftex.def Info: imgs/x1.png used on input line 177.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/x2.png, id=93, 224.84pt x 224.84pt>
+<imgs/x2.png, id=98, 224.84pt x 224.84pt>
 File: imgs/x2.png Graphic file (type png)
  <use imgs/x2.png>
-Package pdftex.def Info: imgs/x2.png used on input line 174.
+Package pdftex.def Info: imgs/x2.png used on input line 180.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/x3.png, id=94, 224.84pt x 224.84pt>
+<imgs/x3.png, id=99, 224.84pt x 224.84pt>
 File: imgs/x3.png Graphic file (type png)
  <use imgs/x3.png>
-Package pdftex.def Info: imgs/x3.png used on input line 177.
+Package pdftex.def Info: imgs/x3.png used on input line 183.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/x4.png, id=95, 224.84pt x 224.84pt>
+<imgs/x4.png, id=100, 224.84pt x 224.84pt>
 File: imgs/x4.png Graphic file (type png)
  <use imgs/x4.png>
-Package pdftex.def Info: imgs/x4.png used on input line 180.
+Package pdftex.def Info: imgs/x4.png used on input line 186.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/y1.png, id=96, 224.84pt x 224.84pt>
+<imgs/y1.png, id=101, 224.84pt x 224.84pt>
 File: imgs/y1.png Graphic file (type png)
  <use imgs/y1.png>
-Package pdftex.def Info: imgs/y1.png used on input line 184.
+Package pdftex.def Info: imgs/y1.png used on input line 190.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/y2.png, id=97, 224.84pt x 224.84pt>
+<imgs/y2.png, id=102, 224.84pt x 224.84pt>
 File: imgs/y2.png Graphic file (type png)
  <use imgs/y2.png>
-Package pdftex.def Info: imgs/y2.png used on input line 187.
+Package pdftex.def Info: imgs/y2.png used on input line 193.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/y3.png, id=98, 224.84pt x 224.84pt>
+<imgs/y3.png, id=103, 224.84pt x 224.84pt>
 File: imgs/y3.png Graphic file (type png)
  <use imgs/y3.png>
-Package pdftex.def Info: imgs/y3.png used on input line 190.
+Package pdftex.def Info: imgs/y3.png used on input line 196.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/y4.png, id=99, 224.84pt x 224.84pt>
+<imgs/y4.png, id=104, 224.84pt x 224.84pt>
 File: imgs/y4.png Graphic file (type png)
  <use imgs/y4.png>
-Package pdftex.def Info: imgs/y4.png used on input line 193.
+Package pdftex.def Info: imgs/y4.png used on input line 199.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
- [14] [15 <./imgs/x1.png (PNG copy)> <./imgs/x2.png (PNG copy)> <./imgs/x3.png 
-(PNG copy)> <./imgs/x4.png (PNG copy)> <./imgs/y1.png (PNG copy)> <./imgs/y2.pn
-g (PNG copy)> <./imgs/y3.png (PNG copy)> <./imgs/y4.png (PNG copy)>]
-<imgs/unet.png, id=107, 1560.83125pt x 1039.885pt>
+ [15 <./imgs/x1.png (PNG copy)> <./imgs/x2.png (PNG copy)> <./imgs/x3.png (PNG 
+copy)> <./imgs/x4.png (PNG copy)> <./imgs/y1.png (PNG copy)> <./imgs/y2.png (PN
+G copy)> <./imgs/y3.png (PNG copy)> <./imgs/y4.png (PNG copy)>] [16]
+<imgs/unet.png, id=112, 1560.83125pt x 1039.885pt>
 File: imgs/unet.png Graphic file (type png)
  <use imgs/unet.png>
-Package pdftex.def Info: imgs/unet.png used on input line 229.
+Package pdftex.def Info: imgs/unet.png used on input line 235.
 (pdftex.def)             Requested size: 360.0pt x 239.83495pt.
- [16]
-[17 <./imgs/unet.png>]
-Overfull \hbox (1.23544pt too wide) in paragraph at lines 246--264
+ [17 <./imgs/unet.png>]
+Overfull \hbox (1.23544pt too wide) in paragraph at lines 252--270
  [][] 
  []
 
-[18] [19] <imgs/elu_relu1.png, id=121, 496.85625pt x 362.35374pt>
+[18] [19] <imgs/elu_relu1.png, id=122, 496.85625pt x 362.35374pt>
 File: imgs/elu_relu1.png Graphic file (type png)
 
 <use imgs/elu_relu1.png>
-Package pdftex.def Info: imgs/elu_relu1.png used on input line 314.
+Package pdftex.def Info: imgs/elu_relu1.png used on input line 320.
 (pdftex.def)             Requested size: 180.0pt x 131.27107pt.
- [20 <./imgs/elu_relu1.png>] [21] [22] [23] [24]
-<imgs/model.png, id=141, 1606.0pt x 1686.3pt>
+ [20] [21 <./imgs/elu_relu1.png>] [22] [23] [24]
+<imgs/model.png, id=143, 1606.0pt x 1686.3pt>
 File: imgs/model.png Graphic file (type png)
  <use imgs/model.png>
-Package pdftex.def Info: imgs/model.png used on input line 429.
+Package pdftex.def Info: imgs/model.png used on input line 435.
 (pdftex.def)             Requested size: 251.9989pt x 264.59015pt.
- [25 <./imgs/model.png>] [26]) (./5_results.tex [27]) (./6_discussion.tex [28])
-
+ [25]
+[26 <./imgs/model.png>]) (./5_results.tex [27]) (./6_discussion.tex [28])
 (./0_Thesis.bbl [29]) [30] (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4732 strings out of 492995
- 73053 string characters out of 6132704
- 169341 words of memory out of 5000000
- 8064 multiletter control sequences out of 15000+600000
+ 4738 strings out of 492995
+ 73195 string characters out of 6132704
+ 169345 words of memory out of 5000000
+ 8069 multiletter control sequences out of 15000+600000
  71724 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,9n,38p,739b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -893,10 +899,10 @@ ve/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2017/te
 xmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/f
 onts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
 /public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (34 pages, 1991866 bytes).
+Output written on 0_Thesis.pdf (34 pages, 2018843 bytes).
 PDF statistics:
- 209 PDF objects out of 1000 (max. 8388607)
+ 211 PDF objects out of 1000 (max. 8388607)
  120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 20636 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 20641 words of extra memory for PDF output out of 20736 (max. 10000000)
 

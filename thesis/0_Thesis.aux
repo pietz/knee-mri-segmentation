@@ -31,6 +31,7 @@
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.4}Convolutional Neural Networks}{6}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.5}Semantic Segmentation}{7}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces A landscape photograph with a possible semantic segmentation map for sky, stone and sea}}{7}}
+\citation{NVIDIA}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Methods*}{8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Setup*}{8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Data Analysis*}{8}}
@@ -38,47 +39,48 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Six equally distributed slices of a single 3D MRI sample. Femur and Tibia are visible starting at the second image, whereas the Fibula becomes visible in the lower left corner of the 4th image.}}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Age distribution in the data set. Purple shows the samples for which segmentation maps were available. Blue includes the rest.}}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Preprocessing*}{10}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Cropping, Resizing, and Resampling*}{11}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.1}Cropping, Resizing, and Resampling*}{10}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.2}Normalization*}{11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Intensity distribution in the data set. Blue shows the Epi samples and purple shows Jopp data.}}{12}}
 \citation{Tustison2010}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}N4 Bias Field Correction*}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Raw image (left), corrected image (middle) and visualization of intensity differences between the two (right)}}{12}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.3}N4 Bias Field Correction*}{13}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Raw image (left), corrected image (middle) and visualization of intensity differences between the two (right)}}{13}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.4}Augmentation*}{13}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.5}2D and 3D data*}{14}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.6}Separate Bone Maps*}{14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Four sample slices with their ground truth segmentations showing the three separate bones}}{15}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.6}Separate Bone Maps*}{15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Four sample slices with their ground truth segmentations showing the three separate bones}}{15}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.3.7}Training, Validation, and Testing Sets*}{16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Architecture*}{16}}
 \citation{Ronneberger2015a}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Visualization of the U-Net architecture}}{17}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Channels, Growth Rate and Depth*}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Visualization of the U-Net architecture}}{17}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Architecture*}{17}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.1}Channels, Growth Rate and Depth*}{18}}
 \@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Convolution blocks 1 to 9 of the candidates with their respective output channels and total number of parameters}}{18}}
 \citation{He2015b}
 \citation{Srivastava2014}
 \citation{Simonyan2014a}
 \citation{Iandola2016a}
 \citation{Krizhevsky}
-\citation{Nair}
-\citation{Goodfellow2016}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.2}Skip Connections*}{19}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.3}Dropout*}{19}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}Activation Functions*}{19}}
+\citation{Nair}
+\citation{Goodfellow2016}
 \citation{He2015a}
 \citation{Clevert2015}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Visualization of ReLU in orange and ELU in blue}}{20}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Training*}{20}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.4.4}Activation Functions*}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Visualization of ReLU in orange and ELU in blue}}{21}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Training*}{21}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.1}Metrics and Loss Functions*}{21}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}Optimizer*}{22}}
 \citation{Chollet2017}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.2}Optimizer*}{23}}
 \citation{Keskar2016}
 \citation{Hoffer2017}
 \citation{Goyal2017}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3}Batch Size*}{23}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.3}Batch Size*}{24}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy*}{24}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Learning rate at epoch x based on the decay value}}{24}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Learning rate at epoch x based on the decay value}}{25}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping*}{25}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Summary}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces The proposed architecture for the segmentation}}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces The proposed architecture for the segmentation}}{26}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Results}{27}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{27}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Visual Evaluation}{27}}
@@ -100,9 +102,10 @@
 \bibcite{Krizhevsky}{13}
 \bibcite{LeCun1990}{14}
 \bibcite{Nair}{15}
-\bibcite{Ronneberger2015a}{16}
-\bibcite{Simonyan2014a}{17}
-\bibcite{Srivastava2014}{18}
-\bibcite{Tustison2010}{19}
-\bibcite{Westbrook2016}{20}
+\bibcite{NVIDIA}{16}
+\bibcite{Ronneberger2015a}{17}
+\bibcite{Simonyan2014a}{18}
+\bibcite{Srivastava2014}{19}
+\bibcite{Tustison2010}{20}
+\bibcite{Westbrook2016}{21}
 \bibstyle{plain}

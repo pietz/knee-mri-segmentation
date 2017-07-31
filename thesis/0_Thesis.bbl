@@ -84,6 +84,10 @@ Y.~{Le Cun}, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, and
 Vinod Nair and Geoffrey~E Hinton.
 \newblock {Rectified Linear Units Improve Restricted Boltzmann Machines}.
 
+\bibitem{NVIDIA}
+NVIDIA.
+\newblock {GPU vs CPU? What is GPU Computing?}
+
 \bibitem{Ronneberger2015a}
 Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
 \newblock {U-Net: Convolutional Networks for Biomedical Image Segmentation}.

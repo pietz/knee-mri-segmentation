@@ -194,6 +194,9 @@ INPUT ./imgs/38.jpg
 INPUT imgs/age_distr.png
 INPUT ./imgs/age_distr.png
 INPUT ./imgs/age_distr.png
+INPUT imgs/intensity_distr.png
+INPUT ./imgs/intensity_distr.png
+INPUT ./imgs/intensity_distr.png
 INPUT imgs/orig.jpg
 INPUT ./imgs/orig.jpg
 INPUT ./imgs/orig.jpg

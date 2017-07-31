@@ -1,12 +1,12 @@
 \section{Methods*}
 
-The purpose of this chapter is twofold. It will discuss the design and processing decisions that were made for the development of this project, while also giving critical insight into how these applied technologies work. I decided that the latter will do more good in this chapter than in the previous one because the theoretical background is directly connected to the choices that were applied.
+The purpose of this chapter is twofold. It will discuss the design and processing decisions that were made for the development of this project, while also giving critical insight into how these applied technologies work.
 
 \subsection{Setup*}
 
-The workstation included an Intel i5 processor, 16GB of RAM and most importantly a NVidia Geforce GTX1060/6GB. Neural Networks can be trained more efficiently on GPUs than CPUs. This is because the simpler but highly parallelized architecture of graphics chips plays in favor for the needed calculations in deep learning.
+The workstation included an Intel i5 processor, 16GB of RAM and most importantly a NVIDIA GeForce GTX1060/6GB. Neural Networks can be trained more efficiently on GPUs than CPUs. This is because the simpler but highly parallelized architecture of graphics chips plays in favor for the needed calculations in deep learning \cite{NVIDIA}.
 
-The computer ran Ubuntu 16.04 with the CUDA and cuDNN libraries installed to take advantage of the GPU. As the primary programming language Python 2 was chosen due to its simple syntax and popularity in the deep learning field. The code of this project is compatible with Python 3 as well. Keras was used as the framework for training models because its top level syntax allows fast prototyping and testing. The development environment was a Jupyter Notebook, which allowed a flexible execution of code snippets instead of running the entire program for every single change.
+The computer ran Ubuntu 16.04 with the NVIDIA CUDA and cuDNN libraries installed to take advantage of the GPU. As the primary programming language Python 2 was chosen due to its simple syntax and popularity in the deep learning field. The code was briefly tested with Python 3 as well and seemed to work. Keras was used as the framework for training models because its top level syntax allows fast prototyping and testing. The development environment was a Jupyter Notebook, which allowed a flexible execution of code snippets instead of running the entire program for every single change.
 
 The processing of medical image data needed a library that could handle these formats. SimpleITK is a Python binding to the ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field. Other libraries were also used for smaller tasks. A complete listing can be found on the project's GitHub page, where the entire code is available.
 
@@ -26,7 +26,7 @@ The data set was a collection of three dimensional MR images showing the human r
 \caption{Details of available images sorted by their source}
 \end{table}
 
-Data provided by Maas et al. featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 65 images from Jopp et al. were another source of retrospective data, of which 36 had segmentation maps. The origin of this data was a previous study that investigated the condition of the epiphyseal plates of Tibia and Femur. A total of 80 MR images were taken just for this project. They showed the highest resolution in all dimensions and half of them had segmentation maps.
+The Maas data featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 65 Jopp images were another source of retrospective data, of which 36 had segmentation maps. The origin of this data was a previous study that investigated the condition of the growth plates of Tibia and Femur. A total of 80 MR images were taken specifically for this project. They showed the highest resolution in all dimensions and half of them had segmentation maps.
 
 \begin{figure}[H]
 \minipage{0.32\textwidth}
@@ -51,7 +51,7 @@ Data provided by Maas et al. featured a sagittal perspective, while all other sa
 \caption{Six equally distributed slices of a single 3D MRI sample. Femur and Tibia are visible starting at the second image, whereas the Fibula becomes visible in the lower left corner of the 4th image.}
 \end{figure}
 
-The total of 76 maps were all manually created by two different people. Each mask featured three channels that showed Femur, Tibia, and Fibula separately. They did not segment the entirety of each 3D image but masked a window around the knee cap where the three bones meet.
+The total of 76 segmentation maps were all manually labeled by two people. Each mask featured three channels that showed Femur, Tibia, and Fibula separately. They did not segment the entirety of each 3D image but masked a window around the knee cap where the three bones meet.
 
 \begin{figure}[H]
 \centering
@@ -65,31 +65,25 @@ The candidates chosen for the MRI recordings were all german males between the a
 
 \subsection{Preprocessing*}
 
-The number of parameters in a Neural Network commonly range from tens of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
+The parameters in a Neural Network commonly range from tens of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
 
-Because of the small data set that was available for this study, several types of data preprocessing were applied to the images. These techniques do one of three things:
-
-\begin{itemize}
-\item Decrease the amount of information per sample
-\item Decrease the variance between multiple samples
-\item Increase the total number of samples virtually
-\end{itemize}
+Because of the small data set that was available for this study, several types of preprocessing were applied to the images. For the most part these techniques remove irrelevant information and reduce variance between multiple smaples.
 
 Other preparation methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
 
 \subsubsection{Cropping, Resizing, and Resampling*}
 
-The framing included vast areas of the thigh and shin to be visible in the picture. Since these weren't relevant for the study, they were cropped out. An existing algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point.
+The framing included vast areas of the upper and lower leg to be visible in the picture. Since these were not seen as relevant, they were cropped out. An existing algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point.
 
-Although there is no theoretical size limitation to using convolutional neural networks, it is desirable to reduce the spatial resolution to decrease the number of calculations. 224x224 pixels for width and height still gave enough detail to identify the shape of Femur, Tibia, and Fibula, while being a typical resolution for CNNs.
+Although there is no theoretical size limitation to using convolutional neural networks, it is desirable to reduce the spatial resolution and therefore decrease the number of calculations. 224x224 pixels for each slice still gave enough detail to identify the shape of Femur, Tibia, and Fibula, while also being a common resolution for CNNs.
 
 Resizing the z-axis was problematic because the resolution was roughly 20 times lower. When scaling along this dimension, the segmentation maps of different slices started to blend and create merged maps of multiple layers. To get the images from two different main sources on the same scale, two different approaches were tried.
 
-The 41 slices per image of the Epi data were padded with empty pixels to 48 slices. Afterward, every second 2D image was resampled to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps would have been misleading and false.
+The 41 slices per image of the Epi data were padded with empty pixels to 48 slices. Afterward, every second 2D image was resampled to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps may have falsified the data.
 
-Throwing away perfectly good data is very uncommon in the machine learning field, especially if datasets are rather small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources, the balance between the amount of Epi and Jopp data was kept. A total of 76 24x224x224 images were now available for training.
+Throwing away perfectly good data is very uncommon in the machine learning field, especially if data sets are small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources, the balance between the amount of Epi and Jopp data was kept. A total of 76 24x224x224 images were now available for training.
 
-The second approach converted the volumetric data to 2D while using all 41 slices from the Epi data and all 24 slices from Jopp et al. No data was thrown away, but the data was no longer volumetric.
+The second approach converted the volumetric data to 2D while using all 41 slices from the Epi data and all 24 slices from Jopp. No samples were thrown away, but the data was no longer volumetric. 
 
 \subsubsection{Normalization*}
 
@@ -105,9 +99,21 @@ The second technique calculates the standard score, where the mean is subtracted
 \[x' = \frac {x - \mu}{\sigma}\]
 \end{figure}
 
-In this case, the mean and standard deviation are not calculated for every image, but for the entire population of training samples. This centers the intensities around the average brightness. When normalizing validation and test sets, it is important to use the mean and standard deviation of the training data, instead of calculating them on their values.
+In this case, the mean and standard deviation are not calculated for every image, but for all training samples. This centers the intensities around the average brightness of the training data. When normalizing validation and test data, one would also use the mean and standard deviation from the training set because those are the measures the architecture is expecting.
 
-The standard score presents a more desirable approach because its mean centering helps to prevent exploding and disappearing gradients more efficiently. It is also less sensitive to outliers e.g. extremely bright spots in the image, which frequently appeared in the form of extremely high intensities. 
+The standard score presents a more desirable approach because its mean centering helps to prevent that parameters get abnormally large or get set to zero during training. It is also less sensitive to outliers e.g. extremely bright spots in the image, which frequently appeared in the form of high intensities.
+
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=1.0\textwidth]{imgs/intensity_distr.png}
+\caption{Intensity distribution in the data set. Blue shows the Epi samples and purple shows Jopp data.}
+\par
+\end{figure}
+
+In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. The Jopp images featured roughly five times higher intensities than the Epi data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an input is.
+
+This approach also has a downside. The network can no longer use the mean intensity and the standard deviation as a feature to learn from because every image will be identical according to these measures. However, these two features showed no correlation to the accuracy of a prediction, which is why it was decided to use this approach.
 
 \subsubsection{N4 Bias Field Correction*}
 
