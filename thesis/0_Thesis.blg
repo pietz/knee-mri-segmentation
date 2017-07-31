@@ -6,6 +6,9 @@ Database file #1: references.bib.bib
 Warning--empty school in Mauer2015
 Warning--there's a number but no series in Aumuller2010
 Warning--empty publisher in Aumuller2010
+Warning--empty journal in Badrinarayanan2015
+Warning--empty journal in Chen2016
+Warning--empty journal in Chen2017
 Warning--empty publisher in Chollet2017
 Warning--empty journal in Clevert2015
 Warning--empty journal in Goyal2017
@@ -16,48 +19,51 @@ Warning--empty journal in Iandola2016a
 Warning--empty journal in Keskar2016
 Warning--empty journal in Krizhevsky
 Warning--empty year in Krizhevsky
+Warning--empty journal in Lin2016
 Warning--empty journal in Nair
 Warning--empty year in Nair
+Warning--empty journal in Nekrasov2016
 Warning--empty journal in Simonyan2014a
-You've used 21 entries,
+Warning--empty journal in Zhao2016
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            603 strings with 7340 characters,
-and the built_in function-call counts, 6770 in all, are:
-= -- 605
-> -- 443
-< -- 4
-+ -- 175
-- -- 154
-* -- 494
-:= -- 1192
-add.period$ -- 60
-call.type$ -- 21
-change.case$ -- 136
+            640 strings with 8943 characters,
+and the built_in function-call counts, 9629 in all, are:
+= -- 864
+> -- 627
+< -- 7
++ -- 247
+- -- 218
+* -- 705
+:= -- 1675
+add.period$ -- 84
+call.type$ -- 29
+change.case$ -- 192
 chr.to.int$ -- 0
-cite$ -- 37
-duplicate$ -- 233
-empty$ -- 438
-format.name$ -- 154
-if$ -- 1332
+cite$ -- 51
+duplicate$ -- 339
+empty$ -- 622
+format.name$ -- 218
+if$ -- 1908
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 22
-newline$ -- 104
-num.names$ -- 42
-pop$ -- 183
+int.to.str$ -- 29
+missing$ -- 30
+newline$ -- 144
+num.names$ -- 58
+pop$ -- 256
 preamble$ -- 1
-purify$ -- 119
+purify$ -- 167
 quote$ -- 0
-skip$ -- 169
+skip$ -- 252
 stack$ -- 0
-substring$ -- 231
-swap$ -- 31
-text.length$ -- 4
+substring$ -- 335
+swap$ -- 54
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
-warning$ -- 16
-while$ -- 52
-width$ -- 23
-write$ -- 198
-(There were 16 warnings)
+type$ -- 108
+warning$ -- 22
+while$ -- 74
+width$ -- 31
+write$ -- 275
+(There were 22 warnings)

@@ -17,10 +17,37 @@ Gerhard Aum{\"{u}}ller, Gabriela Aust, Andreas Doll, J{\"{u}}rgen Engele,
 \newblock {\em {Anatomie}}.
 \newblock Number~2. 2010.
 
+\bibitem{Badrinarayanan2015}
+Vijay Badrinarayanan, Alex Kendall, and Roberto Cipolla.
+\newblock {SegNet: A Deep Convolutional Encoder-Decoder Architecture for Image
+  Segmentation}.
+\newblock nov 2015.
+
+\bibitem{Chen2016}
+Liang-Chieh Chen, George Papandreou, Iasonas Kokkinos, Kevin Murphy, and
+  Alan~L. Yuille.
+\newblock {DeepLab: Semantic Image Segmentation with Deep Convolutional Nets,
+  Atrous Convolution, and Fully Connected CRFs}.
+\newblock jun 2016.
+
+\bibitem{Chen2017}
+Liang-Chieh Chen, George Papandreou, Florian Schroff, and Hartwig Adam.
+\newblock {Rethinking Atrous Convolution for Semantic Image Segmentation}.
+\newblock jun 2017.
+
 \bibitem{Chollet2017}
 Francois Chollet.
 \newblock {\em {Deep Learning With Python}}, volume~1.
 \newblock 2017.
+
+\bibitem{Cicek2016}
+{\"{O}}zg{\"{u}}n {\c{C}}i{\c{c}}ek, Ahmed Abdulkadir, Soeren~S. Lienkamp,
+  Thomas Brox, and Olaf Ronneberger.
+\newblock {3D U-net: Learning dense volumetric segmentation from sparse
+  annotation}.
+\newblock In {\em Lecture Notes in Computer Science (including subseries
+  Lecture Notes in Artificial Intelligence and Lecture Notes in
+  Bioinformatics)}, volume 9901 LNCS, pages 424--432, jun 2016.
 
 \bibitem{Clevert2015}
 Djork-Arn{\'{e}} Clevert, Thomas Unterthiner, and Sepp Hochreiter.
@@ -80,9 +107,27 @@ Y.~{Le Cun}, B.~Boser, J.~S. Denker, D.~Henderson, R.~E. Howard, and
 \newblock {\em Advances in Neural Information Processing Systems}, pages
   396--404, 1990.
 
+\bibitem{Lin2016}
+Guosheng Lin, Anton Milan, Chunhua Shen, and Ian Reid.
+\newblock {RefineNet: Multi-Path Refinement Networks for High-Resolution
+  Semantic Segmentation}.
+\newblock nov 2016.
+
+\bibitem{Milletari2016}
+Fausto Milletari, Nassir Navab, and Seyed~Ahmad Ahmadi.
+\newblock {V-Net: Fully convolutional neural networks for volumetric medical
+  image segmentation}.
+\newblock In {\em Proceedings - 2016 4th International Conference on 3D Vision,
+  3DV 2016}, pages 565--571, jun 2016.
+
 \bibitem{Nair}
 Vinod Nair and Geoffrey~E Hinton.
 \newblock {Rectified Linear Units Improve Restricted Boltzmann Machines}.
+
+\bibitem{Nekrasov2016}
+Vladimir Nekrasov, Janghoon Ju, and Jaesik Choi.
+\newblock {Global Deconvolutional Networks for Semantic Segmentation}.
+\newblock feb 2016.
 
 \bibitem{NVIDIA}
 NVIDIA.
@@ -114,5 +159,10 @@ Nicholas~J. Tustison, Brian~B. Avants, Philip~A. Cook, Yuanjie Zheng, Alexander
 Catherine Westbrook.
 \newblock {\em {MRI at A Glance}}.
 \newblock Wiley Blackwell, 3 edition, 2016.
+
+\bibitem{Zhao2016}
+Hengshuang Zhao, Jianping Shi, Xiaojuan Qi, Xiaogang Wang, and Jiaya Jia.
+\newblock {Pyramid Scene Parsing Network}.
+\newblock dec 2016.
 
 \end{thebibliography}

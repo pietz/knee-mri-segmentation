@@ -238,6 +238,9 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT imgs/elu_relu1.png
 INPUT ./imgs/elu_relu1.png
 INPUT ./imgs/elu_relu1.png
+INPUT imgs/forward_backward_prop.png
+INPUT ./imgs/forward_backward_prop.png
+INPUT ./imgs/forward_backward_prop.png
 INPUT imgs/model.png
 INPUT ./imgs/model.png
 INPUT ./imgs/model.png
