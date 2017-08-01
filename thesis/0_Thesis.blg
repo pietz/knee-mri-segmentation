@@ -1,0 +1,70 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: 0_Thesis.aux
+The style file: plain.bst
+Database file #1: references.bib.bib
+Warning--empty school in Mauer2015
+Warning--there's a number but no series in Aumuller2010
+Warning--empty publisher in Aumuller2010
+Warning--empty journal in Badrinarayanan2015
+Warning--empty journal in Chen2016
+Warning--empty journal in Chen2017
+Warning--empty publisher in Chollet2017
+Warning--empty journal in Clevert2015
+Warning--empty journal in Goyal2017
+Warning--empty journal in He2015b
+Warning--empty journal in He2015a
+Warning--empty journal in Hoffer2017
+Warning--empty journal in Iandola2016a
+Warning--empty journal in Keskar2016
+Warning--empty journal in Kingma2014
+Warning--empty journal in Krizhevsky
+Warning--empty year in Krizhevsky
+Warning--empty journal in Lin2016
+Warning--empty journal in Nair
+Warning--empty year in Nair
+Warning--empty journal in Nekrasov2016
+Warning--empty journal in Simonyan2014a
+Warning--empty journal in Zhao2016
+You've used 30 entries,
+            2118 wiz_defined-function locations,
+            644 strings with 9040 characters,
+and the built_in function-call counts, 9870 in all, are:
+= -- 886
+> -- 640
+< -- 7
++ -- 252
+- -- 222
+* -- 719
+:= -- 1719
+add.period$ -- 87
+call.type$ -- 30
+change.case$ -- 197
+chr.to.int$ -- 0
+cite$ -- 53
+duplicate$ -- 349
+empty$ -- 639
+format.name$ -- 222
+if$ -- 1955
+int.to.chr$ -- 0
+int.to.str$ -- 30
+missing$ -- 31
+newline$ -- 149
+num.names$ -- 60
+pop$ -- 263
+preamble$ -- 1
+purify$ -- 171
+quote$ -- 0
+skip$ -- 260
+stack$ -- 0
+substring$ -- 340
+swap$ -- 54
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 112
+warning$ -- 23
+while$ -- 76
+width$ -- 32
+write$ -- 284
+(There were 23 warnings)

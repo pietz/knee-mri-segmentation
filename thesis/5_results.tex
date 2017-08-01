@@ -1,10 +1,31 @@
 \section{Results}
 
-best model performance, parameter count, size
+In this Chapter I want to provide results of the discussed architecture in a numeric and visual manner.
 
 \subsection{Numeric Evaluation}
 
-The final model 
+The numeric results show different modes applied to the 224x224 pixel test set. Bone carried the focus of hyperparameter tuning and describes all bone channels merged into one. Femur, Tibia and Fibula show the results of models that were trained on each bone alone. Combined assembles the three separate channels into one prediction.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| l | c | c | c |}
+    \hline
+    Mode     & DSC                & IoU                & Error             \\ 
+    \hline
+    \hline
+    Bone     & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    \hline
+    Femur    & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    \hline
+    Tibia    & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    \hline
+    Fibula   & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    \hline
+    Combined & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    \hline
+    \end{tabular}
+    \caption{Evaluation of the test set}
+\end{table}
 
 \subsection{Visual Evaluation}
 

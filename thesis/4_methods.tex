@@ -360,7 +360,7 @@ In situations like these, a surrogate function is used that has a high correlati
 H(p, q) = -\sum p(x) \ log \ q(x)
 \end{equation}
 
-Another option was the F1 score, which is a particular implementation of the F-Measure when $ \beta $ is 1. It is also known as the DICE coefficient.
+Another option was the $F_1 score$, which is a particular implementation of the F-Measure when $ \beta $ is 1. It is also known as the DICE coefficient (DSC).
 
 \begin{equation}
 F_\beta \ score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
@@ -382,6 +382,10 @@ Precision = \frac{TP}{TP+FP}
 
 \begin{equation}
 Recall = \frac{TP}{TP+FN}
+\end{equation}
+
+\begin{equation}
+Error = \frac{FP+FN}{TP+TN+FP+FN}
 \end{equation}
 
 Both loss functions were used in separate runs to compare the results of the $F_1 \ score$ and the cross entropy. The $F_1$ trained model showed better results regarding the $F_1 \ score$ and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy, and Intersection-over-Union (IoU) the performance of the $F_1$ trained network showed higher scores.
