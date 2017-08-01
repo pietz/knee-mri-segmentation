@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  1 AUG 2017 18:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  1 AUG 2017 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -488,21 +488,36 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks23
 \@floatcapt=\box29
 )
+(/usr/local/texlive/2017/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/array.sty
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
+\col@sep=\dimen114
+\extrarowheight=\dimen115
+\NC@list=\toks24
+\extratabsurround=\skip46
+\backup@length=\skip47
+)
+\rotheadsize=\dimen116
+\c@nlinenum=\count101
+\TeXr@lab=\toks25
+)
 (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2016/05/14 v2.6a Micro-typographical refinements (RS)
-\MT@toks=\toks24
-\MT@count=\count101
+\MT@toks=\toks26
+\MT@count=\count102
 LaTeX Info: Redefining \textls on input line 774.
-\MT@outer@kern=\dimen114
+\MT@outer@kern=\dimen117
 LaTeX Info: Redefining \textmicrotypecontext on input line 1310.
-\MT@listname@count=\count102
+\MT@listname@count=\count103
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2016/05/14 v2.6a Definitions specific to pdftex (RS)
 
 LaTeX Info: Redefining \lsstyle on input line 916.
 LaTeX Info: Redefining \lslig on input line 916.
-\MT@outer@space=\skip46
+\MT@outer@space=\skip48
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
@@ -512,35 +527,35 @@ File: microtype.cfg 2016/05/14 v2.6a microtype main configuration file (RS)
 (./0_Thesis.aux)
 \openout1 = `0_Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 25.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count103
-\scratchdimen=\dimen115
+\scratchcounter=\count104
+\scratchdimen=\dimen118
 \scratchbox=\box30
-\nofMPsegments=\count104
-\nofMParguments=\count105
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count106
-\MPscratchDim=\dimen116
-\MPnumerator=\count107
-\makeMPintoPDFobject=\count108
-\everyMPtoPDFconversion=\toks26
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen119
+\MPnumerator=\count108
+\makeMPintoPDFobject=\count109
+\everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -590,7 +605,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 24.
+LaTeX Info: Redefining \microtypecontext on input line 25.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2),
 (microtype)             factor: 1100.
@@ -618,7 +633,7 @@ Package microtype Warning: \nonfrenchspacing is active. Adjustment of
 <imgs/fhw.png, id=1, 179.9523pt x 96.36pt>
 File: imgs/fhw.png Graphic file (type png)
  <use imgs/fhw.png>
-Package pdftex.def Info: imgs/fhw.png used on input line 28.
+Package pdftex.def Info: imgs/fhw.png used on input line 29.
 (pdftex.def)             Requested size: 143.9978pt x 77.11307pt.
  [1
 
@@ -853,7 +868,7 @@ File: imgs/unet.png Graphic file (type png)
 Package pdftex.def Info: imgs/unet.png used on input line 237.
 (pdftex.def)             Requested size: 360.0pt x 239.83495pt.
  [17]
-Overfull \hbox (1.23544pt too wide) in paragraph at lines 254--272
+Overfull \hbox (6.83536pt too wide) in paragraph at lines 254--272
  [][] 
  []
 
@@ -883,13 +898,13 @@ Package pdftex.def Info: imgs/model.png used on input line 455.
 [27 <./imgs/model.png>]) (./5_results.tex [28]) (./6_discussion.tex [29])
 (./0_Thesis.bbl [30] [31]) [32] (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 4749 strings out of 492995
- 73441 string characters out of 6132704
- 169381 words of memory out of 5000000
- 8083 multiletter control sequences out of 15000+600000
+ 4942 strings out of 492995
+ 75588 string characters out of 6132704
+ 170847 words of memory out of 5000000
+ 8269 multiletter control sequences out of 15000+600000
  71605 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,38p,863b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,14n,38p,863b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texm
 f-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/texmf-dist/fonts/e
 nc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm
@@ -906,7 +921,7 @@ texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/20
 17/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (36 pages, 2050358 bytes).
+Output written on 0_Thesis.pdf (36 pages, 2050513 bytes).
 PDF statistics:
  219 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams

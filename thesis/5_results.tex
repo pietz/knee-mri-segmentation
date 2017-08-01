@@ -1,34 +1,47 @@
 \section{Results}
 
-The results in this section are entirely based on the test set, which had no contact with the network up to this point. 5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, a total of 325 2D samples were available for the verification.
+The results in this section are entirely based on the test set, which had no contact with the network up to this point. It was also made sure that there was no overlap in images of people that were recorded multiple times. 
+
+5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
+
+The network architecture was developed and optimized with focus on a single segmentation channel that merged Femur, Tibia und Fibula maps. However, tests were also run to validate the performance for each bone on its own. The same architecture and training procedure was used for this task.
 
 \subsection{Numeric Evaluation}
 
-The
-
-The following results were evaluated on the test set, which consisted of 325 slices. 
-
-The numeric results show different modes applied to the 224x224 pixel test set. Bone carried the focus of hyperparameter tuning and describes all bone channels merged into one. Femur, Tibia and Fibula show the results of models that were trained on each bone alone. Combined assembles the three separate channels into one prediction.
+The proposed model achieves a DICE score of 98.0\% and an IoU of 96.0\%. Precision and Recall are perfectly balanced at 98.0\% as well, suggesting that predictions are neither too 
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{| l | c | c | c |}
+    \begin{tabular}{| l | c | c | c | c | c |}
     \hline
-    Mode       & DSC                & IoU                & Error             \\ 
+           & DSC & IoU & Precision & Recall & Error \\ 
     \hline
+    Merged & \makecell{0.980} 
+           & \makecell{0.960} 
+           & \makecell{0.980} 
+           & \makecell{0.980} 
+           & \makecell{0.012} \\
     \hline
-    Bone (1 Ch.) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    Femur  & \makecell{0.981} 
+           & \makecell{0.963} 
+           & \makecell{0.979} 
+           & \makecell{0.980} 
+           & \makecell{0.009} \\
     \hline
-    Femur        & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    Tibia  & \makecell{0.977} 
+           & \makecell{0.955} 
+           & \makecell{0.976} 
+           & \makecell{0.978} 
+           & \makecell{0.005} \\
     \hline
-    Tibia        & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
-    \hline
-    Fibula       & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
-    \hline
-    Bone (3 Ch.) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    Fibula & \makecell{0.953} 
+           & \makecell{0.910} 
+           & \makecell{0.954} 
+           & \makecell{0.952} 
+           & \makecell{0.001} \\
     \hline
     \end{tabular}
-    \caption{Evaluation of the test set}
+    \caption{Numeric evaluation of the test set using popular metrics}
 \end{table}
 
 \subsection{Visual Evaluation}
