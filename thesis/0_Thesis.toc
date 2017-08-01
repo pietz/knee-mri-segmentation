@@ -31,7 +31,8 @@
 \contentsline {subsubsection}{\numberline {3.5.3}Batch Size}{25}
 \contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy}{25}
 \contentsline {subsubsection}{\numberline {3.5.5}Early Stopping}{26}
-\contentsline {subsection}{\numberline {3.6}Summary}{26}
+\contentsline {subsection}{\numberline {3.6}Postprocessing}{26}
+\contentsline {subsection}{\numberline {3.7}Summary}{26}
 \contentsline {section}{\numberline {4}Results}{28}
 \contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{28}
 \contentsline {subsection}{\numberline {4.2}Visual Evaluation}{28}

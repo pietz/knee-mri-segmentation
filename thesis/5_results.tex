@@ -1,8 +1,12 @@
 \section{Results}
 
-In this Chapter I want to provide results of the discussed architecture in a numeric and visual manner.
+The results in this section are entirely based on the test set, which had no contact with the network up to this point. 5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, a total of 325 2D samples were available for the verification.
 
 \subsection{Numeric Evaluation}
+
+The
+
+The following results were evaluated on the test set, which consisted of 325 slices. 
 
 The numeric results show different modes applied to the 224x224 pixel test set. Bone carried the focus of hyperparameter tuning and describes all bone channels merged into one. Femur, Tibia and Fibula show the results of models that were trained on each bone alone. Combined assembles the three separate channels into one prediction.
 
@@ -10,18 +14,18 @@ The numeric results show different modes applied to the 224x224 pixel test set. 
     \centering
     \begin{tabular}{| l | c | c | c |}
     \hline
-    Mode     & DSC                & IoU                & Error             \\ 
+    Mode       & DSC                & IoU                & Error             \\ 
     \hline
     \hline
-    Bone     & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    Bone (1 Ch.) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
     \hline
-    Femur    & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    Femur        & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
     \hline
-    Tibia    & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    Tibia        & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
     \hline
-    Fibula   & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    Fibula       & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
     \hline
-    Combined & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
+    Bone (3 Ch.) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174) & 0.980 ($\pm$0.174)\\
     \hline
     \end{tabular}
     \caption{Evaluation of the test set}

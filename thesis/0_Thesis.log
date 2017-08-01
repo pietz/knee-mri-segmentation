@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  1 AUG 2017 14:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  1 AUG 2017 18:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -655,28 +655,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `0_Thesis.toc'.
 
- [2]
+ [2] [3]
 (./2_introduction.tex [1]) (./3_background.tex
-<imgs/open-14y.jpg, id=22, 562.1pt x 562.1pt>
+<imgs/open-14y.jpg, id=25, 562.1pt x 562.1pt>
 File: imgs/open-14y.jpg Graphic file (type jpg)
  <use imgs/open-14y.jpg>
 Package pdftex.def Info: imgs/open-14y.jpg used on input line 23.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/centrally-closed-16y.jpg, id=23, 562.1pt x 562.1pt>
+<imgs/centrally-closed-16y.jpg, id=26, 562.1pt x 562.1pt>
 File: imgs/centrally-closed-16y.jpg Graphic file (type jpg)
 
 <use imgs/centrally-closed-16y.jpg>
 Package pdftex.def Info: imgs/centrally-closed-16y.jpg used on input line 26.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/closed-18y.jpg, id=24, 562.1pt x 562.1pt>
+<imgs/closed-18y.jpg, id=27, 562.1pt x 562.1pt>
 File: imgs/closed-18y.jpg Graphic file (type jpg)
  <use imgs/closed-18y.jpg>
 Package pdftex.def Info: imgs/closed-18y.jpg used on input line 29.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-[2] <imgs/cs_hier.png, id=28, 1419.3025pt x 916.42375pt>
+[2] <imgs/cs_hier.png, id=31, 1419.3025pt x 916.42375pt>
 File: imgs/cs_hier.png Graphic file (type png)
 
 <use imgs/cs_hier.png>
@@ -684,7 +684,7 @@ Package pdftex.def Info: imgs/cs_hier.png used on input line 43.
 (pdftex.def)             Requested size: 288.0011pt x 185.95235pt.
  [3 <./imgs/open-14y.jpg> <./imgs/centrally-closed-16y.jpg> <./imgs/closed-18y.
 jpg> <./imgs/cs_hier.png>]
-<imgs/classic_prog.png, id=34, 2257.43375pt x 284.06125pt>
+<imgs/classic_prog.png, id=38, 2257.43375pt x 284.06125pt>
 File: imgs/classic_prog.png Graphic file (type png)
 
 <use imgs/classic_prog.png>
@@ -698,26 +698,26 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 69.
 
-<imgs/ml_pipeline.png, id=35, 2263.45625pt x 795.97375pt>
+<imgs/ml_pipeline.png, id=39, 2263.45625pt x 795.97375pt>
 File: imgs/ml_pipeline.png Graphic file (type png)
 
 <use imgs/ml_pipeline.png>
 Package pdftex.def Info: imgs/ml_pipeline.png used on input line 79.
 (pdftex.def)             Requested size: 288.0011pt x 101.26973pt.
  [4 <./imgs/classic_prog.png>]
-<imgs/ann.png, id=42, 1606.0pt x 832.10875pt>
+<imgs/ann.png, id=45, 1606.0pt x 832.10875pt>
 File: imgs/ann.png Graphic file (type png)
  <use imgs/ann.png>
 Package pdftex.def Info: imgs/ann.png used on input line 97.
 (pdftex.def)             Requested size: 288.0011pt x 149.21445pt.
  [5 <./imgs/ml_pipeline.png>] [6 <./imgs/ann.png>]
-<imgs/landscape.jpg, id=51, 1003.75pt x 1003.75pt>
+<imgs/landscape.jpg, id=54, 1003.75pt x 1003.75pt>
 File: imgs/landscape.jpg Graphic file (type jpg)
  <use imgs/landscape.jpg>
 Package pdftex.def Info: imgs/landscape.jpg used on input line 127.
 (pdftex.def)             Requested size: 115.20264pt x 115.19142pt.
 
-<imgs/landscape_mask.jpg, id=52, 1003.75pt x 1003.75pt>
+<imgs/landscape_mask.jpg, id=55, 1003.75pt x 1003.75pt>
 File: imgs/landscape_mask.jpg Graphic file (type jpg)
 
 <use imgs/landscape_mask.jpg>
@@ -727,43 +727,43 @@ Package pdftex.def Info: imgs/landscape_mask.jpg used on input line 130.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[8] <imgs/3.jpg, id=59, 562.1pt x 562.1pt>
+[8] <imgs/3.jpg, id=62, 562.1pt x 562.1pt>
 File: imgs/3.jpg Graphic file (type jpg)
  <use imgs/3.jpg>
 Package pdftex.def Info: imgs/3.jpg used on input line 33.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/10.jpg, id=60, 562.1pt x 562.1pt>
+<imgs/10.jpg, id=63, 562.1pt x 562.1pt>
 File: imgs/10.jpg Graphic file (type jpg)
  <use imgs/10.jpg>
 Package pdftex.def Info: imgs/10.jpg used on input line 36.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/17.jpg, id=61, 562.1pt x 562.1pt>
+<imgs/17.jpg, id=64, 562.1pt x 562.1pt>
 File: imgs/17.jpg Graphic file (type jpg)
  <use imgs/17.jpg>
 Package pdftex.def Info: imgs/17.jpg used on input line 39.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/24.jpg, id=62, 562.1pt x 562.1pt>
+<imgs/24.jpg, id=65, 562.1pt x 562.1pt>
 File: imgs/24.jpg Graphic file (type jpg)
  <use imgs/24.jpg>
 Package pdftex.def Info: imgs/24.jpg used on input line 43.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/31.jpg, id=63, 562.1pt x 562.1pt>
+<imgs/31.jpg, id=66, 562.1pt x 562.1pt>
 File: imgs/31.jpg Graphic file (type jpg)
  <use imgs/31.jpg>
 Package pdftex.def Info: imgs/31.jpg used on input line 46.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/38.jpg, id=64, 562.1pt x 562.1pt>
+<imgs/38.jpg, id=67, 562.1pt x 562.1pt>
 File: imgs/38.jpg Graphic file (type jpg)
  <use imgs/38.jpg>
 Package pdftex.def Info: imgs/38.jpg used on input line 49.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/age_distr.png, id=65, 1188.44pt x 608.2725pt>
+<imgs/age_distr.png, id=68, 1188.44pt x 608.2725pt>
 File: imgs/age_distr.png Graphic file (type png)
  <use imgs/age_distr.png>
 Package pdftex.def Info: imgs/age_distr.png used on input line 59.
@@ -771,25 +771,25 @@ Package pdftex.def Info: imgs/age_distr.png used on input line 59.
 
 [9 <./imgs/3.jpg> <./imgs/10.jpg> <./imgs/17.jpg> <./imgs/24.jpg> <./imgs/31.jp
 g> <./imgs/38.jpg>] [10 <./imgs/age_distr.png>] [11]
-<imgs/intensity_distr.png, id=77, 1188.44pt x 608.2725pt>
+<imgs/intensity_distr.png, id=80, 1188.44pt x 608.2725pt>
 File: imgs/intensity_distr.png Graphic file (type png)
 
 <use imgs/intensity_distr.png>
 Package pdftex.def Info: imgs/intensity_distr.png used on input line 123.
 (pdftex.def)             Requested size: 360.0pt x 184.25592pt.
- [12] <imgs/orig.jpg, id=84, 321.2pt x 321.2pt>
+ [12] <imgs/orig.jpg, id=87, 321.2pt x 321.2pt>
 File: imgs/orig.jpg Graphic file (type jpg)
 
 <use imgs/orig.jpg>
 Package pdftex.def Info: imgs/orig.jpg used on input line 138.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
- <imgs/corr.jpg, id=85, 321.2pt x 321.2pt>
+ <imgs/corr.jpg, id=88, 321.2pt x 321.2pt>
 File: imgs/corr.jpg Graphic file (type jpg)
 
 <use imgs/corr.jpg>
 Package pdftex.def Info: imgs/corr.jpg used on input line 141.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
- <imgs/diff2.jpg, id=86, 321.2pt x 321.2pt>
+ <imgs/diff2.jpg, id=89, 321.2pt x 321.2pt>
 File: imgs/diff2.jpg Graphic file (type jpg)
 
 <use imgs/diff2.jpg>
@@ -797,49 +797,49 @@ Package pdftex.def Info: imgs/diff2.jpg used on input line 144.
 (pdftex.def)             Requested size: 115.20264pt x 115.2006pt.
  [13 <./imgs/intensity_distr.png>] [14 <./imgs/orig.jpg> <./imgs/corr.jpg> <./i
 mgs/diff2.jpg>] [15]
-<imgs/x1.png, id=97, 224.84pt x 224.84pt>
+<imgs/x1.png, id=101, 224.84pt x 224.84pt>
 File: imgs/x1.png Graphic file (type png)
  <use imgs/x1.png>
 Package pdftex.def Info: imgs/x1.png used on input line 193.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/x2.png, id=98, 224.84pt x 224.84pt>
+<imgs/x2.png, id=102, 224.84pt x 224.84pt>
 File: imgs/x2.png Graphic file (type png)
  <use imgs/x2.png>
 Package pdftex.def Info: imgs/x2.png used on input line 196.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/x3.png, id=99, 224.84pt x 224.84pt>
+<imgs/x3.png, id=103, 224.84pt x 224.84pt>
 File: imgs/x3.png Graphic file (type png)
  <use imgs/x3.png>
 Package pdftex.def Info: imgs/x3.png used on input line 199.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/x4.png, id=100, 224.84pt x 224.84pt>
+<imgs/x4.png, id=104, 224.84pt x 224.84pt>
 File: imgs/x4.png Graphic file (type png)
  <use imgs/x4.png>
 Package pdftex.def Info: imgs/x4.png used on input line 202.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/y1.png, id=101, 224.84pt x 224.84pt>
+<imgs/y1.png, id=105, 224.84pt x 224.84pt>
 File: imgs/y1.png Graphic file (type png)
  <use imgs/y1.png>
 Package pdftex.def Info: imgs/y1.png used on input line 206.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/y2.png, id=102, 224.84pt x 224.84pt>
+<imgs/y2.png, id=106, 224.84pt x 224.84pt>
 File: imgs/y2.png Graphic file (type png)
  <use imgs/y2.png>
 Package pdftex.def Info: imgs/y2.png used on input line 209.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/y3.png, id=103, 224.84pt x 224.84pt>
+<imgs/y3.png, id=107, 224.84pt x 224.84pt>
 File: imgs/y3.png Graphic file (type png)
  <use imgs/y3.png>
 Package pdftex.def Info: imgs/y3.png used on input line 212.
 (pdftex.def)             Requested size: 86.40198pt x 86.4007pt.
 
-<imgs/y4.png, id=104, 224.84pt x 224.84pt>
+<imgs/y4.png, id=108, 224.84pt x 224.84pt>
 File: imgs/y4.png Graphic file (type png)
  <use imgs/y4.png>
 Package pdftex.def Info: imgs/y4.png used on input line 215.
@@ -847,7 +847,7 @@ Package pdftex.def Info: imgs/y4.png used on input line 215.
  [16 <./imgs/x1.png (PNG copy)> <./imgs/x2.png (PNG copy)> <./imgs/x3.png (PNG 
 copy)> <./imgs/x4.png (PNG copy)> <./imgs/y1.png (PNG copy)> <./imgs/y2.png (PN
 G copy)> <./imgs/y3.png (PNG copy)> <./imgs/y4.png (PNG copy)>]
-<imgs/unet.png, id=109, 1560.83125pt x 1039.885pt>
+<imgs/unet.png, id=112, 1560.83125pt x 1039.885pt>
 File: imgs/unet.png Graphic file (type png)
  <use imgs/unet.png>
 Package pdftex.def Info: imgs/unet.png used on input line 237.
@@ -858,14 +858,14 @@ Overfull \hbox (1.23544pt too wide) in paragraph at lines 254--272
  []
 
 [18 <./imgs/unet.png>] [19] [20]
-<imgs/elu_relu1.png, id=123, 496.85625pt x 362.35374pt>
+<imgs/elu_relu1.png, id=126, 496.85625pt x 362.35374pt>
 File: imgs/elu_relu1.png Graphic file (type png)
 
 <use imgs/elu_relu1.png>
 Package pdftex.def Info: imgs/elu_relu1.png used on input line 322.
 (pdftex.def)             Requested size: 180.0pt x 131.27107pt.
 
-<imgs/forward_backward_prop.png, id=124, 1606.0pt x 620.3175pt>
+<imgs/forward_backward_prop.png, id=127, 1606.0pt x 620.3175pt>
 File: imgs/forward_backward_prop.png Graphic file (type png)
 
 <use imgs/forward_backward_prop.png>
@@ -874,10 +874,10 @@ Package pdftex.def Info: imgs/forward_backward_prop.png used on input line 338.
 (pdftex.def)             Requested size: 360.0pt x 139.04482pt.
  [21 <./imgs/elu_relu1.png>] [22 <./imgs/forward_backward_prop.png>] [23] [24] 
 [25]
-<imgs/model.png, id=145, 1606.0pt x 1686.3pt>
+<imgs/model.png, id=148, 1606.0pt x 1686.3pt>
 File: imgs/model.png Graphic file (type png)
  <use imgs/model.png>
-Package pdftex.def Info: imgs/model.png used on input line 451.
+Package pdftex.def Info: imgs/model.png used on input line 455.
 (pdftex.def)             Requested size: 198.0011pt x 207.8794pt.
  [26]
 [27 <./imgs/model.png>]) (./5_results.tex [28]) (./6_discussion.tex [29])
@@ -906,10 +906,10 @@ texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/20
 17/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (35 pages, 2049076 bytes).
+Output written on 0_Thesis.pdf (36 pages, 2050358 bytes).
 PDF statistics:
- 216 PDF objects out of 1000 (max. 8388607)
- 122 compressed objects within 2 object streams
+ 219 PDF objects out of 1000 (max. 8388607)
+ 124 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  20646 words of extra memory for PDF output out of 20736 (max. 10000000)
 
