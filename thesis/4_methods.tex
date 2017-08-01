@@ -1,8 +1,8 @@
-\section{Methods*}
+\section{Methods}
 
 The purpose of this chapter is twofold. It will discuss the design and processing decisions that were made for the development of this project, while also giving critical insight into how these applied technologies work.
 
-\subsection{Setup*}
+\subsection{Setup}
 
 The workstation included an Intel i5 processor, 16GB of RAM and most importantly a NVIDIA GeForce GTX1060/6GB. Neural Networks can be trained more efficiently on GPUs than CPUs. This is because the simpler but highly parallelized architecture of graphics chips plays in favor for the needed calculations in deep learning \cite{NVIDIA}.
 
@@ -10,7 +10,7 @@ The computer ran Ubuntu 16.04 with the NVIDIA CUDA and cuDNN libraries installed
 
 The processing of medical image data needed a library that could handle these formats. SimpleITK is a Python binding to the ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field. Other libraries were also used for smaller tasks. A complete listing can be found on the project's GitHub page, where the entire code is available.
 
-\subsection{Data Analysis*}
+\subsection{Data Analysis}
 
 The data set was a collection of three dimensional MR images showing the human right knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as certain meta information about each image. The resolution of these samples differed from one source to the other.
 
@@ -63,21 +63,21 @@ The total of 76 segmentation maps were all manually labeled by two people. Each 
 
 The candidates chosen for the MRI recordings were all german males between the age of 14 and 20. Their age was normally distributed, and a majority of the candidates were recorded twice roughly a year apart.
 
-\subsection{Preprocessing*}
+\subsection{Preprocessing}
 
 The parameters in a Neural Network commonly range from tens of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
 
-Because of the small data set that was available for this study, several types of preprocessing were applied to the images. For the most part these techniques remove irrelevant information and reduce variance between multiple samples.
+Because of the small data set that was available for this study, several types of preprocessing were applied to the images. For the most part, these techniques remove irrelevant information and reduce variance between multiple samples.
 
 Other preparation methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
 
-\subsubsection{Training, Validation, and Testing Sets*}
+\subsubsection{Training, Validation, and Testing Sets}
 
 The data was split into three subsets of which each was used for a different purpose. The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It's the only portion of the data the network will draw direct conclusions from. 
 
 The validation data is used to regularly measure the performance of the model and check whether overfitting occurs or not. If the accuracy of the validation set drops below the results of the training data, the network is starting to memorize the data it knows rather than generalizing on the concept.
 
-The third subset is referred to as the testing data. In contrast to the validation set, it's only used once in the very end, to give a final score. The idea is that by building a model based on the validation results a certain amount of information bleed occurs, where the network will implicitly learn from the validation data. To prevent biased results, the testing data is used as a last performance reference.
+The third subset is referred to as the testing data. In contrast to the validation set, it's only used once in the very end, to give a final score. The idea is that by building a model based on the validation results a certain amount of information bleed occurs, where the network will implicitly learn from the validation data. In order to prevent biased results, the testing data is used as a last performance reference.
 
 \begin{itemize}
 \item Traning Set: 74\% of the data
@@ -85,13 +85,13 @@ The third subset is referred to as the testing data. In contrast to the validati
 \item Test Set: 13\% of the data
 \end{itemize}
 
-\subsubsection{Cropping, Resizing, and Resampling*}
+\subsubsection{Cropping, Resizing, and Resampling}
 
 The framing included vast areas of the upper and lower leg to be visible in the picture. Since these were not seen as relevant, they were cropped out. An existing algorithm was used to detect the center where Tibia and Femur meet and only use a square window around this point.
 
 Although there is no theoretical size limitation to using convolutional neural networks, it is desirable to reduce the spatial resolution and therefore decrease the number of calculations. 224x224 pixels for each slice still gave enough detail to identify the shape of Femur, Tibia, and Fibula, while also being a common resolution for CNNs.
 
-Resizing the z-axis was problematic because the resolution was roughly 20 times lower. When scaling along this dimension, the segmentation maps of different slices started to blend and create merged maps of multiple layers. To get the images from two different main sources on the same scale, two different approaches were tried.
+Resizing the z-axis was problematic because the resolution was roughly 20 times lower. When scaling along this dimension, the segmentation maps of different slices started to blend and create merged maps of multiple layers. In order to get the images from two different main sources on the same scale, two different approaches were tried.
 
 The 41 slices per image of the Epi data were padded with empty pixels to 48 slices. Afterward, every second 2D image was resampled to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps may have falsified the data.
 
@@ -99,7 +99,7 @@ Throwing away perfectly good data is very uncommon in the machine learning field
 
 The second approach converted the volumetric data to 2D while using all 41 slices from the Epi data and all 24 slices from Jopp. No samples were thrown away, but the data was no longer volumetric. 
 
-\subsubsection{Normalization*}
+\subsubsection{Normalization}
 
 The normalization of images refers to the process of transforming all samples on the same scale of values. Two techniques for this are popular in the field of deep learning. The first one is called feature scaling, where every sample is normalized between 0 and 1.
 
@@ -125,11 +125,11 @@ The standard score presents a more desirable approach because its mean centering
 \par
 \end{figure}
 
-In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. The Jopp images featured roughly five times higher intensities than the Epi data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an input is.
+In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. The Jopp images featured roughly five times higher intensities than the Epi data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an image is.
 
 This approach also has a downside. The network can no longer use the mean intensity and the standard deviation as a feature to learn from because every image will be identical according to these measures. However, these two features showed no correlation to the accuracy of a prediction, which is why it was decided to use this approach.
 
-\subsubsection{N4 Bias Field Correction*}
+\subsubsection{N4 Bias Field Correction}
 
 A bias field is a low-frequency non-uniform intensity that is an unwanted byproduct Magnetic Resonance imaging. Several methods have been developed in the past of which N4ITK is the de facto standard in the field \cite{Tustison2010}. This algorithm approximates the nonuniform field and balances intensities using B-Splines. 
 
@@ -148,13 +148,13 @@ A bias field is a low-frequency non-uniform intensity that is an unwanted byprod
 
 As the name suggests, it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24x224x224 image took between 60 and 120 seconds.
 
-\subsubsection{Augmentation*}
+\subsubsection{Augmentation}
 
 Image augmentation is a popular approach to virtually increase the size of the dataset. The general idea is that a neural network will overfit more when learning one sample n times, in comparison to learning n alternations of this sample just once. It helps to generalize on new images instead of memorizing patterns in the training data.
 
 Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90-degree rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary concerning their contained values. 
 
-The term "lossless" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
+The term "lossless" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically, switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
 
 Lossy augmentation methods include a variety of image transformations. Common choices include:
 
@@ -172,19 +172,19 @@ For this study horizontal flips were implemented to give the impression that ima
 
 Interestingly, these methods did not improve the accuracy of the model. The horizontal flips even hurt the performance and were therefore removed. The horizontal shifts were kept in the training set, so the network would perform better on unseen data that was not perfectly aligned.
 
-\subsubsection{2D and 3D data*}
+\subsubsection{2D and 3D data}
 
 Although convolutional neural networks are most commonly connected with 2D data such as photos or drawings, they can be applied in any dimensional space. In Natural Language Processing (NLP) 1D convolutions are often used on sentences and in finance they can be applied to time series forecasting. In the medical field where a variety of volumetric data exists, 3D convolutions have become a popular choice for building deep learning solutions.
 
 In the context of neural networks, one has to differentiate between volumetric data with one channel and 2D data that consists of multiple color channels. Both are an example of 3D data, but the volumetric images feature three spatial dimensions, whereas photos feature only two. Convolutions commonly traverse the spatial dimensions, which means photos with multiple channels are usually not subject to 3D convolutions. Instead, various input channels are fed into a 2D CNN.
 
-Although the data set consisted of volumetric MRI data, the z-axis showed a 20 times lower resolution than the other two. Not knowing the influence of this situation both 3D and 2D architectures were investigated for this project. The 3D model didn't use any MaxPooling on the already small z-axis. A kernel size of 3x3x3 was used similarly to the 3D version of U-Net. The 2D data was created by using each slice as a single input image.
+Although the data set consisted of volumetric MRI data, the z-axis showed 20 times fewer voxels than the other two dimensions. Not knowing the influence of this situation both 3D and 2D architectures were investigated for this project. The 3D model didn't use any MaxPooling on the already small z-axis. A kernel size of 3x3x3 was used similarly to the 3D version of U-Net. The 2D data was created by using each slice as a single input image.
 
 As described in 3.3.1 the 3D convolutional network used 24x224x224 voxel images from both the Epi and Jopp data. In contrast, the 2D network used all of the available slices from each source as separate images.
 
 While in theory, the spatial information of the z-axis gave the 3D network more contextual information of every slice, the 2D model performed better at the end. The latter was also less computationally expensive and allowed working with data where only single slices were available per sample.
 
-\subsubsection{Separate Bone Maps*}
+\subsubsection{Separate Bone Maps}
 
 The initial segmentation maps came with three separate channels for the Femur, Tibia, and Fibula. With this information, it was possible to train a network that would segment the three bones while still differentiating between them.
 
@@ -223,11 +223,11 @@ The only successful method was training a separate model for each of the three b
 
 For another experiment, the three channels were merged to create a network that would segment any bone in the image. Not only did this solve the problem with the Fibula as well, but the predictions of Femur and Tibia were also more accurate. The network didn't need to learn any more that the global position in the image accounts for whether or not an object should be segmented. Instead, it could segment any bone in any position in the frame. It was decided to continue with this approach for further tests, but the same architecture can be used on single bone channels as well.
 
-\subsection{Architecture*}
+\subsection{Architecture}
 
 The majority of classification CNNs use a recurrent combination of convolutional and pooling layers \cite{Krizhevsky}\cite{He2015b}\cite{Iandola2016a}\cite{Ronneberger2015a}. By combining the local learning patterns of convolutions with the spatial reductions of pooling, the input is compressed to a dense representation of its most important features.
 
-As mentioned in 3.2.5 a segmentation can be seen as a classification for every pixel. As such early CNN segmentation models used small patches of the input image only to predict a single pixel through a classification pipeline. Afterward, a full segmentation map was assembled using each of these pixels. This process was very slow, and it also prevented the network to have a field of view larger than the inserted patch.
+As mentioned in 3.2.5 a segmentation can be seen as a classification for every pixel. As such, early CNN segmentation models used small patches of the input image only to predict a single pixel through a classification pipeline. Afterward, a full segmentation map was assembled using each of these pixels. This process was very slow, and it also prevented the network to have a field of view larger than the inserted patch.
 
 An improvement for segmentations came through architectures referred to as encoder-decoder models. The encoding process describes the same spatial compression used in classification networks. Afterward, in the decoding step, the spatial resolution is brought back to its original shape and further processed by additional convolutions. This yields huge speed improvements, while also increasing the accuracy of the prediction. Encoder-decoder networks are the de facto standard in the current field of image segmentation \cite{Chen2017}\cite{Zhao2016}\cite{Lin2016}\cite{Chen2016}\cite{Nekrasov2016}\cite{Milletari2016}\cite{Cicek2016}\cite{Ronneberger2015a}\cite{Badrinarayanan2015}, and they were the initial starting point for building architecture.
 
@@ -243,7 +243,7 @@ Figure 12 shows a particular implementation of an encoder-decoder model known as
 
 The following subchapters will discuss key elements that go into the design process of such an architecture. It was also analyzed how technologies that were introduced after the U-Net paper could improve the performance on this data set.
 
-\subsubsection{Channels, Growth Rate and Depth*}
+\subsubsection{Channels, Growth Rate and Depth}
 
 The number of parameters in a neural network has a high correlation with its learning capacity. By adding more nodes that can be adjusted during training, the model can approximate a more complex function that transforms the input into the output. The downside is that a larger parameter count will also increase the possibility of overfitting the data. A convention in the field of CNNs is to gradually increase the number of channels, while the spatial resolution is reduced due to the use of MaxPooling \cite{Krizhevsky}\cite{He2015b}\cite{Iandola2016a}\cite{Ronneberger2015a}. U-Net also shows this behavior on the left side of its architecture.
 
@@ -274,25 +274,25 @@ A test was set up that compared the original U-Net against five smaller variants
 
 Training U-Net was very slow in two regards. Each training step lasted six times longer compared to the smallest model, while it also took 25 times more training steps to reach the same results. Since it was also overfitting to a significant amount, it was not trained until the end. The second largest model E also overfitted on the training data and never achieved comparable results to the other four models.
 
-D started with eight channels which were than increased by a factor of 2, whereas B started out larger but only increased the channels by a rate of 1.5. Although being the smaller model, B showed a higher accuracy in the end. It was concluded that the initial number of output channels has a larger effect on the result than the growth rate.
+D started with eight channels which were then increased by a factor of 2, whereas B started out larger but only increased the channels by a rate of 1.5. Although being the smaller model, B showed a higher accuracy in the end. It was concluded that the initial number of output channels has a larger effect on the result than the growth rate.
 
 This theory was supported by the results from A and C, both of which kept their initial number of channels throughout the network. These two showed the highest scores in comparison to the other models while maintaining their relatively small size. Since their results were identical, model A was kept because of its faster training speed. It was interesting to see that the smallest model performed best across the candidates.
 
 The original U-Net featured a depth of 5 convolutional blocks until reaching the bottom of the "U"-shape. It was also investigated that a depth of 6 would not improve performance, while a depth of 4 decreased the accuracy. Therefore, Model A was left unchanged.
 
-\subsubsection{Skip Connections*}
+\subsubsection{Skip Connections}
 
 U-Net uses skip connections to copy values from the left side to the corresponding layer on the right side. This improves performance because otherwise spatial information would get lost while contracting the input. An experiment showed that removing these paths indeed hurt the performance badly.
 
 ResNet \cite{He2015b} is another popular classification architecture that was the first to use residual connections. These are another type of skip connection that bridge the beginning and end of a convolutional block. According to the original paper, they are also one of the main reasons CNNs can be expanded to depths of thousands of layers. Since their use in the industry has found great success in many models, they were also applied in this network. However, they did not have an impact on the performance or the training speed, which is why they were not used in the end.
 
-\subsubsection{Dropout*}
+\subsubsection{Dropout}
 
 Dropout is a popular regularization technique that randomly zeros out a fraction of the nodes during training \cite{Srivastava2014}. It is understood that this helps the model to generalize better and reduce overfitting on a given data set. Well known image classification architectures like VGG16 \cite{Simonyan2014a}, SqueezeNet \cite{Iandola2016a} or AlexNet \cite{Krizhevsky} use Dropout near the end of the network. Similarly, U-Net uses Dropout at the end of the contracting path to prevent overfitting.
 
 Since a single unit of dropout with a rate of 0.5 is common in other architectures, this was also chosen as a first option. Other tests included adding multiple dropout units between the convolutions on the contracting side, which led to slower training and lower scores. Adding dropout on the expanding side is rather unusual and also didn't perform well in the tests. In the end, the first candidate was chosen for future training.
 
-\subsubsection{Activation Functions*}
+\subsubsection{Activation Functions}
 
 Activation functions sit between layers in a network to introduce a non-linearity. Otherwise, the dense and convolutional operations could be regenerated to a simple linear transformation and remove the benefits of building a deep model.
 
@@ -326,7 +326,7 @@ Since the introduction of ReLU other variants have built on its success like PRe
 
 ELU showed superior results in comparison to ReLU and was chosen for all future tests.
 
-\subsection{Training*}
+\subsection{Training}
 
 The training is where the actual learning takes place, and its process is inspired by how humans improve their performance on tasks. When opposed to a difficult question the first step would be a mere guess of what the answer might be. In a second phase, this information is compared to the right answer and processed by the brain accordingly.
 
@@ -340,9 +340,9 @@ Similarly, the training of a neural network consists of two parts. In the first 
 \par
 \end{figure}
 
-The prediction is then compared to the actual answer, and the error is calculated. This metric can be fed back through the network to optimize the parameters in the model. These two steps are called forward and backward propagation.
+The prediction is then compared to the right answer, and the error is calculated. This metric can be fed back through the network to optimize the parameters in the model. These two steps are called forward and backward propagation.
 
-\subsubsection{Metrics and Loss Functions*}
+\subsubsection{Metrics and Loss Functions}
 
 Metrics are used in deep learning to measure the performance of a model. For example, the accuracy is often chosen to describe how well a neural network is doing on a classification task. An accuracy of 0.9 indicates that 9 out of 10 samples are classified correctly.
 
@@ -360,21 +360,21 @@ In situations like these, a surrogate function is used that has a high correlati
 H(p, q) = -\sum p(x) \ log \ q(x)
 \end{equation}
 
-Another option was the F1 score, which is a particular implementation of the F-Measure when beta is 1. 
+Another option was the F1 score, which is a particular implementation of the F-Measure when $ \beta $ is 1. It is also known as the DICE coefficient.
 
 \begin{equation}
-F_\beta score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
+F_\beta \ score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
 \end{equation}
 
-Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the F1 loss was defined as 1 - F1 score.
+Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the $F_1 loss$ was defined as $ 1 - F_1 \ score $.
 
 \begin{equation}
-F_\beta loss = 1 - F_\beta score
+F_\beta \ loss = 1 - F_\beta \ score
 \end{equation}
 
-The value of beta can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was true, whereas recall describes how much of the ground truth was recognized by the model. This can be useful for data sets with large imbalances between classes, like this study showed between Fibula, Femur, and Tibia. 
+The value of $ \beta $ can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was true, whereas recall describes how much of the ground truth was recognized by the model. This can be useful for data sets with large imbalances between classes, like this study showed between Fibula, Femur, and Tibia. 
 
-Therefore the F2 score was tried for the three channel segmentation, where the Fibula could not be recognized. Although this model showed better scores regarding recall, the Fibula was still not segmented.
+The $F_2 score$ was tried for the three channel segmentation, where the Fibula could not be recognized. Although this model showed better scores regarding the recall measure, the Fibula was still not segmented.
 
 \begin{equation}
 Precision = \frac{TP}{TP+FP}
@@ -384,37 +384,37 @@ Precision = \frac{TP}{TP+FP}
 Recall = \frac{TP}{TP+FN}
 \end{equation}
 
-Both loss functions were used in separate runs to compare the results of the F1 score and the cross entropy. The F1 trained model showed better results regarding the F1 score and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy, and Intersection-over-Union (IoU) the performance of F1 trained network showed higher scores.
+Both loss functions were used in separate runs to compare the results of the $F_1 \ score$ and the cross entropy. The $F_1$ trained model showed better results regarding the $F_1 \ score$ and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy, and Intersection-over-Union (IoU) the performance of the $F_1$ trained network showed higher scores.
 
 \begin{equation}
 IoU= \frac{TP}{TP+FP+FN}
 \end{equation}
 
-Another test run used both loss function at the same time. This was done by feeding the output of the second to last layer into two separate segmentation outputs. Each of these last layers was trained with the F1 loss and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture matched the best results of the previous runs in a single model but also increased the training time by 30\%.
+Another test run used both loss function at the same time. This was done by feeding the output of the next-to-last layer into two separate segmentation outputs. Each of these last layers was trained with the $F_1 \ loss$ and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture matched the best results of the previous runs in a single model but also increased the training time by 30\%.
 
-Evaluating these two outputs on the other metrics played in favor for the F1 loss output. Combining both maps didn't improve the scores any further. Since the cross entropy was chosen as a surrogate function and not as a performance metric, all future tests used only the F1 loss. This delivered faster training than the dual output method.
+Evaluating these two outputs on the other metrics played in favor for the $F_1 loss$ output. Combining both maps didn't improve the scores any further. Since the cross entropy was chosen as a surrogate function and not as a performance metric, all future tests used only the $F_1 loss$. This delivered faster training than the dual output method.
 
-\subsubsection{Optimizer*}
+\subsubsection{Optimizer}
 
 The previous chapter provided an overview of the loss function, which measures the performance of a prediction during the training process. This chapter discusses how the result can be used to execute the actual optimization step.
 
 The derivative of a single variable function defines the slope of this function at any given point. Knowing this, one can tell in which direction the original function declines. Adjusting the independent variable along the descent of a loss function will minimize the error in respect to its dependent variable.
 
-The gradient is the derivative for functions of multi-dimensional inputs, such as the loss functions used in deep learning \cite{Chollet2017}. A process that minimizes its result is called gradient descent. While it is possible to determine its minimum analytically, it is intractable for artificial neural networks due to the high number of parameters.
+The gradient is the derivative for functions of multi-dimensional inputs, such as the loss functions used in deep learning. A process that minimizes its result is called gradient descent. While it is possible to determine its minimum analytically, it is intractable for artificial neural networks due to the high number of parameters \cite{Chollet2017}.
 
-Instead, the stochastic gradient descent (SGD) is used which will use a random batch of the training data and iteratively adjust the parameters in small steps. SGD is the basis for all common ANNs, but over the years different variants were introduced to the field.
+Instead, the stochastic gradient descent (SGD) is used which will take a random batch of the training data and iteratively adjust the parameters in small steps. SGD is the basis for all common ANNs, but over the years different variants were introduced to the field.
 
-The Adam optimizer is such a variant, which enhances SGD amongst other things by using what's called an "adaptive momentum estimation." This is also where its name derives from. It adaptively adjusts the learning rate which defines how much the parameters will be changed in one training step. By incorporating the previous and current shape of the slope, Adam can tremendously speed up the training.
+The Adam optimizer \cite{Kingma2014} is such a variant, which enhances SGD amongst other things by using what's called an "adaptive momentum estimation." This is also where its name derives from. It adaptively adjusts the learning rate which defines how much the parameters will be changed in one training step. By incorporating the previous and current shape of the slope, Adam can tremendously speed up the training.
 
-\subsubsection{Batch Size*}
+\subsubsection{Batch Size}
 
-The number of random samples per training step is referred to as the batch size. In the past, it was believed that larger batches led to something called the generalization gap \cite{Keskar2016}, where the accuracy of a model would drop if it was trained on unusually large batches. Recent work by Hoffer et al. \cite{Hoffer2017} suggests other reasons for this decrease in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet \cite{Goyal2017}.
+The number of random samples per training step is referred to as the batch size. In the past, it was believed that larger batches led to something called the generalization gap \cite{Keskar2016}, where the accuracy of a model would drop if it was trained on unusually large batches. Recent work \cite{Hoffer2017} suggests other reasons for this decrease in accuracy. While common batch sizes range from 32 to 256, Goyal et al. showed accurate results using 8192 images per batch when training a model on ImageNet \cite{Goyal2017}.
 
 Using batches smaller than 32 samples can introduce a different kind of problem. Having too few data points that don't represent the mean of the data well, may lead to slow and unstable training.
 
-Based on hardware limitations the largest possible batch sizes ranged from 24 to 48 samples depending on the current architecture. Whatever could be fit into memory was used for these experiments. Exceptions occurred when working with 3D convolutions in which case the batch size was limited to 4 samples.
+Based on hardware limitations the largest possible batch sizes ranged from 24 to 48 samples depending on the current architecture. Whatever could be fit into memory was used for these experiments. Exceptions occurred when working with 3D convolutions in which case the batch size had to be limited to just 4 samples.
 
-\subsubsection{Learning Rate Policy*}
+\subsubsection{Learning Rate Policy}
 
 One full iteration over the training samples is referred to as an epoch, and the learning rate policy describes how the learning rate is changed from one epoch to another. With the introduction of adaptive optimizers like Adam or RMSProp, there has been a lower emphasize on this topic. Learning rates that were set too high or too low will be adjusted by the optimizer after a few iterations. Even though this reduces the number of possible defects, a lot of training time can be saved with the right policy.
 
@@ -429,13 +429,13 @@ lr(x) = \frac{1}{1 + decay * x}
 
 After the model had stopped to improve at epoch 65, the learning rate was changed to 0.0001. This gave a small boost of accuracy. To have a smooth transition between learning rates, the decay was set to 0.001. This meant that the initial learning rate of 0.001 would reach 0.0001 after 68 epochs and then continue to decrease even further.
 
-\subsubsection{Early Stopping*}
+\subsubsection{Early Stopping}
 
 Neural networks will continuously minimize the loss on the training set. This result needs to be validated on data the network hasn't seen before. At a certain point during training, the performance on the validation set will start to decrease because the model is overfitting on the training data. The number of iterations to reach this point is dependent on many hyperparameters, as well as the random values the network has been initialized with. As such it's difficult to calculate how many epochs the training will need to reach its peak.
 
 Early stopping is a simple technique that will end the training process as soon as the model stops improving on the validation data. To do this, a patience value is defined how long the network should continue training after the score has stopped increasing. This is important because not every epoch will lead to a new best score on the validation data.
 
-For test runs in this study, a patience of 9 was selected, which meant the training would stop after ten epochs without improvement. Depending on the architecture and other hyperparameters this point was reached after 30 to 60 epochs. For the last training with the final set of hyperparameters, the patience was increased to 19, which didn't improve the accuracy.  This was also a verification that the initial value of 9 was a good fit for this problem.
+For test runs in this study, a patience of 9 was selected, which meant the training would stop after 10 epochs without improvement. Depending on the architecture and other hyperparameters this point was reached after 50 to 90 epochs. For the last training with the final set of hyperparameters, the patience was increased to 19, which didn't improve the accuracy.  This was also a verification that the initial value of 9 was a good fit for this problem.
 
 \subsection{Summary}
 
@@ -444,15 +444,13 @@ In summary, the architecture features 4 "Down Blocks" on the contracting side th
 \begin{figure}[H]
 \centering
 \par
-\includegraphics[width=0.7\textwidth]{imgs/model.png}
+\includegraphics[width=0.55\textwidth]{imgs/model.png}
 \caption{The proposed architecture for the segmentation}
 \par
 \end{figure}
 
-A Down Block consists of 2 convolutional layers each followed by an ELU activation function, after which A MaxPooling layer halves the width and height of the image. The Up Block looks similar but features a transposed convolutional layer in the beginning to upsample the resolution and no MaxPooling in the end. The Middle Block features a Dropout layer with a discussed value of 0.5, which is surrounded by convolutional layers as well. All convolutional layers had 32 channels. The output layer also featured a convolution that reduced the channels to 1, which represents the segmentation map.
+A Down Block consists of 2 convolutional layers each followed by an ELU activation function, after which A MaxPooling layer halves the width and height of the image. The Up Block looks similar but features a transposed convolutional layer in the beginning to upsample the resolution and no MaxPooling in the end. The Middle Block features a Dropout layer with a value of 0.5, which is surrounded by convolutional layers as well. All convolutional layers have 32 channels. The output layer includes another convolution that reduces the channels to 1, which represents the segmentation map.
 
-Other options that were tried but didn't improve performance included using convolutional blocks with a stride of 2 instead of MaxPooling to downsample the images. 
-
-Batch normalization was also applied but resulted in a high amount of overfitting the network never recovered from. The fact that it did not improve the performance came as a surprise because it usually improves any model. A possible reason for this could be the small batch size in combination with a high variance of intensities in the data. If the mean of each batch varies significantly from mean of the entire training data, it may hurt the performance of batch normalization.
+Other options that were tried but didn't improve performance included using convolutional blocks with a stride of 2 instead of MaxPooling to downsample the images. Batch normalization was also applied but resulted in a high amount of overfitting the network never recovered from. The fact that it did not improve the performance came as a surprise because it usually improves any model. A possible reason for this could be the small batch size in combination with a high variance of intensities in the data. If the mean of each batch varies significantly from the mean of the entire training data, it may hurt the performance of batch normalization.
 
 \newpage
