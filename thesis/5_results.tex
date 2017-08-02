@@ -50,12 +50,30 @@ The proposed model achieves a DICE score of 98.0\% and an IoU of 96.0\%. Precisi
     \caption{Numeric evaluation of the test set using popular metrics}
 \end{table}
 
-Results on Femur and Tibia alone are very comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a fairly unbalanced task.
+Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a fairly unbalanced task.
 
 Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are also increased by 3.
 
 A study from 2011 ran a similar segmentation on the knee \cite{Martel-Pelletier2011}, achieving a DSC of 94\% for the femur and 92\% for the tibia using the ray casting technique. Another study from 2015  \cite{Dam} used an atlas based segmentation and achieved a DSC of 97.5\% for the tibia.
 
 \subsection{Visual Evaluation}
+
+The visual evaluation will focus on the results of the combined network since it's performance is on par with the one channel model while offering more information about the associated bones.
+
+\subsection{Transfer Experiments}
+
+Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. Then again, convolutions are also translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. 
+
+In 3.2 a third data source was mentioned that featured 5 sagittal recordings of knees. These were not used for the training because of their structural differences. The following samples show what happens when the network is applied to images from a different perspective.
+
+
+\subsection{Age Prediction}
+
+The initial cause for the segmentation experiment was to reduce the amount of information in a knee MRI. The resulting images could then be used to make age related predictions that focussed on the bone and the growth plate. This section will briefly cover such an age prediction pipeline.
+
+The age of the candidates ranged from 14 to 21 years with a mean of 17.5 years. Predicting this age for every person meant that it was never off more than 3.5 years. Since the data was normally distributed, a prediction of the mean led to a mean absolute error of 1.2 years.
+
+Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps were applied to all 145 samples this was still the case.
+
 
 \newpage

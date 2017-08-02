@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 AUG 2017 13:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 AUG 2017 17:05
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -666,11 +666,11 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 3.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 3.
-)
+ [2])
 \tf@toc=\write3
 \openout3 = `0_Thesis.toc'.
 
- [2] [3]
+ [3]
 (./2_introduction.tex [1]) (./3_background.tex
 <imgs/open-14y.jpg, id=25, 562.1pt x 562.1pt>
 File: imgs/open-14y.jpg Graphic file (type jpg)
@@ -921,7 +921,7 @@ local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (37 pages, 2052418 bytes).
+Output written on 0_Thesis.pdf (37 pages, 2054595 bytes).
 PDF statistics:
  225 PDF objects out of 1000 (max. 8388607)
  129 compressed objects within 2 object streams
