@@ -35,5 +35,5 @@
 \contentsline {subsection}{\numberline {3.7}Summary}{26}
 \contentsline {section}{\numberline {4}Results}{28}
 \contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{28}
-\contentsline {subsection}{\numberline {4.2}Visual Evaluation}{28}
-\contentsline {section}{\numberline {5}Discussion}{29}
+\contentsline {subsection}{\numberline {4.2}Visual Evaluation}{29}
+\contentsline {section}{\numberline {5}Discussion}{30}

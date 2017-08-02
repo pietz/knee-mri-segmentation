@@ -118,6 +118,12 @@ Guosheng Lin, Anton Milan, Chunhua Shen, and Ian Reid.
   Semantic Segmentation}.
 \newblock nov 2016.
 
+\bibitem{Martel-Pelletier2011}
+Pierre Dodin~Johanne Martel-Pelletier.
+\newblock {A fully automated human knee 3D MRI bone segmentation using the ray
+  casting technique}.
+\newblock pages 1413--1424, 2011.
+
 \bibitem{Milletari2016}
 Fausto Milletari, Nassir Navab, and Seyed~Ahmad Ahmadi.
 \newblock {V-Net: Fully convolutional neural networks for volumetric medical

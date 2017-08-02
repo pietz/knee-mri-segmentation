@@ -21,50 +21,51 @@ Warning--empty journal in Kingma2014
 Warning--empty journal in Krizhevsky
 Warning--empty year in Krizhevsky
 Warning--empty journal in Lin2016
+Warning--empty journal in Martel-Pelletier2011
 Warning--empty journal in Nair
 Warning--empty year in Nair
 Warning--empty journal in Nekrasov2016
 Warning--empty journal in Simonyan2014a
 Warning--empty journal in Zhao2016
-You've used 30 entries,
+You've used 31 entries,
             2118 wiz_defined-function locations,
-            644 strings with 9040 characters,
-and the built_in function-call counts, 9870 in all, are:
-= -- 886
-> -- 640
-< -- 7
-+ -- 252
-- -- 222
-* -- 719
-:= -- 1719
-add.period$ -- 87
-call.type$ -- 30
-change.case$ -- 197
+            650 strings with 9219 characters,
+and the built_in function-call counts, 10295 in all, are:
+= -- 934
+> -- 647
+< -- 8
++ -- 255
+- -- 224
+* -- 740
+:= -- 1776
+add.period$ -- 90
+call.type$ -- 31
+change.case$ -- 201
 chr.to.int$ -- 0
-cite$ -- 53
-duplicate$ -- 349
-empty$ -- 639
-format.name$ -- 222
-if$ -- 1955
+cite$ -- 55
+duplicate$ -- 371
+empty$ -- 674
+format.name$ -- 224
+if$ -- 2054
 int.to.chr$ -- 0
-int.to.str$ -- 30
-missing$ -- 31
-newline$ -- 149
-num.names$ -- 60
-pop$ -- 263
+int.to.str$ -- 31
+missing$ -- 32
+newline$ -- 154
+num.names$ -- 62
+pop$ -- 269
 preamble$ -- 1
-purify$ -- 171
+purify$ -- 174
 quote$ -- 0
-skip$ -- 260
+skip$ -- 282
 stack$ -- 0
-substring$ -- 340
-swap$ -- 54
-text.length$ -- 7
+substring$ -- 385
+swap$ -- 65
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 112
-warning$ -- 23
-while$ -- 76
-width$ -- 32
-write$ -- 284
-(There were 23 warnings)
+type$ -- 116
+warning$ -- 24
+while$ -- 81
+width$ -- 33
+write$ -- 294
+(There were 24 warnings)

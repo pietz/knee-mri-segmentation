@@ -443,7 +443,7 @@ For test runs in this study, a patience of 9 was selected, which meant the train
 
 \subsection{Postprocessing}
 
-After the training finished, it was investigated how the results on the validation data could be improved any further. Since the predicted segmentations showed a small number of values between 0 and 1, a threshold of 0.3 showed the best results to create a fully binary map. Furthermore, any 2D slice that showed a prediction smaller than 2\% of the total frame was predicted as empty instead. This helped against the false prediction of tiny fractions in upper and lower layers.
+After the training finished, it was investigated how the results on the validation data could be improved any further. Since the predicted segmentations showed a small number of values between 0 and 1, a threshold of 0.3 showed the best results to create a fully binary map. Furthermore, any 2D slice that showed a prediction smaller than 2\% of the total frame was predicted as empty instead. This helped against the false prediction of tiny fractions in upper and lower layers. For the segmentation of the Fibula alone, this last step was not executed.
 
 \subsection{Summary}
 
