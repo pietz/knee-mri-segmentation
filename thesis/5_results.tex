@@ -1,6 +1,6 @@
 \section{Results}
 
-The results in this section are entirely based on the test set, which had no contact with the network up to this point. It was also made sure that there was no overlap in images of people that were recorded multiple times. 
+The results in this chapter are entirely based on the test set, which had no contact with the network up to this point. It was also made sure that there was no overlap in images of people that were recorded multiple times. 
 
 5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
 
@@ -54,7 +54,7 @@ Results on Femur and Tibia alone are comparable to the merged approach, whereas 
 
 Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are also increased by 3.
 
-A study from 2011 ran a similar segmentation on the knee \cite{Martel-Pelletier2011}, achieving a DSC of 94\% for the femur and 92\% for the tibia using the ray casting technique. Another study from 2015  \cite{Dam} used an atlas based segmentation and achieved a DSC of 97.5\% for the tibia.
+A study from 2011 ran a similar segmentation on the knee \cite{Martel-Pelletier2011}, achieving a DSC of 94\% for the femur and 92\% for the tibia using the ray casting technique. Another study from 2015 \cite{Dam} used an atlas based segmentation and achieved a DSC of 97.5\% for the tibia.
 
 \subsection{Visual Evaluation}
 
@@ -62,7 +62,7 @@ The visual evaluation will focus on the results of the combined network since it
 
 \subsection{Transfer Experiments}
 
-Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. Then again, convolutions are also translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. 
+Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. Then again, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. 
 
 In 3.2 a third data source was mentioned that featured 5 sagittal recordings of knees. These were not used for the training because of their structural differences. The following samples show what happens when the network is applied to images from a different perspective.
 
@@ -71,9 +71,14 @@ In 3.2 a third data source was mentioned that featured 5 sagittal recordings of 
 
 The initial cause for the segmentation experiment was to reduce the amount of information in a knee MRI. The resulting images could then be used to make age related predictions that focussed on the bone and the growth plate. This section will briefly cover such an age prediction pipeline.
 
-The age of the candidates ranged from 14 to 21 years with a mean of 17.5 years. Predicting this age for every person meant that it was never off more than 3.5 years. Since the data was normally distributed, a prediction of the mean led to a mean absolute error of 1.2 years.
+The age of the candidates ranged from 14 to 21 years with a mean at 17.5 years. Predicting this age for every person meant that it was never off more than 3.5 years. Since the data was normally distributed, a static prediction of the mean led to a mean absolute error (MAE) of 1.2 years.
 
-Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps were applied to all 145 samples this was still the case.
+Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. 
 
+After the segmentation maps were applied to all 145 3D samples many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Out of these resulting 2610 slices 2124 were used for the training set, but I was still not able to train a model.
+
+Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was I able to train a network in a stable manner. The results on the test data showed a MAE of 0.61 years for all of the slices.
+
+Since every 3D sample now had 18 different predictions for every slice I build another tree based model that would take a vector of 18 values and predict a single age. This got a final MAE of 0.54 years on the test data, which is more than twice as good as the already competitive baseline.
 
 \newpage

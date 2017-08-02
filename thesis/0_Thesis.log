@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 AUG 2017 17:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  2 AUG 2017 17:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -895,8 +895,8 @@ File: imgs/model.png Graphic file (type png)
 Package pdftex.def Info: imgs/model.png used on input line 457.
 (pdftex.def)             Requested size: 198.0011pt x 207.8794pt.
  [26]
-[27 <./imgs/model.png>]) (./5_results.tex [28] [29]) (./6_discussion.tex
-[30]) (./0_Thesis.bbl [31] [32]) [33] (./0_Thesis.aux) ) 
+[27 <./imgs/model.png>]) (./5_results.tex [28] [29] [30]) (./6_discussion.tex
+[31]) (./0_Thesis.bbl [32] [33]) [34] (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
  4944 strings out of 492995
  75615 string characters out of 6132704
@@ -921,10 +921,10 @@ local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (37 pages, 2054595 bytes).
+Output written on 0_Thesis.pdf (38 pages, 2055555 bytes).
 PDF statistics:
- 225 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
+ 228 PDF objects out of 1000 (max. 8388607)
+ 131 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  20646 words of extra memory for PDF output out of 20736 (max. 10000000)
 
