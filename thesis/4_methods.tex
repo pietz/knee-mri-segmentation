@@ -221,7 +221,9 @@ However, this led to problems with the Fibula, which was not recognized by any o
 
 The only successful method was training a separate model for each of the three bones. The network started to predict empty segmentation maps in the beginning because the actual masks only made up a fraction of the frame. The only way to improve from here was to find the Fibula in the non-empty slices and segment its region. This was different from the tests before, where the unsatisfactory performance of the Fibula was balanced by making more accurate segmentations of the other two bones.
 
-For another experiment, the three channels were merged to create a network that would segment any bone in the image. Not only did this solve the problem with the Fibula as well, but the predictions of Femur and Tibia were also more accurate. The network didn't need to learn any more that the global position in the image accounts for whether or not an object should be segmented. Instead, it could segment any bone in any position in the frame. It was decided to continue with this approach for further tests, but the same architecture can be used on single bone channels as well.
+For another experiment, the three channels were merged to create a network that would segment any bone in the image. Not only did this solve the problem with the Fibula as well, but the predictions of Femur and Tibia were just as accurate. The network didn't need to learn any more that the global position in the image accounts for whether or not an object should be segmented. Instead, it could segment any bone in any position in the frame.
+
+While building the architecture in the following sections this merged channel approach was used. It helped to speed up the design process, because different settings only needed to be trained once instead of once for every bone.
 
 \subsection{Architecture}
 
