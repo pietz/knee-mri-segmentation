@@ -1,8 +1,6 @@
 \section{Results}
 
-The results in this chapter are entirely based on the test set, which had no contact with the network up to this point. It was also made sure that there was no overlap in images of people that were recorded multiple times. 
-
-5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
+The results in this chapter are entirely based on the test set, which had no contact with the network up to this point. It was also made sure that there was no overlap in images of people that were recorded multiple times. 5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
 
 The network architecture was developed and optimized with focus on a single segmentation channel that merged Femur, Tibia und Fibula maps. However, tests were also run to validate the performance for each bone on its own. The same architecture and training procedure was used for this task.
 
@@ -50,15 +48,50 @@ The proposed model achieves a DICE score of 98.0\% and an IoU of 96.0\%. Precisi
     \caption{Numeric evaluation of the test set using popular metrics}
 \end{table}
 
-Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a fairly unbalanced task.
-
-Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are also increased by 3.
+Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a fairly unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are also increased by 3.
 
 A study from 2011 ran a similar segmentation on the knee \cite{Martel-Pelletier2011}, achieving a DSC of 94\% for the femur and 92\% for the tibia using the ray casting technique. Another study from 2015 \cite{Dam} used an atlas based segmentation and achieved a DSC of 97.5\% for the tibia.
 
 \subsection{Visual Evaluation}
 
-The visual evaluation will focus on the results of the combined network since it's performance is on par with the one channel model while offering more information about the associated bones.
+The visual evaluation will focus on the results of the combined network since its performance is on par with the one channel model while offering more information about the associated bones.
+
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=1.0\textwidth]{imgs/sample1.png}
+\includegraphics[width=1.0\textwidth]{imgs/sample2.png}
+\includegraphics[width=1.0\textwidth]{imgs/sample4.png}
+\includegraphics[width=1.0\textwidth]{imgs/sample3.png}
+\caption{Input, predicted output, difference to ground truth and mask applied on input}
+\par
+\end{figure}
+
+The network shows excellent performance on slices that are located near the middle of the 3D MRIs with DSC scores of over 99\%
+
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=1.0\textwidth]{imgs/sample5.png}
+\includegraphics[width=1.0\textwidth]{imgs/sample6.png}
+\caption{Input, predicted output, difference to ground truth and mask applied on input}
+\par
+\end{figure}
+
+The best DSC scores of 100\% are achieved through empty segmentations that the network correctly predicted as such.
+
+\begin{figure}[H]
+\centering
+\par
+\includegraphics[width=1.0\textwidth]{imgs/sample5.png}
+\includegraphics[width=1.0\textwidth]{imgs/sample6.png}
+\caption{Input, predicted output, difference to ground truth and mask applied on input}
+\par
+\end{figure}
+
+The worst results appeared in upper and lower slices where the bones started to become visible. Oftentimes the network didn't agree with the ground truth on what could already be interpreted as bone. If either the prediction or the ground truth was empty while the other was not 
+
+If the ground truth was empty and the prediction was not resulted in a DSC of 0\%
 
 \subsection{Transfer Experiments}
 
@@ -75,7 +108,7 @@ The age of the candidates ranged from 14 to 21 years with a mean at 17.5 years. 
 
 Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps were applied to all 145 3D samples many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Out of these resulting 2610 slices 2124 were used for the training set, but the network still wouldn't converge.
 
-Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was I able to train a network in a stable manner. This approach did not makw the model converge everytime, but when it did its predictions were stable through multiple epochs. 
+Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was I able to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs. 
 
 The results on the test data showed a MAE of 0.61 years for all of the slices. Since every 3D sample now had 18 different predictions, I build another tree based model that would take a vector of 18 values and predict a single age. This got a final MAE of 0.54 years on the test data, which is more than twice as good as the already competitive baseline.
 
