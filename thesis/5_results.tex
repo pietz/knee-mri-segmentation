@@ -93,17 +93,15 @@ The worst results appeared in upper and lower slices where the bones started to 
 
 \subsection{Model Visualization}
 
-Neural networks are often considered black boxes because it is difficult to get an intuitive understanding how decisions are made. This is a crucial problem especially in the medical field, where a prediction makes estimates about the health of a patient.
+Neural networks are often considered black boxes because it is difficult to get an intuitive understanding how decisions are calculated. This is a crucial problem especially in the medical field, where a prediction may approximate estimates about the health of a patient.
 
-Two factors help in this study to pull away from this problem. Firstly, a segmentation is an image to image pipeline making it less abstract what kind of calculations are happening. Visualizing input and output gives an intuitive understanding of the transformation the network applied from one to the other.
+Two factors help in this study to pull away from this problem. Firstly, a segmentation is an image to image pipeline making it less abstract what kind of transformations are happening. Visualizing input and output gives an intuitive understanding how one may have emerged out of the other.
 
 Secondly, convolutional neural networks take away most of this black box reasoning \cite{Chollet2017} because every layer in the network can be visualized. The following images give an insight what a sample looks like after different convolutional blocks.
 
-
-
 \subsection{Transfer Experiments}
 
-Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. On the other hand, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
+Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. They cannot learn what they weren't taught. On the other hand, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
 
 \subsubsection{Resolution Variance}
 

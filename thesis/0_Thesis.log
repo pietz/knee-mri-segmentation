@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  4 AUG 2017 14:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  4 AUG 2017 14:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -947,112 +947,112 @@ Package pdftex.def Info: imgs/sample6.png used on input line 87.
 File: imgs/transfer_size_x1.png Graphic file (type png)
 
 <use imgs/transfer_size_x1.png>
-Package pdftex.def Info: imgs/transfer_size_x1.png used on input line 114.
+Package pdftex.def Info: imgs/transfer_size_x1.png used on input line 112.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_x2.png, id=179, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_x2.png Graphic file (type png)
 
 <use imgs/transfer_size_x2.png>
-Package pdftex.def Info: imgs/transfer_size_x2.png used on input line 117.
+Package pdftex.def Info: imgs/transfer_size_x2.png used on input line 115.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_x3.png, id=180, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_x3.png Graphic file (type png)
 
 <use imgs/transfer_size_x3.png>
-Package pdftex.def Info: imgs/transfer_size_x3.png used on input line 120.
+Package pdftex.def Info: imgs/transfer_size_x3.png used on input line 118.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_x4.png, id=181, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_x4.png Graphic file (type png)
 
 <use imgs/transfer_size_x4.png>
-Package pdftex.def Info: imgs/transfer_size_x4.png used on input line 123.
+Package pdftex.def Info: imgs/transfer_size_x4.png used on input line 121.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_y1.png, id=182, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_y1.png Graphic file (type png)
 
 <use imgs/transfer_size_y1.png>
-Package pdftex.def Info: imgs/transfer_size_y1.png used on input line 127.
+Package pdftex.def Info: imgs/transfer_size_y1.png used on input line 125.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_y2.png, id=183, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_y2.png Graphic file (type png)
 
 <use imgs/transfer_size_y2.png>
-Package pdftex.def Info: imgs/transfer_size_y2.png used on input line 130.
+Package pdftex.def Info: imgs/transfer_size_y2.png used on input line 128.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_y3.png, id=184, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_y3.png Graphic file (type png)
 
 <use imgs/transfer_size_y3.png>
-Package pdftex.def Info: imgs/transfer_size_y3.png used on input line 133.
+Package pdftex.def Info: imgs/transfer_size_y3.png used on input line 131.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_y4.png, id=185, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_y4.png Graphic file (type png)
 
 <use imgs/transfer_size_y4.png>
-Package pdftex.def Info: imgs/transfer_size_y4.png used on input line 136.
+Package pdftex.def Info: imgs/transfer_size_y4.png used on input line 134.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
  [31]
 <imgs/transfer_pers_x1.png, id=189, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_x1.png Graphic file (type png)
 
 <use imgs/transfer_pers_x1.png>
-Package pdftex.def Info: imgs/transfer_pers_x1.png used on input line 149.
+Package pdftex.def Info: imgs/transfer_pers_x1.png used on input line 147.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
 <imgs/transfer_pers_x2.png, id=190, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_x2.png Graphic file (type png)
 
 <use imgs/transfer_pers_x2.png>
-Package pdftex.def Info: imgs/transfer_pers_x2.png used on input line 152.
+Package pdftex.def Info: imgs/transfer_pers_x2.png used on input line 150.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
 <imgs/transfer_pers_x3.png, id=191, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_x3.png Graphic file (type png)
 
 <use imgs/transfer_pers_x3.png>
-Package pdftex.def Info: imgs/transfer_pers_x3.png used on input line 155.
+Package pdftex.def Info: imgs/transfer_pers_x3.png used on input line 153.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
 <imgs/transfer_pers_x4.png, id=192, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_x4.png Graphic file (type png)
 
 <use imgs/transfer_pers_x4.png>
-Package pdftex.def Info: imgs/transfer_pers_x4.png used on input line 158.
+Package pdftex.def Info: imgs/transfer_pers_x4.png used on input line 156.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
 <imgs/transfer_pers_y1.png, id=193, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_y1.png Graphic file (type png)
 
 <use imgs/transfer_pers_y1.png>
-Package pdftex.def Info: imgs/transfer_pers_y1.png used on input line 162.
+Package pdftex.def Info: imgs/transfer_pers_y1.png used on input line 160.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
 <imgs/transfer_pers_y2.png, id=194, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_y2.png Graphic file (type png)
 
 <use imgs/transfer_pers_y2.png>
-Package pdftex.def Info: imgs/transfer_pers_y2.png used on input line 165.
+Package pdftex.def Info: imgs/transfer_pers_y2.png used on input line 163.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
 <imgs/transfer_pers_y3.png, id=195, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_y3.png Graphic file (type png)
 
 <use imgs/transfer_pers_y3.png>
-Package pdftex.def Info: imgs/transfer_pers_y3.png used on input line 168.
+Package pdftex.def Info: imgs/transfer_pers_y3.png used on input line 166.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
 <imgs/transfer_pers_y4.png, id=196, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_y4.png Graphic file (type png)
 
 <use imgs/transfer_pers_y4.png>
-Package pdftex.def Info: imgs/transfer_pers_y4.png used on input line 171.
+Package pdftex.def Info: imgs/transfer_pers_y4.png used on input line 169.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
  [32 <./imgs/transfer_size_x1.png> <./imgs/transfer_size_x2.png> <./imgs/transf
 er_size_x3.png> <./imgs/transfer_size_x4.png> <./imgs/transfer_size_y1.png> <./
@@ -1086,7 +1086,7 @@ local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/t
 exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/
 fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (42 pages, 3650712 bytes).
+Output written on 0_Thesis.pdf (42 pages, 3650742 bytes).
 PDF statistics:
  284 PDF objects out of 1000 (max. 8388607)
  139 compressed objects within 2 object streams
