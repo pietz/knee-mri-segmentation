@@ -1,12 +1,12 @@
 \section{Results}
 
-The results in this chapter are entirely based on the test set, which had no contact with the network up to this point. It was also made sure that there was no overlap in images of people that were recorded multiple times. 5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
+The results in this chapter are based on the test set or other sources the network has not been trained with. It was also made sure that there was no overlap in images of people that were recorded multiple times. 5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
 
 The network architecture was developed and optimized with focus on a single segmentation channel that merged Femur, Tibia und Fibula maps. However, tests were also run to validate the performance for each bone on its own. The same architecture and training procedure was used for this task.
 
 \subsection{Numeric Evaluation}
 
-The proposed model achieves a DICE score of 98.0\% and an IoU of 96.0\%. Precision and Recall are perfectly balanced at 98.0\% as well, suggesting that predictions are neither too optimistic or pessimistic. The error shows a small value of 1.2\% when looking at falsely predicted areas in relationship to the entire frame.
+The proposed model achieves a DSC score of 98.0\% and an IoU of 96.0\%. Precision and Recall are perfectly balanced at 98.0\% as well, suggesting that predictions are neither too optimistic or pessimistic. The error shows a small value of 1.2\%.
 
 \begin{table}[H]
     \centering

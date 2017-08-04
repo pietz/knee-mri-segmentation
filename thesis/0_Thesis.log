@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  4 AUG 2017 13:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  4 AUG 2017 13:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -895,32 +895,32 @@ File: imgs/model.png Graphic file (type png)
 Package pdftex.def Info: imgs/model.png used on input line 457.
 (pdftex.def)             Requested size: 198.0011pt x 207.8794pt.
  [26]
-[27 <./imgs/model.png>]) (./5_results.tex [28]
-<imgs/sample1.png, id=160, 1164.35pt x 291.0875pt>
+[27 <./imgs/model.png>]) (./5_results.tex
+<imgs/sample1.png, id=157, 1164.35pt x 291.0875pt>
 File: imgs/sample1.png Graphic file (type png)
  <use imgs/sample1.png>
 Package pdftex.def Info: imgs/sample1.png used on input line 62.
 (pdftex.def)             Requested size: 360.0pt x 89.99634pt.
 
-<imgs/sample2.png, id=161, 1164.35pt x 291.0875pt>
+<imgs/sample2.png, id=158, 1164.35pt x 291.0875pt>
 File: imgs/sample2.png Graphic file (type png)
  <use imgs/sample2.png>
 Package pdftex.def Info: imgs/sample2.png used on input line 63.
 (pdftex.def)             Requested size: 360.0pt x 89.99634pt.
 
-<imgs/sample4.png, id=162, 1164.35pt x 291.0875pt>
+<imgs/sample4.png, id=159, 1164.35pt x 291.0875pt>
 File: imgs/sample4.png Graphic file (type png)
  <use imgs/sample4.png>
 Package pdftex.def Info: imgs/sample4.png used on input line 64.
 (pdftex.def)             Requested size: 360.0pt x 89.99634pt.
 
-<imgs/sample3.png, id=163, 1164.35pt x 291.0875pt>
+<imgs/sample3.png, id=160, 1164.35pt x 291.0875pt>
 File: imgs/sample3.png Graphic file (type png)
  <use imgs/sample3.png>
 Package pdftex.def Info: imgs/sample3.png used on input line 65.
 (pdftex.def)             Requested size: 360.0pt x 89.99634pt.
 
-<imgs/sample5.png, id=164, 1164.35pt x 291.0875pt>
+[28] <imgs/sample5.png, id=164, 1164.35pt x 291.0875pt>
 File: imgs/sample5.png Graphic file (type png)
  <use imgs/sample5.png>
 Package pdftex.def Info: imgs/sample5.png used on input line 75.
@@ -1065,7 +1065,7 @@ y4.png>] [33]) (./6_discussion.tex [34])
 Here is how much of TeX's memory you used:
  5054 strings out of 492995
  78403 string characters out of 6132704
- 170855 words of memory out of 5000000
+ 171855 words of memory out of 5000000
  8359 multiletter control sequences out of 15000+600000
  71605 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1086,7 +1086,7 @@ texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/20
 17/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-d
 ist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (41 pages, 3649416 bytes).
+Output written on 0_Thesis.pdf (41 pages, 3649495 bytes).
 PDF statistics:
  281 PDF objects out of 1000 (max. 8388607)
  137 compressed objects within 2 object streams
