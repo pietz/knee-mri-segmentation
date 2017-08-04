@@ -2,7 +2,7 @@
 
 The results in this chapter are based on the test set or other sources the network has not been trained with. It was also made sure that there was no overlap in images of people that were recorded multiple times. 5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
 
-The network architecture was developed and optimized with focus on a single segmentation channel that merged Femur, Tibia und Fibula maps. However, tests were also run to validate the performance for each bone on its own. The same architecture and training procedure was used for this task.
+The network architecture was developed using a single segmentation channel that merged Femur, Tibia und Fibula maps. However, tests were also run to validate the performance for each bone on its own and also combine the three separate predictions into a multi channel segmentation. The same architecture and training procedure was used for this task.
 
 \subsection{Numeric Evaluation}
 
@@ -48,7 +48,7 @@ The proposed model achieves a DSC score of 98.0\% and an IoU of 96.0\%. Precisio
     \caption{Numeric evaluation of the test set using popular metrics}
 \end{table}
 
-Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a fairly unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are also increased by 3.
+Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a fairly unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are increased by 3.
 
 A study from 2011 ran a similar segmentation on the knee \cite{Martel-Pelletier2011}, achieving a DSC of 94\% for the femur and 92\% for the tibia using the ray casting technique. Another study from 2015 \cite{Dam} used an atlas based segmentation and achieved a DSC of 97.5\% for the tibia.
 
@@ -67,7 +67,7 @@ The visual evaluation will focus on the results of the combined network since it
 \par
 \end{figure}
 
-The network shows excellent performance on slices that are located near the middle of the 3D MRIs with DSC scores of over 99\%
+The network shows excellent performance on slices that are located near the middle of the 3D MRIs with DSC scores of over 99\%.
 
 \begin{figure}[H]
 \centering
@@ -89,17 +89,25 @@ The best DSC scores of 100\% are achieved through empty segmentations that the n
 \par
 \end{figure}
 
-The worst results appeared in upper and lower slices where the bones started to become visible. Oftentimes the network didn't agree with the ground truth on what could already be interpreted as bone. If either the prediction or the ground truth was empty while the other was not 
+The worst results appeared in upper and lower slices where the bones started to become visible. Oftentimes the network didn't agree with the ground truth on what could already be interpreted as bone. If either the prediction or the ground truth was empty while the other was not, then the result is a DSC score of 0\%.
 
-If the ground truth was empty and the prediction was not resulted in a DSC of 0\%
+\subsection{Model Visualization}
+
+Neural networks are often considered black boxes because it is difficult to get an intuitive understanding how decisions are made. This is a crucial problem especially in the medical field, where a prediction makes estimates about the health of a patient.
+
+Two factors help in this study to pull away from this problem. Firstly, a segmentation is an image to image pipeline making it less abstract what kind of calculations are happening. Visualizing input and output gives an intuitive understanding of the transformation the network applied from one to the other.
+
+Secondly, convolutional neural networks take away most of this black box reasoning \cite{Chollet2017} because every layer in the network can be visualized. The following images give an insight what a sample looks like after different convolutional blocks.
+
+
 
 \subsection{Transfer Experiments}
 
-Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. Then again, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
+Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. On the other hand, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
 
 \subsubsection{Resolution Variance}
 
-The proposed architecture can be described as "fully convolutional" because it doesn't include any dense layers. This allows the network to accept any kind of resolution and still being able to process it. An experiment was set up that used uncropped Epi image resized to 448x448 making them 4 times larger.
+The proposed architecture can be described as "fully convolutional" because it doesn't include any dense layers. This allows the network to accept any kind of resolution and still being able to process it. An experiment was set up that used uncropped images from the Epi data which were resized to 448x448 pixels. This made them 4 times larger than the images the network was trained with.
 
 \begin{figure}[H]
 \minipage{0.24\textwidth}
@@ -130,7 +138,7 @@ The proposed architecture can be described as "fully convolutional" because it d
 \caption{Four random samples uncropped of Epi data segmentations that were resized to 448x448 pixels}
 \end{figure}
 
-The predictions look surprisingly good even following the shaft of the bone which wasn't visible in the cropped versions it was trained on. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate based on a subjective visual evaluation of random samples. Problems are visible in tissue that isn't bone but was recognized as such like in the fourth sample image.
+The predictions look surprisingly good even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate based on a subjective visual evaluation of random samples. Problems are visible in tissue that isn't bone but was recognized as such.
 
 \subsubsection{Perspective Variance}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  4 AUG 2017 13:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  4 AUG 2017 14:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -947,121 +947,121 @@ Package pdftex.def Info: imgs/sample6.png used on input line 87.
 File: imgs/transfer_size_x1.png Graphic file (type png)
 
 <use imgs/transfer_size_x1.png>
-Package pdftex.def Info: imgs/transfer_size_x1.png used on input line 106.
+Package pdftex.def Info: imgs/transfer_size_x1.png used on input line 114.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_x2.png, id=179, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_x2.png Graphic file (type png)
 
 <use imgs/transfer_size_x2.png>
-Package pdftex.def Info: imgs/transfer_size_x2.png used on input line 109.
+Package pdftex.def Info: imgs/transfer_size_x2.png used on input line 117.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_x3.png, id=180, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_x3.png Graphic file (type png)
 
 <use imgs/transfer_size_x3.png>
-Package pdftex.def Info: imgs/transfer_size_x3.png used on input line 112.
+Package pdftex.def Info: imgs/transfer_size_x3.png used on input line 120.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_x4.png, id=181, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_x4.png Graphic file (type png)
 
 <use imgs/transfer_size_x4.png>
-Package pdftex.def Info: imgs/transfer_size_x4.png used on input line 115.
+Package pdftex.def Info: imgs/transfer_size_x4.png used on input line 123.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_y1.png, id=182, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_y1.png Graphic file (type png)
 
 <use imgs/transfer_size_y1.png>
-Package pdftex.def Info: imgs/transfer_size_y1.png used on input line 119.
+Package pdftex.def Info: imgs/transfer_size_y1.png used on input line 127.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_y2.png, id=183, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_y2.png Graphic file (type png)
 
 <use imgs/transfer_size_y2.png>
-Package pdftex.def Info: imgs/transfer_size_y2.png used on input line 122.
+Package pdftex.def Info: imgs/transfer_size_y2.png used on input line 130.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_y3.png, id=184, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_y3.png Graphic file (type png)
 
 <use imgs/transfer_size_y3.png>
-Package pdftex.def Info: imgs/transfer_size_y3.png used on input line 125.
+Package pdftex.def Info: imgs/transfer_size_y3.png used on input line 133.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
 
 <imgs/transfer_size_y4.png, id=185, 479.7925pt x 470.75874pt>
 File: imgs/transfer_size_y4.png Graphic file (type png)
 
 <use imgs/transfer_size_y4.png>
-Package pdftex.def Info: imgs/transfer_size_y4.png used on input line 128.
+Package pdftex.def Info: imgs/transfer_size_y4.png used on input line 136.
 (pdftex.def)             Requested size: 86.40198pt x 84.76883pt.
- [31 <./imgs/transfer_size_x1.png> <./imgs/transfer_size_x2.png> <./imgs/transf
-er_size_x3.png> <./imgs/transfer_size_x4.png> <./imgs/transfer_size_y1.png> <./
-imgs/transfer_size_y2.png> <./imgs/transfer_size_y3.png> <./imgs/transfer_size_
-y4.png>]
-<imgs/transfer_pers_x1.png, id=197, 261.97874pt x 252.945pt>
+ [31]
+<imgs/transfer_pers_x1.png, id=189, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_x1.png Graphic file (type png)
 
 <use imgs/transfer_pers_x1.png>
-Package pdftex.def Info: imgs/transfer_pers_x1.png used on input line 141.
+Package pdftex.def Info: imgs/transfer_pers_x1.png used on input line 149.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
-<imgs/transfer_pers_x2.png, id=198, 261.97874pt x 252.945pt>
+<imgs/transfer_pers_x2.png, id=190, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_x2.png Graphic file (type png)
 
 <use imgs/transfer_pers_x2.png>
-Package pdftex.def Info: imgs/transfer_pers_x2.png used on input line 144.
+Package pdftex.def Info: imgs/transfer_pers_x2.png used on input line 152.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
-<imgs/transfer_pers_x3.png, id=199, 261.97874pt x 252.945pt>
+<imgs/transfer_pers_x3.png, id=191, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_x3.png Graphic file (type png)
 
 <use imgs/transfer_pers_x3.png>
-Package pdftex.def Info: imgs/transfer_pers_x3.png used on input line 147.
+Package pdftex.def Info: imgs/transfer_pers_x3.png used on input line 155.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
-<imgs/transfer_pers_x4.png, id=200, 261.97874pt x 252.945pt>
+<imgs/transfer_pers_x4.png, id=192, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_x4.png Graphic file (type png)
 
 <use imgs/transfer_pers_x4.png>
-Package pdftex.def Info: imgs/transfer_pers_x4.png used on input line 150.
+Package pdftex.def Info: imgs/transfer_pers_x4.png used on input line 158.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
-<imgs/transfer_pers_y1.png, id=201, 261.97874pt x 252.945pt>
+<imgs/transfer_pers_y1.png, id=193, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_y1.png Graphic file (type png)
 
 <use imgs/transfer_pers_y1.png>
-Package pdftex.def Info: imgs/transfer_pers_y1.png used on input line 154.
+Package pdftex.def Info: imgs/transfer_pers_y1.png used on input line 162.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
-<imgs/transfer_pers_y2.png, id=202, 261.97874pt x 252.945pt>
+<imgs/transfer_pers_y2.png, id=194, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_y2.png Graphic file (type png)
 
 <use imgs/transfer_pers_y2.png>
-Package pdftex.def Info: imgs/transfer_pers_y2.png used on input line 157.
+Package pdftex.def Info: imgs/transfer_pers_y2.png used on input line 165.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
-<imgs/transfer_pers_y3.png, id=203, 261.97874pt x 252.945pt>
+<imgs/transfer_pers_y3.png, id=195, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_y3.png Graphic file (type png)
 
 <use imgs/transfer_pers_y3.png>
-Package pdftex.def Info: imgs/transfer_pers_y3.png used on input line 160.
+Package pdftex.def Info: imgs/transfer_pers_y3.png used on input line 168.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
 
-<imgs/transfer_pers_y4.png, id=204, 261.97874pt x 252.945pt>
+<imgs/transfer_pers_y4.png, id=196, 261.97874pt x 252.945pt>
 File: imgs/transfer_pers_y4.png Graphic file (type png)
 
 <use imgs/transfer_pers_y4.png>
-Package pdftex.def Info: imgs/transfer_pers_y4.png used on input line 163.
+Package pdftex.def Info: imgs/transfer_pers_y4.png used on input line 171.
 (pdftex.def)             Requested size: 86.40198pt x 83.42192pt.
- [32 <./imgs/transfer_pers_x1.png> <./imgs/transfer_pers_x2.png> <./imgs/transf
-er_pers_x3.png> <./imgs/transfer_pers_x4.png> <./imgs/transfer_pers_y1.png> <./
-imgs/transfer_pers_y2.png> <./imgs/transfer_pers_y3.png> <./imgs/transfer_pers_
-y4.png>] [33]) (./6_discussion.tex [34])
-(./0_Thesis.bbl [35] [36]) [37] (./0_Thesis.aux) ) 
+ [32 <./imgs/transfer_size_x1.png> <./imgs/transfer_size_x2.png> <./imgs/transf
+er_size_x3.png> <./imgs/transfer_size_x4.png> <./imgs/transfer_size_y1.png> <./
+imgs/transfer_size_y2.png> <./imgs/transfer_size_y3.png> <./imgs/transfer_size_
+y4.png>] [33 <./imgs/transfer_pers_x1.png> <./imgs/transfer_pers_x2.png> <./img
+s/transfer_pers_x3.png> <./imgs/transfer_pers_x4.png> <./imgs/transfer_pers_y1.
+png> <./imgs/transfer_pers_y2.png> <./imgs/transfer_pers_y3.png> <./imgs/transf
+er_pers_y4.png>] [34]) (./6_discussion.tex
+[35]) (./0_Thesis.bbl [36] [37]) [38] (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
  5054 strings out of 492995
  78403 string characters out of 6132704
@@ -1070,26 +1070,26 @@ Here is how much of TeX's memory you used:
  71605 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,14n,38p,863b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texm
-f-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/texmf-dist/fonts/e
-nc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm
--mathit.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathex.en
-c}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texliv
-e/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2017/tex
-mf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/public/lm/lmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1
-/public/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm
-/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr10.pfb>
-</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/20
-17/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/texmf-d
-ist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/
-type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (41 pages, 3649495 bytes).
+{/usr/local/texlive/201
+7/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2017/texmf-dist/f
+onts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips
+/lm/lm-mathit.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mat
+hex.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</
+usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/
+texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/20
+17/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2017/texmf-
+dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts
+/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pub
+lic/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr1
+0.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texl
+ive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/local/texlive/2017/t
+exmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2017/texmf-dist/
+fonts/type1/public/lm/lmsy8.pfb>
+Output written on 0_Thesis.pdf (42 pages, 3650712 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
- 137 compressed objects within 2 object streams
+ 284 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  20756 words of extra memory for PDF output out of 24883 (max. 10000000)
 
