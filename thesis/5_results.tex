@@ -158,10 +158,10 @@ Even at this level it is difficult to judge what exactly the network is detectin
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/channel4.png}
 \endminipage
-\caption{Sum of feature channels at different layers in the architecture}
+\caption{Single feature maps inside the model}
 \end{figure}
 
-These are a few notable examples inside the model. The first filter detected high frequencies which are likely not relevant to the problem. By finding them in one layer they can theoretically be removed in the next. Filter 2 found vertical edges and filter 3 horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not simply detect horizontal edges, but only those inside the bone. This seem reasonable because the network needs to learn that the darker growth plates need to be ignored for the segmentation.
+These are a few notable examples inside the model. The first filter detected high frequencies which are likely not relevant to the problem. By finding them in one layer they can theoretically be removed in the next. Filter 2 found vertical edges and filter 3 horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not simply detect horizontal edges, but only those inside the bone. This seem reasonable because the network needs to learn that the dark growth plates shouldn't be interpreted as edges.
 
 
 \subsection{Transfer Experiments}
