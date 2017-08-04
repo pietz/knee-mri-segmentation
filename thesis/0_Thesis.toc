@@ -37,5 +37,7 @@
 \contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{28}
 \contentsline {subsection}{\numberline {4.2}Visual Evaluation}{29}
 \contentsline {subsection}{\numberline {4.3}Transfer Experiments}{31}
-\contentsline {subsection}{\numberline {4.4}Age Prediction}{31}
-\contentsline {section}{\numberline {5}Discussion}{32}
+\contentsline {subsubsection}{\numberline {4.3.1}Resolution Variance}{31}
+\contentsline {subsubsection}{\numberline {4.3.2}Perspective Variance}{32}
+\contentsline {subsection}{\numberline {4.4}Age Prediction}{32}
+\contentsline {section}{\numberline {5}Discussion}{34}
