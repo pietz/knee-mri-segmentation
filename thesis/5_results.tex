@@ -1,8 +1,8 @@
 \section{Results}
 
-The results in this chapter are based on the test set or other sources the network has not been trained with. It was also made sure that there was no overlap in images of people that were recorded multiple times. 5 images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
+The results in this chapter are based on the test set or other sources the network has not been trained with. It was also made sure that there was no overlap in images of people that were recorded multiple times. Five images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
 
-The network architecture was developed using a single segmentation channel that merged Femur, Tibia und Fibula maps. However, tests were also run to validate the performance for each bone on its own and also combine the three separate predictions into a multi channel segmentation. The same architecture and training procedure was used for this task.
+The network architecture was developed using a single segmentation channel that merged Femur, Tibia and Fibula maps. However, tests were also run to validate the performance for each bone on its own and also combine the three separate predictions into a multi channel segmentation. The same architecture and training procedure was used for this task.
 
 \subsection{Numeric Evaluation}
 
@@ -48,7 +48,7 @@ The proposed model achieves a DSC score of 98.0\% and an IoU of 96.0\%. Precisio
     \caption{Numeric evaluation of the test set using popular metrics}
 \end{table}
 
-Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a fairly unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are increased by 3.
+Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a somewhat unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are increased by 3.
 
 A study from 2011 ran a similar segmentation on the knee \cite{Martel-Pelletier2011}, achieving a DSC of 94\% for the femur and 92\% for the tibia using the ray casting technique. Another study from 2015 \cite{Dam} used an atlas based segmentation and achieved a DSC of 97.5\% for the tibia.
 
@@ -156,7 +156,7 @@ The most imprecise predictions also appeared in upper and lower slices where the
 \caption{Two examples of falsely predicted estimates whether or not the bone is already visible. Each row shows input, ground truth and prediction}
 \end{figure}
 
-In these examples the ground truth defines the Femur to be visible in the upper image but not in the one below it. The prediction disagrees with it in both cases. These are two examples that could be seen as noise in the ground truth data or to be debateable at least.
+In these examples, the ground truth defines the Femur to be visible in the upper image but not in the one below it. The prediction disagrees with it in both cases. These are two examples that could be seen as noise in the ground truth data or to be debatable at least.
 
 \subsection{Model Exploration}
 
@@ -208,9 +208,9 @@ Secondly, convolutional neural networks take away most of this black box reasoni
 \caption{Intermediate feature maps of the convolutional blocks in the proposed architecture. Each is the sum of the 32 individual output channels}
 \end{figure}
 
-Each image shows the sum of all intermediate channels at a specific layer. The first image is the raw input, whereas the last image is the final segmentation map. One can clearly see the reduction of resolution towards the middle, which is then brought back up. The first convolutional block inverses the input and removes most of the bone structure except for the growth plates. The second to last output looks similar to the input, but the skin on the sides is almost completely removed and the dark growth plates have been filled. Looking closer at this image one can also notice a crisp black line that separates the bone from the rest. A simple threshold at this point would segment the bone fairly accurate.
+Each image shows the sum of all intermediate channels at a particular layer. The first image is the raw input, whereas the last image is the final segmentation map. One can clearly see the reduction of resolution towards the middle, which is then brought back up. The first convolutional block inverses the input and removes most of the bone structure except for the growth plates. The second to last output looks similar to the input, but the skin on the sides is almost entirely removed, and the dark growth plates have been filled. Looking closer at this image one can also notice a crisp black line that separates the bone from the rest. A simple threshold at this point would segment the bone fairly accurate.
 
-Even at this level it is difficult to judge what exactly the network is detecting. For another visualization the intermediate channels are not added like before but analyzed separately.
+Even at this level, it is difficult to judge what exactly the network is detecting. For another visualization, the intermediate channels are not added like before but analyzed separately.
 
 \begin{figure}[H]
 \minipage{0.24\textwidth}
@@ -228,14 +228,14 @@ Even at this level it is difficult to judge what exactly the network is detectin
 \caption{Four examples of output channels at different positions in the network}
 \end{figure}
 
-These are a few notable examples inside the model. The first filter detects high frequencies in the bone and skin tissue. Filter 2 finds vertical edges while filter 3 shows horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not simply detect horizontal edges, but only those inside the bone. This seems reasonable because the network needs to learn that the dark growth plates shouldn't be interpreted as edges.
+These are a few notable examples inside the model. The first filter detects high frequencies in the bone and skin tissue. Filter 2 finds vertical edges while filter 3 shows horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not just detect horizontal edges, but only those inside the bone. This seems reasonable because the network needs to learn that the dark growth plates shouldn't be interpreted as edges.
 
 
 \subsection{Transfer Application}
 
 Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. They cannot learn what they weren't taught. On the other hand, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
 
-The proposed architecture can be described as "fully convolutional" because it doesn't include any dense layers. This allows the network to accept any kind of resolution and still being able to process it. An experiment was set up that used uncropped images from the Epi data which were resized to 448x448 pixels. This made them 4 times larger than the images the network was trained with.
+The proposed architecture can be described as "fully convolutional" because it doesn't include any dense layers. This allows the network to accept any resolution and still being able to process it. An experiment was set up that used uncropped images from the Epi data which were resized to 448x448 pixels. This made them four times larger than the images the network was trained with.
 
 \begin{figure}[H]
 \minipage{0.24\textwidth}
@@ -266,9 +266,9 @@ The proposed architecture can be described as "fully convolutional" because it d
 \caption{Four random samples uncropped of Epi data segmentations that were resized to 448x448 pixels}
 \end{figure}
 
-The predictions look surprisingly good even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate based on a subjective visual evaluation of random samples. Problems are visible in tissue that isn't bone but was recognized as such like the 4th examples shows.
+The predictions look surprisingly good even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate based on a subjective visual evaluation of random samples. Problems are visible in tissue that isn't bone but was recognized as such as the 4th examples shows.
 
-In 3.2 a third data source was mentioned that featured 5 sagittal recordings of knees. These were not used for the training because of their structural differences and because no ground truth segmentations were available. The following samples show what happens when the network is applied to images from a different perspective.
+In 3.2 a third data source was mentioned that featured five sagittal recordings of knees. These were not used for the training because of their structural differences and because no ground truth segmentations were available. The following samples show what happens when the network is applied to images from a different perspective.
 
 \begin{figure}[H]
 \minipage{0.24\textwidth}
@@ -299,7 +299,7 @@ In 3.2 a third data source was mentioned that featured 5 sagittal recordings of 
 \caption{Four random samples of sagittal Maas data segmentations using the coronal trained model}
 \end{figure}
 
-Subjectively, these results look excellent. In example 4 it even recognizes the Patella, a bone it was never trained on. This shows that with enough image augmentation the network will learn to segment any type of bone.
+Subjectively, these results look excellent. In example 4 it even recognizes the Patella, a bone it was never trained on. This shows that with enough image augmentation the network will learn to segment any bone.
 
 \subsection{Age Prediction}
 
@@ -307,10 +307,10 @@ The initial cause for the segmentation experiment was to reduce the amount of in
 
 The age of the candidates ranged from 14 to 21 years with a mean at 17.5 years. Predicting this age for every person meant that it was never off more than 3.5 years. Since the data was normally distributed, a static prediction of the mean led to a mean absolute error (MAE) of 1.2 years.
 
-Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps were applied to all 145 3D samples many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Out of these resulting 2610 slices 2124 were used for the training set, but the network still wouldn't converge.
+Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps had been applied to all 145 3D samples, many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Out of these resulting 2610 slices, 2124 were used for the training set, but the network still wouldn't converge.
 
 Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was I able to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs.
 
-The results on the test data showed a MAE of 0.66 years for all of the slices. Since every 3D sample now had 18 different predictions, I build another tree based model that would take a vector of 18 values and predict a single age. This got a final MAE of 0.55 years on the test data, which is more than twice as good as the baseline.
+The results on the test data showed an MAE of 0.66 years for all of the slices. Since every 3D sample now had 18 different predictions, I build another tree based model that would take a vector of 18 values and predict a single age. This got a final MAE of 0.55 years on the test data, which is more than twice as good as the baseline.
 
 \newpage
