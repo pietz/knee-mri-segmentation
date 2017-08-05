@@ -56,42 +56,109 @@ A study from 2011 ran a similar segmentation on the knee \cite{Martel-Pelletier2
 
 The visual evaluation will focus on the results of the combined network since its performance is on par with the one channel model while offering more information about the associated bones.
 
-\begin{figure}[H]
-\centering
-\par
-\includegraphics[width=1.0\textwidth]{imgs/sample1.png}
-\includegraphics[width=1.0\textwidth]{imgs/sample2.png}
-\includegraphics[width=1.0\textwidth]{imgs/sample4.png}
-\includegraphics[width=1.0\textwidth]{imgs/sample3.png}
-\caption{Input, predicted output, difference to ground truth and mask applied on input}
-\par
-\end{figure}
-
 The network shows excellent performance on slices that are located near the middle of the 3D MRIs with DSC scores of over 99\%.
 
 \begin{figure}[H]
-\centering
-\par
-\includegraphics[width=1.0\textwidth]{imgs/sample5.png}
-\includegraphics[width=1.0\textwidth]{imgs/sample6.png}
-\caption{Input, predicted output, difference to ground truth and mask applied on input}
-\par
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/a1.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/b1.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/c1.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/d1.png}
+\endminipage
+\vspace{0.15cm}
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/a2.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/b2.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/c2.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/d2.png}
+\endminipage
+\vspace{0.15cm}
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/a3.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/b3.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/c3.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/d3.png}
+\endminipage
+\vspace{0.15cm}
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/a4.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/b4.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/c4.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/d4.png}
+\endminipage
+\caption{Random slices extracted from the middle of the 3D images. Each row shows input, predicted output, difference to ground truth and applied mask to input}
 \end{figure}
 
-The best DSC scores of 100\% are achieved through empty segmentations that the network correctly predicted as such.
+Perfect DSC scores of 100\% are achieved through empty segmentations that the network correctly predicted as such.
 
 \begin{figure}[H]
-\centering
-\par
-\includegraphics[width=1.0\textwidth]{imgs/sample5.png}
-\includegraphics[width=1.0\textwidth]{imgs/sample6.png}
-\caption{Input, predicted output, difference to ground truth and mask applied on input}
-\par
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/a5.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/b5.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/a6.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/b6.png}
+\endminipage
+\caption{One upper and lower slice example of a correctly predicted empty segmentation.}
 \end{figure}
 
-The worst results appeared in upper and lower slices where the bones started to become visible. Oftentimes the network didn't agree with the ground truth on what could already be interpreted as bone. If either the prediction or the ground truth was empty while the other was not, then the result is a DSC score of 0\%.
+The most imprecise predictions also appeared in upper and lower slices where the bones started to become visible. If either the prediction or the ground truth was empty while the other was not, then the result is a DSC score of 0\%.
 
-\subsection{Model Visualization}
+\begin{figure}[H]
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/a8.png}
+\endminipage\hfill
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/b8.png}
+\endminipage\hfill
+\minipage{0.32\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/c8.png}
+\endminipage
+\vspace{0.2cm}
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/a7.png}
+\endminipage\hfill
+\minipage{0.32\textwidth}
+  \includegraphics[width=\linewidth]{imgs/b7.png}
+\endminipage\hfill
+\minipage{0.32\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/c7.png}
+\endminipage
+\caption{Two examples of falsely predicted estimates whether or not the bone is already visible. Each row shows input, ground truth and prediction}
+\end{figure}
+
+In these examples the ground truth defines the Femur to be visible in the upper image but not in the one below it. The prediction disagrees with it in both cases. These are two examples that could be seen as noise in the ground truth data or to be debateable at least.
+
+\subsection{Model Exploration}
 
 Neural networks are often considered black boxes because it is difficult to get an intuitive understanding how decisions are calculated. This is a crucial problem especially in the medical field, where a prediction may approximate certain health conditions about a patient.
 
@@ -138,7 +205,7 @@ Secondly, convolutional neural networks take away most of this black box reasoni
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/z_output.png}
 \endminipage
-\caption{Sum of feature channels at different layers in the architecture}
+\caption{Intermediate feature maps of the convolutional blocks in the proposed architecture. Each is the sum of the 32 individual output channels}
 \end{figure}
 
 Each image shows the sum of all intermediate channels at a specific layer. The first image is the raw input, whereas the last image is the final segmentation map. One can clearly see the reduction of resolution towards the middle, which is then brought back up. The first convolutional block inverses the input and removes most of the bone structure except for the growth plates. The second to last output looks similar to the input, but the skin on the sides is almost completely removed and the dark growth plates have been filled. Looking closer at this image one can also notice a crisp black line that separates the bone from the rest. A simple threshold at this point would segment the bone fairly accurate.
@@ -158,17 +225,15 @@ Even at this level it is difficult to judge what exactly the network is detectin
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/channel4.png}
 \endminipage
-\caption{Single feature maps inside the model}
+\caption{Four examples of output channels at different positions in the network}
 \end{figure}
 
-These are a few notable examples inside the model. The first filter detected high frequencies which are likely not relevant to the problem. By finding them in one layer they can theoretically be removed in the next. Filter 2 found vertical edges and filter 3 horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not simply detect horizontal edges, but only those inside the bone. This seem reasonable because the network needs to learn that the dark growth plates shouldn't be interpreted as edges.
+These are a few notable examples inside the model. The first filter detects high frequencies in the bone and skin tissue. Filter 2 finds vertical edges while filter 3 shows horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not simply detect horizontal edges, but only those inside the bone. This seems reasonable because the network needs to learn that the dark growth plates shouldn't be interpreted as edges.
 
 
-\subsection{Transfer Experiments}
+\subsection{Transfer Application}
 
 Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. They cannot learn what they weren't taught. On the other hand, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
-
-\subsubsection{Resolution Variance}
 
 The proposed architecture can be described as "fully convolutional" because it doesn't include any dense layers. This allows the network to accept any kind of resolution and still being able to process it. An experiment was set up that used uncropped images from the Epi data which were resized to 448x448 pixels. This made them 4 times larger than the images the network was trained with.
 
@@ -202,8 +267,6 @@ The proposed architecture can be described as "fully convolutional" because it d
 \end{figure}
 
 The predictions look surprisingly good even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate based on a subjective visual evaluation of random samples. Problems are visible in tissue that isn't bone but was recognized as such like the 4th examples shows.
-
-\subsubsection{Perspective Variance}
 
 In 3.2 a third data source was mentioned that featured 5 sagittal recordings of knees. These were not used for the training because of their structural differences and because no ground truth segmentations were available. The following samples show what happens when the network is applied to images from a different perspective.
 
@@ -246,8 +309,8 @@ The age of the candidates ranged from 14 to 21 years with a mean at 17.5 years. 
 
 Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps were applied to all 145 3D samples many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Out of these resulting 2610 slices 2124 were used for the training set, but the network still wouldn't converge.
 
-Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was I able to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs. 
+Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was I able to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs.
 
-The results on the test data showed a MAE of 0.61 years for all of the slices. Since every 3D sample now had 18 different predictions, I build another tree based model that would take a vector of 18 values and predict a single age. This got a final MAE of 0.54 years on the test data, which is more than twice as good as the already competitive baseline.
+The results on the test data showed a MAE of 0.66 years for all of the slices. Since every 3D sample now had 18 different predictions, I build another tree based model that would take a vector of 18 values and predict a single age. This got a final MAE of 0.55 years on the test data, which is more than twice as good as the baseline.
 
 \newpage
