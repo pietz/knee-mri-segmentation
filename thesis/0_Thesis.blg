@@ -1,0 +1,77 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: 0_Thesis.aux
+The style file: plain.bst
+Database file #1: references.bib.bib
+Warning--empty school in Mauer2015
+Warning--there's a number but no series in Aumuller2010
+Warning--empty publisher in Aumuller2010
+Warning--empty journal in Badrinarayanan2015
+Warning--empty journal in Bojarski2017
+Warning--empty journal in Chen2016
+Warning--empty journal in Chen2017
+Warning--empty publisher in Chollet2017
+Warning--empty journal in Clevert2015
+Warning--empty journal in Dam
+Warning--empty year in Dam
+Warning--empty journal in EuropeanAsylumSupportOffice2013
+Warning--empty journal in Goyal2017
+Warning--empty journal in He2015b
+Warning--empty journal in He2015a
+Warning--empty journal in Hoffer2017
+Warning--empty journal in Iandola2016a
+Warning--empty journal in Keskar2016
+Warning--empty journal in Kingma2014
+Warning--empty journal in Krizhevsky
+Warning--empty year in Krizhevsky
+Warning--empty journal in Lin2016
+Warning--empty journal in Martel-Pelletier2011
+Warning--empty journal in Nair
+Warning--empty year in Nair
+Warning--empty journal in Nekrasov2016
+Warning--empty journal in Saxe2015
+Warning--empty journal in Simonyan2014a
+Warning--empty journal in Wu2016
+Warning--empty journal in Zhao2016
+You've used 37 entries,
+            2118 wiz_defined-function locations,
+            678 strings with 10746 characters,
+and the built_in function-call counts, 12907 in all, are:
+= -- 1146
+> -- 899
+< -- 8
++ -- 355
+- -- 318
+* -- 980
+:= -- 2259
+add.period$ -- 107
+call.type$ -- 37
+change.case$ -- 266
+chr.to.int$ -- 0
+cite$ -- 67
+duplicate$ -- 432
+empty$ -- 786
+format.name$ -- 318
+if$ -- 2528
+int.to.chr$ -- 0
+int.to.str$ -- 37
+missing$ -- 38
+newline$ -- 183
+num.names$ -- 74
+pop$ -- 344
+preamble$ -- 1
+purify$ -- 233
+quote$ -- 0
+skip$ -- 325
+stack$ -- 0
+substring$ -- 440
+swap$ -- 66
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 140
+warning$ -- 30
+while$ -- 95
+width$ -- 39
+write$ -- 348
+(There were 30 warnings)
