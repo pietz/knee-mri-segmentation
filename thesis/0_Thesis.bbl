@@ -67,6 +67,13 @@ Erik~B Dam, Martin Lillholm, Joselene Marques, and Mads Nielsen.
 \newblock {Automatic segmentation of high-and low-field knee MRIs using knee
   image quantification with data from the osteoarthritis initiative}.
 
+\bibitem{Dodin2011}
+Pierre Dodin, Johanne Martel-Pelletier, Jean-Pierre Pelletier, and Francois
+  Abram.
+\newblock {A fully automated human knee 3D MRI bone segmentation using the ray
+  casting technique}.
+\newblock pages 1413--1424, 2011.
+
 \bibitem{EuropeanAsylumSupportOffice2013}
 {European Asylum Support Office}.
 \newblock {Age assessment practice in Europe}.
@@ -134,12 +141,6 @@ Guosheng Lin, Anton Milan, Chunhua Shen, and Ian Reid.
 \newblock {RefineNet: Multi-Path Refinement Networks for High-Resolution
   Semantic Segmentation}.
 \newblock nov 2016.
-
-\bibitem{Martel-Pelletier2011}
-Pierre Dodin~Johanne Martel-Pelletier.
-\newblock {A fully automated human knee 3D MRI bone segmentation using the ray
-  casting technique}.
-\newblock pages 1413--1424, 2011.
 
 \bibitem{Milletari2016}
 Fausto Milletari, Nassir Navab, and Seyed~Ahmad Ahmadi.

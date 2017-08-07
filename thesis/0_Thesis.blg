@@ -3,6 +3,7 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: 0_Thesis.aux
 The style file: plain.bst
 Database file #1: references.bib.bib
+Warning--I didn't find a database entry for "Martel-Pelletier2011"
 Warning--empty school in Mauer2015
 Warning--there's a number but no series in Aumuller2010
 Warning--empty publisher in Aumuller2010
@@ -14,6 +15,7 @@ Warning--empty publisher in Chollet2017
 Warning--empty journal in Clevert2015
 Warning--empty journal in Dam
 Warning--empty year in Dam
+Warning--empty journal in Dodin2011
 Warning--empty journal in EuropeanAsylumSupportOffice2013
 Warning--empty journal in Goyal2017
 Warning--empty journal in He2015b
@@ -25,7 +27,6 @@ Warning--empty journal in Kingma2014
 Warning--empty journal in Krizhevsky
 Warning--empty year in Krizhevsky
 Warning--empty journal in Lin2016
-Warning--empty journal in Martel-Pelletier2011
 Warning--empty journal in Nair
 Warning--empty year in Nair
 Warning--empty journal in Nekrasov2016
@@ -35,32 +36,32 @@ Warning--empty journal in Wu2016
 Warning--empty journal in Zhao2016
 You've used 37 entries,
             2118 wiz_defined-function locations,
-            678 strings with 10746 characters,
-and the built_in function-call counts, 12907 in all, are:
-= -- 1146
-> -- 899
+            680 strings with 10816 characters,
+and the built_in function-call counts, 13005 in all, are:
+= -- 1153
+> -- 915
 < -- 8
-+ -- 355
-- -- 318
-* -- 980
-:= -- 2259
++ -- 361
+- -- 324
+* -- 993
+:= -- 2277
 add.period$ -- 107
 call.type$ -- 37
-change.case$ -- 266
+change.case$ -- 269
 chr.to.int$ -- 0
 cite$ -- 67
 duplicate$ -- 432
 empty$ -- 786
-format.name$ -- 318
-if$ -- 2528
+format.name$ -- 324
+if$ -- 2545
 int.to.chr$ -- 0
 int.to.str$ -- 37
 missing$ -- 38
 newline$ -- 183
 num.names$ -- 74
-pop$ -- 344
+pop$ -- 347
 preamble$ -- 1
-purify$ -- 233
+purify$ -- 236
 quote$ -- 0
 skip$ -- 325
 stack$ -- 0
@@ -74,4 +75,4 @@ warning$ -- 30
 while$ -- 95
 width$ -- 39
 write$ -- 348
-(There were 30 warnings)
+(There were 31 warnings)
