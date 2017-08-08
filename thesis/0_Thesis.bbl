@@ -113,6 +113,12 @@ Forrest~N. Iandola, Song Han, Matthew~W. Moskewicz, Khalid Ashraf, William~J.
 \newblock {SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and}.
 \newblock feb 2016.
 
+\bibitem{Jopp2007}
+Eilin. Jopp.
+\newblock {\em {Methoden zur Alters- und Geschlechtsbestimmung auf dem
+  Pruefstand - eine rechtsmedizinische empirische Studie}}.
+\newblock Kovac, 2007.
+
 \bibitem{Keskar2016}
 Nitish~Shirish Keskar, Dheevatsa Mudigere, Jorge Nocedal, Mikhail Smelyanskiy,
   and Ping Tak~Peter Tang.
@@ -205,6 +211,10 @@ Nicholas~J. Tustison, Brian~B. Avants, Philip~A. Cook, Yuanjie Zheng, Alexander
 Catherine Westbrook.
 \newblock {\em {MRI at A Glance}}.
 \newblock Wiley Blackwell, 3 edition, 2016.
+
+\bibitem{WorldHealthOrganization2016}
+{World Health Organization}.
+\newblock {Ionizing radiation, health effects and protective measures}, 2016.
 
 \bibitem{Wu2016}
 Yonghui Wu, Mike Schuster, Zhifeng Chen, Quoc~V. Le, Mohammad Norouzi, Wolfgang

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  8 AUG 2017 12:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  8 AUG 2017 15:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -872,10 +872,6 @@ File: imgs/unet.png Graphic file (type png)
 Package pdftex.def Info: imgs/unet.png used on input line 239.
 (pdftex.def)             Requested size: 360.0pt x 239.83495pt.
  [18]
-Overfull \hbox (6.83536pt too wide) in paragraph at lines 256--274
- [][] 
- []
-
 [19 <./imgs/unet.png>] [20] [21]
 <imgs/elu_relu1.png, id=136, 496.85625pt x 362.35374pt>
 File: imgs/elu_relu1.png Graphic file (type png)
@@ -1289,13 +1285,13 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 5249 strings out of 492995
- 81241 string characters out of 6132704
- 170879 words of memory out of 5000000
- 8510 multiletter control sequences out of 15000+600000
- 71735 words of font info for 79 fonts, out of 8000000 for 9000
+ 5253 strings out of 492995
+ 81302 string characters out of 6132704
+ 170887 words of memory out of 5000000
+ 8512 multiletter control sequences out of 15000+600000
+ 71865 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,38p,895b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,14n,38p,913b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/t
 exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2017/texmf-dist/
@@ -1311,7 +1307,7 @@ public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lm
 ri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb><
 /usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local
 /texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (48 pages, 3837126 bytes).
+Output written on 0_Thesis.pdf (48 pages, 3837625 bytes).
 PDF statistics:
  369 PDF objects out of 1000 (max. 8388607)
  152 compressed objects within 2 object streams
