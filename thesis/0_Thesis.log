@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  8 AUG 2017 17:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  8 AUG 2017 18:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -895,12 +895,8 @@ File: imgs/model.png Graphic file (type png)
 Package pdftex.def Info: imgs/model.png used on input line 457.
 (pdftex.def)             Requested size: 198.0011pt x 207.8794pt.
  [27]
-[28 <./imgs/model.png>]) (./4_results.tex
-
-LaTeX Warning: Citation `Martel-Pelletier2011' on page 29 undefined on input li
-ne 53.
-
-[29] <imgs/a1.png, id=169, 218.8175pt x 218.8175pt>
+[28 <./imgs/model.png>]) (./4_results.tex [29]
+<imgs/a1.png, id=169, 218.8175pt x 218.8175pt>
 File: imgs/a1.png Graphic file (type png)
  <use imgs/a1.png>
 Package pdftex.def Info: imgs/a1.png used on input line 63.
@@ -1279,35 +1275,31 @@ s/transfer_pers_x3.png> <./imgs/transfer_pers_x4.png> <./imgs/transfer_pers_y1.
 png> <./imgs/transfer_pers_y2.png> <./imgs/transfer_pers_y3.png> <./imgs/transf
 er_pers_y4.png>] [36]) (./5_discussion.tex
 [37]) (./6_conclusion.tex [38]) (./0_Thesis.bbl [39] [40] [41]) [42]
-(./0_Thesis.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 5253 strings out of 492995
- 81302 string characters out of 6132704
+ 5252 strings out of 492995
+ 81280 string characters out of 6132704
  170887 words of memory out of 5000000
- 8512 multiletter control sequences out of 15000+600000
+ 8511 multiletter control sequences out of 15000+600000
  71865 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,14n,38p,919b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2017/t
-exmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2017/texmf-dist/
-fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/
-dvips/lm/lm-mathsy.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/l
-m/lmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmbx12.p
-fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2017/t
-exmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2017/texmf-dist/f
-onts/type1/public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
-public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lm
-ri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmri12.pfb><
-/usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local
-/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (48 pages, 3838059 bytes).
+ 39i,14n,38p,927b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.
+enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
+l/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
+2017/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2017/texmf
+-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2017/texmf-dist/font
+s/type1/public/lm/lmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/pu
+blic/lm/lmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lm
+csc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmex10.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2
+017/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2017/texmf-d
+ist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
+pe1/public/lm/lmri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10
+.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
+Output written on 0_Thesis.pdf (48 pages, 3838513 bytes).
 PDF statistics:
  369 PDF objects out of 1000 (max. 8388607)
  152 compressed objects within 2 object streams

@@ -3,7 +3,6 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: 0_Thesis.aux
 The style file: plain.bst
 Database file #1: references.bib.bib
-Warning--I didn't find a database entry for "Martel-Pelletier2011"
 Warning--empty school in Mauer2015
 Warning--there's a number but no series in Aumuller2010
 Warning--empty publisher in Aumuller2010
@@ -37,7 +36,7 @@ Warning--empty journal in Wu2016
 Warning--empty journal in Zhao2016
 You've used 40 entries,
             2118 wiz_defined-function locations,
-            698 strings with 11333 characters,
+            696 strings with 11293 characters,
 and the built_in function-call counts, 13868 in all, are:
 = -- 1237
 > -- 947
@@ -76,4 +75,4 @@ warning$ -- 31
 while$ -- 104
 width$ -- 42
 write$ -- 377
-(There were 32 warnings)
+(There were 31 warnings)
