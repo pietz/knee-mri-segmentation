@@ -12,7 +12,7 @@ The processing of medical image data needed a library that could handle these fo
 
 \subsection{Data Analysis}
 
-The data set was a collection of three dimensional MR images showing the human right knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as certain meta information about each image. The resolution of these samples differed from one source to the other.
+The data set was a collection of three dimensional T1 weighted MR images showing the human right knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as certain meta information about each image. The resolution of these samples differed from one source to the other.
 
 \begin{table}[h!]
 \centering
@@ -255,7 +255,7 @@ A test was set up that compared the original U-Net against five smaller variants
     \centering
     \begin{tabular}{| l || r | r | r | r | r | r | r | r | r || r |}
     \hline
-    Name    & C1   & C2   & C3   & C4   & C5   & C6   & C7   & C8   & C9  & Param. \\ 
+    Name    & C1   & C2   & C3   & C4   & C5   & C6   & C7   & C8   & C9  & Para. \\ 
     \hline
     \hline
     Model A &   32 &   32 &   32 &   32 &   32 &   32 &   32 &   32 &  32 & 211k      \\
@@ -266,9 +266,9 @@ A test was set up that compared the original U-Net against five smaller variants
     \hline
     Model D &    8 &   16 &   32 &   64 &  128 &   64 &   32 &   16 &   8 & 485k      \\
     \hline
-    Model E &   32 &   48 &   72 &  108 &  159 &  108 &   72 &   48 &  32 & 1,358k      \\
+    Model E &   32 &   48 &   72 &  108 &  159 &  108 &   72 &   48 &  32 & 1.36m      \\
     \hline
-    U-Net   &   64 &  128 &  256 &  512 & 1024 &  512 &  256 &  128 &  64 & 31,000k      \\
+    U-Net   &   64 &  128 &  256 &  512 & 1024 &  512 &  256 &  128 &  64 & 31.5m      \\
     \hline
     \end{tabular}
     \caption{Convolution blocks 1 to 9 of the candidates with their respective output channels and total number of parameters}
