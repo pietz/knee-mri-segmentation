@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  8 AUG 2017 23:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  8 AUG 2017 23:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -699,7 +699,7 @@ Package pdftex.def Info: imgs/closed-18y.jpg used on input line 29.
 File: imgs/cs_hier.png Graphic file (type png)
 
 <use imgs/cs_hier.png>
-Package pdftex.def Info: imgs/cs_hier.png used on input line 45.
+Package pdftex.def Info: imgs/cs_hier.png used on input line 43.
 (pdftex.def)             Requested size: 288.0011pt x 185.95235pt.
  [4 <./imgs/open-14y.jpg> <./imgs/centrally-closed-16y.jpg> <./imgs/closed-18y.
 jpg>]
@@ -707,41 +707,41 @@ jpg>]
 File: imgs/classic_prog.png Graphic file (type png)
 
 <use imgs/classic_prog.png>
-Package pdftex.def Info: imgs/classic_prog.png used on input line 63.
+Package pdftex.def Info: imgs/classic_prog.png used on input line 61.
 (pdftex.def)             Requested size: 288.0011pt x 36.24008pt.
  [5 <./imgs/cs_hier.png> <./imgs/classic_prog.png>]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 71.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 69.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 71.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 69.
 
 <imgs/ml_pipeline.png, id=52, 2263.45625pt x 795.97375pt>
 File: imgs/ml_pipeline.png Graphic file (type png)
 
 <use imgs/ml_pipeline.png>
-Package pdftex.def Info: imgs/ml_pipeline.png used on input line 81.
+Package pdftex.def Info: imgs/ml_pipeline.png used on input line 79.
 (pdftex.def)             Requested size: 288.0011pt x 101.26973pt.
  [6 <./imgs/ml_pipeline.png>]
 <imgs/ann.png, id=58, 1606.0pt x 832.10875pt>
 File: imgs/ann.png Graphic file (type png)
  <use imgs/ann.png>
-Package pdftex.def Info: imgs/ann.png used on input line 99.
+Package pdftex.def Info: imgs/ann.png used on input line 97.
 (pdftex.def)             Requested size: 288.0011pt x 149.21445pt.
  [7 <./imgs/ann.png>] <imgs/landscape.jpg, id=64, 1003.75pt x 1003.75pt>
 File: imgs/landscape.jpg Graphic file (type jpg)
 
 <use imgs/landscape.jpg>
-Package pdftex.def Info: imgs/landscape.jpg used on input line 129.
+Package pdftex.def Info: imgs/landscape.jpg used on input line 127.
 (pdftex.def)             Requested size: 115.20264pt x 115.19142pt.
 
 <imgs/landscape_mask.jpg, id=65, 1003.75pt x 1003.75pt>
 File: imgs/landscape_mask.jpg Graphic file (type jpg)
 
 <use imgs/landscape_mask.jpg>
-Package pdftex.def Info: imgs/landscape_mask.jpg used on input line 132.
+Package pdftex.def Info: imgs/landscape_mask.jpg used on input line 130.
 (pdftex.def)             Requested size: 115.20264pt x 115.19142pt.
  [8] [9 <./imgs/landscape.jpg> <./imgs/landscape_mask.jpg>]) (./3_methods.tex
 
