@@ -13,35 +13,35 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Artificial Neural Networks}{6}
 \contentsline {subsubsection}{\numberline {2.2.4}Convolutional Neural Networks}{7}
 \contentsline {subsubsection}{\numberline {2.2.5}Semantic Segmentation}{8}
-\contentsline {section}{\numberline {3}Methods}{9}
-\contentsline {subsection}{\numberline {3.1}Setup}{9}
-\contentsline {subsection}{\numberline {3.2}Data Analysis}{9}
-\contentsline {subsection}{\numberline {3.3}Preprocessing}{11}
-\contentsline {subsubsection}{\numberline {3.3.1}Training, Validation, and Testing Sets}{11}
-\contentsline {subsubsection}{\numberline {3.3.2}Cropping, Resizing, and Resampling}{12}
-\contentsline {subsubsection}{\numberline {3.3.3}Normalization}{13}
-\contentsline {subsubsection}{\numberline {3.3.4}N4 Bias Field Correction}{14}
-\contentsline {subsubsection}{\numberline {3.3.5}Augmentation}{15}
-\contentsline {subsubsection}{\numberline {3.3.6}2D and 3D data}{16}
-\contentsline {subsubsection}{\numberline {3.3.7}Separate Bone Maps}{17}
-\contentsline {subsection}{\numberline {3.4}Architecture}{18}
-\contentsline {subsubsection}{\numberline {3.4.1}Channels, Growth Rate and Depth}{19}
-\contentsline {subsubsection}{\numberline {3.4.2}Skip Connections}{20}
-\contentsline {subsubsection}{\numberline {3.4.3}Dropout}{21}
-\contentsline {subsubsection}{\numberline {3.4.4}Activation Functions}{21}
-\contentsline {subsection}{\numberline {3.5}Training}{22}
-\contentsline {subsubsection}{\numberline {3.5.1}Metrics and Loss Functions}{23}
-\contentsline {subsubsection}{\numberline {3.5.2}Optimizer}{25}
-\contentsline {subsubsection}{\numberline {3.5.3}Batch Size}{26}
-\contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy}{26}
-\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping}{27}
-\contentsline {subsection}{\numberline {3.6}Postprocessing}{27}
-\contentsline {subsection}{\numberline {3.7}Summary}{27}
-\contentsline {section}{\numberline {4}Results}{29}
-\contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{29}
-\contentsline {subsection}{\numberline {4.2}Visual Evaluation}{30}
-\contentsline {subsection}{\numberline {4.3}Model Exploration}{32}
-\contentsline {subsection}{\numberline {4.4}Transfer Application}{33}
-\contentsline {subsection}{\numberline {4.5}Age Prediction}{35}
-\contentsline {section}{\numberline {5}Discussion}{37}
-\contentsline {section}{\numberline {6}Conclusion}{38}
+\contentsline {section}{\numberline {3}Methods}{10}
+\contentsline {subsection}{\numberline {3.1}Setup}{10}
+\contentsline {subsection}{\numberline {3.2}Data Analysis}{10}
+\contentsline {subsection}{\numberline {3.3}Preprocessing}{12}
+\contentsline {subsubsection}{\numberline {3.3.1}Training, Validation, and Testing Sets}{12}
+\contentsline {subsubsection}{\numberline {3.3.2}Cropping, Resizing, and Resampling}{13}
+\contentsline {subsubsection}{\numberline {3.3.3}Normalization}{14}
+\contentsline {subsubsection}{\numberline {3.3.4}N4 Bias Field Correction}{15}
+\contentsline {subsubsection}{\numberline {3.3.5}Augmentation}{16}
+\contentsline {subsubsection}{\numberline {3.3.6}2D and 3D data}{17}
+\contentsline {subsubsection}{\numberline {3.3.7}Separate Bone Maps}{18}
+\contentsline {subsection}{\numberline {3.4}Architecture}{19}
+\contentsline {subsubsection}{\numberline {3.4.1}Channels, Growth Rate and Depth}{20}
+\contentsline {subsubsection}{\numberline {3.4.2}Skip Connections}{21}
+\contentsline {subsubsection}{\numberline {3.4.3}Dropout}{22}
+\contentsline {subsubsection}{\numberline {3.4.4}Activation Functions}{22}
+\contentsline {subsection}{\numberline {3.5}Training}{23}
+\contentsline {subsubsection}{\numberline {3.5.1}Metrics and Loss Functions}{24}
+\contentsline {subsubsection}{\numberline {3.5.2}Optimizer}{26}
+\contentsline {subsubsection}{\numberline {3.5.3}Batch Size}{27}
+\contentsline {subsubsection}{\numberline {3.5.4}Learning Rate Policy}{27}
+\contentsline {subsubsection}{\numberline {3.5.5}Early Stopping}{28}
+\contentsline {subsection}{\numberline {3.6}Postprocessing}{28}
+\contentsline {subsection}{\numberline {3.7}Summary}{28}
+\contentsline {section}{\numberline {4}Results}{30}
+\contentsline {subsection}{\numberline {4.1}Numeric Evaluation}{30}
+\contentsline {subsection}{\numberline {4.2}Visual Evaluation}{31}
+\contentsline {subsection}{\numberline {4.3}Model Exploration}{33}
+\contentsline {subsection}{\numberline {4.4}Transfer Application}{34}
+\contentsline {subsection}{\numberline {4.5}Age Prediction}{36}
+\contentsline {section}{\numberline {5}Discussion}{38}
+\contentsline {section}{\numberline {6}Conclusion}{39}
