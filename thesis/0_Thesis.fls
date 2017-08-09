@@ -119,6 +119,7 @@ INPUT 0_abstract.tex
 INPUT 0_abstract.tex
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmbx10.tfm
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT 0_Thesis.toc
@@ -148,7 +149,6 @@ OUTPUT 0_Thesis.lof
 INPUT 1_introduction.tex
 INPUT 1_introduction.tex
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
-INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 INPUT 2_background.tex
 INPUT 2_background.tex
 INPUT imgs/open-14y.jpg
