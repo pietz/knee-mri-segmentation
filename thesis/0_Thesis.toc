@@ -42,6 +42,6 @@
 \contentsline {subsection}{\numberline {4.2}Visual Evaluation}{31}
 \contentsline {subsection}{\numberline {4.3}Model Exploration}{33}
 \contentsline {subsection}{\numberline {4.4}Transfer Application}{34}
-\contentsline {subsection}{\numberline {4.5}Age Prediction}{36}
+\contentsline {subsection}{\numberline {4.5}Age Assessment}{36}
 \contentsline {section}{\numberline {5}Discussion}{38}
 \contentsline {section}{\numberline {6}Conclusion}{39}

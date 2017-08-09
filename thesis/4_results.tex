@@ -285,13 +285,13 @@ In 3.2 a third data source was mentioned that featured five sagittal recordings 
 
 Subjectively, these results look excellent. In example 4 it even recognizes the Patella, a bone it was never trained on. This shows that with enough image augmentation the network will learn to segment any bone.
 
-\subsection{Age Prediction}
+\subsection{Age Assessment}
 
-The initial cause for the segmentation experiment was to reduce the amount of information in a knee MRI. The resulting images could then be used to make age related predictions that focussed on the bone and the growth plate. This section will briefly cover such an age prediction pipeline.
+The initial cause for the segmentation experiment was to reduce the amount of information in a knee MRI. The resulting images could then be used to make age assessments that focussed on the bone and the growth plate. This section will briefly cover such an age prediction pipeline.
 
 The age of the candidates ranged from 14 to 21 years with a mean at 17.5 years. Predicting this age for every person meant that it was never off more than 3.5 years. Since the data was normally distributed, a static prediction of the mean led to a mean absolute error (MAE) of 1.2 years.
 
-Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps had been applied to all 145 3D samples, many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Out of these resulting 2610 slices, 2124 were used for the training set, but the network still wouldn't converge.
+Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps had been applied to all 145 3D samples, many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Even with these changes the network wouldn't converge.
 
 Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was I able to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs.
 
