@@ -6,51 +6,35 @@ The network architecture was developed using a single segmentation channel that 
 
 \subsection{Numeric Evaluation}
 
-The proposed model achieves a DSC score of 98.0\% and an IoU of 96.0\%. Precision and Recall are perfectly balanced at 98.0\% as well, suggesting that predictions are neither too optimistic or pessimistic. The error shows a small value of 1.2\%.
+The proposed model achieves a DSC score of 98.0\% and an IoU of 96.0\%. Precision and Recall are perfectly balanced, suggesting that predictions are neither too optimistic or pessimistic. The error shows a small value of 1.2\%.
 
 \begin{table}[H]
     \centering
     \begin{tabular}{| l | c | c | c | c | c |}
     \hline
            & DSC & IoU & Precision & Recall & Error \\ 
+    \Xhline{3\arrayrulewidth}
+    Merged & 0.980 & 0.960 & 0.980 & 0.980 & 0.012 \\
     \hline
-    Merged   & \makecell{0.980} 
-             & \makecell{0.960} 
-             & \makecell{0.980} 
-             & \makecell{0.980} 
-             & \makecell{0.012} \\
+    Femur & 0.981 & 0.963 & 0.979 & 0.984 & 0.006 \\
     \hline
-    Femur    & \makecell{0.981} 
-             & \makecell{0.963} 
-             & \makecell{0.979} 
-             & \makecell{0.984} 
-             & \makecell{0.006} \\
+    Tibia & 0.977 & 0.955 & 0.976 & 0.977 & 0.006 \\
     \hline
-    Tibia    & \makecell{0.977} 
-             & \makecell{0.955} 
-             & \makecell{0.976} 
-             & \makecell{0.977} 
-             & \makecell{0.006} \\
+    Fibula & 0.953 & 0.911 & 0.954 & 0.952 & 0.001 \\
     \hline
-    Fibula   & \makecell{0.953} 
-             & \makecell{0.911} 
-             & \makecell{0.954} 
-             & \makecell{0.952} 
-             & \makecell{0.001} \\
+    Combined & 0.979 & 0.958 & 0.977 & 0.981 & 0.004 \\
+    \Xhline{3\arrayrulewidth}
+    Femur \cite{Dodin2011} & 0.940 & - & - & - & - \\
     \hline
-    Combined & \makecell{0.979} 
-             & \makecell{0.958} 
-             & \makecell{0.977} 
-             & \makecell{0.981} 
-             & \makecell{0.004} \\
+    Tibia \cite{Dodin2011} & 0.920 & - & - & - & - \\
+    \hline
+    Tibia \cite{Dam} & 0.975 & - & - & - & - \\
     \hline
     \end{tabular}
-    \caption{Numeric evaluation of the test set using popular metrics}
+    \caption{Numeric evaluation of segmentations}
 \end{table}
 
-Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation reaches a DSC of 95.3\% and IoU of 91.1\%. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a somewhat unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is even reduced by a factor of 3, which is expected because the segmentation channels are increased by 3.
-
-A study from 2011 ran a similar segmentation on the knee \cite{Dodin2011}, achieving a DSC of 94\% for the femur and 92\% for the tibia using the ray casting technique. Another study from 2015 \cite{Dam} used an atlas based segmentation and achieved a DSC of 97.5\% for the tibia.
+Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation shows lower scores. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a somewhat unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is reduced by a factor of 3, which is expected because the channels are increased by 3. Compared to previous studies, the proposed model shows slightly better results than the multi-atlas segmentation and significantly higher scores than the ray casting technique.
 
 \subsection{Visual Evaluation}
 

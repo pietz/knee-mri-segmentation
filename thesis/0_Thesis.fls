@@ -63,6 +63,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/makecell/makecell.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype-pdftex.def
