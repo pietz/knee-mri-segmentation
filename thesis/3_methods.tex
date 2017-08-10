@@ -1,6 +1,6 @@
 \section{Methods}
 
-The purpose of this chapter is twofold. It will discuss the design and processing decisions that were made for the development of this project, while also giving critical insight into how these applied technologies work.
+The purpose of this chapter is twofold. It will discuss the design and processing decisions that were made for the development of this project, while also giving critical insight into how these applied technologies work. The sections for setup and data analysis describe the working environment for this study. Preprocessing, architecture, training and postprocessing show in chronological order how the development was addressed.
 
 \subsection{Setup}
 
@@ -12,21 +12,25 @@ The processing of medical image data needed a library that could handle these fo
 
 \subsection{Data Analysis}
 
-The data set was a collection of three dimensional T1 weighted MR images showing the human right knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as certain meta information about each image. The resolution of these samples differed from one source to the other.
+The data set was a collection of three dimensional T1 weighted MR images showing the right human knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as technical meta information about each image. The resolution of these samples differed from one source to the other.
 
 \begin{table}[h!]
 \centering
-\begin{tabular}{l l l r r l}
-    Source & Prospective & Perspective & Samples & Maps & Resolution \\
-    \hline
-    Epi    & Yes         & Coronal     & 80      & 40   & 800x800x41 \\
-    Jopp   & No          & Coronal     & 65      & 36   & 512x512x24 \\
-    Maas   & No          & Sagittal    & 5       & 0    & multiple \\
+\begin{tabular}{ | l | l | l | r | r | l |}
+  \hline
+  Source & Prospective & View & Samples & Maps & Resolution \\
+  \Xhline{3\arrayrulewidth}
+  Class 1 & Yes        & Coronal     & 80      & 40            & 800x800x41 \\
+  \hline
+  Class 2 & Yes        & Coronal     & 65      & 36            & 512x512x24 \\
+  \hline
+  Class 3 & No         & Sagittal    & 5       & 0             & multiple \\
+  \hline
 \end{tabular}
-\caption{Details of available images sorted by their source}
+\caption{Details of the data set separated by source}
 \end{table}
 
-The Maas data featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 65 Jopp images were another source of retrospective data, of which 36 had segmentation maps. The origin of this data was a previous study that investigated the condition of the growth plates of Tibia and Femur. A total of 80 MR images were taken specifically for this project. They showed the highest resolution in all dimensions and half of them had segmentation maps.
+Class 3 data featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 65 class 2 images originated in a previous study that investigated the condition of growth plates led by Jopp et al.. A total of 80 class 1 images were taken as part of the DFG project, which showed the highest resolution due to a different MRI machine.
 
 \begin{figure}[H]
 \minipage{0.32\textwidth}
@@ -48,20 +52,22 @@ The Maas data featured a sagittal perspective, while all other samples were take
 \minipage{0.32\textwidth}%
   \includegraphics[width=\linewidth]{imgs/38.jpg}
 \endminipage
-\caption{Six equally distributed slices of a single 3D MRI sample. Femur and Tibia are visible starting at the second image, whereas the Fibula becomes visible in the lower left corner of the 4th image.}
+\caption{Six different slices of one 3D MRI}
 \end{figure}
 
-The total of 76 segmentation maps were all manually labeled by two people. Each mask featured three channels that showed Femur, Tibia, and Fibula separately. They did not segment the entirety of each 3D image but masked a window around the knee cap where the three bones meet.
+The images above move through the slices of one 3D MRI. The Femur already becomes visible in the first frame, whereas the Tibia starts to show in the second frame. The Fibula becomes visible in the lower left corner of the fourth image and can be seen more clearly in the fifth. The last image shows no bone matter.
+
+The total of 76 segmentation maps were all manually labeled by two people. Each map featured three channels that showed Femur, Tibia, and Fibula separately. They did not segment the entirety of each 3D image but used a square window around the the point where Femur and Tibia meet.
 
 \begin{figure}[H]
 \centering
 \par
 \includegraphics[width=1.0\textwidth]{imgs/age_distr.png}
-\caption{Age distribution in the data set. Purple shows the samples for which segmentation maps were available. Blue includes the rest.}
+\caption{Age distribution in the data set}
 \par
 \end{figure}
 
-The candidates chosen for the MRI recordings were all german males between the age of 14 and 21. Their age was normally distributed, and a majority of the candidates were recorded twice roughly a year apart.
+The candidates chosen for the MRI recordings were all german males between the age of 14 and 21. Their age was normally distributed, and a majority of the candidates were recorded twice roughly a year apart. Above, purple shows the samples for which segmentation maps were available. Blue includes the rest.
 
 \subsection{Preprocessing}
 
@@ -93,11 +99,11 @@ Although there is no theoretical size limitation to using convolutional neural n
 
 Resizing the z-axis was problematic because the resolution was roughly 20 times lower. When scaling along this dimension, the segmentation maps of different slices started to blend and create merged maps of multiple layers. In order to get the images from two different main sources on the same scale, two different approaches were tried.
 
-The 41 slices per image of the Epi data were padded with empty pixels to 48 slices. Afterward, every second 2D image was resampled to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps may have falsified the data.
+The 41 slices per image of the class 1 data were padded with empty pixels to 48 slices. Afterward, every second 2D image was resampled to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps may have falsified the data.
 
-Throwing away perfectly good data is very uncommon in the machine learning field, especially if data sets are small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources, the balance between the amount of Epi and Jopp data was kept. A total of 76 24x224x224 images were now available for training.
+Throwing away perfectly good data is very uncommon in the machine learning field, especially if data sets are small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources, the balance between the amount of class 1 and 2 data was kept. A total of 76 24x224x224 images were now available for training.
 
-The second approach converted the volumetric data to 2D while using all 41 slices from the Epi data and all 24 slices from Jopp. No samples were thrown away, but the data was no longer volumetric. 
+The second approach converted the volumetric data to 2D while using all 41 slices from the class 1 data and all 24 slices from class 2. No samples were thrown away, but the data was no longer volumetric. 
 
 \subsubsection{Normalization}
 
@@ -121,11 +127,11 @@ The standard score presents a more desirable approach because its mean centering
 \centering
 \par
 \includegraphics[width=1.0\textwidth]{imgs/intensity_distr.png}
-\caption{Intensity distribution in the data set. Blue shows the Epi samples and purple shows Jopp data.}
+\caption{Intensity distribution in the data set. Blue shows the class 1 samples and purple shows class 2}
 \par
 \end{figure}
 
-In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. The Jopp images featured roughly five times higher intensities than the Epi data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an image is.
+In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. The class 2 featured roughly five times higher intensities than the class 1 data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an image is.
 
 This approach also has a downside. The network can no longer use the mean intensity and the standard deviation as a feature to learn from because every image will be identical according to these measures. However, these two features showed no correlation to the accuracy of a prediction, which is why it was decided to use this approach.
 
@@ -180,7 +186,7 @@ In the context of neural networks, one has to differentiate between volumetric d
 
 Although the data set consisted of volumetric MRI data, the z-axis showed 20 times fewer voxels than the other two dimensions. Not knowing the influence of this situation both 3D and 2D architectures were investigated for this project. The 3D model didn't use any MaxPooling on the already small z-axis. A kernel size of 3x3x3 was used similarly to the 3D version of U-Net. The 2D data was created by using each slice as a single input image.
 
-As described in 3.3.1 the 3D convolutional network used 24x224x224 voxel images from both the Epi and Jopp data. In contrast, the 2D network used all of the available slices from each source as separate images.
+As described in 3.3.1 the 3D convolutional network used 24x224x224 voxel images from both the class 1 and 2 data. In contrast, the 2D network used all of the available slices from each source as separate images.
 
 While in theory, the spatial information of the z-axis gave the 3D network more contextual information of every slice, the 2D model performed better at the end. The latter was also less computationally expensive and allowed working with data where only single slices were available per sample.
 

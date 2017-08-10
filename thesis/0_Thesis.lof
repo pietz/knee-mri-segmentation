@@ -4,9 +4,9 @@
 \contentsline {figure}{\numberline {4}{\ignorespaces Machine learning pipeline that calculates a set of rules}}{6}
 \contentsline {figure}{\numberline {5}{\ignorespaces An ANN with 3 input nodes, 2 hidden layers with 4 nodes each and 2 output nodes}}{7}
 \contentsline {figure}{\numberline {6}{\ignorespaces A landscape photograph with a possible semantic segmentation map for sky, stone and sea}}{9}
-\contentsline {figure}{\numberline {7}{\ignorespaces Six equally distributed slices of a single 3D MRI sample. Femur and Tibia are visible starting at the second image, whereas the Fibula becomes visible in the lower left corner of the 4th image.}}{11}
-\contentsline {figure}{\numberline {8}{\ignorespaces Age distribution in the data set. Purple shows the samples for which segmentation maps were available. Blue includes the rest.}}{12}
-\contentsline {figure}{\numberline {9}{\ignorespaces Intensity distribution in the data set. Blue shows the Epi samples and purple shows Jopp data.}}{15}
+\contentsline {figure}{\numberline {7}{\ignorespaces Six different slices of one 3D MRI}}{11}
+\contentsline {figure}{\numberline {8}{\ignorespaces Age distribution in the data set}}{12}
+\contentsline {figure}{\numberline {9}{\ignorespaces Intensity distribution in the data set. Blue shows the class 1 samples and purple shows class 2}}{15}
 \contentsline {figure}{\numberline {10}{\ignorespaces Raw image (left), corrected image (middle) and visualization of intensity differences between the two (right)}}{16}
 \contentsline {figure}{\numberline {11}{\ignorespaces Four sample slices with their ground truth segmentations showing the three separate bones}}{18}
 \contentsline {figure}{\numberline {12}{\ignorespaces Visualization of the U-Net architecture}}{20}
