@@ -176,45 +176,9 @@ Two factors help in this study to pull away from this problem. Firstly, a segmen
 Secondly, convolutional neural networks take away most of this black box reasoning \cite{Chollet2017} because every layer in the network can be visualized. The following images give an insight what a sample looks like after different convolutional blocks.
 
 \begin{figure}[H]
-\minipage{0.24\textwidth}
-  \includegraphics[width=\linewidth]{imgs/a_input.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}
-  \includegraphics[width=\linewidth]{imgs/down1.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}%
-  \includegraphics[width=\linewidth]{imgs/down2.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}%
-  \includegraphics[width=\linewidth]{imgs/down3.png}
-\endminipage
-\vspace{0.15cm}
-\minipage{0.24\textwidth}
-  \includegraphics[width=\linewidth]{imgs/down4.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}
-  \includegraphics[width=\linewidth]{imgs/middle1.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}%
-  \includegraphics[width=\linewidth]{imgs/middle2.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}%
-  \includegraphics[width=\linewidth]{imgs/up1.png}
-\endminipage
-\vspace{0.15cm}
-\minipage{0.24\textwidth}
-  \includegraphics[width=\linewidth]{imgs/up2.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}
-  \includegraphics[width=\linewidth]{imgs/up3.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}%
-  \includegraphics[width=\linewidth]{imgs/up4.png}
-\endminipage\hfill
-\minipage{0.24\textwidth}%
-  \includegraphics[width=\linewidth]{imgs/z_output.png}
-\endminipage
-\caption{Intermediate feature maps of the convolutional blocks in the proposed architecture. Each is the sum of the 32 individual output channels}
+  \centering
+  \includegraphics[width=0.95\textwidth]{imgs/archi_explo.png}
+\caption{Intermediate sum of feature maps throughout the network}
 \end{figure}
 
 Each image shows the sum of all intermediate channels at a particular layer. The first image is the raw input, whereas the last image is the final segmentation map. One can clearly see the reduction of resolution towards the middle, which is then brought back up. The first convolutional block inverses the input and removes most of the bone structure except for the growth plates. The second to last output looks similar to the input, but the skin on the sides is almost entirely removed, and the dark growth plates have been filled. Looking closer at this image one can also notice a crisp black line that separates the bone from the rest. A simple threshold at this point would segment the bone fairly accurate.
@@ -234,11 +198,34 @@ Even at this level, it is difficult to judge what exactly the network is detecti
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/channel4.png}
 \endminipage
-\caption{Four examples of output channels at different positions in the network}
+\caption{Examples of intermediate channels throughout the network}
 \end{figure}
 
 These are a few notable examples inside the model. The first filter detects high frequencies in the bone and skin tissue. Filter 2 finds vertical edges while filter 3 shows horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not just detect horizontal edges, but only those inside the bone. This seems reasonable because the network needs to learn that the dark growth plates shouldn't be interpreted as edges.
 
+\subsection{Noise Exploitation}
+
+Ground truth data is often subject to noise, because mistakes happen during their creation or because it may be debatable what the actual truth is. To test how well the network performs on noisy data, another training environment was set up where synthetic noise was added to the ground truth segmentations. By using erosion and dilation with a kernel size of 7 both the training and validation sets were modified.
+
+\begin{figure}[H]
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/orig_seg1.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}
+  \includegraphics[width=\linewidth]{imgs/noisy_seg1.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/orig_seg2.png}
+\endminipage\hfill
+\minipage{0.24\textwidth}%
+  \includegraphics[width=\linewidth]{imgs/noisy_seg2.png}
+\endminipage
+\caption{Examples of synthetic noise}
+\end{figure}
+
+The first and third images show the original segmentations, while 2 and 4 were changed using erosion and dilation respectively. The noise on the training data accounted for an error of 7.1\% DSC. Afterward, the unmodified test data was loaded to verify the results. The predictions show an accuracy of 95.2\% DSC, meaning that the noise hurts the performance of the model.
+
+More importantly however, the DSC error is lower than the error that was introduced through the noise in the training data. When applying the same noise on the test set and using it as a prediction for the actual ground truth, the score is 92.8\% DSC. The predictions of the network contain 33\% less noise than the data it was trained on.
 
 \subsection{Transfer Application}
 
