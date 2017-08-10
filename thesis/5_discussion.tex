@@ -1,33 +1,19 @@
 \section{Discussion}
 
-The application of convolutional neural networks for the segmentation of bones in MRIs has shown to be a very effective measure when compared to other methods like ray casting or multi-atlas registration. The hypothesis that the reduction of data could enable the age assessment through neural networks showed to be true based on a brief test in the previous chapter. 
+Convolutional neural networks proved to be a very effective measure for the segmentation of bones in MRIs. They show better performance than the ray casting technique and multi-atlas registration which were used in previous studies. However, the underlying data sets were only similar and not identical, which could have also led to differences in the results.
 
+data reduction hypothesis, growth plates indicators for age hypothesis
 
-The indications made by previous work of 
+The hypothesis that the reduction of data could enable the age assessment through neural networks showed to be true based on a brief test in the previous chapter. 
 
-The greatest limitation of this study was time. 3 weeks were spent on the programming aspect and trying out different sets of parameters. Each new idea came with several hours of training to verify their performance. As such, only popular techniques in the deep learning field were applied. Another 3 weeks were invested in the writing of the thesis to complete everything by deadline. Spending more time on data analysis, fine tuning parameters and trying entirely new architectures might open up new possibilities. All of the tests were based on encoder-decoder architectures, which means there might be new advancements to be made outside this scope.
+The greatest limitation of this study was time. 3 weeks were spent on the programming aspect and trying out different sets of parameters. Each new idea came with several hours of training to verify the performance. As such, only popular techniques in the deep learning field were applied. Another 3 weeks were invested in the writing of this thesis to complete everything by deadline. Spending more time on data analysis, fine tuning parameters and trying entirely new architectures might open up new possibilities. All of the tests were based on encoder-decoder architectures, which means there might be new advancements to be made outside this scope.
 
 Lately, a new wave of convolutional layers have been getting a lot of attention. Depthwise separable convolutions and dilated convolutions are used more and more frequently in CNNs. Both can increase the efficiency of parameters and are especially popular on mobile devices and real time applications. They were briefly applied in this study as a replacement for some convolutional layers without making a difference. However, more time could be spent on restructuring the entire architecture to benefit the needs of these types of convolutions.
 
-
-
-
-
-Größe des Netzes spielt nicht immer eine entscheidene Rolle
-
-Correlation von Knochen und Epifugen zum Alter ist vorhanden
-
-
-Interpretation, Opinion, Future Work, answer questions made in the introduction.
-
-The purpose of the Discussion is to state your interpretations and opinions, explain the implications of your findings, and make suggestions for future research. Its main function is to answer the questions posed in the Introduction, explain how the results support the answers and, how the answers fit in with existing knowledge on the topic. The Discussion is considered the heart of the paper and usually requires several writing attempts. 
-
-The segmentation results show improved performance when compared to other studies and further prove the importance of neural networks in the field of medical imaging. Although processing speed was no priority, the architecture consists of only 210,000 parameters making it 150 times smaller than U-Net. On a sub-\$1000 workstation, it can be trained from scratch in 1 to 4 hours depending if the bones need to be separated. Using the pre-trained weights, one can likely apply transfer learning with minimal effort to solve similar problems.
+Although processing speed was no priority, the architecture consists of only 210,000 parameters making it 150 times smaller than U-Net. On a sub-\$1000 workstation, it can be trained from scratch in 1 to 3 hours depending if the bones need to be separated. Using the pre-trained weights, one can likely apply transfer learning with minimal effort to solve similar problems.
 
 Creating multiple ground truth segmentations by hand and averaging the results, could present a way of improving the findings in this thesis. This would further reduce the noise in the data and allow the model to move beyond the 98\% mark. Since the smallest architecture achieved the highest score, the challenge of improving the performance is likely not limited by the capacity of the network.
 
-In conclusion, this thesis focussed on the segmentation of bones, but only briefly addressed the age assessment based on the resulting data. It is to be investigated more thoroughly how the segmentation maps can be used to further improve the results on age related estimates. Additional information about the patients like height and weight may help to improve accuracy in the future.
-
-
+It is to be investigated more thoroughly how the segmentation maps can be used to further improve the results on age related estimates. Additional information about the patients like height and weight may help to improve accuracy in the future.
 
 \newpage
