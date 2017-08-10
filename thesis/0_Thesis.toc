@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {3.1}Setup}{10}
 \contentsline {subsection}{\numberline {3.2}Data Analysis}{10}
 \contentsline {subsection}{\numberline {3.3}Preprocessing}{12}
-\contentsline {subsubsection}{\numberline {3.3.1}Training, Validation, and Testing Sets}{12}
+\contentsline {subsubsection}{\numberline {3.3.1}Training, Validation, and Testing Sets}{13}
 \contentsline {subsubsection}{\numberline {3.3.2}Cropping, Resizing, and Resampling}{13}
 \contentsline {subsubsection}{\numberline {3.3.3}Normalization}{14}
 \contentsline {subsubsection}{\numberline {3.3.4}N4 Bias Field Correction}{15}
