@@ -460,13 +460,13 @@ In summary, the architecture features 4 "Down Blocks" on the contracting side th
 \begin{figure}[H]
 \centering
 \par
-\includegraphics[width=0.55\textwidth]{imgs/model.png}
+\includegraphics[width=0.7\textwidth]{imgs/model.png}
 \caption{The proposed architecture for the segmentation}
 \par
 \end{figure}
 
-A Down Block consists of 2 convolutional layers each followed by an ELU activation function, after which A MaxPooling layer halves the width and height of the image. The Up Block looks similar but features a transposed convolutional layer in the beginning to upsample the resolution and no MaxPooling in the end. The Middle Block features a Dropout layer with a value of 0.5, which is surrounded by convolutional layers as well. All convolutional layers have 32 channels. The output layer includes another convolution that reduces the channels to 1, which represents the segmentation map.
+A Down Block consists of 2 convolutional layers each followed by an ELU activation function, after which A MaxPooling layer halves the width and height of the image. The Up Block looks similar but features a transposed convolutional layer in the beginning to upscale the resolution and no MaxPooling in the end. The Middle Block features a Dropout layer with a value of 0.5, which is surrounded by convolutional layers as well. All convolutional layers have 32 channels. The output layer includes another convolution that reduces the channels to 1, which represents the segmentation map.
 
-Other options that were tried but didn't improve performance included using convolutional blocks with a stride of 2 instead of MaxPooling to downsample the images. Batch normalization was also applied but resulted in a high amount of overfitting the network never recovered from. The fact that it did not improve the performance came as a surprise because it usually improves any model. A possible reason for this could be the small batch size in combination with a high variance of intensities in the data. If the mean of each batch varies significantly from the mean of the entire training data, it may hurt the performance of batch normalization.
+Other options that were tried but didn't improve performance included using convolutional blocks with a stride of 2 instead of MaxPooling to down sample the images. Batch normalization was also applied but resulted in a high amount of overfitting the network never recovered from. The fact that it did not improve the performance came as a surprise because it usually improves any model. A possible reason for this could be the small batch size in combination with a high variance of intensities in the data. If the mean of each batch varies significantly from the mean of the entire training data, it may hurt the performance of batch normalization.
 
 \newpage

@@ -65,6 +65,8 @@ INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/tools/tabularx.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype.sty
 INPUT /usr/local/texlive/2017/texmf-dist/tex/latex/microtype/microtype-pdftex.def
@@ -255,6 +257,9 @@ INPUT ./imgs/model.png
 INPUT ./imgs/model.png
 INPUT 4_results.tex
 INPUT 4_results.tex
+INPUT imgs/train_val.png
+INPUT ./imgs/train_val.png
+INPUT ./imgs/train_val.png
 INPUT imgs/a1.png
 INPUT ./imgs/a1.png
 INPUT ./imgs/a1.png

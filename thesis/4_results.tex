@@ -36,6 +36,31 @@ The proposed model achieves a DSC score of 98.0\% and an IoU of 96.0\%. Precisio
 
 Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation shows lower scores. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a somewhat unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is reduced by a factor of 3, which is expected because the channels are increased by 3. Compared to previous studies, the proposed model shows slightly better results than the multi-atlas segmentation and significantly higher scores than the ray casting technique.
 
+\begin{figure}[H]
+  \includegraphics[width=\linewidth]{imgs/train_val.png}
+\caption{Visual representation of performance during training}
+\end{figure}
+
+The graph above shows the performance of the merged model during the learning process on the training and validation data. 
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{| l | c | c | c | c | c |}
+    \hline
+    Data       & Epoch 1 & Epoch 5 & Epoch 10 & Epoch 20 & Epoch 40 \\ 
+    \Xhline{3\arrayrulewidth}
+    Training Set   & 0.753   & 0.949   & 0.966    & 0.975    & 0.981 \\
+    \hline
+    Validation Set & 0.847   & 0.956   & 0.963    & 0.976    & 0.979 \\
+    \hline
+    Test Set       &     -   &     -   &     -    &     -    & 0.980 \\
+    \hline
+    \end{tabular}
+    \caption{Performance on different sets over time}
+\end{table}
+
+The 98\% mark is never reached on the validation data, but only on the final evaluation of the test set. Towards the end the performance of the training data pulls slightly ahead of the validation results.
+
 \subsection{Visual Evaluation}
 
 The visual evaluation will focus on the results of the combined network since its performance is on par with the one channel model while offering more information about the associated bones.
@@ -250,7 +275,7 @@ The proposed architecture can be described as "fully convolutional" because it d
 \caption{Four random samples uncropped of Epi data segmentations that were resized to 448x448 pixels}
 \end{figure}
 
-The predictions look surprisingly good even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate based on a subjective visual evaluation of random samples. Problems are visible in tissue that isn't bone but was recognized as such as the 4th examples shows.
+The predictions show good results even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate. Problems are visible in tissue that isn't bone but was recognized as such as the 4th examples shows.
 
 In 3.2 a third data source was mentioned that featured five sagittal recordings of knees. These were not used for the training because of their structural differences and because no ground truth segmentations were available. The following samples show what happens when the network is applied to images from a different perspective.
 
@@ -283,7 +308,7 @@ In 3.2 a third data source was mentioned that featured five sagittal recordings 
 \caption{Four random samples of sagittal Maas data segmentations using the coronal trained model}
 \end{figure}
 
-Subjectively, these results look excellent. In example 4 it even recognizes the Patella, a bone it was never trained on. This shows that with enough image augmentation the network will learn to segment any bone.
+These results look very accurate. In example 4 it even recognizes the Patella, a bone it was never trained on. This shows that with enough image augmentation the network will learn to segment any bone.
 
 \subsection{Age Assessment}
 
