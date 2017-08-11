@@ -1,0 +1,24 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces Different states of the Tibia}}{4}
+\contentsline {figure}{\numberline {2}{\ignorespaces Hierarchical relationship of relevant topics}}{4}
+\contentsline {figure}{\numberline {3}{\ignorespaces Classical programming pipeline}}{5}
+\contentsline {figure}{\numberline {4}{\ignorespaces Machine learning pipeline}}{6}
+\contentsline {figure}{\numberline {5}{\ignorespaces An ANN with 3 input nodes, 2 hidden layers with 4 nodes each and 2 output nodes}}{7}
+\contentsline {figure}{\numberline {6}{\ignorespaces An example of semantic segmentation}}{8}
+\contentsline {figure}{\numberline {7}{\ignorespaces Six different slices of one 3D MRI}}{10}
+\contentsline {figure}{\numberline {8}{\ignorespaces Age distribution in the data set}}{11}
+\contentsline {figure}{\numberline {9}{\ignorespaces Intensity distribution in the data set}}{14}
+\contentsline {figure}{\numberline {10}{\ignorespaces Raw image, corrected image and intensity differences}}{15}
+\contentsline {figure}{\numberline {11}{\ignorespaces Examples of slices with their ground truth segmentations}}{17}
+\contentsline {figure}{\numberline {12}{\ignorespaces Visualization of the U-Net architecture}}{19}
+\contentsline {figure}{\numberline {13}{\ignorespaces Visualization of ReLU and ELU}}{22}
+\contentsline {figure}{\numberline {14}{\ignorespaces The iterative process of forward and backward propagation}}{23}
+\contentsline {figure}{\numberline {15}{\ignorespaces The proposed architecture for the segmentation}}{28}
+\contentsline {figure}{\numberline {16}{\ignorespaces Visual representation of performance during training}}{30}
+\contentsline {figure}{\numberline {17}{\ignorespaces Input, prediction, difference to ground truth and applied mask}}{31}
+\contentsline {figure}{\numberline {18}{\ignorespaces Correctly segmented upper and lower slices}}{31}
+\contentsline {figure}{\numberline {19}{\ignorespaces Input, ground truth and prediction of false segmentations}}{32}
+\contentsline {figure}{\numberline {20}{\ignorespaces Intermediate sum of feature maps throughout the network}}{33}
+\contentsline {figure}{\numberline {21}{\ignorespaces Examples of intermediate channels throughout the network}}{34}
+\contentsline {figure}{\numberline {22}{\ignorespaces Examples of synthetic noise}}{34}
+\contentsline {figure}{\numberline {23}{\ignorespaces Examples of uncropped and 448x448 pixel predictions}}{35}
+\contentsline {figure}{\numberline {24}{\ignorespaces Examples of sagittal class 3 data segmentations}}{36}

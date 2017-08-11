@@ -235,7 +235,7 @@ While building the architecture in the following sections this merged channel ap
 
 The majority of classification CNNs use a recurrent combination of convolutional and pooling layers \cite{Krizhevsky}\cite{He2015b}\cite{Iandola2016a}\cite{Ronneberger2015a}. By combining the local learning patterns of convolutions with the spatial reductions of pooling, the input is compressed to a dense representation of its most important features.
 
-As mentioned in 3.2.5 a segmentation can be seen as a classification for every pixel. As such, early CNN segmentation models used small patches of the input image only to predict a single pixel through a classification pipeline. Afterward, a full segmentation map was assembled using each of these pixels. This process was very slow, and it also prevented the network to have a field of view larger than the inserted patch.
+As mentioned in 2.2.5 a segmentation can be seen as a classification for every pixel. As such, early CNN segmentation models used small patches of the input image only to predict a single pixel through a classification pipeline. Afterward, a full segmentation map was assembled using each of these pixels. This process was very slow, and it also prevented the network to have a field of view larger than the inserted patch.
 
 An improvement for segmentations came through architectures referred to as encoder-decoder models. The encoding process describes the same spatial compression used in classification networks. Afterward, in the decoding step, the spatial resolution is brought back to its original shape and further processed by additional convolutions. This yields huge speed improvements, while also increasing the accuracy of the prediction. Encoder-decoder networks are the de facto standard in the current field of image segmentation \cite{Chen2017}\cite{Zhao2016}\cite{Lin2016}\cite{Chen2016}\cite{Nekrasov2016}\cite{Milletari2016}\cite{Cicek2016}\cite{Ronneberger2015a}\cite{Badrinarayanan2015}, and they were the initial starting point for building architecture.
 
@@ -263,15 +263,15 @@ A test was set up that compared the original U-Net against five smaller variants
     \hline
     Name    & C1   & C2   & C3   & C4   & C5   & C6   & C7   & C8   & C9  & Para. \\ 
     \Xhline{3\arrayrulewidth}
-    Model A &   32 &   32 &   32 &   32 &   32 &   32 &   32 &   32 &  32 & 211k      \\
+    Model A &   32 &   32 &   32 &   32 &   32 &   32 &   32 &   32 &  32 & 195k      \\
     \hline
-    Model B &   16 &   24 &   36 &   54 &   81 &   54 &   36 &   24 &  16 & 340k      \\
+    Model B &   16 &   24 &   36 &   54 &   81 &   54 &   36 &   24 &  16 & 332k      \\
     \hline
-    Model C &   48 &   48 &   48 &   48 &   48 &   48 &   48 &   48 &  48 & 474k      \\
+    Model C &   48 &   48 &   48 &   48 &   48 &   48 &   48 &   48 &  48 & 437k      \\
     \hline
-    Model D &    8 &   16 &   32 &   64 &  128 &   64 &   32 &   16 &   8 & 485k      \\
+    Model D &    8 &   16 &   32 &   64 &  128 &   64 &   32 &   16 &   8 & 491k      \\
     \hline
-    Model E &   32 &   48 &   72 &  108 &  159 &  108 &   72 &   48 &  32 & 1.36m      \\
+    Model E &   32 &   48 &   72 &  108 &  159 &  108 &   72 &   48 &  32 & 1.33m      \\
     \hline
     U-Net   &   64 &  128 &  256 &  512 & 1024 &  512 &  256 &  128 &  64 & 31.0m      \\
     \hline
