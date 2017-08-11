@@ -148,6 +148,9 @@ OUTPUT 0_Thesis.toc
 INPUT 0_Thesis.lof
 INPUT 0_Thesis.lof
 OUTPUT 0_Thesis.lof
+INPUT 0_Thesis.lot
+INPUT 0_Thesis.lot
+OUTPUT 0_Thesis.lot
 INPUT 1_introduction.tex
 INPUT 1_introduction.tex
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm
@@ -246,9 +249,9 @@ INPUT ./imgs/unet.png
 INPUT ./imgs/unet.png
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
-INPUT imgs/elu_relu1.png
-INPUT ./imgs/elu_relu1.png
-INPUT ./imgs/elu_relu1.png
+INPUT imgs/elu_relu3.png
+INPUT ./imgs/elu_relu3.png
+INPUT ./imgs/elu_relu3.png
 INPUT imgs/forward_backward_prop.png
 INPUT ./imgs/forward_backward_prop.png
 INPUT ./imgs/forward_backward_prop.png

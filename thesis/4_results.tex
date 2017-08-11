@@ -119,7 +119,7 @@ The network shows excellent performance on slices that are located near the midd
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/d4.png}
 \endminipage
-\caption{Random slices extracted from the middle of the 3D images. Each row shows input, predicted output, difference to ground truth and applied mask to input}
+\caption{Input, prediction, difference to ground truth and applied mask}
 \end{figure}
 
 Perfect DSC scores of 100\% are achieved through empty segmentations that the network correctly predicted as such.
@@ -137,7 +137,7 @@ Perfect DSC scores of 100\% are achieved through empty segmentations that the ne
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/b6.png}
 \endminipage
-\caption{One upper and lower slice example of a correctly predicted empty segmentation.}
+\caption{Correctly segmented upper and lower slices}
 \end{figure}
 
 The most imprecise predictions also appeared in upper and lower slices where the bones started to become visible. If either the prediction or the ground truth was empty while the other was not, then the result is a DSC score of 0\%.
@@ -162,7 +162,7 @@ The most imprecise predictions also appeared in upper and lower slices where the
 \minipage{0.32\textwidth}%
   \includegraphics[width=\linewidth]{imgs/c7.png}
 \endminipage
-\caption{Two examples of falsely predicted estimates whether or not the bone is already visible. Each row shows input, ground truth and prediction}
+\caption{Input, ground truth and prediction of false segmentations}
 \end{figure}
 
 In these examples, the ground truth defines the Femur to be visible in the upper image but not in the one below it. The prediction disagrees with it in both cases. These are two examples that could be seen as noise in the ground truth data or to be debatable at least.
@@ -259,7 +259,7 @@ The proposed architecture can be described as "fully convolutional" because it d
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/transfer_size_y4.png}
 \endminipage
-\caption{Four random samples uncropped of Epi data segmentations that were resized to 448x448 pixels}
+\caption{Examples of uncropped and 448x448 pixel predictions}
 \end{figure}
 
 The predictions show good results even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate. Problems are visible in tissue that isn't bone but was recognized as such as the 4th examples shows.
@@ -292,7 +292,7 @@ In 3.2 a third data source was mentioned that featured five sagittal recordings 
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/transfer_pers_y4.png}
 \endminipage
-\caption{Four random samples of sagittal Maas data segmentations using the coronal trained model}
+\caption{Examples of sagittal class 3 data segmentations}
 \end{figure}
 
 These results look very accurate. In example 4 it even recognizes the Patella, a bone it was never trained on. This shows that with enough image augmentation the network will learn to segment any bone.

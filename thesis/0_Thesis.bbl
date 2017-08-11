@@ -168,6 +168,13 @@ Vladimir Nekrasov, Janghoon Ju, and Jaesik Choi.
 NVIDIA.
 \newblock {GPU vs CPU? What is GPU Computing?}
 
+\bibitem{Prasoon2013}
+Adhish Prasoon, Kersten Petersen, Christian Igel, Fran{\c{c}}ois Lauze, Erik
+  Dam, and Mads Nielsen.
+\newblock {Deep Feature Learning for Knee Cartilage Segmentation Using a
+  Triplanar Convolutional Neural Network}.
+\newblock 2013.
+
 \bibitem{Ronneberger2015a}
 Olaf Ronneberger, Philipp Fischer, and Thomas Brox.
 \newblock {U-Net: Convolutional Networks for Biomedical Image Segmentation}.

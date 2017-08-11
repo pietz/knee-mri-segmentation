@@ -20,9 +20,9 @@ The data set was a collection of three dimensional T1 weighted MR images that we
   \hline
   Source & Prospective & View & Samples & Maps & Resolution \\
   \Xhline{3\arrayrulewidth}
-  Class 1 & Yes        & Coronal     & 80      & 40            & 800x800x41 \\
+  Class 1 & Yes        & Coronal     & 65      & 36            & 800x800x41 \\
   \hline
-  Class 2 & Yes        & Coronal     & 65      & 36            & 512x512x24 \\
+  Class 2 & Yes        & Coronal     & 80      & 40            & 512x512x24 \\
   \hline
   Class 3 & No         & Sagittal    & 5       & 0             & multiple \\
   \hline
@@ -30,7 +30,7 @@ The data set was a collection of three dimensional T1 weighted MR images that we
 \caption{Details of the data set separated by source}
 \end{table}
 
-Class 3 data featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 65 class 2 images originated in a previous study that investigated the condition of growth plates led by Jopp et al.. A total of 80 class 1 images were taken as part of the DFG project, which showed the highest resolution due to a different MRI machine.
+Class 3 data featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 80 class 2 images originated in a previous study that investigated the condition of growth plates led by Jopp et al.. A total of 65 class 1 images were taken as part of the DFG project, which showed the highest resolution due to a different MRI machine.
 
 \begin{figure}[H]
 \minipage{0.32\textwidth}
@@ -127,7 +127,7 @@ The standard score presents a more desirable approach because its mean centering
 \centering
 \par
 \includegraphics[width=1.0\textwidth]{imgs/intensity_distr.png}
-\caption{Intensity distribution in the data set. Blue shows the class 1 samples and purple shows class 2}
+\caption{Intensity distribution in the data set}
 \par
 \end{figure}
 
@@ -149,7 +149,7 @@ A bias field is a low-frequency non-uniform intensity that is an unwanted byprod
 \minipage{0.32\textwidth}%
   \includegraphics[width=\linewidth]{imgs/diff2.jpg}
 \endminipage
-\caption{Raw image (left), corrected image (middle) and visualization of intensity differences between the two (right)}
+\caption{Raw image, corrected image and intensity differences}
 \end{figure}
 
 As the name suggests, it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24x224x224 image took between 60 and 120 seconds.
@@ -184,7 +184,7 @@ Although convolutional neural networks are most commonly connected with 2D data 
 
 In the context of neural networks, one has to differentiate between volumetric data with one channel and 2D data that consists of multiple color channels. Both are an example of 3D data, but the volumetric images feature three spatial dimensions, whereas photos feature only two. Convolutions commonly traverse the spatial dimensions, which means photos with multiple channels are usually not subject to 3D convolutions. Instead, various input channels are fed into a 2D CNN.
 
-Although the data set consisted of volumetric MRI data, the z-axis showed 20 times fewer voxels than the other two dimensions. Not knowing the influence of this situation both 3D and 2D architectures were investigated for this project. The 3D model didn't use any MaxPooling on the already small z-axis. A kernel size of 3x3x3 was used similarly to the 3D version of U-Net. The 2D data was created by using each slice as a single input image.
+Although the data set consisted of volumetric MRI data, the z-axis showed 20 times fewer voxels than the other two dimensions. Not knowing the influence of this situation both 3D and 2D architectures were investigated for this project. The 3D model didn't use any MaxPooling on the already small z-axis. A kernel size of 3x3x3 was used similarly to the 3D version of U-Net \cite{Cicek2016}. The 2D data was created by using each slice as a single input image.
 
 As described in 3.3.1 the 3D convolutional network used 24x224x224 voxel images from both the class 1 and 2 data. In contrast, the 2D network used all of the available slices from each source as separate images.
 
@@ -220,7 +220,7 @@ The initial segmentation maps came with three separate channels for the Femur, T
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/y4.png}
 \endminipage
-\caption{Four sample slices with their ground truth segmentations showing the three separate bones}
+\caption{Examples of slices with their ground truth segmentations}
 \end{figure}
 
 However, this led to problems with the Fibula, which was not recognized by any of the applied architectures. The channel was always predicted empty. It's appearance in the images accounted for 3.4\% of the segmented area, whereas the Tibia made up 41\% and the Femur accounted for the remaining 55.6\%. This led the network to learn that an empty prediction of this channel is valid in 96.6\% of the cases, which is very accurate on its own. Instead of spending capacity on improving a channel that only makes up a tiny fraction of the result, the network improved the performance of Femur and Tibia.
@@ -259,11 +259,10 @@ A test was set up that compared the original U-Net against five smaller variants
 
 \begin{table}[H]
     \centering
-    \begin{tabular}{| l || r | r | r | r | r | r | r | r | r || r |}
+    \begin{tabular}{| l | r | r | r | r | r | r | r | r | r | r |}
     \hline
     Name    & C1   & C2   & C3   & C4   & C5   & C6   & C7   & C8   & C9  & Para. \\ 
-    \hline
-    \hline
+    \Xhline{3\arrayrulewidth}
     Model A &   32 &   32 &   32 &   32 &   32 &   32 &   32 &   32 &  32 & 211k      \\
     \hline
     Model B &   16 &   24 &   36 &   54 &   81 &   54 &   36 &   24 &  16 & 340k      \\
@@ -277,7 +276,7 @@ A test was set up that compared the original U-Net against five smaller variants
     U-Net   &   64 &  128 &  256 &  512 & 1024 &  512 &  256 &  128 &  64 & 31.5m      \\
     \hline
     \end{tabular}
-    \caption{Convolution blocks 1 to 9 of the candidates with their respective output channels and total number of parameters}
+    \caption{Convolutional blocks with their respective output channels}
 \end{table}
 
 Training U-Net was very slow in two regards. Each training step lasted six times longer compared to the smallest model, while it also took 25 times more training steps to reach the same results. Since it was also overfitting to a significant amount, it was not trained until the end. The second largest model E also overfitted on the training data and never achieved comparable results to the other four models.
@@ -327,8 +326,8 @@ Since the introduction of ReLU other variants have built on its success like PRe
 \begin{figure}[H]
 \centering
 \par
-\includegraphics[width=0.5\textwidth]{imgs/elu_relu1.png}
-\caption{Visualization of ReLU in orange and ELU in blue}
+\includegraphics[width=0.5\textwidth]{imgs/elu_relu3.png}
+\caption{Visualization of ReLU and ELU}
 \par
 \end{figure}
 
@@ -428,22 +427,13 @@ Based on hardware limitations the largest possible batch sizes ranged from 24 to
 
 \subsubsection{Learning Rate Policy}
 
-One full iteration over the training samples is referred to as an epoch, and the learning rate policy describes how the learning rate is changed from one epoch to another. With the introduction of adaptive optimizers like Adam or RMSProp, there has been a lower emphasize on this topic. Learning rates that were set too high or too low will be adjusted by the optimizer after a few iterations. Even though this reduces the number of possible defects, a lot of training time can be saved with the right policy.
+One full iteration over the training samples is referred to as an epoch, and the learning rate policy describes how the learning rate is changed from one epoch to another. With the introduction of adaptive optimizers like Adam or RMSProp, there has been a lower emphasize on this topic because they modify the learning rate during training. Even though this reduces the number of possible defects, training time can often be saved with the right learning rate.
 
-Ten epochs were run at different learning rates to compare initial results and to examine the point at which the model wouldn't converge at all. 0.002 was the highest rate at which the model started training, but 0.001 resulted in the best score.
-
-\begin{figure}[H]
-\[
-lr(x) = \frac{1}{1 + decay * x}
-\]
-\caption{Learning rate at epoch x based on the decay value}
-\end{figure}
-
-After the model had stopped to improve at epoch 65, the learning rate was changed to 0.0001. This gave a small boost of accuracy. To have a smooth transition between learning rates, the decay was set to 0.001. This meant that the initial learning rate of 0.001 would reach 0.0001 after 68 epochs and then continue to decrease even further.
+Ten epochs were run at different learning rates to compare initial results and to examine the point at which the model wouldn't converge at all. 0.002 was the highest rate at which the model started training, but 0.001 resulted in the best score. Adding a decay that reduces the learning rate manually over time did not improve the results with the use of Adam.
 
 \subsubsection{Early Stopping}
 
-Neural networks will continuously minimize the loss on the training set. This result needs to be validated on data the network hasn't seen before. At a certain point during training, the performance on the validation set will start to decrease because the model is overfitting on the training data. The number of iterations to reach this point is dependent on many hyperparameters, as well as the random values the network has been initialized with. As such it's difficult to calculate how many epochs the training will need to reach its peak.
+Neural networks will continuously minimize the loss on the training set. This result needs to be validated on data the network hasn't seen before. At a certain point during training, the performance on the validation set will start to decrease because the model is overfitting on the training data. The number of iterations to reach this point is dependent on many hyperparameters, as well as the random values the network has been initialized with. As such it's difficult to calculate how long the training will need to reach its peak.
 
 Early stopping is a simple technique that will end the training process as soon as the model stops improving on the validation data. To do this, a patience value is defined how long the network should continue training after the score has stopped increasing. This is important because not every epoch will lead to a new best score on the validation data.
 
