@@ -303,10 +303,10 @@ The initial cause for the segmentation experiment was to reduce the amount of in
 
 The age of the candidates ranged from 14 to 21 years with a mean at 17.5 years. Predicting this age for every person meant that it was never off more than 3.5 years. Since the data was normally distributed, a static prediction of the mean led to a mean absolute error (MAE) of 1.2 years.
 
-Even by using many of the techniques mentioned in previous chapters, I was not able to train a stable model that could beat this baseline on the raw input data. After the segmentation maps had been applied to all 145 3D samples, many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Even with these changes the network wouldn't converge.
+Even by using many of the techniques mentioned in previous chapters, it was not possible to train a stable model that could beat this baseline on the raw input data. After the segmentation maps had been applied to all 145 3D samples, many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Even with these changes the network wouldn't converge.
 
-Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was I able to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs.
+Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was it possible to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs.
 
-The results on the test data showed an MAE of 0.66 years for all of the slices. Since every 3D sample now had 18 different predictions, I build another tree based model that would take a vector of 18 values and predict a single age. This got a final MAE of 0.55 years on the test data, which is more than twice as good as the baseline.
+The results on the test data showed an MAE of 0.66 years for all of the slices. Since every 3D sample now had 18 different predictions, another tree based model was built that would take a vector of 18 values and predict a single age. This got a final MAE of 0.55 years on the test data, which is more than twice as good as the baseline.
 
 \newpage

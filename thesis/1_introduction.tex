@@ -16,7 +16,7 @@ However, these studies are often based on qualitative comparisons, with computer
 
 In a recent study funded by the German Research Foundation (DFG) new MRI data is collected prospectively in order to scientifically verify this hypothesis. Due to the underlying technology used in MRI machines, these images show high detail in non-bone tissue. Despite this being an advantage in many other medical applications, it adds complex information outside the scope of the bone and growth plates.
 
-Neural networks are known to be feature selectors, meaning that they will learn to extract information that is relevant to the task \cite{Setiono1997}. This assumes that the size of the data set and the complexity of the problem enable the network to find correlating features. Based on a series of tests, I was not able to create a stable algorithm that would predict the age of a candidate based on their knee MRI. A logical next step towards this goal was the bone segmentation in MR images to reduce the complexity of the data samples.
+Neural networks are known to be feature selectors, meaning that they will learn to extract information that is relevant to the task \cite{Setiono1997}. This assumes that the size of the data set and the complexity of the problem enable the network to find correlating features. Based on a series of tests, it was not possible to create a stable algorithm that would predict the age of a candidate based on their knee MRI. A logical next step towards this goal was the bone segmentation in MR images to reduce the complexity of the data samples.
 
 \subsection{Previous Research}
 
@@ -26,6 +26,6 @@ Dam et al. presented another approach in 2015 focusing on the segmentation of ca
 
 \subsection{Focus of this Thesis}
 
-The focus of this thesis revolves around creating a fully automated workflow that segments the long bones in 3D MRIs of human knees. Convolutional neural networks will be the base tool for this study because they have been setting state of the art results in a vast majority of image segmentation tasks. In the end, I will briefly present a proof of concept by using the segmented data to assess the age of candidates.
+The focus of this thesis revolves around creating a fully automated workflow that segments the long bones in 3D MRIs of human knees. Convolutional neural networks will be the base tool for this study because they have been setting state of the art results in a vast majority of image segmentation tasks. In the end, a proof of concept will be presented that uses the segmented data to assess the age of individuals.
 
 \newpage
