@@ -1,6 +1,6 @@
 \section{Methods}
 
-The purpose of this chapter is twofold. It will discuss the design and processing decisions that were made for the development of this project, while also giving critical insight into how these applied technologies work. The sections for setup and data analysis describe the working environment for this study. Preprocessing, architecture, training and postprocessing show in chronological order how the development was addressed.
+The purpose of this chapter is twofold. It will discuss the design and processing decisions that were made for the development of this project, while also giving critical insight into how these applied technologies work. The sections for setup and data analysis describe the working environment for this study. Preprocessing, architecture, training and post-processing show in chronological order how the development was addressed.
 
 \subsection{Setup}
 
@@ -12,7 +12,7 @@ The processing of medical image data needed a library that could handle these fo
 
 \subsection{Data Analysis}
 
-The data set was a collection of three dimensional T1 weighted MR images that were not fat saturated showing the right human knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as technical meta information about each image. The resolution of these samples differed from one source to the other.
+The data set was a collection of three dimensional T1 weighted MR images that were not fat saturated showing the right knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as technical meta information about each image. The resolution of these samples differed from one source to the other.
 
 \begin{table}[h!]
 \centering
@@ -30,7 +30,7 @@ The data set was a collection of three dimensional T1 weighted MR images that we
 \caption{Details of the data set separated by source}
 \end{table}
 
-Class 3 data featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 80 class 2 images originated in a previous study that investigated the condition of growth plates led by Jopp et al.. A total of 65 class 1 images were taken as part of the DFG project, which showed the highest resolution due to a different MRI machine.
+Class 3 data featured a sagittal perspective, while all other samples were taken coronal. This mattered because the resolution of all images was roughly 20 times lower on the z-axis. The 80 class 2 images originated in a previous study that investigated the condition of growth plates led by Jopp et al. A total of 65 class 1 images were taken as part of the DFG project, which showed the highest resolution due to a different MRI machine.
 
 \begin{figure}[H]
 \minipage{0.32\textwidth}
@@ -57,7 +57,7 @@ Class 3 data featured a sagittal perspective, while all other samples were taken
 
 The images above move through the slices of one 3D MRI. The Femur already becomes visible in the first frame, whereas the Tibia starts to show in the second frame. The Fibula becomes visible in the lower left corner of the fourth image and can be seen more clearly in the fifth. The last image shows no bone matter.
 
-The total of 76 segmentation maps were all manually labeled by two people. Each map featured three channels that showed Femur, Tibia, and Fibula separately. They did not segment the entirety of each 3D image but used a square window around the the point where Femur and Tibia meet.
+The total of 76 segmentation maps were all manually labeled by two people. Each map featured three channels that showed Femur, Tibia, and Fibula separately. They did not segment the entirety of each 3D image but used a square window around the point where Femur and Tibia meet.
 
 \begin{figure}[H]
 \centering
@@ -131,7 +131,7 @@ The standard score presents a more desirable approach because its mean centering
 \par
 \end{figure}
 
-In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. The class 2 featured roughly five times higher intensities than the class 1 data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an image is.
+In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. Class 2 featured roughly five times higher intensities than the class 1 data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an image is.
 
 This approach also has a downside. The network can no longer use the mean intensity and the standard deviation as a feature to learn from because every image will be identical according to these measures. However, these two features showed no correlation to the accuracy of a prediction, which is why it was decided to use this approach.
 
@@ -160,7 +160,7 @@ Image augmentation is a popular approach to virtually increase the size of the d
 
 Lossless augmentation techniques are those that don't change the values and relative localities in a sample. In 2D these include vertical and horizontal flips, as well diagonal flips if width and height are equal. Note that any multiples of 90-degree rotations can also be created using a combination of these flips. Although the samples are changed as a whole, they do not vary concerning their contained values. 
 
-The term "lossless" only refers to the technical change and not necessarily to the semantic change. Flipping a slice of this dataset vertically, switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
+The term "lossless" only refers to the technical change and not necessarily to the semantic change. Vertically flipping a slice of this data set switches the absolute positions of Femur and Tibia. This might make it harder for the network to distinguish between the two.
 
 Lossy augmentation methods include a variety of image transformations. Common choices include:
 
@@ -229,7 +229,7 @@ The only successful method was training a separate model for each of the three b
 
 For another experiment, the three channels were merged to create a network that would segment any bone in the image. Not only did this solve the problem with the Fibula as well, but the predictions of Femur and Tibia were just as accurate. The network didn't need to learn any more that the global position in the image accounts for whether or not an object should be segmented. Instead, it could segment any bone in any position in the frame.
 
-While building the architecture in the following sections this merged channel approach was used. It helped to speed up the design process, because different settings only needed to be trained once instead of once for every bone.
+While building the architecture in the following sections, this merged channel approach was used. It helped to speed up the design process because different settings only needed to be trained once instead of once for every bone.
 
 \subsection{Architecture}
 
@@ -251,7 +251,7 @@ Figure 12 shows a particular implementation of an encoder-decoder model known as
 
 The following subchapters will discuss key elements that go into the design process of such an architecture. It was also analyzed how technologies that were introduced after the U-Net paper could improve the performance on this data set.
 
-\subsubsection{Channels, Growth Rate and Depth}
+\subsubsection{Channels, Growth Rate, and Depth}
 
 The number of parameters in a neural network has a high correlation with its learning capacity. By adding more nodes that can be adjusted during training, the model can approximate a more complex function that transforms the input into the output. The downside is that a larger parameter count will also increase the possibility of overfitting the data. A convention in the field of CNNs is to gradually increase the number of channels, while the spatial resolution is reduced due to the use of MaxPooling \cite{Krizhevsky}\cite{He2015b}\cite{Iandola2016a}\cite{Ronneberger2015a}. U-Net also shows this behavior on the left side of its architecture.
 
@@ -441,7 +441,7 @@ For test runs in this study, a patience of 9 was selected, which meant the train
 
 \subsection{Postprocessing}
 
-After the training finished, it was investigated how the results on the validation data could be improved any further. Since the predicted segmentations showed a small number of values between 0 and 1, a threshold of 0.3 showed the best results to create a fully binary map. Furthermore, any 2D slice that showed a prediction smaller than 2\% of the total frame was predicted as empty instead. This helped against the false prediction of tiny fractions in upper and lower layers. For the segmentation of the Fibula alone, this last step was not executed.
+After the training had finished, it was investigated how the results on the validation data could be improved any further. Since the predicted segmentations showed a small number of values between 0 and 1, a threshold of 0.3 showed the best results to create a fully binary map. Furthermore, any 2D slice that showed a prediction smaller than 2\% of the total frame was predicted as empty instead. This helped against the false prediction of tiny fractions in upper and lower layers. For the segmentation of the Fibula alone, this last step was not executed.
 
 \subsection{Summary}
 

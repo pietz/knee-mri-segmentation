@@ -1,6 +1,6 @@
 \section{Results}
 
-The results in this chapter are based data the network has not been trained with. It was also made sure that there was no overlap in images of people that were recorded multiple times. Five images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
+The results in this chapter are based on data the network has not been trained with. It was also made sure that there was no overlap in images of people that were recorded multiple times. Five images were chosen randomly from each of the two sources in the very beginning. Since the Epi data featured 41 slices and the Jopp data featured 24 slices, 325 2D samples were available for evaluation. Each slice contained 50,176 pixel values, making a total of 16.3 million predictions that were analyzed.
 
 The network architecture was developed using a single segmentation channel that merged Femur, Tibia and Fibula maps. However, tests were also run to validate the performance for each bone on its own and also combine the three separate predictions into a multi channel segmentation. The same architecture and training procedure was used for this task.
 
@@ -34,7 +34,7 @@ The proposed model achieves a DSC score of 98.0\% and an IoU of 96.0\%. Precisio
     \caption{Numeric evaluation of segmentations}
 \end{table}
 
-Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation shows lower scores. This could be due to the fact that the Fibula is only visible in a minority of slices, making it a somewhat unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is reduced by a factor of 3, which is expected because the channels are increased by 3. Compared to previous studies, the proposed model shows slightly better results than the multi-atlas segmentation and significantly higher scores than the ray casting technique.
+Results on Femur and Tibia alone are comparable to the merged approach, whereas the Fibula segmentation shows lower scores. This could be because the Fibula is only visible in a minority of slices, making it a somewhat unbalanced task. Combining the three separate segmentations to a single model gives comparable results as well. The error is reduced by a factor of 3, which is expected because the channels are increased by 3. Compared to previous studies, the proposed model shows slightly better results than the multi-atlas segmentation and significantly higher scores than the ray casting technique.
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{imgs/train_val.png}
@@ -59,7 +59,7 @@ The graph above shows the performance of the merged model during the learning pr
     \caption{Performance on different sets over time}
 \end{table}
 
-The 98\% mark is never reached on the validation data, but only on the final evaluation of the test set. Towards the end the performance of the training data pulls slightly ahead of the validation results.
+The 98\% mark is never reached on the validation data, but only on the final evaluation of the test set. Towards the end, the performance of the training data pulls slightly ahead of the validation results.
 
 \subsection{Visual Evaluation}
 
@@ -201,7 +201,7 @@ Even at this level, it is difficult to judge what exactly the network is detecti
 \caption{Examples of intermediate channels throughout the network}
 \end{figure}
 
-These are a few notable examples inside the model. The first filter detects high frequencies in the bone and skin tissue. Filter 2 finds vertical edges while filter 3 shows horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not just detect horizontal edges, but only those inside the bone. This seems reasonable because the network needs to learn that the dark growth plates shouldn't be interpreted as edges.
+These are a few notable examples in the model. The first filter detects high frequencies in the bone and skin tissue. Filter 2 finds vertical edges while filter 3 shows horizontal ones. Finally, filter 4 appears to be a growth plate detector. It does not just detect horizontal edges, but only those inside the bone. This seems reasonable because the network needs to learn that the dark growth plates should not be interpreted as edges.
 
 \subsection{Noise Exploitation}
 
@@ -225,13 +225,13 @@ Ground truth data is often subject to noise, because mistakes happen during thei
 
 The first and third images show the original segmentations, while 2 and 4 were changed using erosion and dilation respectively. The noise on the training data accounted for an error of 7.1\% DSC. Afterward, the unmodified test data was loaded to verify the results. The predictions show an accuracy of 95.2\% DSC, meaning that the noise hurts the performance of the model.
 
-More importantly however, the DSC error is lower than the error that was introduced through the noise in the training data. When applying the same noise on the test set and using it as a prediction for the actual ground truth, the score is 92.8\% DSC. The predictions of the network contain 33\% less noise than the data it was trained on.
+More importantly, the DSC error is lower than the error that was introduced by the noise in the training data. When applying the same noise on the test set and using it as a prediction for the actual ground truth, the score is 92.8\% DSC. The predictions of the network contain 33\% less noise than the data it was trained on.
 
 \subsection{Transfer Application}
 
-Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. They cannot learn what they weren't taught. On the other hand, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
+Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. They cannot learn what they were not taught. On the other hand, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
 
-The proposed architecture can be described as "fully convolutional" because it doesn't include any dense layers. This allows the network to accept any resolution and still being able to process it. An experiment was set up that used uncropped images from the Epi data which were resized to 448x448 pixels. This made them four times larger than the images the network was trained with.
+The proposed architecture can be described as "fully convolutional" because it does not include any dense layers. This allows the network to accept any resolution and still being able to process it. An experiment was set up that used uncropped images from the Epi data which were resized to 448x448 pixels. This made them four times larger than the images the network was trained with.
 
 \begin{figure}[H]
 \minipage{0.24\textwidth}
@@ -303,10 +303,12 @@ The initial cause for the segmentation experiment was to reduce the amount of in
 
 The age of the candidates ranged from 14 to 21 years with a mean at 17.5 years. Predicting this age for every person meant that it was never off more than 3.5 years. Since the data was normally distributed, a static prediction of the mean led to a mean absolute error (MAE) of 1.2 years.
 
-Even by using many of the techniques mentioned in previous chapters, it was not possible to train a stable model that could beat this baseline on the raw input data. After the segmentation maps had been applied to all 145 3D samples, many of the slices were completely empty because they didn't contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Even with these changes the network wouldn't converge.
+Even by using many of the techniques mentioned in previous chapters, it was not possible to train a stable model that could beat this baseline on the raw input data. After the segmentation maps had been applied to all 145 3D samples, many of the slices were completely empty because they did not contain any of the three bones. It was decided to only use the middle 18 slices from each of the two sources. Even with these changes, the network would not converge.
 
-Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was it possible to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs.
+Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was it possible to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs. A global average pooling layer and a dense layer were added after the convolutional block in the middle. The output was a single continuous value representing the age of the individual.
 
-The results on the test data showed an MAE of 0.66 years for all of the slices. Since every 3D sample now had 18 different predictions, another tree based model was built that would take a vector of 18 values and predict a single age. This got a final MAE of 0.55 years on the test data, which is more than twice as good as the baseline.
+The results on the validation data showed a mean difference of 0.66 years for all of the slices. Since every 3D sample now had 18 different predictions, another tree based model was built that would take a vector of 18 values and predict a single age. This got a final mean difference of 0.55 years on the test data consisting of 14 3D MRIs, which is more than twice as good as the baseline.
+
+These results show higher accuracy than the work of Stern et al. using carpal MRIs which led to a mean difference of 0.85 years. Their work was not based on convolutional neural networks but a random forest regressor. Furthermore, their equally distributed data set showed higher age variance among the candidates than the normally distributed data of this study. It is therefore difficult to draw direct conclusions.
 
 \newpage
