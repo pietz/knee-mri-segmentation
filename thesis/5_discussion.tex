@@ -8,11 +8,13 @@ The greatest limitation of this study was time. Three weeks were spent on the pr
 
 Lately, a new wave of convolutional layers has been getting much attention. Depthwise separable convolutions and dilated convolutions are used more and more frequently in CNNs. Both can increase the efficiency of parameters and are especially popular on mobile devices and real time applications. They were briefly applied in this study as a replacement for some convolutional layers without making a difference. However, more time could be spent on restructuring the entire architecture to benefit the needs of these types of convolutions.
 
-Although processing speed was no priority, the architecture consists of only 195,000 parameters making it 150 times smaller than U-Net. On a sub-\$1000 workstation, it can be trained from scratch in 1 to 3 hours depending if the bones need to be separated. Using the pre-trained weights, one can likely apply transfer learning with minimal effort to solve similar problems.
-
 Adding noise to the data hurts the performance of the model. However, the resulting error of the predictions was smaller than the error that was introduced through the noise itself. Creating multiple ground truth segmentations by hand and averaging the results, could present a way of improving the findings in this thesis. This would further reduce the noise in the data and allow the model to move beyond the 98\% mark. Since the smallest architecture achieved the highest score, the challenge of improving the performance is likely not limited by the capacity of the network.
 
- It was interesting to see that the architecture using 3D convolutions performed worse than the 2D version. This is also something Prasoon et al. \cite{Prasoon2013} found when applying CNNs to the segmentations of cartilages in the knee. They were able to achieve even better results using a triplanar CNN that worked with 2D slices from each of the three perspectives. 2D CNNs also have the benefit of being faster to train and not needing volumetric images to perform their work.
+\newpage
+
+It was interesting to see that the architecture using 3D convolutions performed worse than the 2D version. This is also something Prasoon et al. \cite{Prasoon2013} found when applying CNNs to the segmentations of cartilages in the knee. They were able to achieve even better results using a triplanar CNN that worked with 2D slices from each of the three perspectives. 2D CNNs also have the benefit of being faster to train and not needing volumetric images to perform their work.
+
+Although processing speed was no priority, the architecture consists of only 195,000 parameters making it 150 times smaller than U-Net. On a sub-\$1000 workstation, it can be trained from scratch in 1 to 3 hours depending if the bones need to be separated. Using the pre-trained weights, one can likely apply transfer learning with minimal effort to solve similar problems.
 
 It is to be investigated more thoroughly how the segmentation maps can be used on age related estimates to improve the results further. Additional information about the patients like height and weight may help to improve accuracy in the future.
 

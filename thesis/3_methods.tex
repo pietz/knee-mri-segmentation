@@ -12,7 +12,7 @@ The processing of medical image data needed a library that could handle these fo
 
 \subsection{Data Analysis}
 
-The data set was a collection of three dimensional T1 weighted MR images that were not fat saturated showing the right knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as technical meta information about each image. The resolution of these samples differed from one source to the other.
+The data set was a collection of three dimensional T1 weighted MR images that were not fat saturated showing the right knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as technical meta information about each image. The resolution of these samples differed between sources.
 
 \begin{table}[h!]
 \centering
@@ -71,11 +71,7 @@ The candidates chosen for the MRI recordings were all german males between the a
 
 \subsection{Preprocessing}
 
-The parameters in a Neural Network commonly range from tens of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training.
-
-Because of the small data set that was available for this study, several types of preprocessing were applied to the images. For the most part, these techniques remove irrelevant information and reduce variance between multiple samples.
-
-Other preparation methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
+The parameters in a Neural Network commonly range from tens of thousands to hundreds of millions. This complexity allows the model to learn on its own what features of an image are relevant for any given task. It works in conjunction with the fact that high volumes of data are available for the training. Because of the small data set that was available for this study, several types of preprocessing were applied to the images. For the most part, these techniques remove irrelevant information and reduce variance between multiple samples. Other preparation methods experimented with the difference between 2D and 3D data as well as the influence of separate segmentation channels on the output.
 
 \subsubsection{Training, Validation, and Testing Sets}
 
@@ -109,19 +105,21 @@ The second approach converted the volumetric data to 2D while using all 41 slice
 
 The normalization of images refers to the process of transforming all samples on the same scale of values. Two techniques for this are popular in the field of deep learning. The first one is called feature scaling, where every sample is normalized between 0 and 1.
 
-\begin{figure}[H]
+%\begin{figure}[H]
 \[x' = \frac {x - min(x)}{max(x) - min(x)}\]
-\end{figure}
+%\end{figure}
 
 The second technique calculates the standard score, where the mean is subtracted from the samples and then divided by the standard deviation.
 
-\begin{figure}[H]
+%\begin{figure}[H]
 \[x' = \frac {x - \mu}{\sigma}\]
-\end{figure}
+%\end{figure}
 
 In this case, the mean and standard deviation are not calculated for every image, but for all training samples. This centers the intensities around the average brightness of the training data. When normalizing validation and test data, one would also use the mean and standard deviation from the training set because those are the measures the architecture is expecting.
 
 The standard score presents a more desirable approach because its mean centering helps to prevent that parameters get abnormally large or get set to zero during training. It is also less sensitive to outliers e.g. extremely bright spots in the image, which frequently appeared in the form of high intensities.
+
+In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. Class 2 featured roughly five times higher intensities than the class 1 data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an image is.
 
 \begin{figure}[H]
 \centering
@@ -131,13 +129,11 @@ The standard score presents a more desirable approach because its mean centering
 \par
 \end{figure}
 
-In contrast to the regular use of the standard score, every image was normalized on its own mean and standard deviation instead of calculating it on the entire training data. Class 2 featured roughly five times higher intensities than the class 1 data because they were recorded on different MRI machines. Figure 9 shows two spikes in mean intensities that had to be dealt with. By normalizing each 3D image on its own values, these two distributions were unified. Furthermore, this procedure will normalize future samples on the same scale the network expects no matter what the bit depth of an image is.
-
 This approach also has a downside. The network can no longer use the mean intensity and the standard deviation as a feature to learn from because every image will be identical according to these measures. However, these two features showed no correlation to the accuracy of a prediction, which is why it was decided to use this approach.
 
 \subsubsection{N4 Bias Field Correction}
 
-A bias field is a low-frequency non-uniform intensity that is an unwanted byproduct Magnetic Resonance imaging. Several methods have been developed in the past of which N4ITK is the de facto standard in the field \cite{Tustison2010}. This algorithm approximates the nonuniform field and balances intensities using B-Splines. 
+A bias field is a low-frequency non-uniform intensity that is an unwanted byproduct magnetic resonance imaging. Several methods have been developed in the past of which N4ITK is the de facto standard in the field \cite{Tustison2010}. As the name suggests, it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24x224x224 image took between 60 and 120 seconds.
 
 \begin{figure}[H]
 \minipage{0.32\textwidth}
@@ -151,8 +147,6 @@ A bias field is a low-frequency non-uniform intensity that is an unwanted byprod
 \endminipage
 \caption{Raw image, corrected image and intensity differences}
 \end{figure}
-
-As the name suggests, it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24x224x224 image took between 60 and 120 seconds.
 
 \subsubsection{Augmentation}
 
@@ -281,7 +275,7 @@ A test was set up that compared the original U-Net against five smaller variants
 
 Training U-Net was very slow in two regards. Each training step lasted six times longer compared to the smallest model, while it also took 25 times more training steps to reach the same results. Since it was also overfitting to a significant amount, it was not trained until the end. The second largest model E also overfitted on the training data and never achieved comparable results to the other four models.
 
-D started with eight channels which were then increased by a factor of 2, whereas B started out larger but only increased the channels by a rate of 1.5. Although being the smaller model, B showed a higher accuracy in the end. It was concluded that the initial number of output channels has a larger effect on the result than the growth rate.
+Model D started with eight channels which were then increased by a factor of 2, whereas B started out larger but only increased the channels by a rate of 1.5. Although being the smaller model, B showed a higher accuracy in the end. It was concluded that the initial number of output channels has a larger effect on the result than the growth rate.
 
 This theory was supported by the results from A and C, both of which kept their initial number of channels throughout the network. These two showed the highest scores in comparison to the other models while maintaining their relatively small size. Since their results were identical, model A was kept because of its faster training speed. It was interesting to see that the smallest model performed best across the candidates.
 
@@ -301,7 +295,7 @@ Since a single unit of dropout with a rate of 0.5 is common in other architectur
 
 \subsubsection{Activation Functions}
 
-Activation functions sit between layers in a network to introduce a non-linearity. Otherwise, the dense and convolutional operations could be regenerated to a simple linear transformation and remove the benefits of building a deep model.
+Activation functions sit between layers in a network to introduce a non-linearity. Otherwise, the operations could be regenerated to a simple linear transformation and remove the benefits of building a deep model. The rectified linear unit or ReLU \cite{Nair} is the default recommendation for an activation function in modern neural networks. It's defined as the maximum of 0 and the input value and can be described as a nonlinear function made up of two linear pieces. Because of this, it preserves many of the properties that make models easy to optimize and generalize well on new data \cite{Goodfellow2016}.
 
 \[
 relu(x) =
@@ -311,8 +305,6 @@ x & \text{if } x \geq 0
 \end{cases}
 \]
 
-The rectified linear unit or ReLU \cite{Nair} is the default recommendation for an activation function in modern neural networks. It's defined as the maximum of 0 and the input value and can be described as a nonlinear function made up of two linear pieces. Because of this, it preserves many of the properties that make models easy to optimize and generalize well on new data \cite{Goodfellow2016}.
-
 \[
 elu(x) =
 \begin{cases} 
@@ -321,17 +313,15 @@ x & \text{if } x \geq 0
 \end{cases}
 \]
 
-Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015a}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive values but adds an exponential function to negative inputs instead of erasing its value.  This has shown further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive.
+Since the introduction of ReLU other variants have built on its success like PReLU \cite{He2015a}, LReLU and ELU \cite{Clevert2015}. The latter titled exponential linear unit shows the same linear behavior for positive values but adds an exponential function to negative inputs instead of erasing its value.  This has shown further improvements by keeping the mean of values centered at 0 while only being slightly more computationally expensive. ELU showed superior results in comparison to ReLU and was chosen for all future tests.
 
 \begin{figure}[H]
 \centering
 \par
-\includegraphics[width=0.5\textwidth]{imgs/elu_relu3.png}
+\includegraphics[width=0.53\textwidth]{imgs/elu_relu4.png}
 \caption{Visualization of ReLU and ELU}
 \par
 \end{figure}
-
-ELU showed superior results in comparison to ReLU and was chosen for all future tests.
 
 \subsection{Training}
 
@@ -353,9 +343,9 @@ The prediction is then compared to the right answer, and the error is calculated
 
 Metrics are used in deep learning to measure the performance of a model. For example, the accuracy is often chosen to describe how well a neural network is doing on a classification task. An accuracy of 0.9 indicates that 9 out of 10 samples are classified correctly.
 
-\begin{equation}
+\[
 Accuracy = \frac{TP+TN}{TP+TN+FP+FN}
-\end{equation}
+\]
 
 In the formula above T and F indicate whether a prediction was true or false. P and N stand for a positive or negative outcome.
 
@@ -363,21 +353,21 @@ The result of a loss function is a metric that will be minimized during the back
 
 In situations like these, a surrogate function is used that has a high correlation with the target metric. For classification problems, this is often the cross entropy. Because a segmentation can be seen as a classification for every output pixel, it was also chosen as a candidate for this study.
 
-\begin{equation}
-H(p, q) = -\sum p(x) \ log \ q(x)
-\end{equation}
+\[
+Cross \ Entropy \ (p, q) = -\sum p(x) \ log \ q(x)
+\]
 
 Another option was the $F_1 score$, which is a particular implementation of the F-Measure when $ \beta $ is 1. It is also known as the DICE similarity coefficient (DSC).
 
-\begin{equation}
-F_\beta \ score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
-\end{equation}
+\[
+F_\beta \ Score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
+\]
 
 Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the $F_1 loss$ was defined as $ 1 - F_1 \ score $.
 
-\begin{equation}
-F_\beta \ loss = 1 - F_\beta \ score
-\end{equation}
+\[
+F_\beta \ Loss = 1 - F_\beta \ Score
+\]
 
 The value of $ \beta $ can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was true, whereas recall describes how much of the ground truth was recognized by the model. This can be useful for data sets with large imbalances between classes, like this study showed between Fibula, Femur, and Tibia. 
 
@@ -387,19 +377,19 @@ The $F_2 score$ was tried for the three channel segmentation, where the Fibula c
 Precision = \frac{TP}{TP+FP}
 \end{equation}
 
-\begin{equation}
+\[
 Recall = \frac{TP}{TP+FN}
-\end{equation}
+\]
 
-\begin{equation}
-Error = \frac{FP+FN}{TP+TN+FP+FN}
-\end{equation}
+\[
+Total Error = \frac{FP+FN}{TP+TN+FP+FN}
+\]
 
 Both loss functions were used in separate runs to compare the results of the $F_1 \ score$ and the cross entropy. The $F_1$ trained model showed better results regarding the $F_1 \ score$ and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy, and Intersection-over-Union (IoU) the performance of the $F_1$ trained network showed higher scores.
 
-\begin{equation}
+\[
 IoU= \frac{TP}{TP+FP+FN}
-\end{equation}
+\]
 
 Another test run used both loss function at the same time. This was done by feeding the output of the next-to-last layer into two separate segmentation outputs. Each of these last layers was trained with the $F_1 \ loss$ and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture matched the best results of the previous runs in a single model but also increased the training time by 30\%.
 
@@ -429,6 +419,8 @@ Based on hardware limitations the largest possible batch sizes ranged from 24 to
 
 One full iteration over the training samples is referred to as an epoch, and the learning rate policy describes how the learning rate is changed from one epoch to another. With the introduction of adaptive optimizers like Adam or RMSProp, there has been a lower emphasize on this topic because they modify the learning rate during training. Even though this reduces the number of possible defects, training time can often be saved with the right learning rate.
 
+\newpage
+
 Ten epochs were run at different learning rates to compare initial results and to examine the point at which the model wouldn't converge at all. 0.002 was the highest rate at which the model started training, but 0.001 resulted in the best score. Adding a decay that reduces the learning rate manually over time did not improve the results with the use of Adam.
 
 \subsubsection{Early Stopping}
@@ -456,6 +448,8 @@ In summary, the architecture features 4 "Down Blocks" on the contracting side th
 \end{figure}
 
 A Down Block consists of 2 convolutional layers each followed by an ELU activation function, after which A MaxPooling layer halves the width and height of the image. The Up Block looks similar but features a transposed convolutional layer in the beginning to upscale the resolution and no MaxPooling in the end. The Middle Block features a Dropout layer with a value of 0.5, which is surrounded by convolutional layers as well. All convolutional layers have 32 channels. The output layer includes another convolution that reduces the channels to 1, which represents the segmentation map.
+
+\newpage
 
 Other options that were tried but didn't improve performance included using convolutional blocks with a stride of 2 instead of MaxPooling to down sample the images. Batch normalization was also applied but resulted in a high amount of overfitting the network never recovered from. The fact that it did not improve the performance came as a surprise because it usually improves any model. A possible reason for this could be the small batch size in combination with a high variance of intensities in the data. If the mean of each batch varies significantly from the mean of the entire training data, it may hurt the performance of batch normalization.
 

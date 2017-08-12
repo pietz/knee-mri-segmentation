@@ -140,7 +140,7 @@ Perfect DSC scores of 100\% are achieved through empty segmentations that the ne
 \caption{Correctly segmented upper and lower slices}
 \end{figure}
 
-The most imprecise predictions also appeared in upper and lower slices where the bones started to become visible. If either the prediction or the ground truth was empty while the other was not, then the result is a DSC score of 0\%.
+The most imprecise results showed a DSC score of 0\% where ground truth and prediction did not overlap at all.
 
 \begin{figure}[H]
 \minipage{0.32\textwidth}
@@ -223,9 +223,7 @@ Ground truth data is often subject to noise, because mistakes happen during thei
 \caption{Examples of synthetic noise}
 \end{figure}
 
-The first and third images show the original segmentations, while 2 and 4 were changed using erosion and dilation respectively. The noise on the training data accounted for an error of 7.1\% DSC. Afterward, the unmodified test data was loaded to verify the results. The predictions show an accuracy of 95.2\% DSC, meaning that the noise hurts the performance of the model.
-
-More importantly, the DSC error is lower than the error that was introduced by the noise in the training data. When applying the same noise on the test set and using it as a prediction for the actual ground truth, the score is 92.8\% DSC. The predictions of the network contain 33\% less noise than the data it was trained on.
+The first and third images show the original segmentations, while two and four were changed using erosion and dilation respectively. The noise on the training data accounted for an error of 7.1\% DSC. Afterward, the unmodified test data was loaded to verify the results. The predictions show an accuracy of 95.2\% DSC, meaning that the noise hurts the performance of the model. More importantly, the DSC error is lower than the error that was introduced by the noise. When applying the same noise on the test set and using it as a prediction for the ground truth, the score is 92.8\% DSC. The predictions of the network contain 33\% less noise than the data it was trained on.
 
 \subsection{Transfer Application}
 
