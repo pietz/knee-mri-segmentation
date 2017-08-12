@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  12 AUG 2017 16:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  12 AUG 2017 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1279,7 +1279,7 @@ er_pers_y4.png>] [37]) (./5_discussion.tex
 Here is how much of TeX's memory you used:
  5332 strings out of 492995
  82341 string characters out of 6132704
- 172694 words of memory out of 5000000
+ 172729 words of memory out of 5000000
  8585 multiletter control sequences out of 15000+600000
  71948 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1299,7 +1299,7 @@ ist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
 pe1/public/lm/lmri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (49 pages, 4054323 bytes).
+Output written on 0_Thesis.pdf (49 pages, 4054306 bytes).
 PDF statistics:
  366 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams
