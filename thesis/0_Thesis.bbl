@@ -208,6 +208,14 @@ Nitish Srivastava, Geoffrey Hinton, Alex Krizhevsky, Ilya Sutskever, and Ruslan
 \newblock {Dropout: A Simple Way to Prevent Neural Networks from Overfitting}.
 \newblock {\em Journal of Machine Learning Research}, 15:1929--1958, 2014.
 
+\bibitem{Stern2014}
+Darko Stern, Thomas Ebner, Horst Bischof, Sabine Grassegger, Thomas Ehammer,
+  and Martin Urschler.
+\newblock {Fully automatic bone age estimation from left hand MR images.}
+\newblock {\em Medical image computing and computer-assisted intervention :
+  MICCAI ... International Conference on Medical Image Computing and
+  Computer-Assisted Intervention}, 17(Pt 2):220--227, 2014.
+
 \bibitem{Tustison2010}
 Nicholas~J. Tustison, Brian~B. Avants, Philip~A. Cook, Yuanjie Zheng, Alexander
   Egan, Paul~A. Yushkevich, and James~C. Gee.
