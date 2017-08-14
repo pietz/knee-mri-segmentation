@@ -15,7 +15,7 @@
 \contentsline {subsubsection}{\numberline {2.2.5}Semantic Segmentation}{8}
 \contentsline {section}{\numberline {3}Methods}{9}
 \contentsline {subsection}{\numberline {3.1}Setup}{9}
-\contentsline {subsection}{\numberline {3.2}Data Analysis}{9}
+\contentsline {subsection}{\numberline {3.2}Data Set}{9}
 \contentsline {subsection}{\numberline {3.3}Preprocessing}{11}
 \contentsline {subsubsection}{\numberline {3.3.1}Training, Validation, and Testing Sets}{11}
 \contentsline {subsubsection}{\numberline {3.3.2}Cropping, Resizing, and Resampling}{12}

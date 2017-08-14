@@ -4,7 +4,7 @@ This chapter provides an overview of prerequisites and previous work that led to
 
 \subsection{Medical Knowledge}
 
-This section will briefly explain how the imaging technology works that was used to create the data set and what function growth plates have in the human body.
+This section will briefly explain how the imaging technology works that was used to create the data set, as well as provide basic information about the structure and growing process of growth plates in the human body.
 
 \subsubsection{Magnetic Resonance Imaging}
 
@@ -12,7 +12,7 @@ Magnetic Resonance Imaging (MRI) uses magnetic fields and radio frequencies to p
 
 96\% of the human body is made up of hydrogen, oxygen, carbon, and nitrogen, all of which are referred to as MR active. These elements have an odd atomic mass number giving the nucleus a spin. Due to the laws of electromagnetic induction, the motion of unbalanced charge produces a magnetic field around itself. Hydrogen is the element used in MRI because its solitary proton in the nucleus gives it a relatively large magnetic moment \cite{Westbrook2016}. 
 
-The positively charged hydrogen particles in water produce a signal when exposed to a strong external magnetic field. This field is supplied by a magnet in the MRI machine aligning the magnetic field of the hydrogen atoms to its own. Gradient coils are used to cause a linear change in the strength of this field. By alternating the current of these coils on three perpendicular axes, it is possible to calculate a three-dimensional image of the tissue \cite{Westbrook2016}.
+The positively charged hydrogen particles in water produce a signal when exposed to a strong external magnetic field. This field is supplied by a magnet in the MRI machine aligning the magnetic field of the hydrogen atoms to its own. Gradient coils are used to cause a linear change in the strength of this field. By alternating the current of these coils on the x, y and z axes, it is possible to calculate a three-dimensional image of the tissue \cite{Westbrook2016}.
 
 \subsubsection{Growth Plates}
 
@@ -117,7 +117,7 @@ CNNs can help to solve different types of supervised machine learning problems o
 
 A regression describes the prediction of one or multiple continuous outputs. An example for this would be the age prediction of a person based on their knee MRI. Regression is also an important part of object detections, where it is applied to determine coordinates in an image.
 
-A classification sorts the input into one or multiple categories, like predicting if the growth plate is open, centrally-closed or closed. It can be seen as n parallel regressions where n equals the total number of classes. The continuous output for each class is the network's confidence of the input belonging to this category. For 1 out of n classifications, the most probable category is predicted. For m out of n classifications, a threshold defines at which point a category is predicted.
+A classification sorts the input into one or multiple categories, like predicting if the growth plate is open, centrally-closed or closed. It can be seen as $n$ parallel regressions where $n$ equals the total number of classes. The continuous output for each class is the network's confidence of the input belonging to this category. For $1$ out of $n$ classifications, the most probable category is predicted. For $m$ out of $n$ classifications, a threshold defines at which point a category is predicted.
 
 A segmentation creates an image of identical dimensions as the input and masks specific regions within. Every channel of the output mask belongs to a particular category that is segmented. A segmentation can be seen as a classification of each pixel/voxel. For this study, the Femur, Tibia, and Fibula needed to be masked from the rest of the MRI content. This is called a semantic segmentation because the process is based on a semantic meaning of objects in the image.
 

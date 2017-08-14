@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  14 AUG 2017 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  14 AUG 2017 18:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -771,72 +771,72 @@ File: imgs/ann.png Graphic file (type png)
 Package pdftex.def Info: imgs/ann.png used on input line 97.
 (pdftex.def)             Requested size: 251.9989pt x 130.56264pt.
  [6 <./imgs/ml_pipeline.png>] [7 <./imgs/ann.png>]
-<imgs/landscape.jpg, id=60, 1003.75pt x 1003.75pt>
+<imgs/landscape.jpg, id=60, 501.875pt x 501.875pt>
 File: imgs/landscape.jpg Graphic file (type jpg)
  <use imgs/landscape.jpg>
 Package pdftex.def Info: imgs/landscape.jpg used on input line 127.
-(pdftex.def)             Requested size: 115.20264pt x 115.19142pt.
+(pdftex.def)             Requested size: 115.20264pt x 115.19908pt.
 
-<imgs/landscape_mask.jpg, id=61, 1003.75pt x 1003.75pt>
+<imgs/landscape_mask.jpg, id=61, 501.875pt x 501.875pt>
 File: imgs/landscape_mask.jpg Graphic file (type jpg)
 
 <use imgs/landscape_mask.jpg>
 Package pdftex.def Info: imgs/landscape_mask.jpg used on input line 130.
-(pdftex.def)             Requested size: 115.20264pt x 115.19142pt.
+(pdftex.def)             Requested size: 115.20264pt x 115.19908pt.
  [8 <./imgs/landscape.jpg> <./imgs/landscape_mask.jpg>]) (./3_methods.tex
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9] <imgs/3.jpg, id=69, 562.1pt x 562.1pt>
+[9] <imgs/3.jpg, id=71, 562.1pt x 562.1pt>
 File: imgs/3.jpg Graphic file (type jpg)
  <use imgs/3.jpg>
 Package pdftex.def Info: imgs/3.jpg used on input line 37.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/10.jpg, id=70, 562.1pt x 562.1pt>
+<imgs/10.jpg, id=72, 562.1pt x 562.1pt>
 File: imgs/10.jpg Graphic file (type jpg)
  <use imgs/10.jpg>
 Package pdftex.def Info: imgs/10.jpg used on input line 40.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/17.jpg, id=71, 562.1pt x 562.1pt>
+<imgs/17.jpg, id=73, 562.1pt x 562.1pt>
 File: imgs/17.jpg Graphic file (type jpg)
  <use imgs/17.jpg>
 Package pdftex.def Info: imgs/17.jpg used on input line 43.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/24.jpg, id=72, 562.1pt x 562.1pt>
+<imgs/24.jpg, id=74, 562.1pt x 562.1pt>
 File: imgs/24.jpg Graphic file (type jpg)
  <use imgs/24.jpg>
 Package pdftex.def Info: imgs/24.jpg used on input line 47.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/31.jpg, id=73, 562.1pt x 562.1pt>
+<imgs/31.jpg, id=75, 562.1pt x 562.1pt>
 File: imgs/31.jpg Graphic file (type jpg)
  <use imgs/31.jpg>
 Package pdftex.def Info: imgs/31.jpg used on input line 50.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/38.jpg, id=74, 562.1pt x 562.1pt>
+<imgs/38.jpg, id=76, 562.1pt x 562.1pt>
 File: imgs/38.jpg Graphic file (type jpg)
  <use imgs/38.jpg>
 Package pdftex.def Info: imgs/38.jpg used on input line 53.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/age_distr.png, id=75, 1188.44pt x 608.2725pt>
+<imgs/age_distr.png, id=77, 1195.46625pt x 616.3025pt>
 File: imgs/age_distr.png Graphic file (type png)
- <use imgs/age_distr.png>
-Package pdftex.def Info: imgs/age_distr.png used on input line 65.
-(pdftex.def)             Requested size: 360.0pt x 184.25592pt.
 
-[10 <./imgs/3.jpg> <./imgs/10.jpg> <./imgs/17.jpg> <./imgs/24.jpg> <./imgs/31.j
-pg> <./imgs/38.jpg>] [11 <./imgs/age_distr.png>] [12]
-<imgs/intensity_distr.png, id=86, 1188.44pt x 608.2725pt>
+<use imgs/age_distr.png>
+Package pdftex.def Info: imgs/age_distr.png used on input line 65.
+(pdftex.def)             Requested size: 360.0pt x 185.58807pt.
+ [10 <./imgs/3.jpg> <./imgs/10.jpg> <./imgs/17.jpg> <./imgs/24.jpg> <./imgs/31.
+jpg> <./imgs/38.jpg>] [11 <./imgs/age_distr.png>]
+[12] <imgs/intensity_distr.png, id=88, 1195.46625pt x 616.3025pt>
 File: imgs/intensity_distr.png Graphic file (type png)
 
 <use imgs/intensity_distr.png>
 Package pdftex.def Info: imgs/intensity_distr.png used on input line 127.
-(pdftex.def)             Requested size: 360.0pt x 184.25592pt.
+(pdftex.def)             Requested size: 360.0pt x 185.58807pt.
  [13] <imgs/orig.jpg, id=93, 321.2pt x 321.2pt>
 File: imgs/orig.jpg Graphic file (type jpg)
 
@@ -1305,7 +1305,7 @@ ist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
 pe1/public/lm/lmri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (49 pages, 4055727 bytes).
+Output written on 0_Thesis.pdf (49 pages, 3908114 bytes).
 PDF statistics:
  366 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams

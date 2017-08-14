@@ -10,7 +10,7 @@ The computer ran Ubuntu 16.04 with the NVIDIA CUDA and cuDNN libraries installed
 
 The processing of medical image data needed a library that could handle these formats. SimpleITK is a Python binding to the ITK library written in C++. It includes many tools for image processing and is especially popular in the medical field. Other libraries were also used for smaller tasks. A complete listing can be found on the project's GitHub page, where the entire code is available.
 
-\subsection{Data Analysis}
+\subsection{Data Set}
 
 The data set is a collection of three dimensional, T1 weighted and non-fat-saturated MR images showing the right knee. The number of available samples grew during the project. For most of the development time, it included 150 samples that came from 3 different sources. All images were provided in the MHD file format, which is very common in the medical field. It features lossless compression, as well as technical meta information about each image. The resolution of these samples differed between sources.
 
@@ -55,9 +55,9 @@ Class 3 data featured a sagittal perspective, while all other samples were taken
 \caption{Six different slices of one 3D MRI}
 \end{figure}
 
-The images above move through the slices of one 3D MRI. The Femur already becomes visible in the first frame, whereas the Tibia starts to show in the second frame. The Fibula becomes visible in the lower left corner of the fourth image and can be seen more clearly in the fifth. The last image shows no bone matter.
+The images above move through the slices of one 3D MRI. The Femur already becomes visible in the first frame, whereas the Tibia starts to show in the second frame. The Fibula becomes visible in the lower left corner of the fourth image and can be seen more clearly in the fifth.
 
-The total of 76 segmentation maps were all manually labeled by two people. Each map featured three channels that showed Femur, Tibia, and Fibula separately. They did not segment the entirety of each 3D image but used a square window around the point where Femur and Tibia meet.
+A total of 76 segmentation maps were initially labeled by semi-automatic region growing followed by a manual adaption. The labeling process took 2 hours per 3D image, and each map showed Femur, Tibia, and Fibula separately. Not the entire image was segmented, but only a square window around the point where Femur and Tibia meet.
 
 \begin{figure}[H]
 \centering
