@@ -119,7 +119,7 @@ The network shows excellent performance on slices that are located near the midd
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/d4.png}
 \endminipage
-\caption{Input, prediction, difference to ground truth and applied mask}
+\caption{Input, prediction, difference to ground truth and applied mask (from left to right)}
 \end{figure}
 
 Perfect DSC scores of 100\% are achieved through empty segmentations that the network correctly predicted as such.
@@ -177,7 +177,7 @@ Secondly, convolutional neural networks take away most of this black box reasoni
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.95\textwidth]{imgs/archi_explo.png}
+  \includegraphics[width=1.0\textwidth]{imgs/archi_explo.png}
 \caption{Intermediate sum of feature maps throughout the network}
 \end{figure}
 
@@ -223,7 +223,7 @@ Ground truth data is often subject to noise, because mistakes happen during thei
 \caption{Examples of synthetic noise}
 \end{figure}
 
-The first and third images show the original segmentations, while two and four were changed using erosion and dilation respectively. The noise on the training data accounted for an error of 7.1\% DSC. Afterward, the unmodified test data was loaded to verify the results. The predictions show an accuracy of 95.2\% DSC, meaning that the noise hurts the performance of the model. More importantly, the DSC error is lower than the error that was introduced by the noise. When applying the same noise on the test set and using it as a prediction for the ground truth, the score is 92.8\% DSC. The predictions of the network contain 33\% less noise than the data it was trained on.
+The first and third images show the original segmentations, while two and four were changed using erosion and dilation respectively. The noise on the training data accounted for an error of 7.1\% DSC. The predictions show an accuracy of 95.2\% DSC on the unmodified test set, meaning that the noise hurts the performance of the model. More importantly, the DSC error is lower than the error that was introduced by the noise. When applying the same noise on the test set and using it as a prediction, the score is 92.8\% DSC. The predictions of the network contain 33\% less noise than the data it was trained on and show the robustness against inaccurate labels.
 
 \subsection{Transfer Application}
 
@@ -295,7 +295,7 @@ In 3.2 a third data source was mentioned that featured five sagittal recordings 
 
 These results look very accurate. In example 4 it even recognizes the Patella, a bone it was never trained on. This shows that with enough image augmentation the network will learn to segment any bone.
 
-\subsection{Age Assessment}
+\subsection{Proof of Concept: Age Assessment}
 
 The initial cause for the segmentation experiment was to reduce the amount of information in a knee MRI. The resulting images could then be used to make age assessments that focussed on the bone and the growth plate. This section will briefly cover such an age prediction pipeline.
 
@@ -305,8 +305,8 @@ Even by using many of the techniques mentioned in previous chapters, it was not 
 
 Only after using the contracting side of the proposed model with the parameters it learned on the segmentation task was it possible to train a network in a stable manner. This approach did not make the model converge every time, but when it did its predictions were stable through multiple epochs. A global average pooling layer and a dense layer were added after the convolutional block in the middle. The output was a single continuous value representing the age of the individual.
 
-The results on the validation data showed a mean difference of 0.64 years for all of the slices. Since every 3D sample now had 18 different predictions, another random forest regressor was built that would take a vector of 18 values and predict a single age. This resulted in a mean difference of 0.56 years on the validation data, and a final run on the test set showed 0.48 $\pm$ 0.32 (SD) years. The most accurate assessment of the 14 test samples was off by 26 days, and the worst estimate showed a difference of 1.37 years.
+The results on the validation data showed a mean difference of 0.64 $\pm$ 0.48 years for all of the slices. Since every 3D sample now had 18 different predictions, another random forest regressor was built that would take a vector of 18 values and predict a single age. This resulted in a mean difference of 0.56 $\pm$ 0.40 years on the validation data, and a final run on the test set showed 0.48 $\pm$ 0.32 years. The most accurate assessment of the 14 test samples was off by 0.07 years, and the worst estimate showed a difference of 1.37 years.
 
-These results show higher accuracy than the work of Stern et al. \cite{Stern2014} using carpal MRIs which led to a mean difference of 0.85 $\pm$ 0.58 (SD) years. Their approach extracted 11 growth plates in the left hand of candidates and then mapped these features to an age estimate. It was not based on convolutional neural networks but a random forest regressor for both stages. Their data set was equally distributed resulting in a higher standard deviation for the age of candidates. However, their worst age estimate was 40\% less accurate than the worst in this study, suggesting that the normal distribution is not the only cause for better results.
+These results show higher accuracy than the work of Stern et al. \cite{Stern2014} using carpal MRIs which led to a mean difference of 0.85 $\pm$ 0.58 years. Their approach extracted 11 growth plates in the left hand of candidates and then mapped these features to an age estimate. It was not based on convolutional neural networks but a random forest regressor for both stages. Their data set was equally distributed resulting in a higher standard deviation for the age of candidates. However, their worst age estimate was off by 2.35 years in comparison to the 1.37 years mentioned above. This suggests that the normal distribution of this study is not the only cause for better results.
 
 \newpage

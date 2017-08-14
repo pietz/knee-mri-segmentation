@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  14 AUG 2017 19:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  14 AUG 2017 19:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1106,7 +1106,7 @@ File: imgs/archi_explo.png Graphic file (type png)
 
 <use imgs/archi_explo.png>
 Package pdftex.def Info: imgs/archi_explo.png used on input line 180.
-(pdftex.def)             Requested size: 341.9989pt x 341.98831pt.
+(pdftex.def)             Requested size: 360.0pt x 359.99825pt.
  [32 <./imgs/a8.png> <./imgs/b8.png> <./imgs/c8.png> <./imgs/a7.png> <./imgs/b7
 .png> <./imgs/c7.png>]
 <imgs/channel1.png, id=231, 218.8175pt x 218.8175pt>
@@ -1305,7 +1305,7 @@ ist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
 pe1/public/lm/lmri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (49 pages, 3906609 bytes).
+Output written on 0_Thesis.pdf (49 pages, 3906919 bytes).
 PDF statistics:
  366 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams
