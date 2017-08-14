@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  13 AUG 2017 23:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.7.14)  14 AUG 2017 16:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -669,27 +669,34 @@ Package pdftex.def Info: imgs/fhw.png used on input line 31.
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./imgs/
 fhw.png>]
-(./0_abstract.tex [1]) (./0_Thesis.toc
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 2.
-
-(/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
+(./0_abstract.tex
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 6.
+ (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 2.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 6.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 2.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 6.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 2.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 6.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 6.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 6.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 6.
+ [1])
+(./0_Thesis.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10.95> on input line 2.
 LaTeX Font Info:    External font `lmex10' loaded for size
@@ -700,8 +707,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `0_Thesis.toc'.
 
- [3]
-(./0_Thesis.lof)
+ [3] (./0_Thesis.lof)
 \tf@lof=\write4
 \openout4 = `0_Thesis.lof'.
 
@@ -709,28 +715,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 \tf@lot=\write5
 \openout5 = `0_Thesis.lot'.
 
- [4] (./1_introduction.tex [1] [2])
-(./2_background.tex [3] <imgs/open-14y.jpg, id=35, 562.1pt x 562.1pt>
+ [4]
+(./1_introduction.tex [1] [2]) (./2_background.tex [3]
+<imgs/open-14y.jpg, id=36, 562.1pt x 562.1pt>
 File: imgs/open-14y.jpg Graphic file (type jpg)
-
-<use imgs/open-14y.jpg>
+ <use imgs/open-14y.jpg>
 Package pdftex.def Info: imgs/open-14y.jpg used on input line 23.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/centrally-closed-16y.jpg, id=36, 562.1pt x 562.1pt>
+<imgs/centrally-closed-16y.jpg, id=37, 562.1pt x 562.1pt>
 File: imgs/centrally-closed-16y.jpg Graphic file (type jpg)
 
 <use imgs/centrally-closed-16y.jpg>
 Package pdftex.def Info: imgs/centrally-closed-16y.jpg used on input line 26.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/closed-18y.jpg, id=37, 562.1pt x 562.1pt>
+<imgs/closed-18y.jpg, id=38, 562.1pt x 562.1pt>
 File: imgs/closed-18y.jpg Graphic file (type jpg)
  <use imgs/closed-18y.jpg>
 Package pdftex.def Info: imgs/closed-18y.jpg used on input line 29.
 (pdftex.def)             Requested size: 115.20264pt x 115.19693pt.
 
-<imgs/cs_hier.png, id=38, 1419.3025pt x 916.42375pt>
+<imgs/cs_hier.png, id=39, 1419.3025pt x 916.42375pt>
 File: imgs/cs_hier.png Graphic file (type png)
  <use imgs/cs_hier.png>
 Package pdftex.def Info: imgs/cs_hier.png used on input line 43.
@@ -738,7 +744,7 @@ Package pdftex.def Info: imgs/cs_hier.png used on input line 43.
 
 [4 <./imgs/open-14y.jpg> <./imgs/centrally-closed-16y.jpg> <./imgs/closed-18y.j
 pg> <./imgs/cs_hier.png>]
-<imgs/classic_prog.png, id=44, 2257.43375pt x 284.06125pt>
+<imgs/classic_prog.png, id=45, 2257.43375pt x 284.06125pt>
 File: imgs/classic_prog.png Graphic file (type png)
 
 <use imgs/classic_prog.png>
@@ -752,7 +758,7 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 69.
 
-<imgs/ml_pipeline.png, id=45, 2263.45625pt x 795.97375pt>
+<imgs/ml_pipeline.png, id=46, 2263.45625pt x 795.97375pt>
 File: imgs/ml_pipeline.png Graphic file (type png)
 
 <use imgs/ml_pipeline.png>
@@ -1277,13 +1283,13 @@ er_pers_y4.png>] [37]) (./5_discussion.tex
 [38] [39]) (./6_conclusion.tex [40]) (./0_Thesis.bbl [41] [42] [43]) [44]
 (./0_Thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 5339 strings out of 492995
- 82412 string characters out of 6132704
+ 5371 strings out of 492995
+ 82916 string characters out of 6132704
  172733 words of memory out of 5000000
- 8586 multiletter control sequences out of 15000+600000
- 72197 words of font info for 84 fonts, out of 8000000 for 9000
+ 8610 multiletter control sequences out of 15000+600000
+ 83066 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,38p,1136b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,9n,38p,1287b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.
 enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
 l/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
@@ -1299,10 +1305,10 @@ ist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2017/texmf-dist/fonts/ty
 pe1/public/lm/lmri10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
 /lm/lmri12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy10
 .pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on 0_Thesis.pdf (49 pages, 4054962 bytes).
+Output written on 0_Thesis.pdf (49 pages, 4055727 bytes).
 PDF statistics:
  366 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 20906 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 23978 words of extra memory for PDF output out of 24883 (max. 10000000)
 
