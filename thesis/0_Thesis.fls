@@ -258,9 +258,9 @@ INPUT ./imgs/unet.png
 INPUT ./imgs/unet.png
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
-INPUT imgs/elu_relu4.png
-INPUT ./imgs/elu_relu4.png
-INPUT ./imgs/elu_relu4.png
+INPUT imgs/elu_relu5.png
+INPUT ./imgs/elu_relu5.png
+INPUT ./imgs/elu_relu5.png
 INPUT imgs/forward_backward_prop.png
 INPUT ./imgs/forward_backward_prop.png
 INPUT ./imgs/forward_backward_prop.png

@@ -67,7 +67,7 @@ A total of 76 segmentation maps were initially labeled by semi-automatic region 
 \par
 \end{figure}
 
-The candidates chosen for the MRI recordings were all german males between the age of 14 and 21. Their age was normally distributed, and a majority of the candidates were recorded twice roughly a year apart. Above, purple shows the samples for which segmentation maps were available. Blue includes the rest.
+The candidates chosen for the MRI recordings were all german males between the age of 14 and 21. Their age was normally distributed, and a majority of the candidates were recorded twice roughly a year apart.
 
 \subsection{Preprocessing}
 
@@ -75,7 +75,7 @@ The parameters in a Neural Network commonly range from tens of thousands to hund
 
 \subsubsection{Training, Validation, and Testing Sets}
 
-The data was split into three subsets of which each was used for a different purpose. The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It's the only portion of the data the network will draw direct conclusions from. 
+The data was split into three subsets of which each was used for a different purpose (training, validation and testing). The training set is commonly the largest of the three and contains the data that is applied to the actual learning process. It's the only portion of the data the network will draw direct conclusions from. 
 
 The validation data is used to regularly measure the performance of the model and check whether overfitting occurs or not. If the accuracy of the validation set drops below the results of the training data, the network is starting to memorize the data it knows rather than generalizing on the concept.
 
@@ -97,7 +97,7 @@ Resizing the z-axis was problematic because the resolution was roughly 20 times 
 
 The 41 slices per image of the class 1 data were padded with empty pixels to 48 slices. Afterward, every second 2D image was resampled to the same 24 slices the data from Jopp et al. showed. It was not possible to do it the other way around and upscale 24 slices to 48, because the interpolated segmentation maps may have falsified the data.
 
-Throwing away perfectly good data is very uncommon in the machine learning field, especially if data sets are small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources, the balance between the amount of class 1 and 2 data was kept. A total of 76 24x224x224 images were now available for training.
+Throwing away perfectly good data is very uncommon in the machine learning field, especially if data sets are small. However, one slice shares a lot of similar information with its neighboring slices and can be seen as a sort of image augmentation between the two. By using the same spatial resolution for both sources, the balance between the amount of class 1 and 2 data was kept. A total of 76 images with a resolution of 24 x 224 x 224 were now available for training.
 
 The second approach converted the volumetric data to 2D while using all 41 slices from the class 1 data and all 24 slices from class 2. No samples were thrown away, but the data was no longer volumetric. 
 
@@ -133,7 +133,7 @@ This approach also has a downside. The network can no longer use the mean intens
 
 \subsubsection{N4 Bias Field Correction}
 
-A bias field is a low-frequency non-uniform intensity that is an unwanted byproduct magnetic resonance imaging. Several methods have been developed in the past of which N4ITK is the de facto standard in the field \cite{Tustison2010}. As the name suggests, it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24x224x224 image took between 60 and 120 seconds.
+Due to the inhomogeneous magnetic field used in MRI machines, a bias field is present as a low-frequency non-uniform intensity in the acquired images. Several methods have been developed in the past of which N4ITK is the de facto standard in the field \cite{Tustison2010}. As the name suggests, it is included in the Insight Toolkit (ITK) for which SimpleITK delivered an available Python binding. Using the N4 Bias Field Correction with its default settings on a single 24 x 224 x 224 image took between 60 and 120 seconds.
 
 \begin{figure}[H]
 \minipage{0.32\textwidth}
@@ -227,11 +227,11 @@ While building the architecture in the following sections, this merged channel a
 
 \subsection{Architecture}
 
-The majority of classification CNNs use a recurrent combination of convolutional and pooling layers \cite{Krizhevsky}\cite{He2015b}\cite{Iandola2016a}\cite{Ronneberger2015a}. By combining the local learning patterns of convolutions with the spatial reductions of pooling, the input is compressed to a dense representation of its most important features.
+The majority of classification CNNs use a recurrent combination of convolutional and pooling layers \cite{Krizhevsky, He2015b, Iandola2016a, Ronneberger2015a}. By combining the local learning patterns of convolutions with the spatial reductions of pooling, the input is compressed to a dense representation of its most important features.
 
 As mentioned in 2.2.5 a segmentation can be seen as a classification for every pixel. As such, early CNN segmentation models used small patches of the input image only to predict a single pixel through a classification pipeline. Afterward, a full segmentation map was assembled using each of these pixels. This process was very slow, and it also prevented the network to have a field of view larger than the inserted patch.
 
-An improvement for segmentations came through architectures referred to as encoder-decoder models. The encoding process describes the same spatial compression used in classification networks. Afterward, in the decoding step, the spatial resolution is brought back to its original shape and further processed by additional convolutions. This yields huge speed improvements, while also increasing the accuracy of the prediction. Encoder-decoder networks are the de facto standard in the current field of image segmentation \cite{Chen2017}\cite{Zhao2016}\cite{Lin2016}\cite{Chen2016}\cite{Nekrasov2016}\cite{Milletari2016}\cite{Cicek2016}\cite{Ronneberger2015a}\cite{Badrinarayanan2015}, and they were the initial starting point for building architecture.
+An improvement for segmentations came through architectures referred to as encoder-decoder models. The encoding process describes the same spatial compression used in classification networks. Afterward, in the decoding step, the spatial resolution is brought back to its original shape and further processed by additional convolutions. This yields huge speed improvements, while also increasing the accuracy of the prediction. Encoder-decoder networks are the de facto standard in the current field of image segmentation \cite{Chen2017, Zhao2016, Lin2016, Chen2016, Nekrasov2016, Milletari2016, Cicek2016, Ronneberger2015a, Badrinarayanan2015}, and they were the initial starting point for building architecture.
 
 \begin{figure}[H]
 \centering
@@ -318,7 +318,7 @@ Since the introduction of ReLU other variants have built on its success like PRe
 \begin{figure}[H]
 \centering
 \par
-\includegraphics[width=0.53\textwidth]{imgs/elu_relu4.png}
+\includegraphics[width=0.53\textwidth]{imgs/elu_relu5.png}
 \caption{Visualization of ReLU and ELU}
 \par
 \end{figure}
@@ -344,7 +344,7 @@ The prediction is then compared to the right answer, and the error is calculated
 Metrics are used in deep learning to measure the performance of a model. For example, the accuracy is often chosen to describe how well a neural network is doing on a classification task. An accuracy of 0.9 indicates that 9 out of 10 samples are classified correctly.
 
 \[
-Accuracy = \frac{TP+TN}{TP+TN+FP+FN}
+\text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN}
 \]
 
 In the formula above T and F indicate whether a prediction was true or false. P and N stand for a positive or negative outcome.
@@ -354,41 +354,41 @@ The result of a loss function is a metric that will be minimized during the back
 In situations like these, a surrogate function is used that has a high correlation with the target metric. For classification problems, this is often the cross entropy. Because a segmentation can be seen as a classification for every output pixel, it was also chosen as a candidate for this study.
 
 \[
-Cross \ Entropy \ (p, q) = -\sum p(x) \ log \ q(x)
+\text{Cross Entropy} \ (p, q) = -\sum \ p(x) \ log \ q(x)
 \]
 
-Another option was the $F_1 score$, which is a particular implementation of the F-Measure when $ \beta $ is 1. It is also known as the DICE similarity coefficient (DSC).
+Another option was the $F_1$ score, which is a particular implementation of the F-Measure when $ \beta $ is 1. It is also known as the dice similarity coefficient (DSC).
 
 \[
-F_\beta \ Score= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
+F_\beta \ \text{Score}= \frac{(1 + \beta^2) TP}{(1+\beta^2)TP+\beta^2FN+FP}
 \]
 
-Although the F1 score is commonly applied as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the $F_1 loss$ was defined as $ 1 - F_1 \ score $.
+Although the $F_1$ score is commonly applied as a binary measure and therefore not differentiable, a "soft" version can be used that accounts for continuous probabilities. To use it as a loss function where 0 describes the best possible outcome the $F_1 loss$ was defined as $ 1 - F_1 \ score $.
 
 \[
-F_\beta \ Loss = 1 - F_\beta \ Score
+F_\beta \ \text{Loss} = 1 - F_\beta \ \text{Score}
 \]
 
 The value of $ \beta $ can be adjusted to change the emphasize between precision and recall. Precision describes how much of the predicted area was true, whereas recall describes how much of the ground truth was recognized by the model. This can be useful for data sets with large imbalances between classes, like this study showed between Fibula, Femur, and Tibia. 
 
 The $F_2 score$ was tried for the three channel segmentation, where the Fibula could not be recognized. Although this model showed better scores regarding the recall measure, the Fibula was still not segmented.
 
-\begin{equation}
-Precision = \frac{TP}{TP+FP}
-\end{equation}
-
 \[
-Recall = \frac{TP}{TP+FN}
+\text{Precision} = \frac{TP}{TP+FP}
 \]
 
 \[
-Total Error = \frac{FP+FN}{TP+TN+FP+FN}
+  \text{Recall} = \frac{TP}{TP+FN}
+\]
+
+\[
+  \text{Total Error} = \frac{FP+FN}{TP+TN+FP+FN}
 \]
 
 Both loss functions were used in separate runs to compare the results of the $F_1 \ score$ and the cross entropy. The $F_1$ trained model showed better results regarding the $F_1 \ score$ and the cross entropy model showed better results on the cross entropy loss. In regards to Precision, Recall, Accuracy, and Intersection-over-Union (IoU) the performance of the $F_1$ trained network showed higher scores.
 
 \[
-IoU= \frac{TP}{TP+FP+FN}
+\text{IoU}= \frac{TP}{TP+FP+FN}
 \]
 
 Another test run used both loss function at the same time. This was done by feeding the output of the next-to-last layer into two separate segmentation outputs. Each of these last layers was trained with the $F_1 \ loss$ and cross entropy loss respectively. All previous layers were therefore trained by the sum of both loss functions. This architecture matched the best results of the previous runs in a single model but also increased the training time by 30\%.
