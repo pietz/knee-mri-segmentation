@@ -38,7 +38,7 @@ Results on Femur and Tibia alone are comparable to the merged approach, whereas 
 
 \begin{figure}[H]
   \includegraphics[width=\linewidth]{imgs/train_val.png}
-\caption{Visual representation of performance during training}
+\caption{Visual representation of the performance during training}
 \end{figure}
 
 The graph above shows the performance of the merged model during the learning process on the training and validation data. 
@@ -56,7 +56,7 @@ The graph above shows the performance of the merged model during the learning pr
     Test Set       &     -   &     -   &     -    &     -    & 0.980 \\
     \hline
     \end{tabular}
-    \caption{Performance on different sets over time}
+    \caption{Performance of the merged model on different sets over time}
 \end{table}
 
 The 98\% mark is never reached on the validation data, but only on the final evaluation of the test set. Towards the end, the performance of the training data pulls slightly ahead of the validation results.
@@ -65,7 +65,7 @@ The 98\% mark is never reached on the validation data, but only on the final eva
 
 The visual evaluation will focus on the results of the combined network since its performance is on par with the one channel model while offering more information about the associated bones.
 
-The network shows excellent performance on slices that are located near the middle of the 3D MRIs with DSC scores of over 99\%.
+The network shows excellent performance on slices that are located near the middle of the 3D MRIs often with DSC scores of over 99\%.
 
 \begin{figure}[H]
 \minipage{0.24\textwidth}
@@ -140,7 +140,7 @@ Perfect DSC scores of 100\% are achieved through empty segmentations that the ne
 \caption{Correctly segmented upper and lower slices}
 \end{figure}
 
-The most imprecise results showed a DSC score of 0\% where ground truth and prediction did not overlap at all.
+The most imprecise results showed a DSC of 0\% where ground truth and prediction did not overlap at all.
 
 \begin{figure}[H]
 \minipage{0.32\textwidth}
@@ -220,7 +220,7 @@ Ground truth data is often subject to noise, because mistakes happen during thei
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/noisy_seg2.png}
 \endminipage
-\caption{Examples of synthetic noise}
+\caption{Examples of synthetic noise using erosion and dilation}
 \end{figure}
 
 The first and third images show the original segmentations, while two and four were changed using erosion and dilation respectively. The noise on the training data accounted for an error of 7.1\% DSC. The predictions show an accuracy of 95.2\% DSC on the unmodified test set, meaning that the noise hurts the performance of the model. More importantly, the DSC error is lower than the error that was introduced by the noise. When applying the same noise on the test set and using it as a prediction, the score is 92.8\% DSC. The predictions of the network contain 33\% less noise than the data it was trained on and show the robustness against inaccurate labels.
@@ -229,7 +229,7 @@ The first and third images show the original segmentations, while two and four w
 
 Neural networks are known to be unreliable when used on data that exceeds the range of variation in the training set. They cannot learn what they were not taught. On the other hand, convolutions are translation invariant, allowing them to recognize patterns anywhere in the frame \cite{Chollet2017}. Another merged model was trained that used the same architecture but added further image augmentation of horizontal and vertical flips. This way it only reached a DSC score of 97.3\% but was more flexible to structural differences in the image.
 
-The proposed architecture can be described as "fully convolutional" because it does not include any dense layers. This allows the network to accept any resolution and still being able to process it. An experiment was set up that used uncropped images from the Epi data which were resized to 448x448 pixels. This made them four times larger than the images the network was trained with.
+The proposed architecture can be described as "fully convolutional" because it does not include any dense layers. This allows the network to accept any resolution and still being able to process it. An experiment was set up that used uncropped images from the Epi data which were resized to 448 x 448 pixels. This made them four times larger than the images the network was trained with.
 
 \begin{figure}[H]
 \minipage{0.24\textwidth}
@@ -257,10 +257,10 @@ The proposed architecture can be described as "fully convolutional" because it d
 \minipage{0.24\textwidth}%
   \includegraphics[width=\linewidth]{imgs/transfer_size_y4.png}
 \endminipage
-\caption{Examples of uncropped and 448x448 pixel predictions}
+\caption{Examples of uncropped and 448 x 448 pixel predictions}
 \end{figure}
 
-The predictions show good results even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate. Problems are visible in tissue that isn't bone but was recognized as such as the 4th examples shows.
+The predictions show good results even following the shaft of the bone which wasn't visible in the original cropped images. Even large intensity gaps through growth plates are recognized as Femur or Tibia. The recall performance is very accurate. Problems are visible in tissue that isn't bone but was recognized as such as the 4th example shows.
 
 In 3.2 a third data source was mentioned that featured five sagittal recordings of knees. These were not used for the training because of their structural differences and because no ground truth segmentations were available. The following samples show what happens when the network is applied to images from a different perspective.
 
