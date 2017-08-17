@@ -8,6 +8,19 @@
 \usepackage[singlespacing]{setspace}
 \usepackage{parskip}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
 
 \widowpenalty = 10000
@@ -16,18 +29,18 @@
 
 \pagenumbering{Roman}
 
-\title{Developing a Deep Learning Process for the Segmentation of 3D MR images}
+\title{Automated Segmentation of Bones for the Age Assessment in 3D MR Images using Convolutional Neural Networks}
 \author{Paul-Louis Pröve}
 
 \begin{document}
 
     \begin{titlepage}
     \centering
-    \includegraphics[width=0.4\textwidth]{fhw.png}\par
+    \includegraphics[width=0.4\textwidth]{imgs/fhw.png}\par
     \vspace{1cm}
     {\scshape\Large Bachelor Thesis\par}
     \vspace{2cm}
-    {\bfseries\Huge Semantic Segmentation of human knees using Convolutional Neural Networks\par}
+    {\bfseries\huge Automated Segmentation of Bones \par for the Age Assessment \par in 3D MR Images using \par Convolutional Neural Networks\par}
     \vspace{2cm}
     {\itshape\Large Paul-Louis Pröve\par}
     mail@plpp.de\par
@@ -39,23 +52,40 @@
     Hamburg,\par \today\par
     \end{titlepage}
 
+\input{0_abstract.tex}
+
 \tableofcontents
 \newpage
 
-%\listoffigures
-%\newpage
+\listoffigures
+\listoftables
+\newpage
 
 \pagenumbering{arabic}
 
-\input{1_abstract.tex}
-\input{2_introduction.tex}
-\input{3_background.tex}
-\input{4_methods.tex}
-\input{5_results.tex}
-\input{6_discussion.tex}
+\input{1_introduction.tex}
+\input{2_background.tex}
+\input{3_methods.tex}
+\input{4_results.tex}
+\input{5_discussion.tex}
+\input{6_conclusion.tex}
 
+\pagenumbering{Roman}
+\setcounter{page}{5}
 \bibliography{references.bib}
-\bibliographystyle{plain}
+\bibliographystyle{unsrt}
+\newpage
+
+\section*{Statutory Declaration} 
+\vspace{2cm}
+I declare that I have authored this thesis independently, that I have not used other than the declared sources/resources, and that I have explicitly marked all material which has been quoted either literally or by content from the used sources.
+
+This thesis was not previously presented to another examination board and has not been published.
+
+\vspace{4cm}
+
+\parbox{1.0\linewidth}{\dotfill}\par
+\hspace{2cm} City, Date \hfill Signature \hspace{2cm}
 
 
 \end{document}
