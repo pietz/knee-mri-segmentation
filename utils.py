@@ -231,7 +231,7 @@ def read_mhd(path, label=0, crop=None, size=None, bias=False, norm=False):
     #img = img[:, crop[0]:-2*crop[1]+crop[0], crop[1]:-1*crop[1]] if crop else img
     img = resize_3d(img, size) if size else img
     img = n4_bias_correction(img) if bias else img
-    img = (img-img.min()) / (img.max()-img.min()) if norm else img
+    img = (img - img.mean()) / img.std() if norm else img
     return img.astype('float32')
 
 def load_data(path, label=0, size=(24,224,224), bias=False, norm=False, to2d=False):
